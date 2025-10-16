@@ -1,0 +1,6 @@
+{
+    "vscode-php-cs-fixer.allowRisky": true,
+    "vscode-php-cs-fixer.useCache": true,
+    "php.validate.enable": false,
+    "php.validate.executablePath": ""
+}
