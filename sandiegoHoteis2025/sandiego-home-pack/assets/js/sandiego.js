@@ -1,10 +1,10 @@
 
 /* San Diego custom */
-(function($){
-  $(function(){
+(function(jQuery){
+  jQuery(function(){
     // Slick examples (if needed later)
-    if ($('.js-services-slider').length){
-      $('.js-services-slider').slick({
+    if (jQuery('.js-services-slider').length){
+      jQuery('.js-services-slider').slick({
         dots:true, arrows:false, autoplay:true, autoplaySpeed:6000, slidesToShow:4, slidesToScroll:4,
         responsive:[
           {breakpoint:1200, settings:{slidesToShow:3, slidesToScroll:3}},
@@ -15,10 +15,10 @@
     }
 
     // Copy buttons (helper page)
-    $('.copy-btn[data-copy]').on('click', function(){
-      const text = $(this).attr('data-copy');
+    jQuery('.copy-btn[data-copy]').on('click', function(){
+      const text = jQuery(this).attr('data-copy');
       navigator.clipboard.writeText(text).then(()=>{
-        const t = $(this);
+        const t = jQuery(this);
         const prev = t.text();
         t.text('Copiado!').addClass('copied');
         setTimeout(()=>{ t.text(prev).removeClass('copied'); }, 1200);

@@ -1,52 +1,24 @@
 @charset "UTF-8";
 /*
-@charset "UTF-8";
-/*
-Theme Name: San Diego Hoteis 2025
-Theme URI: https://www.gamberine.com.br
-Author URI: https://www.gamberine.com.br
-Description: Tema filho do Tema Base Gamberine, desenvolvido para o Hotel San Diego em 2025.
-Version: 1.0.0
-Template: tema-base-gamb
-Text Domain: sandiegoHoteis2025
-Tags: custom-background, custom-logo, custom-menu, featured-images, theme-options, translation-ready
-Author: Gamberine Comunicação Digital
-Ano: 2025
-*/
-
 /* Cores */
 :root {
 
-  /* --fontTitulos   : 'Roboto Bold', sans-serif !important; */
-  /* --fontConteudos : 'Roboto Light', sans-serif !important; */
-  --fontTitulos   : 'Fira Sans', sans-serif !important;
-  --fontConteudos : 'Roboto Light', sans-serif !important;
+  --fontTitulos   : 'Diavlo Black', sans-serif !important;
+  --fontConteudos : 'Diavlo Book', sans-serif !important;
   --fontDecorativa: 'Blacksword', sans-serif !important;
 
-  --cor-teal    : #0d5963;
-  --cor-teal-700: #0b4951;
-  --cor-gray    : #566370;
-  --font-title  : 'Diavlo Black',
-  system-ui,
-  -apple-system,
-  Segoe UI,
-  Roboto,
-  Arial,
-  sans-serif;
-  --font-body : 'Diavlo Book',
-  system-ui,
-  -apple-system,
-  Segoe UI,
-  Roboto,
-  Arial,
-  sans-serif;
+ 
+  --font-title  : 'Diavlo Black', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-body : 'Diavlo Book', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+ --cor-teal    : #0d5963;
+ --cor-teal-700: #0b4951;
+ --cor-gray    : #566370;
 
 
-
-
-  --corPrincipal       : #13706F !important;
-  --corPrincipalHover  : #187c72 !important;
-  --corPrincipalTransp : #13706Fb0 !important;
+  --corPrincipal       : #0d5963 !important;
+  --corPrincipalHover  : #0b4951 !important;
+  --corPrincipalTransp : #0b4951b0 !important;
   --corSecundaria      : #383836 !important;
   --corSecundariaHover : #313131 !important;
   --corSecundariaTransp: #313131eb !important;
@@ -58,7 +30,7 @@ Ano: 2025
   --corBg          : #ECECEC !important;
   --corBgSecundario: #ededed !important;
   --corBgModal     : #313131e6 !important;
-  --corCinza       : #bababa !important;
+  --corCinza       : #566370 !important;
 
   --corTextos     : #313131 !important;
   --corTextosHover: #140801 !important;
