@@ -1,0 +1,343 @@
+@charset "UTF-8";
+/*
+Theme Name: Castelar RC
+Author: Gamberine Comunicação Digital
+Ano: 2025
+*/
+/* styles.css */
+/* @import url('style-variaveis.css'); */
+
+/* Cores */
+:root {
+
+  --fontTitulos   : 'avory-i-pe', sans-serif !important;
+  --fontConteudos : 'avory-i-pe', sans-serif !important;
+  --fontDecorativa: 'Blacksword', sans-serif !important;
+
+  --corPrincipal       : #13706F !important;
+  --corPrincipalHover  : #187c72 !important;
+  --corPrincipalTransp : #13706Fb0 !important;
+  --corSecundaria      : #383836 !important;
+  --corSecundariaHover : #313131 !important;
+  --corSecundariaTransp: #313131eb !important;
+
+  --corAtiva  : #135a70 !important;
+  --corSucesso: #1e5a24 !important;
+  --corBtn    : #f8e37a !important;
+
+  --corBg          : #ECECEC !important;
+  --corBgSecundario: #ededed !important;
+  --corBgModal     : #313131e6 !important;
+  --corCinza       : #bababa !important;
+
+  --corTextos     : #313131 !important;
+  --corTextosHover: #140801 !important;
+  --corBranca     : #ffffff;
+  --corAlerta     : #8a320a !important;
+
+  --gradientPadrao        : linear-gradient(270deg, #383836, #313131) !important;
+  --gradientHover         : linear-gradient(90deg, #313131, #383836) !important;
+  --gradientHeader        : linear-gradient(90deg, #383836ee, #313131fa) !important;
+  /* --gradientPrincipal  : linear-gradient(270deg, #187c72, #13706F) !important; */
+  --gradientPrincipal     : linear-gradient(270deg, var(--corPrincipalHover), var(--corPrincipal)) !important;
+  --gradientPrincipalHover: linear-gradient(90deg, var(--corPrincipalHover), var(--corPrincipal)) !important;
+
+  --corBordas    : #bababa9d;
+  --corSombra    : #27272729;
+  --boxShadow    : 2px 2px 8px -2px var(--corSombra) !important;
+  --sombraInterna: inset 0px 0px 6px 2px var(--corPrincipalHover) !important;
+
+  --bordaPadrao     : 1px solid var(--corBordas);
+  --bordaBranca     : 4px solid var(--corBranca) !important;
+  --bordaBSecundaria: 46px solid var(--corBgSecundario) !important;
+  --textShadow      : 1px 1px 1px var(--corSombra) !important;
+  --filterShadow    : drop-shadow(0 0 6px var(--corSombra)) !important;
+  --borderRadius    : 6px !important;
+  --transition      : all .3s ease !important;
+  --transitionLinear: all .3s linear !important;
+
+
+  --gradientMask       : linear-gradient(212deg, #ECECEC4a 25%, #bababac9 88%) !important;
+  --gradientBtn        : linear-gradient(270deg, var(--corPrincipal), var(--corPrincipalHover)) !important;
+  --gradientBtnHover   : linear-gradient(0deg, var(--corPrincipal), var(--corPrincipalHover)) !important;
+  --gradientSecundario : linear-gradient(165deg, #fff, var(--corCinza), var(--corPrincipal) 110%) !important;
+  --gradientColorRotate: linear-gradient(270deg, var(--corSecundaria), var(--corBtn)) !important;
+  --gradientBanner     : linear-gradient(330deg, #155c8656, #155d8680) !important;
+}
+
+/* ocultando a barra de ferramentas de um Editor WYSIWYG para uso como criador de galeria de fotos (add class boxGaleriaAdmin */
+.boxGaleriaAdmin .mce-container.mce-toolbar.mce-stack-layout-item.mce-first.mce-last,
+.boxGaleriaAdmin button.button.wpforms-insert-form-button {
+    display: none !important;
+}
+
+/* ocultando todas os items que não são a home na definição do banner home e também o pesquisar dentro das opçõoes */
+/* li.select2-results__option:not(:nth-child(1)),
+.select2-container--default .select2-search--dropdown .select2-search__field{
+    display: none;
+}
+li.select2-results__option:nth-child(1) {
+    display: block !important;
+} */
+/* fim ocultando todas os items que não são a home na definição do banner home */
+
+/* Personalização campos do ACF - Gamberine */
+Input[type=checkbox] {
+    accent-color: var(--corPrincipal) !important;
+}
+
+/* Posicionamento do botão atualizar - Gamberine */
+input.button.button-primary.button-large.fixed {
+    bottom: 2vw !important;
+    position: fixed !important;
+    right: 1rem !important;
+    padding-inline: 3rem !important;
+    min-height: 3.5rem !important;
+    border-radius: 8px;
+    font-size: 2.5cap;
+    box-shadow: inset 0 0 16px -1px #0a1f3066;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* .acf-field.acf-field-image.acf-field-67a5689bd7912, */
+/* #addtag .form-field.term-description-wrap, */
+
+.taxonomy-especialidade .acf-field-imagem-categoria,
+.taxonomy-especialidade h2,
+li#menu-posts-diferenciais,
+tr.form-field.term-parent-wrap,
+#addtag .form-field.term-parent-wrap,
+div#categorydiv,
+div#postimagediv,
+li#wp-admin-bar-archive,
+li#toplevel_page_wpforms-overview,
+#menu-comments,
+.notice.notice-warning,
+li#menu-posts,
+.post-type-infos a.page-title-action,
+.post-type-conteudo a.page-title-action {
+    display   : none !important;
+    visibility: hidden !important;
+}
+
+/* #acf-term-fields {
+    margin-block: 2rem 3rem !important;
+} */
+
+.acf-image-uploader a.button {
+    display        : flex !important;
+    align-items    : center !important;
+    justify-content: center !important;
+    border-radius  : 7px !important;
+    min-height         : 35px !important;
+    background     : var(--corPrincipal);
+    color          : var(--corBranca);
+    border         : none !important;
+    transition     : var(--transition) !important;
+}
+
+.acf-image-uploader a.button:hover {
+    border       : none !important;
+    border-radius: 7px !important;
+    /* height       : 35px !important; */
+    background   : var(--corPrincipalHover);
+    color        : var(--corBranca);
+    transition   : var(--transition) !important;
+}
+
+.acf-image-uploader p {
+    display    : flex !important;
+    flex-flow  : column-reverse !important;
+    gap        : 1rem !important;
+    padding-top: .5rem !important;
+}
+
+#acf-term-fields>.acf-field>.acf-label label {
+    font-size  : 13px !important;
+    font-weight: 400 !important;
+}
+
+/* div[id$="div"], */
+/* #tagsdiv-cargo,
+div#tagsdiv-mercado_produtos,
+div#tagsdiv-fornecedor,
+div#category_tipo_destinodiv,
+div#tagsdiv-category_tipo_viagem,
+div#category_produtosdiv,
+div#tagsdiv-filtros_produtos,
+div#category_bannerdiv,
+div[id^="tagsdiv-"] {
+    visibility: hidden;
+} */
+
+.corPrincipal label {
+    color: var(--corPrincipal);
+}
+
+/* .select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height   : 1 !important;
+    padding-left  : 0.75rem;
+    font-weight   : 700 !important;
+    color         : var(--corSecundaria);
+    text-transform: uppercase;
+    width         : 100%;
+    height        : 100%;
+    display       : flex;
+    align-items   : center;
+} */
+
+/* .select2-container.-acf .select2-selection {
+    border-color      : #7e8993;
+    min-height        : 34px !important;
+} */
+
+/* .select2-results__option[aria-selected] {
+    text-transform: uppercase;
+    white-space   : pre;
+    overflow-x    : hidden;
+    text-overflow : ellipsis;
+    padding       : 5px;
+} */
+
+/* .categorychecklist-holder ul {
+    min-height        : 34px;
+} */
+
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
+    font-weight: 500;
+}
+
+/* .categorychecklist-holder ul li:nth-child(odd) {
+    position: relative;
+    left    : -1rem;
+} */
+/* .acf-input-wrap input {
+    position: relative;
+    min-height  : 34px;
+    padding : 4px 8px !important;
+} */
+
+.destaque {
+    background: #bac2cb !important;
+}
+
+/* acf-field.acf-field-group {
+    display            : flex;
+    align-items        : center;
+    background         : #c6ced6 !important;
+    height             : 34px;
+    border-bottom-color: #fff !important;
+    padding            : 0 !important;
+} */
+
+/* .acf-field.acf-field-group .acf-label label,
+.acf-field-group .acf-label {
+    margin: 0 !important;
+} */
+
+.acf-field.acf-field-accordion.acf-field-658b1654f6fbc.acf-accordion.-open .acf-label.acf-accordion-title,
+.acf-field.acf-field-accordion.acf-field-658b2b2a50989.acf-accordion.-open .acf-label.acf-accordion-title,
+.post-type-acf-field-group #acf-field-group-fields .acf-field-object-accordion {
+    background-color: #acb6c0d4 !important;
+    transition      : all ease .3s !important;
+}
+
+.acf-field.acf-accordion .acf-label.acf-accordion-title,
+.post-type-acf-field-group #acf-field-group-fields .acf-field-object-tab {
+    background-color: #c6ced6 !important;
+    transition      : all ease .3s !important;
+}
+
+/* .acf-fields>.acf-tab-wrap:first-child .acf-tab-group {
+    margin: 0 !important;
+} */
+
+.acf-fields>.acf-tab-wrap .acf-tab-group li.active a {
+    background-color: #c6ced6 !important;
+    border-color    : #c6ced6 !important;
+    transition      : all ease .3s !important;
+}
+
+.acf-fields>.acf-tab-wrap .acf-tab-group li a:hover {
+    background-color: #b3d9ff !important;
+    transition      : all ease .3s !important;
+}
+
+.acf-image-uploader .image-wrap img,
+.acf-image-uploader img {
+    height      : 8.2rem !important;
+    aspect-ratio: 4 / 3 !important;
+    width       : 100% !important;
+    object-fit  : scale-down !important;
+    background  : #acb6c0d4;
+    overflow    : hidden !important;
+}
+
+/* 
+.acf-field.acf-field-accordion.acf-field-658b1654f6fbc.acf-accordion,
+.acf-field.acf-field-accordion.acf-field-658b2b2a50989.acf-accordion {
+    margin-top: 15px !important;
+} */
+
+.icon_preview {
+    display        : flex !important;
+    justify-content: center !important;
+    height         : 6rem !important;
+    align-items    : center !important;
+}
+
+/* #adminmenu li.wp-menu-separator {
+    height: 0 !important;
+    margin: 0 !important;
+} */
+
+/* // personalizar campo Editor WYSIWYG do acf */
+/* .editorWYSIWYG .wp-editor-container textarea.wp-editor-area {
+    height    : auto !important;
+    min-height: 12vh;
+} */
+
+.postbox-header {
+    min-height: 38px !important;
+    background: #acb6c0d4 !important;
+}
+
+/* .acf-taxonomy-field:hover .acf-actions, */
+.acf-actions.-hover,
+/* .acf-taxonomy-field .acf-actions, */
+.gridCatBanner .acf-actions.-hover,
+.gridCatBanner .acf-taxonomy-field .acf-actions {
+    display: block !important;
+}
+
+/* .acf-taxonomy-field[data-ftype=select] .acf-actions {
+    padding: 0 !important;
+    margin : -1.8rem 0 !important;
+} */
+
+/* li#wp-admin-bar-wpforms-menu,
+li#wp-admin-bar-comments,
+li#wp-admin-bar-wp-logo {
+    display: none !important;
+} */
+
+@media only screen and (min-width: 1299px) and (max-width: 1380px) {
+
+    /* #adminmenu,
+    #adminmenu .wp-submenu,
+    #adminmenuback,
+    #adminmenuwrap {
+        width: 12.5vw !important;
+    } */
+
+    #wpcontent {
+        padding-left: 14vw !important;
+        margin-left : 0 !important;
+    }
+}
+
+/* .acf-input .acf-fields.-top.-border .acf-field {
+    min-height: auto !important;
+} */
+
