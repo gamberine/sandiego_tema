@@ -701,11 +701,11 @@ span.fontDecorativa {
 
 .gridImgFlutuante h4,
 .gridImgFlutuante h5 {
-  display           : flex;
+  display           : -webkit-box !important;
   width             : 100%;
   align-items       : center;
   margin-block      : 0 1rem !important;
-  display           : -webkit-box !important;
+  display           : flex;
   align-content     : center;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3 !important;
@@ -919,7 +919,6 @@ section.gridBranco.contatos {
   color             : var(--corBg) !important;
   font-weight       : 100 !important;
   opacity           : .8;
-  display           : flex;
   align-items       : center;
   margin-block      : 0 !important;
   padding-block     : 0 !important;
@@ -1297,7 +1296,6 @@ li.desktop-nav-item.selected:before {
   overflow-x     : hidden;
   overflow-y     : auto;
   gap            : 1px;
-  scrollbar-width: none;
   justify-content: space-between;
 }
 
@@ -3350,7 +3348,7 @@ a.text-white.underline:hover {
   font-size     : 6.5rem;
   line-height   : 1 !important;
   font-weight   : 500;
-  text-transform: math-auto;
+  text-transform: none;
   position      : relative;
   letter-spacing: -1px !important;
   word-spacing  : .4rem;
@@ -3358,7 +3356,6 @@ a.text-white.underline:hover {
   text-align    : center;
   margin        : 0 !important;
 }
-
 .bannerInternas:before {
   content   : '';
   position  : absolute;
@@ -3771,10 +3768,6 @@ i.fas.fa-comment-dots {
 .lineFooter {
   border: 0.8px solid var(--corBordas);
   margin: 28px 0 -10px;
-}
-
-.scroller {
-  scrollbar-color: #a37a00 #04296E !important;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -4806,7 +4799,7 @@ section.gridDetalheServico:not(:nth-child(odd)) .rowDetalheServico {
   background   : var(--corBranca);
   border-radius: var(--borderRadius) !important;
   filter       : grayscale(.9);
-  float        : inline-end;
+  float        : right;
   transition   : var(--transition) !important;
 }
 
@@ -4816,7 +4809,7 @@ section.gridDetalheServico:not(:nth-child(odd)) .rowDetalheServico {
 }
 
 section.gridDetalheServico:not(:nth-child(odd)) .imgServicos {
-  float: inline-start;
+  float: left;
 }
 
 .imgServicos img {
@@ -4825,7 +4818,7 @@ section.gridDetalheServico:not(:nth-child(odd)) .imgServicos {
   border-radius: var(--borderRadius) !important;
   box-shadow   : 0 0 9px 0px var(--corSombra);
   transition   : var(--transition) !important;
-  float        : inline-end;
+  float        : right;
 }
 
 section.gridDetalheServico:not(:nth-child(odd)) .imgServicos img {
@@ -5762,7 +5755,7 @@ section#vantagens {
 p.textoChamada {
   font-size     : .9rem !important;
   font-family   : var(--fontConteudos) !important;
-  text-transform: math-auto;
+  text-transform: unset !important;
   margin-bottom : 0.25rem !important;
   opacity       : .6;
   max-width     : 90%;
@@ -6061,7 +6054,6 @@ section#nossahistoria {
 }
 
 .gridEquipe h3 {
-  display           : flex;
   align-items       : center;
   display           : -webkit-box !important;
   align-content     : center;
@@ -6579,7 +6571,7 @@ button.btnClose:focus {
   font-size      : 1.8rem !important;
   margin-block   : .5rem 1.5rem !important;
   text-align     : start;
-  min-height     : auto !important;
+  min-height     : 1px !important;
   width          : auto !important;
   margin-inline  : 0 !important;
   justify-content: flex-start;
@@ -8261,8 +8253,8 @@ label {
 
   input[type='checkbox'],
   input[type='radio'] {
-    appearance     : none;
     -moz-appearance: none;
+    appearance     : none;
     position       : relative;
     width          : 25px;
     height         : 25px;
@@ -11436,6 +11428,7 @@ h1.page-title {
   font-family: var(--fontTitulos) !important;
   font-weight: normal;
   font-size  : var(--global--font-size-lg);
+  -webkit-hyphens: auto;
   hyphens    : auto;
   word-wrap  : break-word;
   word-break : break-word;
@@ -13936,7 +13929,7 @@ section.gridCertificacoes, */
   .projetos.sliderImgTexto .fontTitulos,
   .projetos.sliderImgTexto p {
     padding-inline: .5rem !important;
-    min-height    : auto !important;
+    min-height    : 1px !important;
     height        : 100% !important;
     margin-block  : 1rem !important;
   }
@@ -15577,7 +15570,7 @@ section.gridCertificacoes, */
     width     : 100% !important;
     margin    : 0 auto !important;
     text-align: center !important;
-    min-height: auto !important;
+    min-height: 1px !important;
   }
 
   section.gridQueijos .px-5 {
@@ -15840,7 +15833,7 @@ section.gridCertificacoes, */
 
   .sliderIntegrantes .modal h2,
   .modalTitleMobile h2 {
-    min-height   : auto !important;
+    min-height   : 1px !important;
     padding-block: 0;
     position     : relative;
     top          : -16px;
@@ -16592,7 +16585,6 @@ span.linkIdiomas.d-flex .gtranslate_wrapper .gt_selector {
 
   .gtranslate-select select {
     /* fallback para browsers que não entendem CSS variables */
-    background-image   : url('/wp-content/plugins/gtranslate/flags/svg/pt-br.svg');
     background-repeat  : no-repeat;
     background-position: 6px center;
     background-size    : 16px 16px;
@@ -16616,3 +16608,141 @@ span.linkIdiomas.d-flex .gtranslate_wrapper .gt_selector {
 }
 
 /* -------------- fim  arquivo-idiomas -------------- */
+
+
+/* San Diego - minimal styles for sections (Bootstrap friendly) */
+
+.sandiego .title-xl {
+  font-family   : var(--font-title);
+  font-size     : clamp(1.8rem, 1.6rem + 1.2vw, 3rem);
+  color         : var(--cor-teal);
+  letter-spacing: .02em
+}
+
+.sandiego .title-lg {
+  font-family: var(--font-title);
+  font-size  : clamp(1.4rem, 1.2rem + .8vw, 2.2rem);
+  color      : var(--cor-teal)
+}
+
+.sandiego .lead {
+  font-size: 1.125rem;
+  color    : var(--cor-gray)
+}
+
+.sandiego .hero {
+  position   : relative;
+  min-height : 60vh;
+  display    : grid;
+  place-items: center;
+  overflow   : hidden;
+  background : #083f46;
+}
+
+.sandiego .hero img.bg {
+  position  : absolute;
+  inset     : 0;
+  width     : 100%;
+  height    : 100%;
+  object-fit: cover;
+  opacity   : .55;
+}
+
+.sandiego .hero .play {
+  width          : 160px;
+  height         : 160px;
+  border         : 6px solid rgba(255, 255, 255, .6);
+  border-radius  : 50%;
+  display        : grid;
+  place-items    : center;
+  backdrop-filter: blur(2px);
+}
+
+.sandiego .hero .play svg {
+  width       : 64px;
+  height      : 64px;
+  fill        : none;
+  stroke      : #fff;
+  stroke-width: 12
+}
+
+.sandiego .searchbar {
+  background   : #fff;
+  margin-top   : -40px;
+  box-shadow   : 0 12px 24px rgba(0, 0, 0, .06);
+  border-radius: 12px
+}
+
+.sandiego .searchbar .form-label {
+  font-weight: 700;
+  color      : var(--cor-teal);
+}
+
+.sandiego .searchbar .form-control,
+.sandiego .searchbar .form-select {
+  border-color : #c6d3d6;
+  padding      : .8rem .9rem;
+  border-radius: 10px;
+}
+
+.sandiego .searchbar .btn-search {
+  background   : var(--cor-teal);
+  color        : #fff;
+  border-radius: 10px;
+  padding      : .8rem 1rem
+}
+
+.sandiego .services .card {
+  border       : 0;
+  box-shadow   : 0 6px 18px rgba(0, 0, 0, .05);
+  border-radius: 16px
+}
+
+.sandiego .services .icon {
+  width : 64px;
+  height: 64px;
+  color : var(--cor-teal)
+}
+
+.sandiego .numbers {
+  background: var(--cor-teal);
+  color     : #fff
+}
+
+.sandiego .numbers .item {
+  border       : 2px solid rgba(255, 255, 255, .65);
+  border-radius: 22px;
+  padding      : 22px
+}
+
+.sandiego .diff .mini h4 {
+  color      : var(--cor-teal);
+  font-weight: 800;
+  font-size  : 1.1rem
+}
+
+.sandiego .diff .mini img {
+  border-radius: 12px;
+  width        : 100%;
+  height       : 160px;
+  object-fit   : cover;
+}
+
+.sandiego .cta-card {
+  background   : var(--cor-teal);
+  color        : #fff;
+  border-radius: 8px;
+  padding      : 24px
+}
+
+.copy-list .copy-btn {
+  cursor     : pointer;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.copy-list .copied {
+  opacity: .75
+}
+
+/* fim css sandiego home  */

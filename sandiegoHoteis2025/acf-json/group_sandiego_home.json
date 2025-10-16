@@ -1,0 +1,174 @@
+{
+  "key": "group_sandiego_home",
+  "title": "Home — Seções",
+  "fields": [
+    {
+      "key": "field_home_sections",
+      "label": "Seções da Home",
+      "name": "home_sections",
+      "type": "flexible_content",
+      "layouts": [
+        {
+          "key": "layout_hero",
+          "name": "hero",
+          "label": "Hero",
+          "display": "block",
+          "sub_fields": [
+            {
+              "key": "hero_bg",
+              "label": "Imagem de Fundo",
+              "name": "hero_bg",
+              "type": "image",
+              "return_format": "array",
+              "preview_size": "medium",
+              "library": "all"
+            },
+            {
+              "key": "hero_show_play",
+              "label": "Mostrar Play",
+              "name": "hero_show_play",
+              "type": "true_false",
+              "default_value": 1
+            }
+          ]
+        },
+        {
+          "key": "layout_search",
+          "name": "search",
+          "label": "Barra de Busca",
+          "display": "block",
+          "sub_fields": []
+        },
+        {
+          "key": "layout_services",
+          "name": "services",
+          "label": "Nossos Serviços",
+          "display": "block",
+          "sub_fields": [
+            {
+              "key": "services_title",
+              "label": "Título",
+              "name": "title",
+              "type": "text",
+              "default_value": "Nossos Serviços"
+            },
+            {
+              "key": "services_rep",
+              "label": "Itens",
+              "name": "services",
+              "type": "repeater",
+              "button_label": "Adicionar serviço",
+              "sub_fields": [
+                {
+                  "key": "s_icon",
+                  "label": "Ícone/Imagem",
+                  "name": "icon",
+                  "type": "image",
+                  "return_format": "array",
+                  "preview_size": "thumbnail"
+                },
+                {
+                  "key": "s_title",
+                  "label": "Título",
+                  "name": "title",
+                  "type": "text"
+                },
+                {
+                  "key": "s_text",
+                  "label": "Texto",
+                  "name": "text",
+                  "type": "textarea",
+                  "rows": 3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "layout_numbers",
+          "name": "numbers",
+          "label": "Números",
+          "display": "block",
+          "sub_fields": [
+            {
+              "key": "n_rep",
+              "label": "Itens",
+              "name": "items",
+              "type": "repeater",
+              "button_label": "Adicionar número",
+              "sub_fields": [
+                {
+                  "key": "n_number",
+                  "label": "Número",
+                  "name": "number",
+                  "type": "text"
+                },
+                {
+                  "key": "n_label",
+                  "label": "Rótulo",
+                  "name": "label",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "layout_differentials",
+          "name": "differentials",
+          "label": "Diferenciais + Contato",
+          "display": "block",
+          "sub_fields": [
+            {
+              "key": "d_cards",
+              "label": "Cards",
+              "name": "cards",
+              "type": "repeater",
+              "sub_fields": [
+                {
+                  "key": "d_title",
+                  "label": "Título",
+                  "name": "title",
+                  "type": "text"
+                },
+                {
+                  "key": "d_img",
+                  "label": "Imagem",
+                  "name": "image",
+                  "type": "image",
+                  "return_format": "array"
+                }
+              ]
+            },
+            {
+              "key": "d_cta_title",
+              "label": "CTA — Título",
+              "name": "cta_title",
+              "type": "text",
+              "default_value": "Quer conversar sobre os nossos serviços de administração?"
+            },
+            {
+              "key": "d_cta_text",
+              "label": "CTA — Texto",
+              "name": "cta_text",
+              "type": "textarea",
+              "rows": 3,
+              "default_value": "Preencha seus dados que entraremos em contato."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "page_template",
+        "operator": "==",
+        "value": "page-home.php"
+      }
+    ]
+  ],
+  "position": "acf_after_title",
+  "active": true
+}
