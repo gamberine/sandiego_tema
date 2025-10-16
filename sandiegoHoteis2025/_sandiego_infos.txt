@@ -1,0 +1,47 @@
+
+
+
+Sandiego Hoteis
+sandiegohoteis
+
+https://sandiegohoteis.com.br
+Servidor FTP: ftp.sandiegohoteis.com.br
+Usuário FTP: sandiegohoteis
+
+ajuda2lw.com.br
+Usuário FTP: ajuda2lw1 
+Plano: Hospedagem Dedicada 6GB
+
+
+
+
+
+
+
+https://fonts.googleapis.com/css?family=Roboto:500,300,700italic
+
+corPrincipal: #13706F
+corPrincipalH #187c72
+corSecundaria:#383836
+corBg : #ECECEC
+
+
+https://bahiafloor.com.br/
+
+https://gamberine.com.br/arquivos_publicos/castelar/wp-content/themes/castelarRc2025/assets/js/scripts.js
+
+            <!-- ------------ -->
+            <a class="d-flex align-items-center" target="_blank" href="<?php echo wp_kses_post(get_field('link_whatsapp_pt')); ?>">
+              <i class="fab fa-whatsapp"></i>
+              <?php echo wp_kses_post(get_field('numero_whatsapp_pt')); ?>
+            </a>
+            <a class="d-flex align-items-center" target="_blank" href="<?php echo wp_kses_post(get_field('link_whatsapp_en')); ?>">
+              <i class="fab fa-whatsapp"></i>
+              <?php echo wp_kses_post(get_field('numero_whatsapp_en')); ?>
+            </a>
+            <a class="d-flex align-items-center" target="_blank" href="<?php echo wp_kses_post(get_field('link_whatsapp_ca')); ?>">
+              <i class="fab fa-whatsapp"></i>
+              <?php echo wp_kses_post(get_field('numero_whatsapp_ca')); ?>
+            </a>
+            <!-- ------------ -->
+

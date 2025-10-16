@@ -1,0 +1,141 @@
+/* San Diego - minimal styles for sections (Bootstrap friendly) */
+:root {
+  --cor-teal    : #0d5963;
+  --cor-teal-700: #0b4951;
+  --cor-gray    : #566370;
+  --font-title  : 'Diavlo Black', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-body   : 'Diavlo Book', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.sandiego .title-xl {
+  font-family   : var(--font-title);
+  font-size     : clamp(1.8rem, 1.6rem + 1.2vw, 3rem);
+  color         : var(--cor-teal);
+  letter-spacing: .02em
+}
+
+.sandiego .title-lg {
+  font-family: var(--font-title);
+  font-size  : clamp(1.4rem, 1.2rem + .8vw, 2.2rem);
+  color      : var(--cor-teal)
+}
+
+.sandiego .lead {
+  font-size: 1.125rem;
+  color    : var(--cor-gray)
+}
+
+.sandiego .hero {
+  position   : relative;
+  min-height : 60vh;
+  display    : grid;
+  place-items: center;
+  overflow   : hidden;
+  background : #083f46;
+}
+
+.sandiego .hero img.bg {
+  position  : absolute;
+  inset     : 0;
+  width     : 100%;
+  height    : 100%;
+  object-fit: cover;
+  opacity   : .55;
+}
+
+.sandiego .hero .play {
+  width          : 160px;
+  height         : 160px;
+  border         : 6px solid rgba(255, 255, 255, .6);
+  border-radius  : 50%;
+  display        : grid;
+  place-items    : center;
+  backdrop-filter: blur(2px);
+}
+
+.sandiego .hero .play svg {
+  width       : 64px;
+  height      : 64px;
+  fill        : none;
+  stroke      : #fff;
+  stroke-width: 12
+}
+
+.sandiego .searchbar {
+  background   : #fff;
+  margin-top   : -40px;
+  box-shadow   : 0 12px 24px rgba(0, 0, 0, .06);
+  border-radius: 12px
+}
+
+.sandiego .searchbar .form-label {
+  font-weight: 700;
+  color      : var(--cor-teal);
+}
+
+.sandiego .searchbar .form-control,
+.sandiego .searchbar .form-select {
+  border-color : #c6d3d6;
+  padding      : .8rem .9rem;
+  border-radius: 10px;
+}
+
+.sandiego .searchbar .btn-search {
+  background   : var(--cor-teal);
+  color        : #fff;
+  border-radius: 10px;
+  padding      : .8rem 1rem
+}
+
+.sandiego .services .card {
+  border       : 0;
+  box-shadow   : 0 6px 18px rgba(0, 0, 0, .05);
+  border-radius: 16px
+}
+
+.sandiego .services .icon {
+  width : 64px;
+  height: 64px;
+  color : var(--cor-teal)
+}
+
+.sandiego .numbers {
+  background: var(--cor-teal);
+  color     : #fff
+}
+
+.sandiego .numbers .item {
+  border       : 2px solid rgba(255, 255, 255, .65);
+  border-radius: 22px;
+  padding      : 22px
+}
+
+.sandiego .diff .mini h4 {
+  color      : var(--cor-teal);
+  font-weight: 800;
+  font-size  : 1.1rem
+}
+
+.sandiego .diff .mini img {
+  border-radius: 12px;
+  width        : 100%;
+  height       : 160px;
+  object-fit   : cover;
+}
+
+.sandiego .cta-card {
+  background   : var(--cor-teal);
+  color        : #fff;
+  border-radius: 8px;
+  padding      : 24px
+}
+
+.copy-list .copy-btn {
+  cursor     : pointer;
+  -webkit-user-select: none;
+  user-select: none
+}
+
+.copy-list .copied {
+  opacity: .75
+}

@@ -2,7 +2,14 @@
 /*
 @charset "UTF-8";
 /*
-Theme Name: Castelar RC
+Theme Name: San Diego Hoteis 2025
+Theme URI: https://www.gamberine.com.br
+Author URI: https://www.gamberine.com.br
+Description: Tema filho do Tema Base Gamberine, desenvolvido para o Hotel San Diego em 2025.
+Version: 1.0.0
+Template: tema-base-gamb
+Text Domain: sandiegoHoteis2025
+Tags: custom-background, custom-logo, custom-menu, featured-images, theme-options, translation-ready
 Author: Gamberine Comunicação Digital
 Ano: 2025
 */
@@ -15,6 +22,27 @@ Ano: 2025
   --fontTitulos   : 'Fira Sans', sans-serif !important;
   --fontConteudos : 'Roboto Light', sans-serif !important;
   --fontDecorativa: 'Blacksword', sans-serif !important;
+
+  --cor-teal    : #0d5963;
+  --cor-teal-700: #0b4951;
+  --cor-gray    : #566370;
+  --font-title  : 'Diavlo Black',
+  system-ui,
+  -apple-system,
+  Segoe UI,
+  Roboto,
+  Arial,
+  sans-serif;
+  --font-body : 'Diavlo Book',
+  system-ui,
+  -apple-system,
+  Segoe UI,
+  Roboto,
+  Arial,
+  sans-serif;
+
+
+
 
   --corPrincipal       : #13706F !important;
   --corPrincipalHover  : #187c72 !important;
@@ -129,7 +157,6 @@ html {
   /* 1rem = 10px */
   overflow-x             : hidden;
   max-width              : 100% !important;
-  text-size-adjust       : 100%;
   padding                : 0;
   margin                 : 0;
   scroll-behavior        : smooth;
@@ -146,7 +173,6 @@ body {
   overflow-x      : hidden;
   width           : 100%;
   background-color: transparent;
-  text-size-adjust: 100%;
   position        : inherit;
   margin          : 0;
 }
