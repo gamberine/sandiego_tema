@@ -1,6 +1,13 @@
 @charset "UTF-8";
 /*
-Theme Name: Castelar RC
+Theme Name: San Diego Hoteis 2025
+Theme URI: https://www.gamberine.com.br
+Author URI: https://www.gamberine.com.br
+Description: Tema filho do Tema Base Gamberine, desenvolvido para o Hotel San Diego em 2025.
+Version: 1.0.0
+Template: tema-base-gamb
+Text Domain: sandiegoHoteis2025
+Tags: custom-background, custom-logo, custom-menu, featured-images, theme-options, translation-ready
 Author: Gamberine Comunicação Digital
 Ano: 2025
 */
@@ -3356,6 +3363,7 @@ a.text-white.underline:hover {
   text-align    : center;
   margin        : 0 !important;
 }
+
 .bannerInternas:before {
   content   : '';
   position  : absolute;
@@ -11425,13 +11433,13 @@ h1.page-title {
 }
 
 .comment-meta .comment-author .fn {
-  font-family: var(--fontTitulos) !important;
-  font-weight: normal;
-  font-size  : var(--global--font-size-lg);
+  font-family    : var(--fontTitulos) !important;
+  font-weight    : normal;
+  font-size      : var(--global--font-size-lg);
   -webkit-hyphens: auto;
-  hyphens    : auto;
-  word-wrap  : break-word;
-  word-break : break-word;
+  hyphens        : auto;
+  word-wrap      : break-word;
+  word-break     : break-word;
 }
 
 .comment-meta .comment-metadata {
@@ -16573,7 +16581,7 @@ span.linkIdiomas.d-flex .gtranslate_wrapper .gt_selector {
     -ms-flex-direction   : column;
     flex-direction       : column;
     gap                  : 5px;
-       transform : scale(.8);
+    transform            : scale(.8);
     /* Gap nem sempre é suportado */
   }
 
@@ -16596,7 +16604,7 @@ span.linkIdiomas.d-flex .gtranslate_wrapper .gt_selector {
 
 @media only screen and (max-width: 991px) {
   .gridIdiomas {
-        transform: scale(.8);
+    transform: scale(.8);
   }
 }
 
@@ -16736,9 +16744,9 @@ span.linkIdiomas.d-flex .gtranslate_wrapper .gt_selector {
 }
 
 .copy-list .copy-btn {
-  cursor     : pointer;
+  cursor             : pointer;
   -webkit-user-select: none;
-  user-select: none;
+  user-select        : none;
 }
 
 .copy-list .copied {
