@@ -21,12 +21,12 @@
     </div>
 
     <section class="gridBranco" id="quem-somos">
-      <div class="container corTextos">
+      <div class="container text-color">
         <div class="row d-flex flex-row justify-content-around align-items-center row-gap-4">
 
           <div class="gridSobreEsq col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12">
-              <h2 class="tituloComum text-xl-end text-lg-center corSecundariaHover"><?php echo wp_kses_post(get_field('titulo_sessao_sobre')); ?></h2>
+              <h2 class="tituloComum text-xl-end text-lg-center secondary-hover"><?php echo wp_kses_post(get_field('titulo_sessao_sobre')); ?></h2>
               <div class="serrilhadoHorizontal"></div>
             </div>
             <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 text-xl-start text-lg-center">

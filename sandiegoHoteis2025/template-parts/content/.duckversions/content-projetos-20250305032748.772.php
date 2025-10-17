@@ -17,7 +17,7 @@
 
 
   <section class="gridBgFixedPost my-0" style="background-image: url(<?php echo wp_kses_post(get_field('imagem_projeto')); ?>)">
-    <h1 class="tituloPrincipal text-center text-white my-5 py-5"><?php the_title(); ?></h1>
+    <h1 class="title-primary text-center text-white my-5 py-5"><?php the_title(); ?></h1>
   </section>
   <div class="gridCinza my-0 py-lg-5 py-md-2">
     <div class="container my-lg-5 my-md-2">
@@ -25,7 +25,7 @@
         <div class="text-md-center">
           <img class="img-flutuante" src="<?php echo esc_url(get_field('imagem_projeto')); ?>" />
           <div>
-            <h2 class="tituloPrincipal text-lg-start text-md-center corPrincipal"><?php the_title(); ?></h2>
+            <h2 class="title-primary text-lg-start text-md-center corPrincipal"><?php the_title(); ?></h2>
             <?php echo wp_kses_post(get_field('texto_projeto')); ?>
           </div>
           <div class="col-12">

@@ -8,8 +8,8 @@ get_header(); // Load the header.php file
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
                 <div class="row text-center">
-                    <h1 class="tituloPrincipal text-center corPrincipal mb-3"><?php echo wp_kses_post(get_field('titulo_sessao_servicos')); ?></h1>
-                    <p class="corTextos"><?php echo wp_kses_post(get_field('texto_chamada_servicos')); ?></p>
+                    <h1 class="title-primary text-center primary mb-3"><?php echo wp_kses_post(get_field('titulo_sessao_servicos')); ?></h1>
+                    <p class="text-color"><?php echo wp_kses_post(get_field('texto_chamada_servicos')); ?></p>
                 </div>
             <?php endwhile; ?>
         <?php endif; ?>

@@ -17,7 +17,7 @@
   <?php query_posts("post_type=conteudo&posts_per_page=1"); ?>
   <?php if (have_posts()) : ?>
     <?php while (have_posts()) : the_post(); ?>
-      <h2 class="tituloPrincipal text-center corPrincipal">
+      <h2 class="title-primary text-center corPrincipal">
         <?php echo wp_kses_post(get_field('titulo_sessao_contatos')); ?>
         <div class="serrilhadoTitulo"></div>
       </h2>
@@ -27,7 +27,7 @@
           <a target="_blank" href="<?php echo esc_url(get_field('link_endereco_1')); ?>"></a>
 
           <div class="textoContatos py-0">
-            <a class="corTextos col-12" target="_blank" href="<?php echo esc_url(get_field('link_endereco_1')); ?>">
+            <a class="text-color col-12" target="_blank" href="<?php echo esc_url(get_field('link_endereco_1')); ?>">
               <i class="fa-solid fa-location-dot">
                 <h3><?php echo wp_kses_post(get_field('titulo_endereco_1')); ?></h3>
               </i>
@@ -39,7 +39,7 @@
           <a target="_blank" href="<?php echo esc_url(get_field('link_endereco_2')); ?>"></a>
 
           <div class="textoContatos py-0">
-            <a class="corTextos col-12" target="_blank" href="<?php echo esc_url(get_field('link_endereco_2')); ?>">
+            <a class="text-color col-12" target="_blank" href="<?php echo esc_url(get_field('link_endereco_2')); ?>">
               <i class="fa-solid fa-location-dot">
                 <h3><?php echo wp_kses_post(get_field('titulo_endereco_2')); ?></h3>
               </i>
@@ -51,7 +51,7 @@
           <a target="_blank" href="< ?php echo esc_url(get_field('link_endereco_3')); ?>"></a>
 
           <div class="textoContatos py-0">
-            <a class="corTextos col-12" target="_blank" href="< ?php echo esc_url(get_field('link_endereco_3')); ?>">
+            <a class="text-color col-12" target="_blank" href="< ?php echo esc_url(get_field('link_endereco_3')); ?>">
               <i class="fa-solid fa-location-dot">
                 <h3>< ?php echo wp_kses_post(get_field('titulo_endereco_3')); ?></h3>
               </i>

@@ -21,7 +21,7 @@
         <?php while (have_posts()) : the_post(); ?>
           <div class="headerSection col-12 mb-5 text-white">
 
-            <h2 class="tituloPrincipal justify-content-center text-white">
+            <h2 class="title-primary justify-content-center text-white">
               <i class="fa-solid fa-check"></i>
               <?php echo wp_kses_post(get_field('titulo_sessao_projetos')); ?>
             </h2>
@@ -52,7 +52,7 @@
                 <div class="gridImgPadrao">
                   <img src="<?php echo wp_kses_post(get_field('imagem_projeto')); ?>" />
                 </div>
-                <h4 class="fontTitulos text-white text-uppercase mt-4 fw-bold"><?php the_title(); ?></h4>
+                <h4 class="font-title text-white text-uppercase mt-4 fw-bold"><?php the_title(); ?></h4>
                 <p class="text-white"><?php echo wp_kses_post(get_field('texto_resumo_projeto')); ?></p>
                 <!-- < ?php echo wp_kses_post(get_field('texto_projeto')); ?> -->
               </a>

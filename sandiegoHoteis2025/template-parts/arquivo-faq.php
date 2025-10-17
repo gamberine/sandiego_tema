@@ -28,7 +28,7 @@
                     <?php while (have_posts()) : the_post(); ?>
 
                         <p class="textoChamada"><?php echo wp_kses_post(get_field('texto_chamada_faq')); ?></p>
-                        <h2 class="corPrincipal"><?php echo wp_kses_post(get_field('titulo_faq')); ?></h2>
+                        <h2 class="primary"><?php echo wp_kses_post(get_field('titulo_faq')); ?></h2>
                         <img class="imgDivisor mb-5" src="<?php echo get_template_directory_uri(); ?>/imagens/divisorCoracaoColor.png">
                         <p class="text-center"><?php echo wp_kses_post(get_field('texto_faq_principal')); ?></p>
 

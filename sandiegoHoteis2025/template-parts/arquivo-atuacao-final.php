@@ -16,16 +16,16 @@
   <?php while (have_posts()) : the_post(); ?>
 
     <section class="gridBranco mb-lg-0 pb-lg-0" id="atuacao" style="background: url(<?php echo wp_kses_post(get_field('background_sessao_atuacao')); ?>); background-size: cover;">
-      <div class="full-max-width mx-lg-0 px-lg-0 text-center corSecundariaHover">
+      <div class="full-max-width mx-lg-0 px-lg-0 text-center secondary-hover">
         <div class="row d-flex flex-row justify-content-around align-items-center  mb-0">
 
           <div class="headerSection col-12 mb-0 mx-lg-0 px-lg-0">
 
-            <h2 class="tituloPrincipal mb-0">
+            <h2 class="title-primary mb-0">
               <?php echo wp_kses_post(get_field('titulo_sessao_atuacao')); ?>
               <div class="serrilhadoTitulo"></div>
             </h2>
-            <!-- <p class="textoChamada corTextos">
+            <!-- <p class="textoChamada text-color">
                             < ?php echo wp_kses_post(get_field('texto_sessao_menu')); ?>
                         </p> -->
 
@@ -54,8 +54,8 @@
               <div class="gridImgItems">
                 <img src="<?php echo wp_kses_post(get_field('imagem_atuacao')); ?>" />
               </div>
-              <div class="boxTextos corTextos">
-                <h4 class="fontTitulos text-uppercase mt-3 mb-0 fw-bold"><?php the_title(); ?>
+              <div class="boxTextos text-color">
+                <h4 class="font-title text-uppercase mt-3 mb-0 fw-bold"><?php the_title(); ?>
                   <p><?php echo wp_kses_post(get_field('texto_atuacao')); ?></p>
                 </h4>
               </div>

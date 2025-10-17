@@ -43,10 +43,10 @@ $wrapper_classes = has_custom_logo() ? ' has-logo' : '';
 
 </header>
 
-<div class="site-content error-404 not-found container corSecundaria">
+<div class="site-content error-404 not-found container secondary">
   <h2>Página não encontrada!</h2>
   <a class="error404" href="<?php echo esc_url(home_url('/')); ?>">Retornar para a página inicial</a>
-  <h5 class="text-center corTextos" style="line-height: 1.1;">O conteúdo pesquisado não foi encontrado. <br /> Que tal tentar uma nova pesquisa?</h5>
+  <h5 class="text-center text-color" style="line-height: 1.1;">O conteúdo pesquisado não foi encontrado. <br /> Que tal tentar uma nova pesquisa?</h5>
   <?php get_search_form(); ?>
 </div>
 <!-- .error-404 -->

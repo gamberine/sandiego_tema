@@ -42,7 +42,7 @@
           ?>
 
             <div class="gridImgFlutuante">
-              <h5 class="d-flex corBg align-items-center justify-content-center text-center text-uppercase my-4"><?php the_title(); ?></h5>
+              <h5 class="d-flex bg-primary-coloralign-items-center justify-content-center text-center text-uppercase my-4"><?php the_title(); ?></h5>
 
               <!-- <a href="< ?php the_permalink(); ?>"> -->
               <a style="cursor: grab !important;">

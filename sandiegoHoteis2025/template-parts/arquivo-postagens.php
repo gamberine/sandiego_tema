@@ -23,7 +23,7 @@
                     <?php while (have_posts()) : the_post(); ?>
 
                         <p class="textoChamada"><?php echo wp_kses_post(get_field('texto_chamada_postagens')); ?></p>
-                        <h2 class="corPrincipal"><?php echo wp_kses_post(get_field('titulo_postagens')); ?></h2>
+                        <h2 class="primary"><?php echo wp_kses_post(get_field('titulo_postagens')); ?></h2>
 
                     <?php endwhile; ?>
                 <?php endif; ?>

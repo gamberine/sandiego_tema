@@ -20,7 +20,7 @@
         <h3 class="modal-title text-uppercase" id="< ?php echo esc_attr($modal_id . '-label'); ?>">< ?php the_title(); ?></h3>
         <button type="button" class="btnClose" data-bs-dismiss="modal" aria-label="< ?php esc_attr_e('Fechar', 'text-domain'); ?>"><i class="close fa-solid fa-circle-xmark"></i></button>
       </div>
-      <div class="modal-body corTextos gap-2">
+      <div class="modal-body text-color gap-2">
         < ?php if ($img_servico) : ?>
           <img src="< ?php echo esc_url($img_servico); ?>" class="img-flutuante" alt="< ?php the_title_attribute(); ?>">
         < ?php endif; ?>

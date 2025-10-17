@@ -21,7 +21,7 @@
                 <?php if (have_posts()) : ?>
                     <?php while (have_posts()) : the_post(); ?>
 
-                        <h2 class="tituloPrincipal corPrincipal pb-4"><?php echo wp_kses_post(get_field('titulo_sessao_destinos_perfil')); ?></h2>
+                        <h2 class="title-primary primarypb-4"><?php echo wp_kses_post(get_field('titulo_sessao_destinos_perfil')); ?></h2>
 
                     <?php endwhile; ?>
                 <?php endif; ?>
@@ -30,7 +30,7 @@
         <div class="row perfilViagens">
             <!-- Carrossel "Para a Família" -->
             <div class="col-xl-5 col-md-12 mb-4">
-                <h2 class="tituloPrincipal corPrincipal pb-3">Para a Família</h2>
+                <h2 class="title-primary primarypb-3">Para a Família</h2>
                 <div class="sliderViagem" id="sliderFamilia">
                     <?php
                     $argsFamilia = array(
@@ -71,7 +71,7 @@
 
             <!-- Carrossel "Para o Casal" -->
             <div class="col-xl-5 col-md-12 mb-4">
-                <h2 class="tituloPrincipal corPrincipal pb-3">Para o Casal</h2>
+                <h2 class="title-primary primarypb-3">Para o Casal</h2>
                 <div class="sliderViagem" id="sliderCasal">
                     <?php
                     $argsCasal = array(
@@ -113,7 +113,7 @@
         <div class="row perfilViagens">
             <!-- Carrossel "Nacional" -->
             <div class="col-xl-5 col-md-12 mb-4">
-                <h2 class="tituloPrincipal corPrincipal pb-3">Nacional</h2>
+                <h2 class="title-primary primarypb-3">Nacional</h2>
                 <div class="sliderViagem" id="sliderNacional">
                     <?php
                     $argsNacional = array(
@@ -154,7 +154,7 @@
 
             <!-- Carrossel "Internacional" -->
             <div class="col-xl-5 col-md-12 mb-4">
-                <h2 class="tituloPrincipal corPrincipal pb-3">Internacional</h2>
+                <h2 class="title-primary primarypb-3">Internacional</h2>
                 <div class="sliderViagem" id="sliderInternacional">
                     <?php
                     $argsInternacional = array(

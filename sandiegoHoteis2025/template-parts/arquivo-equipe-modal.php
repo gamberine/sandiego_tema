@@ -30,7 +30,7 @@
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
-            <div class="gridModal corTextos">
+            <div class="gridModal text-color">
                 <div class="modalImg col-4">
                     <img src="<?php echo esc_url(get_field('imagem_integrante')); ?>" alt="Imagem do Integrante">
                 </div>

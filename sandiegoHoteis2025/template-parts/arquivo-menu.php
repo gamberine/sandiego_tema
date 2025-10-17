@@ -19,12 +19,12 @@
 
     <section class="gridCinza pt-5" id="menu">
 
-      <div class="container text-center corSecundariaHover">
+      <div class="container text-center secondary-hover">
 
         <div class="row">
           <div class="headerSection">
 
-            <h2 class="tituloPrincipal mb-2">
+            <h2 class="title-primary mb-2">
               <?php echo wp_kses_post(get_field('titulo_sessao_menu')); ?>
               <div class="serrilhadoTitulo"></div>
             </h2>
@@ -59,7 +59,7 @@
                   <img src="<?php echo wp_kses_post(get_field('imagem_menu')); ?>" />
                 </div>
                 <div class="boxTitulosSlider text-white mt-4"><?php the_title(); ?></div>
-                <!-- <p class="corTextos">< ?php echo wp_kses_post(get_field('texto_menu')); ?></p> -->
+                <!-- <p class="text-color">< ?php echo wp_kses_post(get_field('texto_menu')); ?></p> -->
                 <!-- </a> -->
 
               </div>

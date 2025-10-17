@@ -12,9 +12,9 @@
 
 ?>
 
-<section class="gridBranco corTextos" id="qualidade">
+<section class="gridBranco text-color" id="qualidade">
 
-  <div class="container text-center corSecundariaHover">
+  <div class="container text-center secondary-hover">
     <div class="row d-flex flex-row justify-content-around align-items-center mb-0">
 
       <?php query_posts("post_type=conteudo&posts_per_page=1"); ?>
@@ -22,11 +22,11 @@
         <?php while (have_posts()) : the_post(); ?>
           <div class="headerSection col-12 mb-0">
 
-            <h2 class="tituloPrincipal">
+            <h2 class="title-primary">
               <?php echo wp_kses_post(get_field('titulo_sessao_qualidade')); ?>
               <div class="serrilhadoTitulo"></div>
             </h2>
-            <!-- <p class="textoChamada corTextos">
+            <!-- <p class="textoChamada text-color">
                             < ?php echo wp_kses_post(get_field('texto_sessao_menu')); ?>
                         </p> -->
 
@@ -47,7 +47,7 @@
           <?php while (have_posts()) : the_post();
           ?>
 
-            <div class="gridImgQualidade text-center corTextos">
+            <div class="gridImgQualidade text-center text-color">
               <img src="<?php echo wp_kses_post(get_field('imagem_qualidade')); ?>" />
               <?php echo wp_kses_post(get_field('texto_qualidade')); ?>
             </div>

@@ -16,16 +16,16 @@
     <?php while (have_posts()) : the_post(); ?>
 
         <section class="gridBranco" id="atuacao" style="background: url(<?php echo wp_kses_post(get_field('background_sessao_atuacao')); ?>); background-size: cover;">
-            <div class="container text-center corSecundaria">
+            <div class="container text-center secondary">
                 <div class="row d-flex flex-row justify-content-around align-items-center  mb-0">
 
                     <div class="headerSection col-12 mb-0">
 
-                        <h2 class="tituloPrincipal mb-0">
+                        <h2 class="title-primary mb-0">
                             <?php echo wp_kses_post(get_field('titulo_sessao_atuacao')); ?>
                             <div class="serrilhadoTitulo"></div>
                         </h2>
-                        <!-- <p class="textoChamada corTextos">
+                        <!-- <p class="textoChamada text-color">
                             < ?php echo wp_kses_post(get_field('texto_sessao_menu')); ?>
                         </p> -->
 
@@ -35,7 +35,7 @@
             <?php endif; ?>
 
 
-            <div class="sliderImgTexto corTextos flex-wrap gap-3">
+            <div class="sliderImgTexto text-color flex-wrap gap-3">
                 <?php
                 $args = array(
                     'post_type'      => 'atuacao',
@@ -77,12 +77,12 @@
                                         <img src="<?php echo esc_url($grupo['imagem_atuacao']['url']); ?>" alt="<?php echo esc_attr($grupo['imagem_atuacao']['alt']); ?>">
                                     </div>
 
-                                    <div class="corTextos mt-4 mb-0">
+                                    <div class="text-color mt-4 mb-0">
                                         <h4><?php echo wp_kses_post($grupo['titulo_atuacao']); ?></h4>
                                     </div>
 
                                     <?php if (! empty($grupo['texto_atuacao'])) : ?>
-                                        <div class="corTextos mt-0">
+                                        <div class="text-color mt-0">
                                             <p><?php echo wp_kses_post($grupo['texto_atuacao']); ?></p>
                                         </div>
                                     <?php endif; ?>
@@ -121,12 +121,12 @@
                                             <img src="<?php echo esc_url($grupoB['imagem_atuacao']['url']); ?>" alt="<?php echo esc_attr($grupoB['imagem_atuacao']['alt']); ?>">
                                         </div>
 
-                                        <div class="corTextos mt-4 mb-0">
+                                        <div class="text-color mt-4 mb-0">
                                             <h4><?php echo wp_kses_post($grupoB['titulo_atuacao']); ?></h4>
                                         </div>
 
                                         <?php if (! empty($grupoB['texto_atuacao'])) : ?>
-                                            <div class="corTextos mt-0">
+                                            <div class="text-color mt-0">
                                                 <p><?php echo wp_kses_post($grupoB['texto_atuacao']); ?></p>
                                             </div>
                                         <?php endif; ?>

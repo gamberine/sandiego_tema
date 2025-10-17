@@ -10,7 +10,7 @@
  */
 ?>
 <section class="gridBranco" id="pisos">
-  <div class="container corSecundaria">
+  <div class="container secondary">
     <div class="row row-gap-5">
       <?php
       $args = array(
@@ -35,8 +35,8 @@
                 <div class="gridImgPadrao"><img src="<?php echo esc_url($img_servico); ?>" alt="<?php the_title_attribute(); ?>"> </div>
               <?php endif; ?>
 
-              <div class="boxTextos corTextos">
-                <h4 class="fontTitulos text-uppercase mt-4 mb-0 fw-bold"><?php the_title(); ?> </h4>
+              <div class="boxTextos text-color">
+                <h4 class="font-title text-uppercase mt-4 mb-0 fw-bold"><?php the_title(); ?> </h4>
                 <?php if ($texto_resumo) : ?>
                   <p><?php echo wp_kses_post($texto_resumo); ?></p>
                 <?php endif; ?>
@@ -58,7 +58,7 @@
                   <h3 class="modal-title text-uppercase" id="<?php echo esc_attr($modal_id . '-label'); ?>"><?php the_title(); ?></h3>
                   <button type="button" class="btnClose close" data-bs-dismiss="modal" aria-label="<?php esc_attr_e('Fechar', 'text-domain'); ?>"><i class="fa-solid fa-circle-xmark"></i></button>
                 </div>
-                <div class="modal-body corTextos gap-2">
+                <div class="modal-body text-color gap-2">
                   <?php if ($img_servico) : ?>
                     <img src="<?php echo esc_url($img_servico); ?>" class="img-flutuante" alt="<?php the_title_attribute(); ?>">
                   <?php endif; ?>

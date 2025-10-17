@@ -17,7 +17,7 @@
 </main><!-- #main -->
 </div><!-- #primary -->
 </div><!-- #content -->
-<!-- <div class="faixaCorSecundaria"></div> -->
+<!-- <div class="faixasecondary"></div> -->
 
 
 

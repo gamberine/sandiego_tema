@@ -17,7 +17,7 @@
 
 
     <section class="gridBgFixedPost my-0" style="background-image: url(<?php echo wp_kses_post(get_field('imagem_destino')); ?>)">
-        <h1 class="tituloPrincipal text-center text-white my-5 py-5"><?php the_title(); ?></h1>
+        <h1 class="title-primary text-center text-white my-5 py-5"><?php the_title(); ?></h1>
     </section>
     <div class="gridCinza my-0 py-5">
         <div class="container my-5">
