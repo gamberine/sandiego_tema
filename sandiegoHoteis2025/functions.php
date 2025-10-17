@@ -519,14 +519,14 @@ function tema_base_gamb_non_latin_languages()
   }
 }
 add_action('wp_enqueue_scripts', 'tema_base_gamb_non_latin_languages');
-// /**
-//  * Enqueue non-latin language styles for the editor
-//  *
-//  * @since Tema Dev-Gamb 1.0
-//  *
-//  * @return void
-//  */
-// require_once get_stylesheet_directory() . '/inc/enqueue-and-acf.php';
+/**
+ * Enqueue non-latin language styles for the editor
+ *
+ * @since Tema Dev-Gamb 1.0
+ *
+ * @return void
+ */
+require_once get_stylesheet_directory() . '/inc/enqueue-and-acf.php';
 // SVG Icons class.
 require get_template_directory() . '/classes/class-tema-base-gamb-svg-icons.php';
 // Custom color classes.
