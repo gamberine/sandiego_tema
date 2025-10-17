@@ -10,60 +10,60 @@ Ano: 2025
 /* Cores */
 :root {
 
-  /* --fontTitulos   : 'Roboto Bold', sans-serif !important; */
-  /* --fontConteudos : 'Roboto Light', sans-serif !important; */
-  --fontTitulos   : 'Fira Sans', sans-serif !important;
-  --fontConteudos : 'Roboto Light', sans-serif !important;
-  --fontDecorativa: 'Blacksword', sans-serif !important;
+  /* --font-title   : 'Roboto Bold', sans-serif !important; */
+  /* --font-body : 'Roboto Light', sans-serif !important; */
+  --font-title   : 'Fira Sans', sans-serif !important;
+  --font-body : 'Roboto Light', sans-serif !important;
+  --font-decorative: 'Blacksword', sans-serif !important;
 
-  --corPrincipal       : #13706F !important;
-  --corPrincipalHover  : #187c72 !important;
-  --corPrincipalTransp : #13706Fb0 !important;
-  --corSecundaria      : #383836 !important;
-  --corSecundariaHover : #313131 !important;
-  --corSecundariaTransp: #313131eb !important;
+  --primary-color       : #13706F !important;
+  --primary-color-hover  : #187c72 !important;
+  --primary-color-transp : #13706Fb0 !important;
+  --secondary-color      : #383836 !important;
+  --secondary-color-hover : #313131 !important;
+  --secondary-color: #313131eb !important;
 
-  --corAtiva  : #135a70 !important;
-  --corSucesso: #1e5a24 !important;
-  --corBtn    : #f8e37a !important;
+  --accent-color  : #135a70 !important;
+  --sucess-color: #1e5a24 !important;
+  --accent-color    : #f8e37a !important;
 
-  --corBg          : #ECECEC !important;
-  --corBgSecundario: #ededed !important;
-  --corBgModal     : #313131e6 !important;
-  --corCinza       : #bababa !important;
+  --bg-primary-color         : #ECECEC !important;
+  --bg-secondary-color: #ededed !important;
+  --bg-primary-color     : #313131e6 !important;
+  --gray-color       : #bababa !important;
 
-  --corTextos     : #313131 !important;
-  --corTextosHover: #140801 !important;
-  --corBranca     : #ffffff;
-  --corAlerta     : #8a320a !important;
+  --text-color    : #313131 !important;
+  --text-color-hover : #140801 !important;
+  --white-color     : #ffffff;
+  --danger-color     : #8a320a !important;
 
-  --gradientPadrao        : linear-gradient(270deg, #383836, #313131) !important;
-  --gradientHover         : linear-gradient(90deg, #313131, #383836) !important;
+  --primary-gradient        : linear-gradient(270deg, #383836, #313131) !important;
+  --primary-gradient-hover         : linear-gradient(90deg, #313131, #383836) !important;
   --gradientHeader        : linear-gradient(90deg, #383836ee, #313131fa) !important;
-  /* --gradientPrincipal  : linear-gradient(270deg, #187c72, #13706F) !important; */
-  --gradientPrincipal     : linear-gradient(270deg, var(--corPrincipalHover), var(--corPrincipal)) !important;
-  --gradientPrincipalHover: linear-gradient(90deg, var(--corPrincipalHover), var(--corPrincipal)) !important;
+  /* --primary-gradient  : linear-gradient(270deg, #187c72, #13706F) !important; */
+  --primary-gradient     : linear-gradient(270deg, var(--primary-color-hover), var(--primary-color)) !important;
+  --primary-gradient-hover: linear-gradient(90deg, var(--primary-color-hover), var(--primary-color)) !important;
 
-  --corBordas    : #bababa9d;
-  --corSombra    : #27272729;
-  --boxShadow    : 2px 2px 8px -2px var(--corSombra) !important;
-  --sombraInterna: inset 0px 0px 6px 2px var(--corPrincipalHover) !important;
+  --border-primary-color    : #bababa9d;
+  --shadow-color    : #27272729;
+  --boxShadow    : 2px 2px 8px -2px var(--shadow-color) !important;
+  --sombraInterna: inset 0px 0px 6px 2px var(--primary-color-hover) !important;
 
-  --bordaPadrao     : 1px solid var(--corBordas);
-  --bordaBranca     : 4px solid var(--corBranca) !important;
-  --bordaBSecundaria: 46px solid var(--corBgSecundario) !important;
-  --textShadow      : 1px 1px 1px var(--corSombra) !important;
-  --filterShadow    : drop-shadow(0 0 6px var(--corSombra)) !important;
-  --borderRadius    : 6px !important;
+  --bordaPadrao     : 1px solid var(--border-primary-color);
+  --bordaBranca     : 4px solid var(--white-color) !important;
+  --bordaBSecundaria: 46px solid var(--bg-secondary-color) !important;
+  --textShadow      : 1px 1px 1px var(--shadow-color) !important;
+  --filterShadow    : drop-shadow(0 0 6px var(--shadow-color)) !important;
+  --border-padrao    : 6px !important;
   --transition      : all .3s ease !important;
   --transitionLinear: all .3s linear !important;
 
 
   --gradientMask       : linear-gradient(212deg, #ECECEC4a 25%, #bababac9 88%) !important;
-  --gradientBtn        : linear-gradient(270deg, var(--corPrincipal), var(--corPrincipalHover)) !important;
-  --gradientBtnHover   : linear-gradient(0deg, var(--corPrincipal), var(--corPrincipalHover)) !important;
-  --gradientSecundario : linear-gradient(165deg, #fff, var(--corCinza), var(--corPrincipal) 110%) !important;
-  --gradientColorRotate: linear-gradient(270deg, var(--corSecundaria), var(--corBtn)) !important;
+  --gradientBtn        : linear-gradient(270deg, var(--primary-color), var(--primary-color-hover)) !important;
+  --gradientBtnHover   : linear-gradient(0deg, var(--primary-color), var(--primary-color-hover)) !important;
+  --secondary-gradient : linear-gradient(165deg, #fff, var(--gray-color), var(--primary-color) 110%) !important;
+  --gradientColorRotate: linear-gradient(270deg, var(--secondary-color), var(--accent-color)) !important;
   --gradientBanner     : linear-gradient(330deg, #155c8656, #155d8680) !important;
 
 
@@ -123,7 +123,7 @@ Ano: 2025
 
 html {
   box-sizing             : border-box;
-  font-family            : var(--fontConteudos);
+  font-family            : var(--font-body);
   line-height            : 1.2;
   font-size              : 100%;
   /* 1rem = 10px */
@@ -139,8 +139,8 @@ html {
 
 .site body,
 body {
-  font-family     : var(--fontConteudos) !important;
-  color           : var(--corTextos);
+  font-family     : var(--font-body) !important;
+  color           : var(--text-color);
   font-size       : 1.2rem;
   font-weight     : 400;
   overflow-x      : hidden;
@@ -175,7 +175,7 @@ p {
 textarea.wpcf7-form-control.wpcf7-textarea.textArea::placeholder,
 textarea::placeholder {
   font-size: 1rem !important;
-  color    : var(--corTextos) !important;
+  color    : var(--text-color) !important;
   opacity  : .6;
 }
 
@@ -307,7 +307,7 @@ a.glink img {
   }
 
   a.glink:hover {
-    color: var(--corPrincipal);
+    color: var(--primary-color);
   }
 }
 
@@ -341,16 +341,16 @@ body:not(.safari, .ios-app) .rowDataSafari {
   display: flex !important;
 }
 
-.fontTitulos {
-  font-family: var(--fontTitulos) !important;
+.font-title {
+  font-family: var(--font-title) !important;
 }
 
-.fontConteudos {
-  font-family: var(--fontConteudos) !important;
+.font-body {
+  font-family: var(--font-body) !important;
 }
 
-.fontDecorativa {
-  font-family: var(--fontDecorativa) !important;
+.font-decorative {
+  font-family: var(--font-decorative) !important;
 }
 
 .menu-wrapper li.itemFooter,
@@ -547,10 +547,10 @@ li#menu-item-2989 a::after {
   letter-spacing: 0;
   visibility    : hidden;
   width         : 120px;
-  background    : var(--corSecundaria);
-  color         : var(--corBranca);
+  background    : var(--secondary-color);
+  color         : var(--white-color);
   text-align    : center;
-  border-radius : var(--borderRadius) !important;
+  border-radius : var(--border-padrao) !important;
   position      : absolute;
   z-index       : 1;
   bottom        : 114%;
@@ -568,7 +568,7 @@ li#menu-item-2989 a::after {
   margin-left : -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: var(--corSecundaria) transparent transparent transparent;
+  border-color: var(--secondary-color) transparent transparent transparent;
 }
 
 .tooltipHtml:hover .tooltiptextHtml {
@@ -605,16 +605,16 @@ li#menu-item-2989 a::after {
   letter-spacing            : 0;
   visibility                : hidden;
   width                     : 100%;
-  background                : var(--corPrincipalTransp) !important;
-  color                     : var(--corBranca);
+  background                : var(--primary-color-transp) !important;
+  color                     : var(--white-color);
   text-align                : center;
   z-index                   : 1;
   bottom                    : 0;
   left                      : 0;
   margin-left               : 0;
   opacity                   : 0;
-  border-bottom-left-radius : var(--borderRadius) !important;
-  border-bottom-right-radius: var(--borderRadius) !important;
+  border-bottom-left-radius : var(--border-padrao) !important;
+  border-bottom-right-radius: var(--border-padrao) !important;
   transition                : var(--transition) !important;
   display                   : flex;
   align-items               : center;
@@ -691,12 +691,12 @@ li#menu-item-2989 a::after {
         top: -50px; 
         left: 50%;
         transform: translateX(-50%);
-        background: var(--corPrincipal); 
+        background: var(--primary-color); 
         color: #fff;
         font-size: 1rem; 
-        font-family: var(--fontConteudos);
+        font-family: var(--font-body);
         padding: 5px 10px;
-        border-radius: var(--borderRadius); 
+        border-radius: var(--border-padrao); 
         white-space: nowrap; 
         opacity: 0;
         visibility: hidden;
@@ -713,7 +713,7 @@ li#menu-item-2989 a::after {
         transform: translateX(-50%);
         border-width: 5px;
         border-style: solid;
-        border-color: transparent transparent var(--corPrincipal) transparent; 
+        border-color: transparent transparent var(--primary-color) transparent; 
         opacity: 0;
         visibility: hidden;
         transition: opacity 0.2s ease, visibility 0.2s ease;

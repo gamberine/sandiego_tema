@@ -15,7 +15,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
     <section class="gridGradiente">
-        <h1 class="tituloPrincipal text-white text-center mt-5 pt-5"><?php the_title(); ?></h1>
+        <h1 class="title-primary text-white text-center mt-5 pt-5"><?php the_title(); ?></h1>
     </section>
 
     <?php if (has_post_thumbnail()) : ?>

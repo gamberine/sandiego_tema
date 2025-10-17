@@ -23,7 +23,7 @@
                 <?php while (have_posts()) : the_post(); ?>
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 
-                        <h2 class="tituloPrincipal pb-5">
+                        <h2 class="title-primary pb-5">
                             <?php echo wp_kses_post(get_field('titulo_sessao_destinos')); ?>
                         </h2>
                     <?php endwhile; ?>
@@ -52,7 +52,7 @@
                                             <div class="imgSlider" style="background-image: url(<?php echo wp_kses_post(get_field('imagem_destino')); ?>);">
                                                 <a href="<?php the_permalink(); ?>">
                                                     <div class="gridTextosSlider">
-                                                        <h1 class="fontTitulos mb-0"><?php the_title(); ?></h1>
+                                                        <h1 class="font-title mb-0"><?php the_title(); ?></h1>
                                                         <p><?php echo wp_kses_post(get_field('texto_destino')); ?></p>
                                                     </div>
                                                 </a>

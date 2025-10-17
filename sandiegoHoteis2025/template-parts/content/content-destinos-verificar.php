@@ -85,8 +85,8 @@
 
             <!-- Informações do produto -->
             <div class="text-start col-lg-5 col-md-12 col-sm-12 col-xs-12 infosProdutoSingle">
-                <h2 class="corSecundaria" translate="no"><?php the_title(); ?></h2>
-                <p class="corTextos fs-14 fw-400 d-flex align-items-baseline">
+                <h2 class="secondary" translate="no"><?php the_title(); ?></h2>
+                <p class="text-color fs-14 fw-400 d-flex align-items-baseline">
                     Preço:
                     <?php
                     $moeda_selecao = get_field('moeda_preco');
@@ -98,7 +98,7 @@
                         $preco = get_field('preco_produto_dolar');
                     }
                     ?>
-                    <span class="valor corSecundaria fontTitulos fw-bold fs-1" translate="no" data-mask="<?php echo esc_attr($simbolo); ?>"><?php echo esc_html($preco); ?></span>
+                    <span class="valor secondary font-title fw-bold fs-1" translate="no" data-mask="<?php echo esc_attr($simbolo); ?>"><?php echo esc_html($preco); ?></span>
                 </p>
                 <p>Cód. Produto: <strong><?php echo wp_kses_post(get_field('codigo_produto')); ?></strong></p>
                 <p>Sobre o produto: <strong><?php echo wp_kses_post(get_field('resumo_descricao_produto')); ?></strong></p>
@@ -110,8 +110,8 @@
                             $term_links = array();
                             foreach ($terms as $term) {
                                 $term_links[] =
-                                    // '<a class="corPrincipal" href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a>'
-                                    '<span class="corPrincipal">' . esc_html($term->name) . '</span>';
+                                    // '<a class="primary" href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a>'
+                                    '<span class="primary">' . esc_html($term->name) . '</span>';
                             }
                             echo wp_kses_post(implode(', ', $term_links));
                         } else {
@@ -129,13 +129,13 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 my-5 descricaoComplementar corSecundaria">
+            <div class="col-12 my-5 descricaoComplementar secondary">
                 <h2 class="titleSection mb-5">Descrição complementar</h2>
                 <p><?php echo wp_kses_post(get_field('descricao_produto')); ?></p>
             </div>
         </div>
     </div>
-    <div class="row relacionados position-relative my-5" style="background: var(--corCinza); display: flex; justify-content: space-between; align-items: center;">
+    <div class="row relacionados position-relative my-5" style="background: var(--gray-color); display: flex; justify-content: space-between; align-items: center;">
         <?php
         $temabasegamb_next = is_rtl() ? tema_base_gamb_get_icon_svg('ui', 'arrow_left') : tema_base_gamb_get_icon_svg('ui', 'arrow_right');
         $temabasegamb_prev = is_rtl() ? tema_base_gamb_get_icon_svg('ui', 'arrow_right') : tema_base_gamb_get_icon_svg('ui', 'arrow_left');
@@ -152,7 +152,7 @@
         );
         ?>
         <!-- Botão de Voltar -->
-        <button class="btn btnRounded corPrincipal btnAbsolute" onclick="window.location.href='<?php echo esc_url(get_permalink(get_adjacent_post(false, '', true))); ?>';">
+        <button class="btn btnRounded primarybtnAbsolute" onclick="window.location.href='<?php echo esc_url(get_permalink(get_adjacent_post(false, '', true))); ?>';">
             <span class="iconMove">
                 <i class="fa-solid fa-chevron-left"></i><i class="fa-solid fa-chevron-left"></i>
             </span> Voltar
@@ -161,7 +161,7 @@
 
 
     <!-- Div com 3 Produtos Relacionados na mesma categoria -->
-    <div class="row posts-relacionados my-5 corSecundaria">
+    <div class="row posts-relacionados my-5 secondary">
         <h3 class="text-center pb-3">Produtos Relacionados</h3>
         <div class="rowLinksProdutos">
         <?php

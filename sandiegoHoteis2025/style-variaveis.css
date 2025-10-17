@@ -1,69 +1,57 @@
 @charset "UTF-8";
+
 /*
 /* Cores */
 :root {
 
-  --fontTitulos   : 'Diavlo Black', sans-serif !important;
-  --fontConteudos : 'Diavlo Book', sans-serif !important;
-  --fontDecorativa: 'Blacksword', sans-serif !important;
+  --font-decorative: 'Blacksword', sans-serif !important;
 
- 
-  --font-title  : 'Diavlo Black', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-title: 'Diavlo Black', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   --font-body : 'Diavlo Book', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 
- --cor-teal    : #0d5963;
- --cor-teal-700: #0b4951;
- --cor-gray    : #566370;
 
+  --primary-color      : #0d5963;
+  --primary-color-hover: #0b4951;
+  --accent-color       : #739248 !important;
+  --bg-primary-color   : #e3f0eb !important;
+  --bg-secondary-color : #d2dfda !important;
 
-  --corPrincipal       : #0d5963 !important;
-  --corPrincipalHover  : #0b4951 !important;
-  --corPrincipalTransp : #0b4951b0 !important;
-  --corSecundaria      : #383836 !important;
-  --corSecundariaHover : #313131 !important;
-  --corSecundariaTransp: #313131eb !important;
+  --primary-color-transp  : #0b4951cc !important;
+  --secondary-color       : #384146 !important;
+  --secondary-color-hover : #2f383c !important;
+  --secondary-color-transp: #384146cc;
 
-  --corAtiva  : #135a70 !important;
-  --corSucesso: #1e5a24 !important;
-  --corBtn    : #f8e37a !important;
+  --sucess-color    : #1e5a24 !important;
+  --gray-color      : #5a6772 !important;
+  --text-color      : #2e2e2e !important;
+  --text-color-hover: #111 !important;
+  --white-color     : #ffffff;
+  --danger-color    : #8a320a !important;
 
-  --corBg          : #ECECEC !important;
-  --corBgSecundario: #ededed !important;
-  --corBgModal     : #313131e6 !important;
-  --corCinza       : #566370 !important;
-
-  --corTextos     : #313131 !important;
-  --corTextosHover: #140801 !important;
-  --corBranca     : #ffffff;
-  --corAlerta     : #8a320a !important;
-
-  --gradientPadrao        : linear-gradient(270deg, #383836, #313131) !important;
-  --gradientHover         : linear-gradient(90deg, #313131, #383836) !important;
+  --primary-gradient      : linear-gradient(270deg, var(--primary-color-hover), var(--primary-color)) !important;
+  --primary-gradient-hover: linear-gradient(90deg, var(--primary-color-hover), var(--primary-color)) !important;
   --gradientHeader        : linear-gradient(90deg, #383836ee, #313131fa) !important;
-  /* --gradientPrincipal  : linear-gradient(270deg, #187c72, #13706F) !important; */
-  --gradientPrincipal     : linear-gradient(270deg, var(--corPrincipalHover), var(--corPrincipal)) !important;
-  --gradientPrincipalHover: linear-gradient(90deg, var(--corPrincipalHover), var(--corPrincipal)) !important;
 
-  --corBordas    : #bababa9d;
-  --corSombra    : #27272729;
-  --boxShadow    : 2px 2px 8px -2px var(--corSombra) !important;
-  --sombraInterna: inset 0px 0px 6px 2px var(--corPrincipalHover) !important;
+  --border-primary-color: #bababa9d;
+  --shadow-color        : #27272729;
+  --boxShadow           : 2px 2px 8px -2px var(--shadow-color) !important;
+  --sombraInterna       : inset 0px 0px 6px 2px var(--primary-color-hover) !important;
 
-  --bordaPadrao     : 1px solid var(--corBordas);
-  --bordaBranca     : 4px solid var(--corBranca) !important;
-  --bordaBSecundaria: 46px solid var(--corBgSecundario) !important;
-  --textShadow      : 1px 1px 1px var(--corSombra) !important;
-  --filterShadow    : drop-shadow(0 0 6px var(--corSombra)) !important;
-  --borderRadius    : 6px !important;
+  --bordaPadrao     : 1px solid var(--border-primary-color);
+  --bordaBranca     : 4px solid var(--white-color) !important;
+  --bordaBSecundaria: 46px solid var(--bg-secondary-color) !important;
+  --textShadow      : 1px 1px 1px var(--shadow-color) !important;
+  --filterShadow    : drop-shadow(0 0 6px var(--shadow-color)) !important;
+  --border-padrao   : 6px !important;
   --transition      : all .3s ease !important;
   --transitionLinear: all .3s linear !important;
 
 
   --gradientMask       : linear-gradient(212deg, #ECECEC4a 25%, #bababac9 88%) !important;
-  --gradientBtn        : linear-gradient(270deg, var(--corPrincipal), var(--corPrincipalHover)) !important;
-  --gradientBtnHover   : linear-gradient(0deg, var(--corPrincipal), var(--corPrincipalHover)) !important;
-  --gradientSecundario : linear-gradient(165deg, #fff, var(--corCinza), var(--corPrincipal) 110%) !important;
-  --gradientColorRotate: linear-gradient(270deg, var(--corSecundaria), var(--corBtn)) !important;
+  --gradientBtn        : linear-gradient(270deg, var(--primary-color), var(--primary-color-hover)) !important;
+  --gradientBtnHover   : linear-gradient(0deg, var(--primary-color), var(--primary-color-hover)) !important;
+  --secondary-gradient : linear-gradient(165deg, #fff, var(--gray-color), var(--primary-color) 110%) !important;
+  --gradientColorRotate: linear-gradient(270deg, var(--secondary-color), var(--accent-color)) !important;
   --gradientBanner     : linear-gradient(330deg, #155c8656, #155d8680) !important;
 
 
@@ -120,10 +108,9 @@
   --vibrateFillMode                  : forwards;
 }
 
-
 html {
   box-sizing             : border-box;
-  font-family            : var(--fontConteudos);
+  font-family            : var(--font-body);
   line-height            : 1.2;
   font-size              : 100%;
   /* 1rem = 10px */
@@ -138,8 +125,8 @@ html {
 
 .site body,
 body {
-  font-family     : var(--fontConteudos) !important;
-  color           : var(--corTextos);
+  font-family     : var(--font-body) !important;
+  color           : var(--text-color);
   font-size       : 1.2rem;
   font-weight     : 400;
   overflow-x      : hidden;
@@ -154,7 +141,6 @@ p {
   line-height: 1.3;
   font-weight: 400;
 }
-
 
 .fa-check::before {
   content            : "";
@@ -173,7 +159,7 @@ p {
 textarea.wpcf7-form-control.wpcf7-textarea.textArea::placeholder,
 textarea::placeholder {
   font-size: 1rem !important;
-  color    : var(--corTextos) !important;
+  color    : var(--text-color) !important;
   opacity  : .6;
 }
 
@@ -247,16 +233,16 @@ body:not(.safari, .ios-app) .rowDataSafari {
   display: flex !important;
 }
 
-.fontTitulos {
-  font-family: var(--fontTitulos) !important;
+.font-title {
+  font-family: var(--font-title) !important;
 }
 
-.fontConteudos {
-  font-family: var(--fontConteudos) !important;
+.font-body {
+  font-family: var(--font-body) !important;
 }
 
-.fontDecorativa {
-  font-family: var(--fontDecorativa) !important;
+.font-decorative {
+  font-family: var(--font-decorative) !important;
 }
 
 .menu-wrapper li.itemFooter,
@@ -453,10 +439,10 @@ li#menu-item-2989 a::after {
   letter-spacing: 0;
   visibility    : hidden;
   width         : 120px;
-  background    : var(--corSecundaria);
-  color         : var(--corBranca);
+  background    : var(--secondary-color);
+  color         : var(--white-color);
   text-align    : center;
-  border-radius : var(--borderRadius) !important;
+  border-radius : var(--border-padrao) !important;
   position      : absolute;
   z-index       : 1;
   bottom        : 114%;
@@ -474,7 +460,7 @@ li#menu-item-2989 a::after {
   margin-left : -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: var(--corSecundaria) transparent transparent transparent;
+  border-color: var(--secondary-color) transparent transparent transparent;
 }
 
 .tooltipHtml:hover .tooltiptextHtml {
@@ -511,16 +497,16 @@ li#menu-item-2989 a::after {
   letter-spacing            : 0;
   visibility                : hidden;
   width                     : 100%;
-  background                : var(--corPrincipalTransp) !important;
-  color                     : var(--corBranca);
+  background                : var(--primary-color-transp) !important;
+  color                     : var(--white-color);
   text-align                : center;
   z-index                   : 1;
   bottom                    : 0;
   left                      : 0;
   margin-left               : 0;
   opacity                   : 0;
-  border-bottom-left-radius : var(--borderRadius) !important;
-  border-bottom-right-radius: var(--borderRadius) !important;
+  border-bottom-left-radius : var(--border-padrao) !important;
+  border-bottom-right-radius: var(--border-padrao) !important;
   transition                : var(--transition) !important;
   display                   : flex;
   align-items               : center;
@@ -597,12 +583,12 @@ li#menu-item-2989 a::after {
         top: -50px; 
         left: 50%;
         transform: translateX(-50%);
-        background: var(--corPrincipal); 
+        background: var(--primary-color); 
         color: #fff;
         font-size: 1rem; 
-        font-family: var(--fontConteudos);
+        font-family: var(--font-body);
         padding: 5px 10px;
-        border-radius: var(--borderRadius); 
+        border-radius: var(--border-padrao); 
         white-space: nowrap; 
         opacity: 0;
         visibility: hidden;
@@ -619,7 +605,7 @@ li#menu-item-2989 a::after {
         transform: translateX(-50%);
         border-width: 5px;
         border-style: solid;
-        border-color: transparent transparent var(--corPrincipal) transparent; 
+        border-color: transparent transparent var(--primary-color) transparent; 
         opacity: 0;
         visibility: hidden;
         transition: opacity 0.2s ease, visibility 0.2s ease;

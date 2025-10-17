@@ -16,16 +16,16 @@
   <?php while (have_posts()) : the_post(); ?>
 
     <section class="gridCinza" id="diferenciais" style="background: url(<?php echo wp_kses_post(get_field('background_sessao_diferenciais')); ?>); background-size: cover;">
-      <div class="container text-center corSecundariaHover">
+      <div class="container text-center secondary-hover">
         <div class="row d-flex flex-row justify-content-around align-items-center mb-0">
 
           <div class="headerSection col-12 mb-0">
 
-            <h2 class="tituloPrincipal">
+            <h2 class="title-primary">
               <?php echo wp_kses_post(get_field('titulo_sessao_diferenciais')); ?>
               <div class="serrilhadoTitulo"></div>
             </h2>
-            <!-- <p class="textoChamada corTextos">
+            <!-- <p class="textoChamada text-color">
                             < ?php echo wp_kses_post(get_field('texto_sessao_menu')); ?>
                         </p> -->
 

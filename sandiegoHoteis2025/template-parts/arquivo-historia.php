@@ -18,9 +18,9 @@
             <?php if (have_posts()) : ?>
                 <?php while (have_posts()) : the_post(); ?>
 
-                    <h2 class="tituloPrincipal corPrincipal mb-1"><?php echo wp_kses_post(get_field('titulo_sessao_historia')); ?></h2>
-                    <span class="text-center corTextos mb-0"><?php echo wp_kses_post(get_field('texto_sessao_historia')); ?></span>
-                    <h3 class="tituloPrincipal fontTitulos fw-bold corPrincipal mb-5"><?php echo wp_kses_post(get_field('titulo_secundario_sessao_historia')); ?></h3>
+                    <h2 class="title-primary primary mb-1"><?php echo wp_kses_post(get_field('titulo_sessao_historia')); ?></h2>
+                    <span class="text-center text-color mb-0"><?php echo wp_kses_post(get_field('texto_sessao_historia')); ?></span>
+                    <h3 class="title-primary font-title fw-bold primary mb-5"><?php echo wp_kses_post(get_field('titulo_secundario_sessao_historia')); ?></h3>
 
                 <?php endwhile; ?>
             <?php endif; ?>

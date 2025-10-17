@@ -7,7 +7,7 @@ $post = get_post($post_id);
 if ($post) :
     setup_postdata($post); ?>
     <section class="gridBgSecundario" id="novidades">
-        <h2 class="text-center tituloPrincipal corPrincipal pb-4"><?php echo get_the_title($post); ?></h2>
+        <h2 class="text-center title-primary primarypb-4"><?php echo get_the_title($post); ?></h2>
         <div><?php echo apply_filters('the_content', $post->post_content); ?></div>
     </section>
 <?php wp_reset_postdata(); // Reseta o contexto global de posts

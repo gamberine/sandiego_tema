@@ -20,7 +20,7 @@
                 <img src="<?php echo esc_url(get_field('imagem_destino')); ?>" />
             </div>
             <div class="col-6">
-                <h2 class="corPrincipal text-center">
+                <h2 class="primary text-center">
                     <?php the_title(); ?>
                 </h2>
                 <p><?php echo wp_kses_post(get_field('texto_destino')); ?></p>

@@ -3,7 +3,7 @@
 <main id="main" class="site-main" role="main">
     <?php if ( have_posts() ) : ?>
         <section class="gridGradiente">
-            <h1 class="tituloPrincipal text-white text-center mt-5 pt-5"><?php single_term_title(); ?></h1>
+            <h1 class="title-primary text-white text-center mt-5 pt-5"><?php single_term_title(); ?></h1>
         </section>
         <?php while ( have_posts() ) : the_post(); ?>
             <?php

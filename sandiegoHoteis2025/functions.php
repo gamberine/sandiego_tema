@@ -377,6 +377,7 @@ function tema_base_gamb_scripts()
     // 🔹 Adicionando fontes externas (substituindo @import)
     wp_enqueue_style('blacksword-font', 'https://fonts.cdnfonts.com/css/blacksword', array(), null);
     wp_enqueue_style('fira-Sans', 'https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap', array(), null);
+    wp_enqueue_style('diavlo-family', 'https://use.typekit.net/nez2mlc.css', array(), null);
 
     // 🔹 Scripts essenciais do tema
     wp_enqueue_script('jquery', get_stylesheet_directory_uri() . '/assets/js/jquery-1.11.0.min.js', array(), null, true);

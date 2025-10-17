@@ -26,10 +26,10 @@
                         <div class="headerSectionBg"></div>
 
 
-                        <h2 class="tituloPrincipal pb-2">
+                        <h2 class="title-primary pb-2">
                             <?php echo wp_kses_post(get_field('titulo_sessao_tratamentos')); ?>
                         </h2>
-                        <p class="textoChamada corTextos">
+                        <p class="textoChamada text-color">
                             <?php echo wp_kses_post(get_field('texto_sessao_tratamentos')); ?>
                         </p>
                         <!-- <img src="< ?php echo wp_kses_post(get_field('icone_sessao_tratamentos')); ?>" alt="< ?php echo wp_kses_post(get_field('titulo_sessao_tratamentos')); ?>"> -->
@@ -91,7 +91,7 @@
             < ?php if (have_posts()) : ?>
                 < ?php while (have_posts()) : the_post();
                 ?>
-                    <div class="gridImgItems corSecundaria col-xl-3 col-lg-6 col-md-6 col-sm-6 col-6">
+                    <div class="gridImgItems secondary col-xl-3 col-lg-6 col-md-6 col-sm-6 col-6">
 
                         <div><img src="< ?php echo wp_kses_post(get_field('imagem_tratamento')); ?>" /> </div>
                         <h4>< ?php the_title(); ?></h4>

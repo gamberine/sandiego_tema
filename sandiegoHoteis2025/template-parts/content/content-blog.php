@@ -13,7 +13,7 @@
 ?>
 
 <section class="gridCinza">
-    <h2 class="corPrincipal text-center">
+    <h2 class="primary text-center">
         <?php the_title(); ?>
     </h2>
 </section>

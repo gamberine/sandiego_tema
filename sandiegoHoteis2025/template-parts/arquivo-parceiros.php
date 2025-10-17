@@ -18,7 +18,7 @@
                 <?php query_posts("post_type=conteudo&posts_per_page=1"); ?>
                 <?php if (have_posts()) : ?>
                     <?php while (have_posts()) : the_post(); ?>
-                        <h2 class="tituloPrincipal corPrincipal pb-4"><?php echo wp_kses_post(get_field('titulo_sessao_parceiros')); ?></h2>
+                        <h2 class="title-primary primarypb-4"><?php echo wp_kses_post(get_field('titulo_sessao_parceiros')); ?></h2>
                     <?php endwhile; ?>
                 <?php endif; ?>
                 <?php wp_reset_query(); ?>

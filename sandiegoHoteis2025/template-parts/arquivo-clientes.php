@@ -23,7 +23,7 @@
 
           <div class="headerSection col-12 mb-5">
 
-            <h2 class="tituloPrincipal justify-content-center">
+            <h2 class="title-primary justify-content-center">
               <i class="fa-solid fa-check"></i>
               <?php echo wp_kses_post(get_field('titulo_sessao_clientes')); ?>
             </h2>
