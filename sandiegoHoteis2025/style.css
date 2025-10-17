@@ -1,18 +1,13 @@
 @charset "UTF-8";
 /*
-Theme Name: San Diego Hoteis 2025
-Theme URI: https://www.gamberine.com.br
-Author URI: https://www.gamberine.com.br
-Description: Tema filho do Tema Base Gamberine, desenvolvido para o Hotel San Diego em 2025.
-Version: 1.0.0
-Template: tema-base-gamb
-Text Domain: sandiegoHoteis2025
-Tags: custom-background, custom-logo, custom-menu, featured-images, theme-options, translation-ready
+Theme Name: Sandiego Hoteis 2025
 Author: Gamberine Comunicação Digital
 Ano: 2025
+Theme URI: https://www.gamberine.com.br
+Author URI: https://www.gamberine.com.br
+Description: Tema Base Gamberine, desenvolvido para o Hotel San Diego em 2025.
+Version: 1.0.0
 */
-
-/* styles.css */
 @import url('style-variaveis.css');
 
 
@@ -287,7 +282,7 @@ span.font-decorative {
   align-items        : center;
 }
 
-.serrilhadoHorizontalprimary{
+.serrilhadoHorizontalprimary {
   background         : url(imagens/serrilhadoHorizontalCorPrincipal.svg);
   width              : 12rem;
   max-width          : 80% !important;
@@ -2726,8 +2721,8 @@ a.more-link {
 }
 
 .text-hover {
-  color              : var(--text-color-hover ) !important;
-  --before-background: var(--text-color-hover );
+  color              : var(--text-color-hover) !important;
+  --before-background: var(--text-color-hover);
 }
 
 .white-color {
@@ -2745,7 +2740,7 @@ a.more-link {
   --before-background: var(--yellow);
 }
 
-.bg-primary-color{
+.bg-primary-color {
   color              : var(--bg-primary-color) !important;
   --before-background: var(--bg-primary-color);
 }
@@ -7015,7 +7010,7 @@ article {
 }
 
 .footerDesenvolvedor a:hover {
-  color          : var(--text-color-hover ) !important;
+  color          : var(--text-color-hover) !important;
   text-decoration: none !important;
   transition     : var(--transition) !important;
 }
@@ -8164,7 +8159,7 @@ input.wpcf7-form-control.wpcf7-file.fileuploadfield.d-flex:before {
 }
 
 .labelAnexar:active::before {
-  background: var(--text-color-hover ) !important;
+  background: var(--text-color-hover) !important;
   color     : var(--white-color) !important;
   transition: none !important;
 }
@@ -12617,7 +12612,7 @@ color: var(--white-color) !important;
 }
 
 .has-gray-color[class] {
-  color: var(--text-color-hover );
+  color: var(--text-color-hover);
 }
 
 .has-dark-gray-color[class] {
@@ -12668,7 +12663,7 @@ color: var(--white-color) !important;
 }
 
 .has-gray-background-color[class] {
-  background-color: var(--text-color-hover );
+  background-color: var(--text-color-hover);
 }
 
 .has-dark-gray-background-color[class] {
