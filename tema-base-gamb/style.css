@@ -1,6 +1,17 @@
 /*
 Theme Name: tema-base-gamb
+Theme URI: https://example.com
 Author: Gamberine
+Author URI: https://example.com
+Description: Tema base para o site San Diego Hotéis
 Version: 1.0
-Description: Tema base vazio para o San Diego Hoteis
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: tema-base-gamb
 */
+
+/*
+ * Este arquivo de estilo é intencionalmente simples. Ele declara o tema
+ * como um tema base para o tema filho San Diego Hotéis e inclui apenas
+ * comentários com as informações do cabeçalho exigidas pelo WordPress.
+ */

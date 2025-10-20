@@ -1,0 +1,29 @@
+{
+  "key": "group_sd_depo",
+  "title": "Depoimento – Campos",
+  "fields": [
+    {
+      "key": "depo_origem",
+      "label": "Origem (Cidade/UF)",
+      "name": "depo_origem",
+      "type": "text"
+    },
+    {
+      "key": "depo_nota",
+      "label": "Nota (1-5)",
+      "name": "depo_nota",
+      "type": "number",
+      "min": 1,
+      "max": 5
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "depoimento"
+      }
+    ]
+  ]
+}
