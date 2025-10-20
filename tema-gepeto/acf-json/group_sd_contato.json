@@ -1,0 +1,39 @@
+{
+  "key": "group_sd_contato",
+  "title": "Contato Hotéis – Campos",
+  "fields": [
+    {
+      "key": "contato_form_titulo",
+      "label": "Título Formulário",
+      "name": "contato_form_titulo",
+      "type": "text"
+    },
+    {
+      "key": "contato_form_sub",
+      "label": "Subtítulo Formulário",
+      "name": "contato_form_sub",
+      "type": "text"
+    },
+    {
+      "key": "contato_form_shortcode",
+      "label": "Shortcode do CF7",
+      "name": "contato_form_shortcode",
+      "type": "text"
+    },
+    {
+      "key": "contato_admin_url",
+      "label": "URL Administradora",
+      "name": "contato_admin_url",
+      "type": "url"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "page_template",
+        "operator": "==",
+        "value": "page-contato-hoteis.php"
+      }
+    ]
+  ]
+}

@@ -26,22 +26,212 @@ secondary:#383836
 bg-primary-color: #ECECEC
 
 
-https://bahiafloor.com.br/
+section page home:
 
-https://gamberine.com.br/arquivos_publicos/castelar/wp-content/themes/castelarRc2025/assets/js/scripts.js
+Desfrute do melhor da  hospitalidade mineira
+***seção com loop de post-type-hoteis
 
-            <!-- ------------ -->
-            <a class="d-flex align-items-center" target="_blank" href="<?php echo wp_kses_post(get_field('link_whatsapp_pt')); ?>">
-              <i class="fab fa-whatsapp"></i>
-              <?php echo wp_kses_post(get_field('numero_whatsapp_pt')); ?>
-            </a>
-            <a class="d-flex align-items-center" target="_blank" href="<?php echo wp_kses_post(get_field('link_whatsapp_en')); ?>">
-              <i class="fab fa-whatsapp"></i>
-              <?php echo wp_kses_post(get_field('numero_whatsapp_en')); ?>
-            </a>
-            <a class="d-flex align-items-center" target="_blank" href="<?php echo wp_kses_post(get_field('link_whatsapp_ca')); ?>">
-              <i class="fab fa-whatsapp"></i>
-              <?php echo wp_kses_post(get_field('numero_whatsapp_ca')); ?>
-            </a>
-            <!-- ------------ -->
+Belo Horizonte
+
+Lourdes
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+
+Saiba mais
+
+Experiência San Diego
+*** section com loop de post-type-comodidades
+
+Siga nosso Instagram
+*section com título e import do plugin instagram-feed
+
+-----------------------------------------------------
+2.page-SINGLE-HOTEL
+
+Belo Horizonte
+Lourdes
+
+Localizado na região de restaurantes de Lourdes, nosso hotel oferece acomodações elegantes e completas para tornar sua estadia em Belo Horizonte memorável. Aqui, você encontrará uma variedade de comodidades e serviços para garantir seu conforto e conveniência.
+
+Nossos quartos são cuidadosamente decorados e proporcionam um ambiente elegante e acolhedor. Cada unidade possui uma varanda privativa e uma área de estar confortável, onde você pode relaxar e desfrutar de momentos tranquilos.
+
+No San Diego Suites Belo Horizonte, você terá acesso a instalações de lazer. Nossa sauna, piscina e academia estão disponíveis para você relaxar e se exercitar durante sua estadia. Além disso, nosso centro de convenções tem capacidade para até 320 pessoas, sendo ideal para eventos e reuniões.
+
+A localização privilegiada do San Diego Suites Belo Horizonte permite que você explore facilmente os encantos da cidade. Estamos a apenas 800 metros da Praça da Liberdade, um importante ponto turístico da região. O Parque Municipal Américo Renné Giannetti também está localizado nas proximidades, a apenas 1,6 km de distância, proporcionando uma oportunidade para desfrutar de áreas verdes e natureza exuberante.
+
+ Nossas acomodações elegantes, comodidades modernas e localização estratégica garantirão uma experiência memorável em Belo Horizonte. Reserve agora mesmo e aproveite tudo o que nossa cidade tem a oferecer!
+
+Quartos
+***section com loop de post-type-acomodacao - em carrocel personalizado via slick slide
+
+
+Quarto Simples
+Quarto Duplo
+
+COMODIDADES
+**** section com loop de tags dentro de post-type-hoteis
+
+no cadastro do item de hoteis, criar campo para inclusão de tags e as tags quando cadastradas terão possibilidade de inserir um ícone para cada uma.
+
+Estacionamento
+Terceirizado
+
+Piscina
+
+Academia
+
+Frigobar
+
+Sauna
+
+Restaurante
+
+Lavanderia
+
+Estacionamento
+
+Lazer e Gastronomia
+*** secttion com loop de galeria dentro do post-type-hoteis
+Localização do Hotel
+
+
+San Diego Lourdes Suites   Av. Álvares Cabral, 1181 - Lourdes,  Belo Horizonte - MG, 30170-001 Minas Gerais BRASIL GPS:-22.98127, -43.19026 Telefone +55 21 3339-3000 E-mail de contato: <contato@sandiegohoteis.com.br>
+
+Depoimento dos nossos Hóspedes
+*** section com loop de post-type-depoimentos em formato carrocel slick 
+
+
+
+Marina Guedes  - Belo Horizonte (MG)
+“A equipe foi extremamente atenciosa. O quarto estava impecável e o café da manhã superou minhas expectativas. Uma experiência confortável e acolhedora do início ao fim.”
+
+Carlos Antunes  - Ribeirão Preto (SP)
+“Já me hospedei em vários hotéis, mas esse se destaca pelo atendimento. Todos os funcionários foram simpáticos e prestativos. O ambiente é moderno, limpo e muito bem cuidado.”
+
+Patrícia Duarte -  Juiz de Fora (MG)
+“O hotel é bonito e bem localizado. As acomodações são confortáveis e o serviço é eficiente. Gostaria apenas de ver mais opções no cardápio do restaurante, mas no geral foi ótimo.”
+
+Este hotel nas redes sociais:
+** dentro do hotel, na criação irá gerar os campos redes sociais
+
+Quero fazer uma reserva nessa unidade
+** botão de contato alimento dentro do post-type-hoteis
+
+
+--------------------------------
+
+3.page-contato-hoteis.jpg
+
+Contato hotéis
+****section com loop de post-type-hoteis, trazendo campos específicos de contatos de cada hotel
+
+
+Belo Horizonte
+Lourdes
+
+Belo Horizonte
+Pampulha
+
+Belo Horizonte
+Barro Preto
+
+Sao Gotardo
+
+Contato
+Telefone: +55 (31) 3309-3000
+E-mall: <contato@sandlegohotels.com.br>
+Endereço
+Aw. Awares Cabral 1181- Lourdes
+Belo Hortzonce
+
+Contato
+Telefone: +55 (31) 3614-6500 | 99404-3965
+E-mall: <reservas.plu@sandlegohotels.com.br>
+
+Endereço
+Averida Ocacilo Negrao de Lima, 1624
+Sao Lus - Belo Horlzonte
+
+Contato
+Telefone: +55 (31) 3614-3750
+E-mall: evencos.angra(@fasano.com.br
+
+Endereco
+AM. Barbacena, 41 Barro Preto
+Belo Hortzonce MG
+
+Contato
+Telefone: +55 (34) 3615 0200
+E-mall: <reservas.sg@sandlegohotels.com.br>
+
+Endereço
+Avenida Presiderite Vargas n" 507 Cerltro
+Sao Gotardo
+
+Veredas
+
+Lancaster
+
+Ipatinga
+
+Contato
+Telefone: +55 (31) 3779-9300
+E-mall: reservasveredas(@sandlegohocels.com.br
+
+Endereço
+Avenida Prefelto Alberto Moura 21500
+Eldorado
+
+Contato
+Telefone: +55 (33) 3779-8300 | 3522-3131
+E-mail: <concato@isandiegonoteis.com.br>
+
+Endereço
+Rua Frei Gorzaga, 142 Cenero
+TebAla Oton
+
+Contato
+Telefone: +55 (33) 3929-6000
+E-mall: <reservas.ipn@sandiegonoteis.com.or>
+
+Endereco
+Rua das Palmelras, 406 - Horto
+Ipadinga
+
+Gov. Valadares
+
+Contato
+Telefone: +55 (33) 0508-1300 | 3509-1300
+E-mall: reservas@sandiegohoteis.com.br
+
+Endereço
+Rua Tenerite Coronel Francisco Rodrigues, n. 51
+Morada do Acampamento - Gov. Valadares
+
+
+Quer conversar sobre os nossos serviços de administração?
+Preencha seus dados que entraremos em contato.
+título e campo de mensagem alimentado no post type conteudo
+
+formulario:
+** formulário de contato vindo do contact form 7 comum
+Nome completo
+cidade
+e-mail
+telefone
+
+Clique aqui para falar com a Administradora da Rede
+
+******************* frazer o mesmo processo de criação de arquivos seguindo a mesmo padrão usado na home.
+
+********************* atenção: o css foi atualizado conforme anexo. utilizar esse padrão css (cores, efeitos) juntamente com o bootstrap
+
+****************** sempre separar cada sessão no formato de component importando na page
+
+******************* todos os campos comuns serão administrados via post type conteudo no acf
+
+criar html com clique para copiar os textos
+gerar arquivos completos no mesmo padrão de organização anterior, zipados
+
+
 

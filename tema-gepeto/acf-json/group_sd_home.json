@@ -1,0 +1,51 @@
+{
+  "key": "group_sd_home",
+  "title": "Home – Campos",
+  "fields": [
+    {
+      "key": "home_banner_imagem",
+      "label": "Imagem do banner",
+      "name": "home_banner_imagem",
+      "type": "image"
+    },
+    {
+      "key": "home_banner_titulo",
+      "label": "Título",
+      "name": "home_banner_titulo",
+      "type": "text"
+    },
+    {
+      "key": "home_banner_sub",
+      "label": "Subtítulo",
+      "name": "home_banner_sub",
+      "type": "text"
+    },
+    {
+      "key": "home_experiencia_galeria",
+      "label": "Galeria Experiência",
+      "name": "home_experiencia_galeria",
+      "type": "gallery"
+    },
+    {
+      "key": "home_instagram_titulo",
+      "label": "Título Instagram",
+      "name": "home_instagram_titulo",
+      "type": "text"
+    },
+    {
+      "key": "home_instagram_shortcode",
+      "label": "Shortcode Instagram",
+      "name": "home_instagram_shortcode",
+      "type": "text"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "page_template",
+        "operator": "==",
+        "value": "page-home-hoteis.php"
+      }
+    ]
+  ]
+}

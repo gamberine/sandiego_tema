@@ -1,0 +1,22 @@
+{
+  "key": "group_sd_feature_term",
+  "title": "Comodidade – Ícone",
+  "fields": [
+    {
+      "key": "feature_icon",
+      "label": "Ícone (PNG/SVG)",
+      "name": "feature_icon",
+      "type": "image",
+      "return_format": "array"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "taxonomy",
+        "operator": "==",
+        "value": "hotel_feature"
+      }
+    ]
+  ]
+}

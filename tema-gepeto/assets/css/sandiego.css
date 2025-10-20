@@ -1,0 +1,19 @@
+:root {
+  --teal-500:#0f6773;
+  --teal-600:#0d5963;
+  --teal-700:#0a4b52;
+  --azul-500:#1F3C88;
+  --azul-600:#2C4DA7;
+  --destaque:#F97316;
+}
+.section-pad{padding:60px 0}
+.sd-title{font-weight:700;text-transform:uppercase;letter-spacing:.02em}
+.sd-sub{color:var(--teal-600)}
+.sd-btn{background:linear-gradient(90deg,var(--azul-500),var(--teal-500));border:none;color:#fff;padding:12px 28px;border-radius:12px;text-transform:uppercase}
+.sd-btn:hover{background:linear-gradient(90deg,var(--azul-600),var(--teal-600));color:#fff;transform:translateY(-1px)}
+.sd-card{border:1px solid #E1E5EA;border-radius:12px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+.copy-inline{cursor:pointer;border:0;background:none;color:var(--teal-600)}
+.copy-inline:hover{color:var(--teal-700)}
+.sd-amenity{display:flex;flex-direction:column;align-items:center;gap:.5rem;text-align:center}
+
+/* Estilos adicionais podem ser adicionados aqui conforme necessário para o tema San Diego. */
