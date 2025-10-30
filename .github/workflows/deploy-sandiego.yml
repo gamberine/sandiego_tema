@@ -1,0 +1,54 @@
+name: Build, validate and deploy San Diego
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Instalar Node (Tailwind/SASS)
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar dependências
+        if: hashFiles('package-lock.json') != ''
+        run: npm ci
+
+      - name: Compilar assets
+        if: hashFiles('package.json') != ''
+        run: npm run build
+
+      - name: Verificar erros PHP
+        run: |
+          echo "🔍 Verificando sintaxe PHP..."
+          find . -name "*.php" -not -path "./vendor/*" -exec php -l {} \; | (! grep "Errors parsing") || exit 1
+
+      - name: Gerar backup do tema
+        run: |
+          echo "📦 Gerando backup sandiego.zip..."
+          zip -r sandiego.zip . -x "*.git*" "node_modules/*" "*.github/*"
+
+      - name: Upload do backup (artefato)
+        uses: actions/upload-artifact@v4
+        with:
+          name: sandiego-theme
+          path: sandiego.zip
+
+      - name: Deploy via SSH (Hostinger)
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOSTINGER_HOST }}
+          username: ${{ secrets.HOSTINGER_USER }}
+          key: ${{ secrets.HOSTINGER_SSH_KEY }}
+          script: |
+            echo "🚀 Conectando ao servidor Hostinger..."
+            cd /home/usuario/public_html/wp-content/themes/sandiego
+            git pull origin main
+            echo "✅ Deploy concluído com sucesso!"
