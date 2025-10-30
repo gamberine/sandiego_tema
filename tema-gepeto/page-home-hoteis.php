@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template Name: Home Hotéis
  *
@@ -6,12 +7,11 @@
  */
 get_header();
 
-// Carrega componentes definidos em template-parts/components
-get_template_part('template-parts/components/section','banner-home');
-get_template_part('template-parts/components/section','busca-reserva');
-get_template_part('template-parts/components/section','grid-hoteis');
-get_template_part('template-parts/components/section','experiencia');
-get_template_part('template-parts/components/section','instagram');
+// Carrega componentes definidos em template-parts
+get_template_part('template-parts/section', 'banner-home');
+get_template_part('template-parts/section', 'busca-reserva');
+get_template_part('template-parts/section', 'grid-hoteis');
+get_template_part('template-parts/section', 'experiencia');
+get_template_part('template-parts/section', 'instagram');
 
 get_footer();
-?>
