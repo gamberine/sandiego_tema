@@ -15,9 +15,19 @@ if ( version_compare($GLOBALS['wp_version'], '5.3', '<') ) {
  * 1) Traduções (corrige aviso: carregar no init ou depois)
  * -------------------------------------------------------------------------- */
 function temabasegamb_load_textdomain() {
-  load_theme_textdomain( 'temabasegamb', get_template_directory() . '/languages' );
+  // load_theme_textdomain( 'temabasegamb', get_template_directory() . '/languages' );
 }
 add_action('init', 'temabasegamb_load_textdomain');
+
+/**
+ * Corrige o carregamento antecipado das traduções no WP 6.7+
+ * As traduções do tema devem ser carregadas a partir do hook init.
+ */
+function gamberine_load_textdomain_late() {
+    load_theme_textdomain('temabasegamb', get_template_directory() . '/languages');
+}
+add_action('init', 'gamberine_load_textdomain_late');
+
 
 /* --------------------------------------------------------------------------
  * 2) Setup do tema (after_setup_theme)
