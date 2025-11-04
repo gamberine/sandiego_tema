@@ -7,6 +7,31 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * Configurações básicas do tema.
+ */
+add_action('after_setup_theme', function () {
+  load_theme_textdomain('temabasegamb', get_template_directory() . '/languages');
+
+  add_theme_support('title-tag');
+  add_theme_support('post-thumbnails');
+  add_theme_support('automatic-feed-links');
+  add_theme_support('html5', ['search-form','comment-form','comment-list','gallery','caption','style','script','navigation-widgets']);
+  add_theme_support('customize-selective-refresh-widgets');
+  add_theme_support('responsive-embeds');
+  add_theme_support('custom-logo', [
+    'height'      => 100,
+    'width'       => 300,
+    'flex-height' => true,
+    'flex-width'  => true,
+  ]);
+
+  register_nav_menus([
+    'primary' => __('Menu Principal', 'temabasegamb'),
+    'footer'  => __('Menu Rodapé', 'temabasegamb'),
+  ]);
+});
+
+/**
  * Carrega scripts e estilos (Bootstrap, Slick, CSS personalizado)
  */
 add_action('wp_enqueue_scripts', function () {
@@ -20,9 +45,11 @@ add_action('wp_enqueue_scripts', function () {
   wp_enqueue_script( 'sd-slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', ['jquery'], '1.8.1', true );
 
   // Estilos do tema: variáveis e customizações
+  wp_enqueue_style( 'sd-font-diavlo', 'https://use.typekit.net/nez2mlc.css', [], null );
+  wp_enqueue_style( 'sd-font-fira', 'https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap', [], null );
   wp_enqueue_style( 'sd-variaveis', get_stylesheet_directory_uri() . '/assets/css/style-variaveis.css', [], '1.0.0' );
   wp_enqueue_style( 'sd-theme-base', get_stylesheet_directory_uri() . '/assets/css/theme-base.css', [], '1.0.0' );
-  wp_enqueue_style( 'sd-theme', get_stylesheet_directory_uri() . '/assets/css/sandiego.css', ['sd-variaveis'], '1.0.0' );
+  wp_enqueue_style( 'sd-theme', get_stylesheet_directory_uri() . '/assets/css/sandiego.css', ['sd-variaveis','sd-font-diavlo','sd-font-fira'], '1.1.0' );
 
   // JavaScript personalizado
   wp_enqueue_script( 'sd-theme-js', get_stylesheet_directory_uri() . '/assets/js/sandiego.js', ['jquery','sd-slick'], '1.0.0', true );
@@ -126,4 +153,22 @@ function sd_field( $key, $post_id = null, $default = '' ) {
   }
   return $default;
 }
-?>
+
+/**
+ * Créditos do rodapé (fallback caso a função não exista no tema pai).
+ */
+if ( ! function_exists('bl_site_footer_se') ) {
+  function bl_site_footer_se() {
+    $logo = trailingslashit( get_stylesheet_directory_uri() ) . 'imagens/logoSe.png';
+    echo '<a href="https://secomunicacao.com.br" target="_blank" rel="noopener">';
+    echo '<img src="' . esc_url( $logo ) . '" alt="SE Comunicação">';
+    echo '</a>';
+  }
+}
+
+if ( ! function_exists('bl_site_footer_logo') ) {
+  function bl_site_footer_logo() {
+    $logo = trailingslashit( get_stylesheet_directory_uri() ) . 'imagens/logoSe.png';
+    echo '<img src="' . esc_url( $logo ) . '" alt="">';
+  }
+}
