@@ -7,9 +7,9 @@
 /* --------------------------------------------------------------------------
  * 0) Compat e Constantes
  * -------------------------------------------------------------------------- */
-if ( version_compare($GLOBALS['wp_version'], '5.3', '<') ) {
-  require get_template_directory() . '/inc/back-compat.php';
-}
+// if ( version_compare($GLOBALS['wp_version'], '5.3', '<') ) {
+//   require get_template_directory() . '/inc/back-compat.php';
+// }
 
 /* --------------------------------------------------------------------------
  * 1) Traduções
