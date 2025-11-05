@@ -27,6 +27,7 @@ add_action('after_setup_theme', function () {
 
   register_nav_menus([
     'primary' => __('Menu Principal', 'temabasegamb'),
+    'secondary' => __('Menu Internas', 'temabasegamb'),
     'footer'  => __('Menu Rodapé', 'temabasegamb'),
   ]);
 });
@@ -48,17 +49,66 @@ add_action('wp_enqueue_scripts', function () {
   wp_enqueue_style( 'sd-font-diavlo', 'https://use.typekit.net/nez2mlc.css', [], null );
   wp_enqueue_style( 'sd-font-fira', 'https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap', [], null );
   wp_enqueue_style( 'sd-variaveis', get_stylesheet_directory_uri() . '/assets/css/style-variaveis.css', [], '1.0.0' );
-  wp_enqueue_style( 'sd-theme-base', get_stylesheet_directory_uri() . '/assets/css/theme-base.css', [], '1.0.0' );
+  wp_enqueue_style( 'sd-style-base', get_stylesheet_directory_uri() . '/assets/css/style-base.css', [], '1.0.0' );
   wp_enqueue_style( 'sd-theme', get_stylesheet_directory_uri() . '/assets/css/sandiego.css', ['sd-variaveis','sd-font-diavlo','sd-font-fira'], '1.1.0' );
 
   // JavaScript personalizado
   wp_enqueue_script( 'sd-theme-js', get_stylesheet_directory_uri() . '/assets/js/sandiego.js', ['jquery','sd-slick'], '1.0.0', true );
 });
 
+/* Estilos/Scripts no admin */
+function wgm_admin_styles() {
+    wp_enqueue_style( 'sd-style-admin', get_template_directory_uri() . '/assets/css/style-admin.css', [], '1.0.0' );
+}
+add_action('admin_head', 'wgm_admin_styles');
+
 /**
  * Registra Custom Post Types e Taxonomias
  */
 add_action('init', function () {
+// Post type Conteúdo 
+register_post_type('conteudo', [
+  'labels' => [
+    'name'               => 'Conteúdo',
+    'singular_name'      => 'Conteúdo',
+    'add_new_item'       => 'Adicionar novo Conteúdo',
+    'edit_item'          => 'Editar Conteúdo',
+    'new_item'           => 'Novo Conteúdo',
+    'view_item'          => 'Ver Conteúdo',
+    'search_items'       => 'Buscar Conteúdo',
+    'not_found'          => 'Nenhum Conteúdo encontrado',
+    'not_found_in_trash' => 'Nenhum Conteúdo encontrado na lixeira',
+  ],
+  'public'       => false,
+  'has_archive'  => false,
+  'menu_icon'    => 'dashicons-admin-customizer',
+  'supports'     => ['title','editor','thumbnail','excerpt','revisions'],
+  'rewrite'      => ['slug'=>'conteudo'],
+  'show_in_rest' => true,
+]);
+
+// Post type Banner
+register_post_type('banner', [
+  'labels' => [
+    'name'               => 'Banner',
+    'singular_name'      => 'Banner',
+    'add_new_item'       => 'Adicionar novo Banner',
+    'edit_item'          => 'Editar Banner',
+    'new_item'           => 'Novo Banner',
+    'view_item'          => 'Ver Banner',
+    'search_items'       => 'Buscar Banner',
+    'not_found'          => 'Nenhum Banner encontrado',
+    'not_found_in_trash' => 'Nenhum Banner encontrado na lixeira',
+  ],
+  'public'       => true,
+  'has_archive'  => false,
+  'menu_icon'    => 'dashicons-cover-image',
+  'supports'     => ['title','editor','thumbnail','excerpt','revisions'],
+  'rewrite'      => ['slug'=>'banner'],
+  'show_in_rest' => true,
+]);
+
+
   // Post type Hotéis
   register_post_type('hoteis', [
     'labels' => [
@@ -87,7 +137,7 @@ add_action('init', function () {
       'singular_name' => 'Acomodação'
     ],
     'public'       => true,
-    'menu_icon'    => 'dashicons-bed',
+    'menu_icon'    => 'dashicons-welcome-learn-more',
     'supports'     => ['title','editor','thumbnail','excerpt','revisions'],
     'rewrite'      => ['slug'=>'acomodacoes'],
     'show_in_rest' => true,
