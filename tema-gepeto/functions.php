@@ -1,6 +1,6 @@
 <?php
 /**
- * Funções do tema filho San Diego Hotéis 2025
+ * Funções do tema Gepeto SD
  */
 if ( ! defined( 'ABSPATH' ) ) {
   exit;
