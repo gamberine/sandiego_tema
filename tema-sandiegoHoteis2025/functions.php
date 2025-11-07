@@ -787,10 +787,19 @@ function adicionar_links_dinamicos_menu() {
 }
 add_action('admin_menu','adicionar_links_dinamicos_menu');
 
-/* --------------------------------------------------------------------------
- * 10) Editor helpers diversos
- * -------------------------------------------------------------------------- */
+/* --------------------- */
 
-/* Script para IE class já foi adicionado acima */
+// Add Last Modified Column
+add_filter('manage_posts_columns', function ($columns) {
+  $columns['last_modified'] = __('Last Modified');
+  return $columns;
+});
+
+add_action('manage_posts_custom_column', function ($column, $post_id) {
+  if ('last_modified' === $column) {
+    $modified_time = get_the_modified_time('Y/m/d g:i:s a', $post_id);
+    echo esc_html($modified_time);
+  }
+}, 10, 2);
 
 /* FIM functions.php reestruturado */

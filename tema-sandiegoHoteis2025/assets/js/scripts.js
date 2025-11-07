@@ -476,6 +476,15 @@ jQuery(function (jQuery) {
   });
 });
 
+/*   scroll admin   */
+jQuery(window).scroll(function () {
+    if (jQuery(window).scrollTop() >= 100) {
+        jQuery('#post-body').addClass('travaBoxPost');
+    } else {
+        jQuery('#post-body').removeClass('travaBoxPost');
+    };
+});
+
 
 
 // scripts.js - Código para modal dinâmico utilizando Slick Slider com legenda abaixo da imagem
