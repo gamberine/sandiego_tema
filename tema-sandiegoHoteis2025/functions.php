@@ -115,7 +115,7 @@ if ( ! function_exists('tema_base_gamb_setup') ) {
 }
 add_action('after_setup_theme', 'tema_base_gamb_setup');
 
-/* Largura de conteúdo */
+/* Largura de content */
 function tema_base_gamb_content_width() {
   $GLOBALS['content_width'] = apply_filters('tema_base_gamb_content_width', 750);
 }
@@ -318,8 +318,8 @@ function create_post_types() {
     'show_ui'=>true,
     'show_in_rest'=>true,
     'has_archive'=>false,
-    'show_in_menu'=>false,
-    'show_in_nav_menus'=>false,
+    'show_in_menu'=>true,
+    'show_in_nav_menus'=>true,
     'exclude_from_search'=>true,
     'capability_type'=>'post',
     'map_meta_cap'=>true,
