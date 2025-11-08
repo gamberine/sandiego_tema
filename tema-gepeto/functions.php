@@ -79,7 +79,7 @@ register_post_type('conteudo', [
     'not_found'          => 'Nenhum Conteúdo encontrado',
     'not_found_in_trash' => 'Nenhum Conteúdo encontrado na lixeira',
   ],
-  'public'       => false,
+  'public'       => true,
   'has_archive'  => false,
   'menu_icon'    => 'dashicons-admin-customizer',
   'supports'     => ['title','editor','thumbnail','excerpt','revisions'],
@@ -176,7 +176,7 @@ function sd_shortcode_copy( $atts ) {
   ob_start();
   ?>
   <button class="sd-copy btn btn-sm btn-outline-secondary" data-copy="<?php echo $text; ?>" title="Copiar">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <svg xmlns="https://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
       <path d="M10 1.5H6a.5.5 0 0 0-.5.5v1h5V2a.5.5 0 0 0-.5-.5"/>
       <path d="M4.5 3a1 1 0 0 1 1-1h.5v1a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2h.5a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1z"/>
     </svg>
