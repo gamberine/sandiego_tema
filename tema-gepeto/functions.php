@@ -1,6 +1,6 @@
 <?php
 /**
- * Funções do tema Gepeto SD
+ * Funções do tema Gepeto SD - 03-43
  */
 if ( ! defined( 'ABSPATH' ) ) {
   exit;
