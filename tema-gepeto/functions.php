@@ -85,11 +85,14 @@ register_post_type('conteudo', [
     'not_found_in_trash' => 'Nenhum Conteúdo encontrado na lixeira',
   ],
   'public'       => true,
+  'show_in_rest' => true,
   'has_archive'  => false,
+  'show_in_menu' => false, // Mostrar no menu
+  'show_in_nav_menus' => false, // Não mostrar em menus de navegação
+  'exclude_from_search' => true,
   'menu_icon'    => 'dashicons-admin-customizer',
   'supports'     => ['title','editor','thumbnail','excerpt','revisions'],
   'rewrite'      => ['slug'=>'conteudo'],
-  'show_in_rest' => true,
 ]);
 
 // Post type Banner

@@ -161,6 +161,7 @@ li#toplevel_page_wpforms-overview,
 .notice.notice-warning,
 li#menu-posts,
 .post-type-infos a.page-title-action,
+li#menu-posts-conteudo,
 .post-type-conteudo a.page-title-action {
   display   : none !important;
   visibility: hidden !important;

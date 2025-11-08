@@ -1181,6 +1181,8 @@ function add_custom_class_to_post_type($classes)
 }
 add_filter('admin_body_class', 'add_custom_class_to_post_type');
 
+
+
 // Logo Login
 function gamberine_login_edit()
 {
