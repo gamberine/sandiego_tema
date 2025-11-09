@@ -11,7 +11,7 @@
  */
 // This theme requires WordPress 5.3 or later.
 if (version_compare($GLOBALS['wp_version'], '5.3', '<')) {
-  require get_template_directory() . '/inc/back-compat.php';
+  require get_template_directory() . '/classes/back-compat.php';
 }
 if (!function_exists('tema_base_gamb_setup')) {
   /**
@@ -288,7 +288,7 @@ if (!function_exists('tema_base_gamb_setup')) {
 		* page load, as it is a one-off operation only needed once in the customizer.
 		*/
     if (is_customize_preview()) {
-      require get_template_directory() . '/inc/starter-content.php';
+      require get_template_directory() . '/classes/starter-content.php';
       add_theme_support('starter-content', tema_base_gamb_get_starter_content());
     }
     // Add support for responsive embedded content.
@@ -526,25 +526,25 @@ add_action('wp_enqueue_scripts', 'tema_base_gamb_non_latin_languages');
  *
  * @return void
  */
-require_once get_stylesheet_directory() . '/inc/enqueue-and-acf.php';
+require_once get_stylesheet_directory() . '/classes/enqueue-and-acf.php';
 // SVG Icons class.
 require get_template_directory() . '/classes/class-tema-base-gamb-svg-icons.php';
 // Custom color classes.
 require get_template_directory() . '/classes/class-tema-base-gamb-custom-colors.php';
 new Tema_Dev_Gamb_Custom_Colors();
 // Enhance the theme by hooking into WordPress.
-require get_template_directory() . '/inc/template-functions.php';
+require get_template_directory() . '/classes/template-functions.php';
 // Menu functions and filters.
-require get_template_directory() . '/inc/menu-functions.php';
+require get_template_directory() . '/classes/menu-functions.php';
 // Custom template tags for the theme.
-require get_template_directory() . '/inc/template-tags.php';
+require get_template_directory() . '/classes/template-tags.php';
 // Customizer additions.
 require get_template_directory() . '/classes/class-tema-base-gamb-customize.php';
 new Tema_Dev_Gamb_Customize();
 // Block Patterns.
-require get_template_directory() . '/inc/block-patterns.php';
+require get_template_directory() . '/classes/block-patterns.php';
 // Block Styles.
-require get_template_directory() . '/inc/block-styles.php';
+require get_template_directory() . '/classes/block-styles.php';
 // Dark Mode.
 require_once get_template_directory() . '/classes/class-tema-base-gamb-dark-mode.php';
 new Tema_Dev_Gamb_Dark_Mode();

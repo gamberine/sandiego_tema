@@ -320,7 +320,7 @@ function tema_base_gamb_get_non_latin_css($type = 'front-end')
 
     // Include file if function doesn't exist.
     if (! function_exists('tema_base_gamb_generate_css')) {
-        require_once get_theme_file_path('inc/custom-css.php'); // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
+        require_once get_theme_file_path('classes/custom-css.php'); // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
     }
 
     // Return the specified styles.

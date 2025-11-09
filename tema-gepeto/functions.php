@@ -9,6 +9,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Configurações básicas do tema.
  */
+/**
+ * Configurações básicas do tema.
+ */
 add_action('after_setup_theme', function () {
   load_theme_textdomain('temabasegamb', get_template_directory() . '/languages');
 
@@ -26,52 +29,84 @@ add_action('after_setup_theme', function () {
   ]);
 
   register_nav_menus([
-    'primary' => __('Menu Principal', 'temabasegamb'),
+    'primary'   => __('Menu Principal', 'temabasegamb'),
     'secondary' => __('Menu Internas', 'temabasegamb'),
-    'footer'  => __('Menu Rodapé', 'temabasegamb'),
+    'footer'    => __('Menu Rodapé', 'temabasegamb'),
   ]);
+
+  // Starter content apenas no customizer
+  if ( is_customize_preview() ) {
+    require get_template_directory() . '/classes/starter-content.php';
+    add_theme_support('starter-content', tema_base_gamb_get_starter_content());
+  }
 });
 
 
 // Garantir que as funções base estejam carregadas
-if ( ! function_exists( 'tema_base_gamb_get_icon_svg' ) ) {
-    require_once get_template_directory() . '/inc/class-tema-base-gamb-svg-icons.php';
+if ( !function_exists( 'tema_base_gamb_get_icon_svg' ) ) {
+  require_once get_template_directory() . '/classes/class-tema-base-gamb-svg-icons.php';
 }
 
 
-// /**
-//  * Carrega scripts e estilos (Bootstrap, Slick, CSS personalizado)
-//  */
-// add_action('wp_enqueue_scripts', function () {
-//   // Bootstrap
-//   wp_enqueue_style( 'sd-bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css', [], '5.3.3' );
-//   wp_enqueue_script( 'sd-bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js', ['jquery'], '5.3.3', true );
 
-//   // Slick Carousel
-//   wp_enqueue_style( 'sd-slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', [], '1.8.1' );
-//   wp_enqueue_style( 'sd-slick-theme', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css', ['sd-slick'], '1.8.1' );
-//   wp_enqueue_script( 'sd-slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', ['jquery'], '1.8.1', true );
+// * --------------------------------------------------------------------------
+//  * 5) Requires (classes/inc)
+//  * -------------------------------------------------------------------------- */
+require_once get_stylesheet_directory() . '/inc/enqueue-and-acf.php';
+require get_template_directory() . '/classes/class-tema-base-gamb-svg-icons.php';
+require get_template_directory() . '/classes/class-tema-base-gamb-custom-colors.php';
+require get_template_directory() . '/classes/class-tema-base-gamb-customize.php';
+require_once get_template_directory() . '/classes/class-tema-base-gamb-dark-mode.php';
+new Tema_Dev_Gamb_Custom_Colors();
+require get_template_directory() . '/inc/template-functions.php';
+require get_template_directory() . '/inc/menu-functions.php';
+require get_template_directory() . '/inc/template-tags.php';
+new Tema_Dev_Gamb_Customize();
+require get_template_directory() . '/inc/block-patterns.php';
+require get_template_directory() . '/inc/block-styles.php';
+new Tema_Dev_Gamb_Dark_Mode();
 
-//   // Estilos do tema: variáveis e customizações
-//   wp_enqueue_style( 'sd-font-diavlo', 'https://use.typekit.net/nez2mlc.css', [], null );
-//   wp_enqueue_style( 'sd-font-fira', 'https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap', [], null );
-//   wp_enqueue_style( 'sd-variaveis', get_stylesheet_directory_uri() . '/assets/css/style-variaveis.css', [], '1.0.0' );
-//   wp_enqueue_style( 'sd-style-base', get_stylesheet_directory_uri() . '/assets/css/style-base.css', [], '1.0.0' );
-//   wp_enqueue_style( 'sd-theme', get_stylesheet_directory_uri() . '/assets/css/sandiego.css', ['sd-variaveis','sd-font-diavlo','sd-font-fira'], '1.1.0' );
+/* Customizer JS */
+function temabasegamb_customize_preview_init() {
+  wp_enqueue_script('temabasegamb-customize-helpers', get_theme_file_uri('/assets/js/customize-helpers.js'), array(), wp_get_theme()->get('Version'), true);
+  wp_enqueue_script('temabasegamb-customize-preview', get_theme_file_uri('/assets/js/customize-preview.js'), array('customize-preview','customize-selective-refresh','jquery','temabasegamb-customize-helpers'), wp_get_theme()->get('Version'), true);
+}
+add_action('customize_preview_init', 'temabasegamb_customize_preview_init');
 
-//   // JavaScript personalizado
-//   wp_enqueue_script( 'sd-theme-js', get_stylesheet_directory_uri() . '/assets/js/sandiego.js', ['jquery','sd-slick'], '1.0.0', true );
-// });
+function temabasegamb_customize_controls_enqueue_scripts() {
+  wp_enqueue_script('temabasegamb-customize-helpers', get_theme_file_uri('/assets/js/customize-helpers.js'), array(), wp_get_theme()->get('Version'), true);
+}
+add_action('customize_controls_enqueue_scripts', 'temabasegamb_customize_controls_enqueue_scripts');
 
-// /* Estilos/Scripts no admin */
-// function wgm_admin_styles() {
-//     wp_enqueue_style( 'sd-style-admin', get_template_directory_uri() . '/assets/css/style-admin.css', [], '1.0.0' );
-// }
-// add_action('admin_head', 'wgm_admin_styles');
+/**
+ * Carrega scripts e estilos (Bootstrap, Slick, CSS personalizado)
+ */
+add_action('wp_enqueue_scripts', function () {
+  // Bootstrap
+  wp_enqueue_style( 'sd-bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css', [], '5.3.3' );
+  wp_enqueue_script( 'sd-bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js', ['jquery'], '5.3.3', true );
 
+  // Slick Carousel
+  wp_enqueue_style( 'sd-slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', [], '1.8.1' );
+  wp_enqueue_style( 'sd-slick-theme', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css', ['sd-slick'], '1.8.1' );
+  wp_enqueue_script( 'sd-slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', ['jquery'], '1.8.1', true );
 
+  // Estilos do tema
+  wp_enqueue_style( 'sd-font-diavlo', 'https://use.typekit.net/nez2mlc.css', [], null );
+  wp_enqueue_style( 'sd-font-fira', 'https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap', [], null );
+  wp_enqueue_style( 'sd-variaveis', get_stylesheet_directory_uri() . '/assets/css/style-variaveis.css', [], '1.0.0' );
+  wp_enqueue_style( 'sd-style-base', get_stylesheet_directory_uri() . '/assets/css/style-base.css', [], '1.0.0' );
+  wp_enqueue_style( 'sd-theme', get_stylesheet_directory_uri() . '/assets/css/sandiego.css', ['sd-variaveis','sd-font-diavlo','sd-font-fira'], '1.1.0' );
 
+  // JS personalizado
+  wp_enqueue_script( 'sd-theme-js', get_stylesheet_directory_uri() . '/assets/js/sandiego.js', ['jquery','sd-slick'], '1.0.0', true );
+});
 
+/* Estilos/Scripts no admin */
+function wgm_admin_styles() {
+    wp_enqueue_style( 'sd-style-admin', get_template_directory_uri() . '/assets/css/style-admin.css', [], '1.0.0' );
+}
+add_action('admin_head', 'wgm_admin_styles');
 
 
 /**
