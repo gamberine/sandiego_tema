@@ -13,7 +13,7 @@ Version: 1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: temabasegamb
-Tags: one-column, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, block-patterns, rtl-language-support, sticky-post, threaded-comments, translation-ready
+Tags: one-column, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, , block-patterns, rtl-language-support, sticky-post, threaded-comments, translation-ready
 
 Tema Dev-Gamb WordPress Theme, (C) 2020 WordPress.org
 Tema Dev-Gamb is distributed under the terms of the GNU GPL.
@@ -354,7 +354,6 @@ html {
 	line-height: 1.15;
 
 	/* 1 */
-	-webkit-text-size-adjust: 100%;
 
 	/* 2 */
 }
@@ -555,12 +554,6 @@ select {
 /**
  * Correct the inability to style clickable types in iOS and Safari.
  */
-button,
-[type=button],
-[type=reset],
-[type=submit] {
-	-webkit-appearance: button;
-}
 
 /**
  * Remove the inner border and padding in Firefox.
@@ -657,14 +650,6 @@ textarea {
  * 1. Correct the odd appearance in Chrome and Safari.
  * 2. Correct the outline style in Safari.
  */
-[type=search] {
-	-webkit-appearance: textfield;
-
-	/* 1 */
-	outline-offset: -2px;
-
-	/* 2 */
-}
 
 /**
  * Remove the inner padding in Chrome and Safari on macOS.
@@ -993,10 +978,6 @@ template {
  * .entry-content children specific controls
  * - Adds special margin overrides for alignment utility classes
  */
-.entry-content > * {
-
-	/* Reset alignleft and alignright margins after alignfull */
-}
 
 .entry-content > *.alignleft,
 .entry-content > *.alignright,
@@ -1335,8 +1316,6 @@ License: MIT.
 
 	input[type=checkbox],
 	input[type=radio] {
-		-webkit-appearance: none;
-		-moz-appearance: none;
 		position: relative;
 		width: 25px;
 		height: 25px;
@@ -1432,12 +1411,7 @@ input[type=radio] + label {
 @supports (-webkit-appearance: none) or (-moz-appearance: none) {
 
 	input[type=range] {
-		-webkit-appearance: none;
-
-		/* Hides the slider so that custom slider can be made */
 		width: 100%;
-
-		/* Specific width is required for Firefox. */
 		height: 6px;
 		background: var(--form--color-ranged);
 		border-radius: 6px;
@@ -1643,7 +1617,6 @@ a {
 	cursor: pointer;
 	color: var(--wp--style--color--link, var(--global--color-primary));
 	text-underline-offset: 3px;
-	text-decoration-skip-ink: all;
 }
 
 a:hover {
@@ -2704,12 +2677,6 @@ dd {
 	padding-right: calc(2 * var(--global--spacing-horizontal));
 }
 
-.wp-block-media-text {
-
-	/**
-   * Block Options
-   */
-}
 
 .wp-block-media-text.alignfull {
 	margin-top: 0;
@@ -4471,9 +4438,6 @@ h1.page-title {
 	font-family: var(--global--font-secondary);
 	font-weight: normal;
 	font-size: var(--global--font-size-lg);
-	hyphens: auto;
-	word-wrap: break-word;
-	word-break: break-word;
 }
 
 .comment-meta .comment-metadata {
@@ -5556,7 +5520,6 @@ h1.page-title {
 
 .widget_search > .search-form .search-field {
 	margin-left: calc(-1 * var(--button--border-width));
-	-webkit-appearance: none;
 	margin-bottom: calc(0.5 * var(--global--spacing-vertical));
 }
 

@@ -30,8 +30,8 @@
     <!-- Design/Manutenção: -->
     <?php bl_site_footer_se(); ?>
   </span>
-  <!-- <span>Desenvolvimento:
-    < ?php bl_site_footer_logo(); ?></span> -->
+  <span>Desenvolvimento:
+    <?php bl_site_footer_logo(); ?></span>
 </div>
 
 </div><!-- #page -->
