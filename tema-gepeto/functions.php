@@ -43,9 +43,9 @@ add_action('after_setup_theme', function () {
 
 
 // Garantir que as funções base estejam carregadas
-if ( !function_exists( 'tema_base_gamb_get_icon_svg' ) ) {
-  require_once get_template_directory() . '/classes/class-tema-base-gamb-svg-icons.php';
-}
+// if ( !function_exists( 'tema_base_gamb_get_icon_svg' ) ) {
+//   require_once get_template_directory() . '/classes/class-tema-base-gamb-svg-icons.php';
+// }
 
 
 
