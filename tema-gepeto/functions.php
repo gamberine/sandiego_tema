@@ -35,10 +35,10 @@ add_action('after_setup_theme', function () {
   ]);
 
   // Starter content apenas no customizer
-  if ( is_customize_preview() ) {
-    require get_template_directory() . '/classes/starter-content.php';
-    add_theme_support('starter-content', tema_base_gamb_get_starter_content());
-  }
+  // if ( is_customize_preview() ) {
+  //   require get_template_directory() . '/classes/starter-content.php';
+  //   add_theme_support('starter-content', tema_base_gamb_get_starter_content());
+  // }
 });
 
 

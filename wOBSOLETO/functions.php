@@ -14,12 +14,12 @@ if ( version_compare($GLOBALS['wp_version'], '5.3', '<') ) {
 /* --------------------------------------------------------------------------
  * 1) Traduções
  * -------------------------------------------------------------------------- */
-function temabasegamb_load_textdomain() {
-    // Carrega o textdomain do tema no 'init' para compatibilidade com WP 6.7+.
-    load_theme_textdomain('temabasegamb', get_template_directory() . '/languages');
-}
-// Alterado de 'after_setup_theme' para 'init' para corrigir o aviso do WP 6.7+
-add_action('init', 'temabasegamb_load_textdomain');
+// function temabasegamb_load_textdomain() {
+//     // Carrega o textdomain do tema no 'init' para compatibilidade com WP 6.7+.
+//     load_theme_textdomain('temabasegamb', get_template_directory() . '/languages');
+// }
+// // Alterado de 'after_setup_theme' para 'init' para corrigir o aviso do WP 6.7+
+// add_action('init', 'temabasegamb_load_textdomain');
 
 
 /* --------------------------------------------------------------------------
