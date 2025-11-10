@@ -1,0 +1,427 @@
+
+[
+    {
+        "key": "group_sd_home_pack",
+        "title": "Home - Pack",
+        "fields": [
+            {
+                "key": "field_home_sections",
+                "label": "Seções da Home",
+                "name": "home_sections",
+                "aria-label": "",
+                "type": "flexible_content",
+                "instructions": "",
+                "required": false,
+                "conditional_logic": false,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layouts": [
+                    {
+                        "key": "layout_hero",
+                        "name": "hero",
+                        "label": "Hero",
+                        "display": "block",
+                        "sub_fields": [
+                            {
+                                "key": "hero_bg",
+                                "label": "Imagem de Fundo",
+                                "name": "hero_bg",
+                                "aria-label": "",
+                                "type": "image",
+                                "instructions": "",
+                                "required": false,
+                                "conditional_logic": false,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "return_format": "array",
+                                "preview_size": "large",
+                                "library": "all",
+                                "min_width": 0,
+                                "min_height": 0,
+                                "min_size": 0,
+                                "max_width": 0,
+                                "max_height": 0,
+                                "max_size": 0,
+                                "mime_types": ""
+                            },
+                            {
+                                "key": "hero_show_play",
+                                "label": "Mostrar botão play",
+                                "name": "hero_show_play",
+                                "aria-label": "",
+                                "type": "true_false",
+                                "instructions": "",
+                                "required": false,
+                                "conditional_logic": false,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": 1,
+                                "ui": 1,
+                                "message": "",
+                                "ui_on_text": "",
+                                "ui_off_text": ""
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
+                    },
+                    {
+                        "key": "layout_search",
+                        "name": "search",
+                        "label": "Barra de Busca",
+                        "display": "block",
+                        "sub_fields": [],
+                        "min": "",
+                        "max": ""
+                    },
+                    {
+                        "key": "layout_services",
+                        "name": "services",
+                        "label": "Nossos Serviços",
+                        "display": "block",
+                        "sub_fields": [
+                            {
+                                "key": "services_title",
+                                "label": "Título",
+                                "name": "title",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": false,
+                                "conditional_logic": false,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "Nossos Serviços",
+                                "maxlength": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "services_rep",
+                                "label": "Itens",
+                                "name": "services",
+                                "aria-label": "",
+                                "type": "repeater",
+                                "instructions": "",
+                                "required": false,
+                                "conditional_logic": false,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "button_label": "Adicionar serviço",
+                                "layout": "row",
+                                "min": 0,
+                                "max": 0,
+                                "rows_per_page": 20,
+                                "collapsed": "",
+                                "sub_fields": [
+                                    {
+                                        "key": "s_icon",
+                                        "label": "Ícone \/ Imagem",
+                                        "name": "icon",
+                                        "aria-label": "",
+                                        "type": "image",
+                                        "instructions": "",
+                                        "required": false,
+                                        "conditional_logic": false,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "return_format": "array",
+                                        "preview_size": "medium",
+                                        "library": "all",
+                                        "min_width": 0,
+                                        "min_height": 0,
+                                        "min_size": 0,
+                                        "max_width": 0,
+                                        "max_height": 0,
+                                        "max_size": 0,
+                                        "mime_types": "",
+                                        "parent_repeater": "services_rep"
+                                    },
+                                    {
+                                        "key": "s_title",
+                                        "label": "Título",
+                                        "name": "title",
+                                        "aria-label": "",
+                                        "type": "text",
+                                        "instructions": "",
+                                        "required": false,
+                                        "conditional_logic": false,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "default_value": "",
+                                        "maxlength": "",
+                                        "placeholder": "",
+                                        "prepend": "",
+                                        "append": "",
+                                        "parent_repeater": "services_rep"
+                                    },
+                                    {
+                                        "key": "s_text",
+                                        "label": "Texto",
+                                        "name": "text",
+                                        "aria-label": "",
+                                        "type": "textarea",
+                                        "instructions": "",
+                                        "required": false,
+                                        "conditional_logic": false,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "rows": 3,
+                                        "default_value": "",
+                                        "new_lines": "",
+                                        "maxlength": "",
+                                        "placeholder": "",
+                                        "parent_repeater": "services_rep"
+                                    }
+                                ]
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
+                    },
+                    {
+                        "key": "layout_numbers",
+                        "name": "numbers",
+                        "label": "Números",
+                        "display": "block",
+                        "sub_fields": [
+                            {
+                                "key": "n_rep",
+                                "label": "Itens",
+                                "name": "items",
+                                "aria-label": "",
+                                "type": "repeater",
+                                "instructions": "",
+                                "required": false,
+                                "conditional_logic": false,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "button_label": "Adicionar número",
+                                "layout": "row",
+                                "min": 0,
+                                "max": 0,
+                                "rows_per_page": 20,
+                                "collapsed": "",
+                                "sub_fields": [
+                                    {
+                                        "key": "n_number",
+                                        "label": "Número",
+                                        "name": "number",
+                                        "aria-label": "",
+                                        "type": "text",
+                                        "instructions": "",
+                                        "required": false,
+                                        "conditional_logic": false,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "default_value": "",
+                                        "maxlength": "",
+                                        "placeholder": "",
+                                        "prepend": "",
+                                        "append": "",
+                                        "parent_repeater": "n_rep"
+                                    },
+                                    {
+                                        "key": "n_label",
+                                        "label": "Rótulo",
+                                        "name": "label",
+                                        "aria-label": "",
+                                        "type": "text",
+                                        "instructions": "",
+                                        "required": false,
+                                        "conditional_logic": false,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "default_value": "",
+                                        "maxlength": "",
+                                        "placeholder": "",
+                                        "prepend": "",
+                                        "append": "",
+                                        "parent_repeater": "n_rep"
+                                    }
+                                ]
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
+                    },
+                    {
+                        "key": "layout_differentials",
+                        "name": "differentials",
+                        "label": "Diferenciais e CTA",
+                        "display": "block",
+                        "sub_fields": [
+                            {
+                                "key": "d_cards",
+                                "label": "Cards",
+                                "name": "cards",
+                                "aria-label": "",
+                                "type": "repeater",
+                                "instructions": "",
+                                "required": false,
+                                "conditional_logic": false,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "layout": "row",
+                                "min": 0,
+                                "max": 0,
+                                "rows_per_page": 20,
+                                "button_label": "Adicionar linha",
+                                "collapsed": "",
+                                "sub_fields": [
+                                    {
+                                        "key": "d_title",
+                                        "label": "Título",
+                                        "name": "title",
+                                        "aria-label": "",
+                                        "type": "text",
+                                        "instructions": "",
+                                        "required": false,
+                                        "conditional_logic": false,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "default_value": "",
+                                        "maxlength": "",
+                                        "placeholder": "",
+                                        "prepend": "",
+                                        "append": "",
+                                        "parent_repeater": "d_cards"
+                                    },
+                                    {
+                                        "key": "d_img",
+                                        "label": "Imagem",
+                                        "name": "image",
+                                        "aria-label": "",
+                                        "type": "image",
+                                        "instructions": "",
+                                        "required": false,
+                                        "conditional_logic": false,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "return_format": "array",
+                                        "preview_size": "medium",
+                                        "library": "all",
+                                        "min_width": 0,
+                                        "min_height": 0,
+                                        "min_size": 0,
+                                        "max_width": 0,
+                                        "max_height": 0,
+                                        "max_size": 0,
+                                        "mime_types": "",
+                                        "parent_repeater": "d_cards"
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "d_cta_title",
+                                "label": "CTA — Título",
+                                "name": "cta_title",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": false,
+                                "conditional_logic": false,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "Quer conversar sobre os nossos serviços de administração?",
+                                "maxlength": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "d_cta_text",
+                                "label": "CTA — Texto",
+                                "name": "cta_text",
+                                "aria-label": "",
+                                "type": "textarea",
+                                "instructions": "",
+                                "required": false,
+                                "conditional_logic": false,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "rows": 3,
+                                "default_value": "Preencha seus dados que entraremos em contato.",
+                                "new_lines": "",
+                                "maxlength": "",
+                                "placeholder": ""
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
+                    }
+                ],
+                "min": "",
+                "max": "",
+                "button_label": "Adicionar linha"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page_template",
+                    "operator": "==",
+                    "value": "page-home-pack.php"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "acf_after_title",
+        "style": "seamless",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0
+    }
+]

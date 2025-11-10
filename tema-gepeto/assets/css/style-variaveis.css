@@ -9,25 +9,44 @@
   --font-title: 'Diavlo Black', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   --font-body : 'Diavlo Book', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 
+  --primary-color           : #13706F;
+  --primary-color-hover     : #187C72;
+  --primary-color-transp    : #13706fcc;
 
-  --primary-color      : #13706F;
-  --primary-color-hover: #187c72;
-  --secondary-color       : #383836 !important;
-  --secondary-color-hover : #323227 !important;
-  --secondary-color-transp: #383836cc;
+  --secondary-color         : #383836;
+  --secondary-color-hover   : #2f2f2e;
+  --secondary-color-transp  : #383836cc;
 
-  --accent-color       : #739248 !important;
-  --bg-primary-color   : #ECECEC !important;
-  --bg-secondary-color : #b6c5bf !important;
+  --accent-color            : #7AA874; /* verde oliva suave, destaque harmonioso */
+  --accent-color-hover      : #6a9462;
 
-  --primary-color-transp  : #187c72cc !important;
+  --bg-primary-color        : #ECECEC;
+  --bg-secondary-color      : #C9D3D0; /* tom mais frio que complementa o primary */
+  --bg-tertiary-color       : #F8F8F8; /* fundo alternativo mais leve */
 
-  --sucess-color    : #1e5a24 !important;
-  --gray-color      : #5a6772 !important;
-  --text-color      : #2e2e2e !important;
-  --text-color-hover: #111 !important;
-  --white-color     : #ffffff;
-  --danger-color    : #8a320a !important;
+  --success-color           : #2F8A57; /* verde mais vivo e equilibrado */
+  --success-color-hover     : #276F47;
+
+  --info-color              : #13706F; /* mesma base do primary */
+  --info-color-light        : #CDE4E3;
+
+  --warning-color           : #C99834;
+  --warning-color-hover     : #B8882C;
+
+  --danger-color            : #9A3A24;
+  --danger-color-hover      : #822F1C;
+
+  --gray-color              : #6B757B;
+  --gray-light              : #ADB5BD;
+  --gray-dark               : #343A40;
+
+  --text-color              : #2E2E2E;
+  --text-color-hover        : #111111;
+  --text-color-light        : #5C5C5C;
+
+  --white-color             : #FFFFFF;
+  --black-color             : #000000;
+
 
   --primary-gradient      : linear-gradient(270deg, var(--primary-color-hover), var(--primary-color)) !important;
   --primary-gradient-hover: linear-gradient(90deg, var(--primary-color-hover), var(--primary-color)) !important;
