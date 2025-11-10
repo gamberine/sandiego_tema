@@ -175,9 +175,46 @@ $social_links = array_filter(
           );
           ?>
         <?php else : ?>
+          <?php
+          $fallback_links = array(
+            array(
+              'label' => __('Home', 'temabasegamb'),
+              'url'   => home_url('/'),
+            ),
+            array(
+              'label' => __('Sobre', 'temabasegamb'),
+              'url'   => home_url('/sobre'),
+            ),
+            array(
+              'label' => __('Hotéis', 'temabasegamb'),
+              'url'   => home_url('/hoteis'),
+            ),
+            array(
+              'label' => __('Ofertas', 'temabasegamb'),
+              'url'   => home_url('/ofertas'),
+            ),
+            array(
+              'label' => __('Blog', 'temabasegamb'),
+              'url'   => home_url('/blog'),
+            ),
+            array(
+              'label' => __('Contato', 'temabasegamb'),
+              'url'   => home_url('/contato'),
+            ),
+          );
+          ?>
           <nav class="footer-menu" aria-label="<?php echo esc_attr($company_menu_title); ?>">
             <ul class="footer-menu-list">
-              <li><a href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('Home', 'temabasegamb'); ?></a></li>
+              <?php foreach ($fallback_links as $fallback_link) :
+                $fallback_label = $fallback_link['label'] ?? '';
+                $fallback_url   = $fallback_link['url'] ?? '';
+
+                if (empty($fallback_label) || empty($fallback_url)) {
+                  continue;
+                }
+              ?>
+                <li><a href="<?php echo esc_url($fallback_url); ?>"><?php echo esc_html($fallback_label); ?></a></li>
+              <?php endforeach; ?>
             </ul>
           </nav>
         <?php endif; ?>

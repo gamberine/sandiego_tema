@@ -402,6 +402,381 @@
             "append": ""
         },
         {
+            "key": "field_67dc9f8cfb001",
+            "label": "Rodapé",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_67dc9fb8fb002",
+            "label": "Título Menu Empresa",
+            "name": "footer_company_menu_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Nossa Empresa",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_67dc9fd5fb003",
+            "label": "Título Contato",
+            "name": "footer_contact_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Entre em contato",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_67dc9feffb004",
+            "label": "Título Redes Sociais",
+            "name": "footer_social_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "34",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Siga-nos",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_67dca00afb005",
+            "label": "Etiqueta Contato 1",
+            "name": "footer_contact_admin_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Administração Hoteleira",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_67dca021fb006",
+            "label": "Conteúdo Contato 1",
+            "name": "footer_contact_admin_value",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "placeholder": "(31) 3333-3333",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_67dca03cfb007",
+            "label": "Link Contato 1",
+            "name": "footer_contact_admin_link",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "Use formatos tel: ou http(s) quando precisar de link.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "34",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 1,
+            "placeholder": "tel:+553199999999"
+        },
+        {
+            "key": "field_67dca055fb008",
+            "label": "Etiqueta Contato 2",
+            "name": "footer_contact_reservations_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Reservas",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_67dca071fb009",
+            "label": "Conteúdo Contato 2",
+            "name": "footer_contact_reservations_value",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "placeholder": "(31) 3333-3333",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_67dca08efb00a",
+            "label": "Link Contato 2",
+            "name": "footer_contact_reservations_link",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "Use formatos tel: ou http(s) quando precisar de link.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "34",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 1,
+            "placeholder": "tel:+553199999999"
+        },
+        {
+            "key": "field_67dca0a8fb00b",
+            "label": "Etiqueta Contato 3",
+            "name": "footer_contact_email_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "E-mail",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_67dca0c3fb00c",
+            "label": "Conteúdo Contato 3",
+            "name": "footer_contact_email_value",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "placeholder": "contato@sandiegohoteis.com.br",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_67dca0defb00d",
+            "label": "Link Contato 3",
+            "name": "footer_contact_email_link",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "Use mailto: para endereços de e-mail.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "34",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 1,
+            "placeholder": "mailto:contato@sandiegohoteis.com.br"
+        },
+        {
+            "key": "field_67dca0f9fb00e",
+            "label": "Linha Principal Empresa",
+            "name": "footer_company_info_primary_text",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Use quebras de linha para separar frases.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "rows": "3",
+            "new_lines": ""
+        },
+        {
+            "key": "field_67dca115fb00f",
+            "label": "Linha Secundária Empresa",
+            "name": "footer_company_info_secondary_text",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Use quebras de linha para separar frases.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "rows": "3",
+            "new_lines": ""
+        },
+        {
+            "key": "field_67dca130fb010",
+            "label": "Link Facebook",
+            "name": "footer_social_facebook_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 1,
+            "placeholder": "https://facebook.com/..."
+        },
+        {
+            "key": "field_67dca14bfb011",
+            "label": "Link YouTube",
+            "name": "footer_social_youtube_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 1,
+            "placeholder": "https://youtube.com/..."
+        },
+        {
+            "key": "field_67dca166fb012",
+            "label": "Link Instagram",
+            "name": "footer_social_instagram_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 1,
+            "placeholder": "https://instagram.com/..."
+        },
+        {
+            "key": "field_67dca181fb013",
+            "label": "Link LinkedIn",
+            "name": "footer_social_linkedin_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 1,
+            "placeholder": "https://linkedin.com/..."
+        },
+        {
             "key": "field_661e123ae7601",
             "label": "Número Telefone Com DDD",
             "name": "numeroTelefone",
@@ -563,7 +938,7 @@
             "name": "numero_feed_instagram",
             "aria-label": "",
             "type": "number",
-            "instructions": "Número exibido no caminho abaixo, na coluna \"Shortcode\".\r\n\r\nObs.: Caso não tenha nenhuma linha cadastrada, iniciar o processo de integração de um feed e depois retornar aqui para inserção do número. Caso seja o primeiro feed a ser cadastrado, ele já estará preenchido aqui automaticamente\r\n\r\n<a href=\"admin.php?page=sbi-feed-builder\">Instagram Feed > Todos os feeds<\/a>",
+            "instructions": "Número exibido no caminho abaixo, na coluna \"Shortcode\".\r\n\r\nObs.: Caso não tenha nenhuma linha cadastrada, iniciar o processo de integração de um feed e depois retornar aqui para inserção do número. Caso seja o primeiro feed a ser cadastrado, ele já estará preenchido aqui automaticamente\r\n\r\n<a href=\"admin.php?page=sbi-feed-builder\">Instagram Feed > Todos os feeds</a>",
             "required": 0,
             "conditional_logic": [
                 [
@@ -873,5 +1248,5 @@
     "active": true,
     "description": "Conteúdo",
     "show_in_rest": 1,
-    "modified": 1744833831
+    "modified": 1762760258
 }
