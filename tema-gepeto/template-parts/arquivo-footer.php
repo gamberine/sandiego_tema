@@ -9,7 +9,7 @@
  * @subpackage Tema_Dev_Gamb
  * @since Tema Dev-Gamb 1.0
  */
-?>
+
 
 $footer_posts = get_posts(
   array(
