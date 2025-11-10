@@ -221,7 +221,7 @@
 
 .copy-list .copy-btn {
   cursor: pointer;
-  user-select: none;
+  /* user-select: none; */
   transition: opacity 0.2s ease;
 }
 

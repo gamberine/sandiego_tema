@@ -10,16 +10,17 @@
   --font-body : 'Diavlo Book', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 
 
-  --primary-color      : #0d5963;
-  --primary-color-hover: #0b4951;
-  --accent-color       : #739248 !important;
-  --bg-primary-color   : #e3f0eb !important;
-  --bg-secondary-color : #d2dfda !important;
+  --primary-color      : #13706F;
+  --primary-color-hover: #187c72;
+  --secondary-color       : #383836 !important;
+  --secondary-color-hover : #323227 !important;
+  --secondary-color-transp: #383836cc;
 
-  --primary-color-transp  : #0b4951cc !important;
-  --secondary-color       : #384146 !important;
-  --secondary-color-hover : #2f383c !important;
-  --secondary-color-transp: #384146cc;
+  --accent-color       : #739248 !important;
+  --bg-primary-color   : #ECECEC !important;
+  --bg-secondary-color : #b6c5bf !important;
+
+  --primary-color-transp  : #187c72cc !important;
 
   --sucess-color    : #1e5a24 !important;
   --gray-color      : #5a6772 !important;
