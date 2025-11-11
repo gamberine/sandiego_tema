@@ -16940,10 +16940,13 @@ span.linkIdiomas.d-flex .gtranslate_wrapper .gt_selector {
 }
 
 .sandiego .cta-card {
-  background   : var(--primary-color);
-  color        : #fff;
-  border-radius: 8px;
-  padding      : 24px
+  background: var(--primary-color);
+  color: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
 }
 
 .copy-list .copy-btn {

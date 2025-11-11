@@ -33,24 +33,24 @@
 
     <!-- formulario de contato -->
     <div class="col-12 col-lg-12 col-xl-7">
-      <form class="row g-4">
-        <div class="col-12 border border-4 rounded primary-color">
+      <form class="row gap-4 primary-color">
+        <div class="col-12 border border-4 rounded my-0">
           <label class="form-label">Nome Completo</label>
           <input type="text" class="form-control">
         </div>
-        <div class="col-12 border border-4 rounded primary-color col-md-6">
+        <div class="col-12 border border-4 rounded my-0">
           <label class="form-label">Cidade</label>
           <input type="text" class="form-control">
         </div>
-        <div class="col-12 border border-4 rounded primary-color col-md-6">
+        <div class="col-12 border border-4 rounded my-0">
           <label class="form-label">E-mail</label>
           <input type="email" class="form-control">
         </div>
-        <div class="col-12 border border-4 rounded primary-color">
+        <div class="col-12 border border-4 rounded my-0">
           <label class="form-label">Telefone</label>
           <input type="tel" class="form-control">
         </div>
-        <div class="col-12 border border-4 rounded primary-color">
+        <div class="col-12 border border-4 rounded my-0">
           <button class="btn btn-search">Enviar</button>
         </div>
       </form>
