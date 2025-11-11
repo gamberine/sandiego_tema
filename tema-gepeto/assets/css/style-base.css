@@ -1572,10 +1572,10 @@ li.desktop-nav-item.selected:before {
 
 .gridSliderNav.clearfix .card-body,
 .gridSliderNav.clearfix .cardImg {
-  position    : relative;
-  width       : 25rem;
-  float       : right;
-  margin-right: 3rem;
+  position       : relative;
+  width          : 25rem;
+  /* float       : right; */
+  margin-right   : 3rem;
 }
 
 .gridSliderNav.clearfix .card-body {
@@ -1649,17 +1649,17 @@ li.desktop-nav-item.selected:before {
 }
 
 .sliderPageProdutos .card img {
-  aspect-ratio       : 4 / 3 !important;
-  border-radius      : 12px !important;
-  object-fit         : cover !important;
-  max-width          : 100% !important;
-  object-position    : center !important;
-  padding            : 0.5rem !important;
-  width              : 100% !important;
-  background-position: center !important;
-  position           : relative;
-  float              : right;
-  height             : 16rem !important;
+  aspect-ratio          : 4 / 3 !important;
+  border-radius         : 12px !important;
+  object-fit            : cover !important;
+  max-width             : 100% !important;
+  object-position       : center !important;
+  padding               : 0.5rem !important;
+  width                 : 100% !important;
+  background-position   : center !important;
+  position              : relative;
+  /* float              : right; */
+  height                : 16rem !important;
 }
 
 .sliderPageProdutos .card .card-body {
@@ -4007,7 +4007,7 @@ i.fas.fa-comment-dots {
 }
 
 .imgPost img {
-  float    : right;
+  /* float    : right; */
   /* Posiciona a imagem à direita */
   margin   : 0 0 10px 10px;
   /* Espaçamento ao redor da imagem */
@@ -4068,15 +4068,15 @@ h6.postDate:after {
 }
 
 .imgPost iframe {
-  width        : 32vw;
-  height       : 100%;
-  border-radius: var(--border-padrao) !important;
-  float        : left;
-  object-fit   : scale-down;
-  aspect-ratio : 4 / 3;
-  max-width    : 100%;
-  margin-right : 25px;
-  margin-bottom: 15px;
+  width           : 32vw;
+  height          : 100%;
+  border-radius   : var(--border-padrao) !important;
+  /* float        : left; */
+  object-fit      : scale-down;
+  aspect-ratio    : 4 / 3;
+  max-width       : 100%;
+  margin-right    : 25px;
+  margin-bottom   : 15px;
 }
 
 p.postData {
@@ -5009,12 +5009,12 @@ section.gridDetalheServico:not(:nth-child(odd)) .rowDetalheServico {
 }
 
 .imgServicos {
-  width        : 20vw;
-  background   : var(--white-color);
-  border-radius: var(--border-padrao) !important;
-  filter       : grayscale(.9);
-  float        : right;
-  transition   : var(--transition) !important;
+  width           : 20vw;
+  background      : var(--white-color);
+  border-radius   : var(--border-padrao) !important;
+  filter          : grayscale(.9);
+  /* float        : right; */
+  transition      : var(--transition) !important;
 }
 
 .imgServicos:hover {
@@ -5022,17 +5022,17 @@ section.gridDetalheServico:not(:nth-child(odd)) .rowDetalheServico {
   transition: var(--transition) !important;
 }
 
-section.gridDetalheServico:not(:nth-child(odd)) .imgServicos {
+/* section.gridDetalheServico:not(:nth-child(odd)) .imgServicos {
   float: left;
-}
+} */
 
 .imgServicos img {
-  object-fit   : cover;
-  border       : 7px solid var(--white-color);
-  border-radius: var(--border-padrao) !important;
-  box-shadow   : 0 0 9px 0px var(--shadow-color);
-  transition   : var(--transition) !important;
-  float        : right;
+  object-fit      : cover;
+  border          : 7px solid var(--white-color);
+  border-radius   : var(--border-padrao) !important;
+  box-shadow      : 0 0 9px 0px var(--shadow-color);
+  transition      : var(--transition) !important;
+  /* float        : right; */
 }
 
 section.gridDetalheServico:not(:nth-child(odd)) .imgServicos img {
@@ -5542,16 +5542,16 @@ section#nav_menu-2 {
 }
 
 .imgSobreDireita {
-  width        : 56%;
-  box-shadow   : 3px 3px 11px -3px var(--shadow-color);
-  border-radius: 100%;
-  float        : right;
-  position     : relative;
-  bottom       : 9rem;
-  right        : 2.1rem;
-  z-index      : 0;
-  margin-bottom: -8rem;
-  animation    :
+  width           : 56%;
+  box-shadow      : 3px 3px 11px -3px var(--shadow-color);
+  border-radius   : 100%;
+  /* float        : right; */
+  position        : relative;
+  bottom          : 9rem;
+  right           : 2.1rem;
+  z-index         : 0;
+  margin-bottom   : -8rem;
+  animation       :
     animationTopDownToLeft 3s ease-in-out 5s 1,
     pauseAnimation 3s linear 9s 1;
   animation-fill-mode: forwards;
@@ -6854,11 +6854,11 @@ button.btnClose:focus {
 /* <!-- modal galeria  --> */
 
 .gallery.slick-initialized.slick-slider {
-  width   : 100%;
-  float   : left;
-  margin  : 0 auto;
-  position: relative;
-  display : flex;
+  width      : 100%;
+  /* float   : left; */
+  margin     : 0 auto;
+  position   : relative;
+  display    : flex;
 }
 
 .slick-prev {
@@ -7056,7 +7056,7 @@ button.btnClose:focus {
 }
 
 .img-flutuante {
-  float        : left;
+  /* float        : left; */
   margin       : 0 1.5rem 1.5rem 0;
   max-width    : 30%;
   width        : auto;
@@ -7067,14 +7067,14 @@ button.btnClose:focus {
 }
 
 .imgPostagem {
-  height         : 20rem;
-  width          : 36%;
-  overflow       : hidden;
-  float          : left;
-  margin         : 0 1.5rem 1.5rem 0;
-  border-radius  : var(--border-padrao) !important;
-  object-fit     : cover;
-  object-position: center left;
+  height            : 20rem;
+  width             : 36%;
+  overflow          : hidden;
+  /* float          : left; */
+  margin            : 0 1.5rem 1.5rem 0;
+  border-radius     : var(--border-padrao) !important;
+  object-fit        : cover;
+  object-position   : center left;
 }
 
 img#modalImage {
@@ -7344,13 +7344,13 @@ aside section {
 }
 
 .endereco {
-  width          : auto;
-  text-align     : left;
-  color          : #585856 !important;
-  float          : right;
-  display        : flex;
-  flex-direction : column;
-  justify-content: center;
+  width             : auto;
+  text-align        : left;
+  color             : #585856 !important;
+  /* float          : right; */
+  display           : flex;
+  flex-direction    : column;
+  justify-content   : center;
 }
 
 .endereco h2 {
@@ -10712,9 +10712,9 @@ table.wp-calendar-table caption {
   fill: currentColor;
 }
 
-.wp-calendar-nav .wp-calendar-nav-next {
+/* .wp-calendar-nav .wp-calendar-nav-next {
   float: right;
-}
+} */
 
 .wp-block-tag-cloud.alignfull {
   padding-left : var(--global--spacing-unit);
@@ -10759,7 +10759,7 @@ table.wp-calendar-table caption {
 @media only screen and (min-width: 482px) {
   .alignleft {
     /*rtl:ignore*/
-    float        : left;
+    /* float        : left; */
     /*rtl        :ignore*/
     margin-right : var(--global--spacing-horizontal);
     margin-bottom: var(--global--spacing-vertical);
@@ -10774,12 +10774,12 @@ table.wp-calendar-table caption {
 * .aligncenter
 */
 .aligncenter {
-  clear       : both;
-  display     : block;
-  float       : none;
-  margin-right: auto;
-  margin-left : auto;
-  text-align  : center;
+  clear          : both;
+  display        : block;
+  /* float       : none; */
+  margin-right   : auto;
+  margin-left    : auto;
+  text-align     : center;
 }
 
 /**
@@ -10797,7 +10797,7 @@ table.wp-calendar-table caption {
 @media only screen and (min-width: 482px) {
   .alignright {
     /*rtl:ignore*/
-    float      : right;
+    /* float      : right; */
     /*rtl      :ignore*/
     margin-left: var(--global--spacing-horizontal);
   }
@@ -10835,12 +10835,12 @@ table.wp-calendar-table caption {
 }
 
 .has-drop-cap:not(:focus)::first-letter {
-  font-family   : var(--font-title) !important;
-  line-height   : 0.66;
-  text-transform: uppercase;
-  font-style    : normal;
-  float         : left;
-  margin        : 0.1em 0.1em 0 0;
+  font-family      : var(--font-title) !important;
+  line-height      : 0.66;
+  text-transform   : uppercase;
+  font-style       : normal;
+  /* float         : left; */
+  margin           : 0.1em 0.1em 0 0;
 }
 
 .has-drop-cap:not(:focus)::after {
@@ -11324,11 +11324,11 @@ h1.entry-title {
 }
 
 .entry-footer {
-  color    : var(--global--color-primary);
-  clear    : both;
-  float    : none;
-  font-size: 1rem;
-  display  : block;
+  color       : var(--global--color-primary);
+  clear       : both;
+  /* float    : none; */
+  font-size   : 1rem;
+  display     : block;
 }
 
 .entry-footer>span {
@@ -14034,11 +14034,11 @@ section.gridCertificacoes, */
   }
 
   .imgPostagem {
-    height   : 16rem;
-    max-width: 100%;
-    width    : 100%;
-    float    : none;
-    margin   : 0 auto 1.5rem !important;
+    height      : 16rem;
+    max-width   : 100%;
+    width       : 100%;
+    /* float    : none; */
+    margin      : 0 auto 1.5rem !important;
   }
 
   .tituloAjuste {
@@ -14070,7 +14070,7 @@ section.gridCertificacoes, */
   }
 
   .img-flutuante {
-    float        : none;
+    /* float        : none; */
     margin       : 0 auto 2rem;
     max-width    : 90%;
     border-radius: var(--border-padrao) !important;
@@ -14401,7 +14401,7 @@ section.gridCertificacoes, */
 
   .imgServicos,
   section.gridDetalheServico:not(:nth-child(odd)) .imgServicos {
-    float : none;
+    /* float : none; */
     margin: 0 auto;
     width : 30vw;
   }
@@ -14507,11 +14507,11 @@ section.gridCertificacoes, */
 		padding: 30px 15px !important;
 	} */
   .primary-navigation>.primary-menu-container ul>li .sub-menu-toggle[aria-expanded='false']~ul {
-    display : table !important;
-    position: relative !important;
-    width   : 100%;
-    clear   : both;
-    float   : none;
+    display    : table !important;
+    position   : relative !important;
+    width      : 100%;
+    clear      : both;
+    /* float   : none; */
   }
 
   .primary-navigation .sub-menu {
@@ -15481,9 +15481,9 @@ section.gridCertificacoes, */
     width: 24vw !important;
   }
 
-  .wpcf7-submit {
+  /* .wpcf7-submit {
     float: none !important;
-  }
+  } */
 
   .site-footer .wpcf7-not-valid-tip {
     top: -26px;
@@ -15665,16 +15665,16 @@ section.gridCertificacoes, */
   }
 
   #sb_instagram #sbi_load {
-    flex-wrap      : wrap !important;
-    display        : flex;
-    align-items    : center;
-    justify-content: center;
-    flex-direction : column;
-    width          : 100%;
-    float          : none;
-    box-sizing     : border-box;
-    margin         : 0 auto !important;
-    padding-top    : 1rem;
+    flex-wrap         : wrap !important;
+    display           : flex;
+    align-items       : center;
+    justify-content   : center;
+    flex-direction    : column;
+    width             : 100%;
+    /* float          : none; */
+    box-sizing        : border-box;
+    margin            : 0 auto !important;
+    padding-top       : 1rem;
   }
 
   section.gridDetalheServico .rowDetalheServico,
@@ -16378,11 +16378,9 @@ input[type='datetime'],
 input[type='datetime-local'] {
 justify-content: flex-start !important;
 } */
+
   .wpcf7-submit {
-    margin      : 0 auto !important;
-    /* max-width: 90%; */
-    /* width    : 90%; */
-    float       : unset !important;
+    margin: 0 auto !important;
   }
 
   #eventos input.wpcf7-form-control.wpcf7-text,
@@ -16906,43 +16904,43 @@ span.linkIdiomas.d-flex .gtranslate_wrapper .gt_selector {
   padding      : .8rem 1rem
 }
 
-.sandiego .services .card {
+.services .card {
   border       : 0;
   box-shadow   : 0 6px 18px rgba(0, 0, 0, .05);
   border-radius: 16px
 }
 
-.sandiego .services .icon {
+.services .icon {
   width : 64px;
   height: 64px;
   color : var(--primary-color)
 }
 
-.sandiego .numbers {
+.numbers {
   background: var(--primary-color);
   color     : #fff
 }
 
-.sandiego .numbers .item {
+.numbers .item {
   border       : 2px solid rgba(255, 255, 255, .65);
   border-radius: 22px;
   padding      : 22px
 }
 
-.sandiego .diff .mini h4 {
+.diff .mini h4 {
   color      : var(--primary-color);
   font-weight: 800;
   font-size  : 1.1rem
 }
 
-.sandiego .diff .mini img {
+.diff .mini img {
   border-radius: 12px;
   width        : 100%;
   height       : 160px;
   object-fit   : cover;
 }
 
-.sandiego .cta-card {
+.cta-card {
   background     : var(--primary-color);
   color          : #fff;
   border-radius  : 12px;

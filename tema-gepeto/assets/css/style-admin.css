@@ -1,4 +1,4 @@
-/* .site-footer {
+.site-footer {
   background-color: #006a72;
   color           : #f5f9fa;
   padding         : 3rem 0 2.5rem;
@@ -167,7 +167,7 @@
   .footer-menu-list li::before {
     top: .4rem;
   }
-} */
+} 
 
 @media only screen and (min-width: 1299px) and (max-width: 1380px) {
 
@@ -184,6 +184,6 @@
   }
 }
 
-/* .acf-input .acf-fields.-top.-border .acf-field {
-    min-height: auto !important;
-} */
+.acf-input .acf-fields.-top.-border .acf-field {
+    min-height: 1px !important;
+} 
