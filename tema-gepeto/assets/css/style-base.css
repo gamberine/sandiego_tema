@@ -192,9 +192,10 @@ Ano: 2025
 
 /* .site-footer { */
 .site-footer {
-  background-color: #006a72;
+  /* background-color: #006a72; */
+    background: var(--secondary-color-hover);
   color           : #f5f9fa;
-  padding         : 3rem 0 2.5rem;
+  padding         : 4rem 0 !important;
   position        : relative;
 }
 
@@ -209,6 +210,7 @@ Ano: 2025
 }
 
 .site-footer a:hover {
+  color          : var(--accent-color);
   opacity: .8;
 }
 
