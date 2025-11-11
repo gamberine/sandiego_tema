@@ -149,7 +149,7 @@ $social_links = array_filter(
       <div class="footer-brand">
         <?php if (! empty($logo_url)) : ?>
           <a class="footer-logo" href="<?php echo esc_url(home_url('/')); ?>">
-            <img src="<?php echo esc_url($logo_url); ?>" alt="<?php echo esc_attr($logo_alt ?: get_bloginfo('name')); ?>" />
+            <img class="w-auto" src="<?php echo esc_url($logo_url); ?>" alt="<?php echo esc_attr($logo_alt ?: get_bloginfo('name')); ?>" />
           </a>
         <?php else : ?>
           <a class="footer-logo fallback" href="<?php echo esc_url(home_url('/')); ?>">
