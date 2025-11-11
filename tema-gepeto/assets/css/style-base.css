@@ -190,13 +190,36 @@ Ano: 2025
 }
 
 
+.diff input.form-control {
+  position    : relative;
+  margin-block: 0.8rem 5px !important;
+  font-size   : 1.2rem !important;
+  padding     : 1px 1rem !important;
+}
+
+.diff label.form-label {
+  position    : absolute;
+  background  : #fff;
+  margin-block: -.8rem 0 !important;
+  padding     : 3px 1.2rem 0 !important;
+  font-size   : 1rem;
+  line-height : 1;
+}
+
 /* .site-footer { */
+
+/* css: tema-gepeto\assets\css\style-base.css */
+.bg-Rodape {
+  background-image   : url('../imagens/rodape.png');
+  background-size    : cover;
+  background-position: center;
+}
+
 .site-footer {
-  /* background-color: #006a72; */
-    background: var(--secondary-color-hover);
-  color           : #f5f9fa;
-  padding         : 4rem 0 !important;
-  position        : relative;
+  background: var(--primary-color-hover);
+  color     : #f5f9fa;
+  padding   : 4rem 0 !important;
+  position  : relative;
 }
 
 .site-footer .container {
@@ -210,7 +233,7 @@ Ano: 2025
 }
 
 .site-footer a:hover {
-  color          : var(--accent-color);
+  color  : var(--accent-color);
   opacity: .8;
 }
 
@@ -230,8 +253,8 @@ Ano: 2025
 }
 
 .footer-logo.fallback span {
-  font-family: var(--font-title);
-  font-size  : 1.3rem;
+  font-family   : var(--font-title);
+  font-size     : 1.3rem;
   letter-spacing: .2em;
   text-transform: uppercase;
 }
@@ -246,40 +269,40 @@ Ano: 2025
 
 .footer-menu-list,
 .footer-contact-list {
-  list-style : none;
-  margin     : 0;
-  padding    : 0;
-  display    : flex;
-  flex-flow  : column;
-  gap        : .4rem;
+  list-style: none;
+  margin    : 0;
+  padding   : 0;
+  display   : flex;
+  flex-flow : column;
+  gap       : .4rem;
 }
 
 .footer-menu-list li {
-  position   : relative;
+  position    : relative;
   padding-left: 1rem;
 }
 
 .footer-menu-list li::before {
-  content   : '\2022';
-  position  : absolute;
-  left      : 0;
-  color     : #9ed6d9;
-  font-size : 1rem;
+  content    : '\2022';
+  position   : absolute;
+  left       : 0;
+  color      : #9ed6d9;
+  font-size  : 1rem;
   line-height: 1;
-  top       : .15rem;
+  top        : .15rem;
 }
 
 .footer-menu-list a {
-  font-family  : var(--font-body);
-  font-size    : .95rem;
-  font-weight  : 500;
+  font-family   : var(--font-body);
+  font-size     : .95rem;
+  font-weight   : 500;
   letter-spacing: .03em;
 }
 
 .footer-contact-item {
-  display: flex;
+  display       : flex;
   flex-direction: column;
-  gap    : .15rem;
+  gap           : .15rem;
 }
 
 .footer-item-label {
@@ -298,10 +321,10 @@ Ano: 2025
 }
 
 .footer-extra-info p {
-  margin      : 0;
-  color       : #e7f6f7;
-  font-size   : .9rem;
-  line-height : 1.6;
+  margin     : 0;
+  color      : #e7f6f7;
+  font-size  : .9rem;
+  line-height: 1.6;
 }
 
 .footer-social-links {
@@ -325,9 +348,9 @@ Ano: 2025
 }
 
 .footer-social-link:hover {
-  transform  : translateY(-2px);
-  box-shadow : 0 14px 24px rgba(0, 0, 0, .3);
-  opacity    : 1;
+  transform : translateY(-2px);
+  box-shadow: 0 14px 24px rgba(0, 0, 0, .3);
+  opacity   : 1;
 }
 
 .footer-social-text {
@@ -345,7 +368,7 @@ Ano: 2025
 @media (max-width: 1024px) {
   .footer-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap                 : 2rem;
+    gap                  : 2rem;
   }
 }
 
@@ -467,7 +490,7 @@ span.font-decorative {
   align-items        : center;
 }
 
-.serrilhadoHorizontalprimary{
+.serrilhadoHorizontalprimary {
   background         : url(imagens/serrilhadoHorizontalCorPrincipal.svg);
   width              : 12rem;
   max-width          : 80% !important;
@@ -2906,8 +2929,8 @@ a.more-link {
 }
 
 .text-hover {
-  color              : var(--text-color-hover ) !important;
-  --before-background: var(--text-color-hover );
+  color              : var(--text-color-hover) !important;
+  --before-background: var(--text-color-hover);
 }
 
 .white-color {
@@ -2925,7 +2948,7 @@ a.more-link {
   --before-background: var(--yellow);
 }
 
-.bg-primary-color{
+.bg-primary-color {
   color              : var(--bg-primary-color) !important;
   --before-background: var(--bg-primary-color);
 }
@@ -7195,7 +7218,7 @@ article {
 }
 
 .footerDesenvolvedor a:hover {
-  color          : var(--text-color-hover ) !important;
+  color          : var(--text-color-hover) !important;
   text-decoration: none !important;
   transition     : var(--transition) !important;
 }
@@ -8011,7 +8034,7 @@ select,
   font-weight  : 300;
   font-size    : 1rem !important;
   outline      : none !important;
-  min-height   : 48px;
+  min-height   : var(--height-base);
 }
 
 .site textarea {
@@ -8344,7 +8367,7 @@ input.wpcf7-form-control.wpcf7-file.fileuploadfield.d-flex:before {
 }
 
 .labelAnexar:active::before {
-  background: var(--text-color-hover ) !important;
+  background: var(--text-color-hover) !important;
   color     : var(--white-color) !important;
   transition: none !important;
 }
@@ -12797,7 +12820,7 @@ color: var(--white-color) !important;
 }
 
 .has-gray-color[class] {
-  color: var(--text-color-hover );
+  color: var(--text-color-hover);
 }
 
 .has-dark-gray-color[class] {
@@ -12848,7 +12871,7 @@ color: var(--white-color) !important;
 }
 
 .has-gray-background-color[class] {
-  background-color: var(--text-color-hover );
+  background-color: var(--text-color-hover);
 }
 
 .has-dark-gray-background-color[class] {

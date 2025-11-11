@@ -21,32 +21,36 @@
     <?php endwhile; endif; ?>
   </div>
 
-  <div class="row g-4 align-items-stretch">
-    <div class="col-12 col-lg-5">
+  <div class="row align-items-stretch flex-lg-wrap flex-xl-nowrap gap-5 bg-Rodape">
+    <div class="col-12 col-lg-12 col-xl-5">
       <div class="cta-card h-100">
-        <h3 class="h4 mb-2"><?php the_sub_field('cta_title') ?: print 'Quer conversar sobre os nossos serviços de administração?'; ?></h3>
-        <p class="mb-0"><?php the_sub_field('cta_text') ?: print 'Preencha seus dados que entraremos em contato.'; ?></p>
+        <h3 class="h4 mb-2"><?php the_sub_field('cta_title');  ?></h3>
+        <p class="mb-0"><?php the_sub_field('cta_text'); ?></p>
+        <!-- <h3 class="h4 mb-2">< ?php the_sub_field('cta_title') ?: print 'Quer conversar sobre os nossos serviços de administração?'; ?></h3>
+        <p class="mb-0">< ?php the_sub_field('cta_text') ?: print 'Preencha seus dados que entraremos em contato.'; ?></p> -->
       </div>
     </div>
-    <div class="col-12 col-lg-7">
-      <form class="row g-3">
-        <div class="col-12">
+
+    <!-- formulario de contato -->
+    <div class="col-12 col-lg-12 col-xl-7">
+      <form class="row g-4">
+        <div class="col-12 border border-4 rounded primary-color">
           <label class="form-label">Nome Completo</label>
           <input type="text" class="form-control">
         </div>
-        <div class="col-12 col-md-6">
+        <div class="col-12 border border-4 rounded primary-color col-md-6">
           <label class="form-label">Cidade</label>
           <input type="text" class="form-control">
         </div>
-        <div class="col-12 col-md-6">
+        <div class="col-12 border border-4 rounded primary-color col-md-6">
           <label class="form-label">E-mail</label>
           <input type="email" class="form-control">
         </div>
-        <div class="col-12">
+        <div class="col-12 border border-4 rounded primary-color">
           <label class="form-label">Telefone</label>
           <input type="tel" class="form-control">
         </div>
-        <div class="col-12">
+        <div class="col-12 border border-4 rounded primary-color">
           <button class="btn btn-search">Enviar</button>
         </div>
       </form>
