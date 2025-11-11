@@ -338,7 +338,7 @@ Ano: 2025
   height          : 44px;
   border-radius   : 999px;
   background-color: var(--white-color);
-  color           : #006a72;
+  color           : var(--primary-color-hover);
   display         : inline-flex;
   align-items     : center;
   justify-content : center;
@@ -2893,6 +2893,9 @@ a.more-link {
   opacity      : 0.6;
   border-radius: var(--border-padrao);
 }
+
+
+/* btn buttons botoes gamb */
 
 .btnRounded,
 .btnRounded.bg-primary-color,
@@ -16896,7 +16899,7 @@ span.linkIdiomas.d-flex .gtranslate_wrapper .gt_selector {
   border-radius: 10px;
 }
 
-.sandiego .searchbar .btn-search {
+.btn-search {
   background   : var(--primary-color);
   color        : #fff;
   border-radius: 10px;
@@ -16940,12 +16943,12 @@ span.linkIdiomas.d-flex .gtranslate_wrapper .gt_selector {
 }
 
 .sandiego .cta-card {
-  background: var(--primary-color);
-  color: #fff;
-  border-radius: 12px;
-  padding: 2rem;
-  display: flex;
-  flex-flow: column;
+  background     : var(--primary-color);
+  color          : #fff;
+  border-radius  : 12px;
+  padding        : 2rem;
+  display        : flex;
+  flex-flow      : column;
   justify-content: center;
 }
 

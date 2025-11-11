@@ -50,9 +50,9 @@
           <label class="form-label">Telefone</label>
           <input type="tel" class="form-control">
         </div>
-        <div class="col-12 border border-4 rounded my-0">
-          <button class="btn btn-search">Enviar</button>
-        </div>
+        <button class="btn btn-search">Enviar</button>
+        <!-- <div class="col-12 border border-4 rounded my-0">
+        </div> -->
       </form>
     </div>
   </div>

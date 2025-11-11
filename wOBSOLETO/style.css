@@ -2841,7 +2841,7 @@ a.more-link {
   opacity      : 0.6;
   border-radius: var(--border-padrao);
 }
-
+/* 
 .btnRounded,
 .btnRounded.bg-primary-color,
 .btnRounded.sucess {
@@ -2850,7 +2850,7 @@ a.more-link {
   color      : var(--white-color) !important;
   font-weight: 500 !important;
   border     : 2px solid !important;
-}
+} */
 
 .btnRounded.left {
   display        : flex;
@@ -4134,7 +4134,7 @@ p.meta-nav.proximoPost {
 .sectionMenor {
   padding: 30px 60px;
 }
-
+/* 
 .btnPadrao.absolute {
   position: relative;
   bottom  : -88px;
@@ -4322,7 +4322,7 @@ a.btnRounded:hover {
 .btnSecundario:hover {
   color : var(--primary-color) !important;
   border: none !important;
-}
+} */
 
 .btn.btnLeft {
   white-space        : nowrap;
