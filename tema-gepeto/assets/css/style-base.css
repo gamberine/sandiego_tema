@@ -192,8 +192,8 @@ Ano: 2025
 
 .diff input.form-control {
   position    : relative;
-  margin-block: 0.8rem 5px !important;
-  font-size   : 1.2rem !important;
+  margin-block: .6rem !important;
+  font-size   : 1.3rem !important;
   padding     : 1px 1rem !important;
 }
 
@@ -16828,25 +16828,34 @@ span.linkIdiomas.d-flex .gtranslate_wrapper .gt_selector {
 
 /* San Diego - minimal styles for sections (Bootstrap friendly) */
 
-.sandiego .title-xl {
+
+.sd-amenity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.title-xl {
   font-family   : var(--font-title);
   font-size     : clamp(1.8rem, 1.6rem + 1.2vw, 3rem);
   color         : var(--primary-color);
   letter-spacing: .02em
 }
 
-.sandiego .title-lg {
+.title-lg {
   font-family: var(--font-title);
   font-size  : clamp(1.4rem, 1.2rem + .8vw, 2.2rem);
   color      : var(--primary-color)
 }
 
-.sandiego .lead {
+.lead {
   font-size: 1.125rem;
   color    : var(--gray-color)
 }
 
-.sandiego .hero {
+.hero {
   position   : relative;
   min-height : 60vh;
   display    : grid;
@@ -16855,7 +16864,26 @@ span.linkIdiomas.d-flex .gtranslate_wrapper .gt_selector {
   background : #083f46;
 }
 
-.sandiego .hero img.bg {
+@media (max-width: 768px) {
+  .hero {
+    min-height: 50vh;
+  }
+
+  .hero .play {
+    width: 120px;
+    height: 120px;
+  }
+
+  .searchbar {
+    margin-top: -28px;
+  }
+
+  .services .card {
+    text-align: center;
+  }
+}
+
+.hero img.bg {
   position  : absolute;
   inset     : 0;
   width     : 100%;
@@ -16864,7 +16892,7 @@ span.linkIdiomas.d-flex .gtranslate_wrapper .gt_selector {
   opacity   : .55;
 }
 
-.sandiego .hero .play {
+.hero .play {
   width          : 160px;
   height         : 160px;
   border         : 6px solid rgba(255, 255, 255, .6);
@@ -16874,7 +16902,7 @@ span.linkIdiomas.d-flex .gtranslate_wrapper .gt_selector {
   backdrop-filter: blur(2px);
 }
 
-.sandiego .hero .play svg {
+.hero .play svg {
   width       : 64px;
   height      : 64px;
   fill        : none;
@@ -16882,20 +16910,20 @@ span.linkIdiomas.d-flex .gtranslate_wrapper .gt_selector {
   stroke-width: 12
 }
 
-.sandiego .searchbar {
+.searchbar {
   background   : #fff;
   margin-top   : -40px;
   box-shadow   : 0 12px 24px rgba(0, 0, 0, .06);
   border-radius: 12px
 }
 
-.sandiego .searchbar .form-label {
+.searchbar .form-label {
   font-weight: 700;
   color      : var(--primary-color);
 }
 
-.sandiego .searchbar .form-control,
-.sandiego .searchbar .form-select {
+.searchbar .form-control,
+.searchbar .form-select {
   border-color : #c6d3d6;
   padding      : .8rem .9rem;
   border-radius: 10px;
@@ -16908,10 +16936,19 @@ span.linkIdiomas.d-flex .gtranslate_wrapper .gt_selector {
   padding      : .8rem 1rem
 }
 
+.btn-search:hover {
+  background: var(--primary-color-hover);
+  transform: translateY(-1px);
+}
+
 .services .card {
   border       : 0;
   box-shadow   : 0 6px 18px rgba(0, 0, 0, .05);
   border-radius: 16px
+}
+
+.services .card:hover {
+  transform: translateY(-6px);
 }
 
 .services .icon {
@@ -16929,6 +16966,11 @@ span.linkIdiomas.d-flex .gtranslate_wrapper .gt_selector {
   border       : 2px solid rgba(255, 255, 255, .65);
   border-radius: 22px;
   padding      : 22px
+}
+
+.numbers .item strong {
+  font-family: var(--font-title);
+  font-size: clamp(2rem, 1.6rem + 1vw, 3rem);
 }
 
 .diff .mini h4 {
@@ -16952,6 +16994,14 @@ span.linkIdiomas.d-flex .gtranslate_wrapper .gt_selector {
   display        : flex;
   flex-flow      : column;
   justify-content: center;
+}
+
+.cta-card {
+  background: var(--primary-color);
+  color: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-block: 3%;
 }
 
 .copy-list .copy-btn {

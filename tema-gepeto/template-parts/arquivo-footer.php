@@ -213,7 +213,7 @@ $social_links = array_filter(
                   continue;
                 }
               ?>
-                <li><a href="<?php echo esc_url($fallback_url); ?>"><?php echo esc_html($fallback_label); ?></a></li>
+                <li> teste <a href="<?php echo esc_url($fallback_url); ?>"><?php echo esc_html($fallback_label); ?></a></li>
               <?php endforeach; ?>
             </ul>
           </nav>
@@ -316,7 +316,7 @@ $social_links = array_filter(
     <?php get_template_part('template-parts/arquivo-whatsapp'); ?>
 
     <a class="btnTop" href="#top">
-      <i class="fa-solid fa-arrow-up"></i>
+      <i class="fa fa-arrow-up"></i>
     </a>
   <?php endif; ?>
 </footer>
