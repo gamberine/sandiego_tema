@@ -1,11 +1,11 @@
-Section: Differentials + ContactRepeater: cards (title, image)Fields: cta_title, cta_textContact form: basic HTML (integrate plugin later)<?php
-                                                                                                                                          /**
-                                                                                                                                           * Section: Differentials + Contact
-                                                                                                                                           * Repeater: cards (title, image)
-                                                                                                                                           * Fields: cta_title, cta_text
-                                                                                                                                           * Contact form: basic HTML (integrate plugin later)
-                                                                                                                                           */
-                                                                                                                                          ?>
+<?php
+/**
+ * Section: Differentials + Contact
+ * Repeater: cards (title, image)
+ * Fields: cta_title, cta_text
+ * Contact form: basic HTML (integrate plugin later)
+ */
+ ?>
 <section class="sandiego diff container py-5">
   <h2 class="title-xl text-center mb-4">Principais Diferenciais</h2>
   <div class="row g-4 mb-4">
@@ -26,8 +26,6 @@ Section: Differentials + ContactRepeater: cards (title, image)Fields: cta_title,
       <div class="cta-card h-100">
         <h3 class="h4 mb-2"><?php the_sub_field('cta_title');  ?></h3>
         <p class="mb-0"><?php the_sub_field('cta_text'); ?></p>
-        <!-- <h3 class="h4 mb-2">< ?php the_sub_field('cta_title') ?: print 'Quer conversar sobre os nossos serviços de administração?'; ?></h3>
-        <p class="mb-0">< ?php the_sub_field('cta_text') ?: print 'Preencha seus dados que entraremos em contato.'; ?></p> -->
       </div>
     </div>
 
@@ -51,8 +49,6 @@ Section: Differentials + ContactRepeater: cards (title, image)Fields: cta_title,
           <input type="tel" class="form-control">
         </div>
         <button class="btn btn-search">Enviar</button>
-        <!-- <div class="col-12 border border-3 border-primary-color rounded my-0">
-        </div> -->
       </form>
     </div>
   </div>

@@ -213,7 +213,7 @@ $social_links = array_filter(
                   continue;
                 }
               ?>
-                <li> teste <a href="<?php echo esc_url($fallback_url); ?>"><?php echo esc_html($fallback_label); ?></a></li>
+                <li><a href="<?php echo esc_url($fallback_url); ?>"> teste <?php echo esc_html($fallback_label); ?></a></li>
               <?php endforeach; ?>
             </ul>
           </nav>
