@@ -5,7 +5,7 @@
  * Repeater: services (icon, title, text)
  */
 ?>
-<section class="sandiego services container py-5">
+<section class="services container py-5">
   <h2 class="title-xl text-center mb-4"><?php the_sub_field('title') ?: print 'Nossos Serviços'; ?></h2>
   <div class="row g-4">
     <?php if(have_rows('services')): while(have_rows('services')): the_row(); ?>

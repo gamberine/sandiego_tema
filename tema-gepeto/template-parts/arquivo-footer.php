@@ -26,121 +26,19 @@ if ($footer_entry instanceof WP_Post) {
   setup_postdata($footer_entry);
 }
 
-$footer_logo = $footer_entry ? get_field('logomarca_rodape', $footer_entry->ID) : null;
-$logo_url    = is_array($footer_logo) ? ($footer_logo['url'] ?? '') : (is_string($footer_logo) ? $footer_logo : '');
-$logo_alt    = is_array($footer_logo) ? ($footer_logo['alt'] ?? '') : '';
+$footer_logo       = $footer_entry ? get_field('logomarca_rodape', $footer_entry->ID) : null;
+$logo_url          = is_array($footer_logo) ? ($footer_logo['url'] ?? '') : (is_string($footer_logo) ? $footer_logo : '');
+$logo_alt          = is_array($footer_logo) ? ($footer_logo['alt'] ?? '') : '';
+$company_menu_title = $footer_entry ? get_field('footer_company_menu_title', $footer_entry->ID) : '';
+$contact_title      = $footer_entry ? get_field('footer_contact_title', $footer_entry->ID) : '';
+$social_title       = $footer_entry ? get_field('footer_social_title', $footer_entry->ID) : '';
+$contact_items      = $footer_entry ? get_field('footer_contact_items', $footer_entry->ID) : array();
+$company_info_lines = $footer_entry ? get_field('footer_company_info_lines', $footer_entry->ID) : array();
+$social_links       = $footer_entry ? get_field('footer_social_links', $footer_entry->ID) : array();
 
-$get_footer_field = static function ($field_name, $default = '') use ($footer_entry) {
-  if (! ($footer_entry instanceof WP_Post)) {
-    return $default;
-  }
-
-  $value = get_field($field_name, $footer_entry->ID);
-
-  if (null === $value || false === $value) {
-    return $default;
-  }
-
-  if (is_string($value)) {
-    $value = trim($value);
-  }
-
-  if ('' === $value) {
-    return $default;
-  }
-
-  return $value;
-};
-
-$company_menu_title = $get_footer_field('footer_company_menu_title') ?: __('Nossa Empresa', 'temabasegamb');
-$contact_title      = $get_footer_field('footer_contact_title') ?: __('Entre em contato', 'temabasegamb');
-$social_title       = $get_footer_field('footer_social_title') ?: __('Siga-nos', 'temabasegamb');
-
-$contact_items = array_filter(
-  array(
-    array(
-      'label'   => $get_footer_field('footer_contact_admin_label') ?: __('Administração Hoteleira', 'temabasegamb'),
-      'content' => $get_footer_field('footer_contact_admin_value'),
-      'link'    => $get_footer_field('footer_contact_admin_link'),
-    ),
-    array(
-      'label'   => $get_footer_field('footer_contact_reservations_label') ?: __('Reservas', 'temabasegamb'),
-      'content' => $get_footer_field('footer_contact_reservations_value'),
-      'link'    => $get_footer_field('footer_contact_reservations_link'),
-    ),
-    array(
-      'label'   => $get_footer_field('footer_contact_email_label') ?: __('E-mail', 'temabasegamb'),
-      'content' => $get_footer_field('footer_contact_email_value'),
-      'link'    => $get_footer_field('footer_contact_email_link'),
-    ),
-  ),
-  static function ($item) {
-    return ! empty($item['content']);
-  }
-);
-
-$company_info_blocks = array_filter(
-  array(
-    $get_footer_field('footer_company_info_primary_text'),
-    $get_footer_field('footer_company_info_secondary_text'),
-  ),
-  static function ($info) {
-    return ! empty($info);
-  }
-);
-
-$company_info_lines = array();
-
-foreach ($company_info_blocks as $info_block) {
-  if (! is_string($info_block)) {
-    continue;
-  }
-
-  $info_rows = preg_split('/\r\n|\r|\n/', $info_block);
-
-  if (empty($info_rows)) {
-    $company_info_lines[] = $info_block;
-    continue;
-  }
-
-  foreach ($info_rows as $row) {
-    $row = trim($row);
-
-    if ('' === $row) {
-      continue;
-    }
-
-    $company_info_lines[] = $row;
-  }
-}
-
-$social_links = array_filter(
-  array(
-    array(
-      'label'      => __('Facebook', 'temabasegamb'),
-      'url'        => $get_footer_field('footer_social_facebook_url'),
-      'icon_class' => 'fa-brands fa-facebook-f',
-    ),
-    array(
-      'label'      => __('YouTube', 'temabasegamb'),
-      'url'        => $get_footer_field('footer_social_youtube_url'),
-      'icon_class' => 'fa-brands fa-youtube',
-    ),
-    array(
-      'label'      => __('Instagram', 'temabasegamb'),
-      'url'        => $get_footer_field('footer_social_instagram_url'),
-      'icon_class' => 'fa-brands fa-instagram',
-    ),
-    array(
-      'label'      => __('LinkedIn', 'temabasegamb'),
-      'url'        => $get_footer_field('footer_social_linkedin_url'),
-      'icon_class' => 'fa-brands fa-linkedin-in',
-    ),
-  ),
-  static function ($social) {
-    return ! empty($social['url']);
-  }
-);
+$company_menu_title = $company_menu_title ?: __('Nossa Empresa', 'temabasegamb');
+$contact_title      = $contact_title ?: __('Entre em contato', 'temabasegamb');
+$social_title       = $social_title ?: __('Siga-nos', 'temabasegamb');
 ?>
 
 <footer class="site-footer" id="contato">
@@ -175,46 +73,9 @@ $social_links = array_filter(
           );
           ?>
         <?php else : ?>
-          <?php
-          $fallback_links = array(
-            array(
-              'label' => __('Home', 'temabasegamb'),
-              'url'   => home_url('/'),
-            ),
-            array(
-              'label' => __('Sobre', 'temabasegamb'),
-              'url'   => home_url('/sobre'),
-            ),
-            array(
-              'label' => __('Hotéis', 'temabasegamb'),
-              'url'   => home_url('/hoteis'),
-            ),
-            array(
-              'label' => __('Ofertas', 'temabasegamb'),
-              'url'   => home_url('/ofertas'),
-            ),
-            array(
-              'label' => __('Blog', 'temabasegamb'),
-              'url'   => home_url('/blog'),
-            ),
-            array(
-              'label' => __('Contato', 'temabasegamb'),
-              'url'   => home_url('/contato'),
-            ),
-          );
-          ?>
           <nav class="footer-menu" aria-label="<?php echo esc_attr($company_menu_title); ?>">
             <ul class="footer-menu-list">
-              <?php foreach ($fallback_links as $fallback_link) :
-                $fallback_label = $fallback_link['label'] ?? '';
-                $fallback_url   = $fallback_link['url'] ?? '';
-
-                if (empty($fallback_label) || empty($fallback_url)) {
-                  continue;
-                }
-              ?>
-                <li><a href="<?php echo esc_url($fallback_url); ?>"> teste <?php echo esc_html($fallback_label); ?></a></li>
-              <?php endforeach; ?>
+              <li><a href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('Home', 'temabasegamb'); ?></a></li>
             </ul>
           </nav>
         <?php endif; ?>
@@ -222,21 +83,25 @@ $social_links = array_filter(
 
       <div class="footer-section footer-contact">
         <p class="footer-section-title"><?php echo esc_html($contact_title); ?></p>
-        <?php if (! empty($contact_items)) : ?>
+        <?php if (! empty($contact_items) && is_array($contact_items)) : ?>
           <ul class="footer-contact-list">
             <?php foreach ($contact_items as $item) :
-              $item_label   = $item['label'] ?? '';
-              $item_content = $item['content'] ?? '';
-              $item_link    = $item['link'] ?? '';
+              $item_label   = $item['footer_contact_label'] ?? '';
+              $item_content = $item['footer_contact_content'] ?? '';
+              $item_link    = $item['footer_contact_link'] ?? '';
               $link_url     = '';
               $link_target  = '';
               $link_rel     = '';
 
-              if (is_string($item_link)) {
-                $link_url = $item_link;
-              } elseif (is_array($item_link)) {
+              if (empty($item_content)) {
+                continue;
+              }
+
+              if (is_array($item_link)) {
                 $link_url    = $item_link['url'] ?? '';
                 $link_target = ! empty($item_link['target']) ? $item_link['target'] : '';
+              } elseif (is_string($item_link)) {
+                $link_url = $item_link;
               }
 
               if (! empty($link_url) && is_string($link_url) && 0 === strpos($link_url, 'http')) {
@@ -264,14 +129,16 @@ $social_links = array_filter(
           </ul>
         <?php endif; ?>
 
-        <?php if (! empty($company_info_lines)) : ?>
+        <?php if (! empty($company_info_lines) && is_array($company_info_lines)) : ?>
           <div class="footer-extra-info">
-            <?php foreach ($company_info_lines as $info_text) :
-              if (! is_string($info_text) || '' === $info_text) {
+            <?php foreach ($company_info_lines as $info_line) :
+              $info_text = $info_line['footer_company_info_text'] ?? '';
+
+              if (empty($info_text)) {
                 continue;
               }
             ?>
-              <p><?php echo esc_html($info_text); ?></p>
+              <p><?php echo wp_kses_post($info_text); ?></p>
             <?php endforeach; ?>
           </div>
         <?php endif; ?>
@@ -279,23 +146,29 @@ $social_links = array_filter(
 
       <div class="footer-section footer-social">
         <p class="footer-section-title"><?php echo esc_html($social_title); ?></p>
-        <?php if (! empty($social_links)) : ?>
+        <?php if (! empty($social_links) && is_array($social_links)) : ?>
           <div class="footer-social-links">
             <?php foreach ($social_links as $social) :
-              $social_label  = $social['label'] ?? '';
-              $social_url    = $social['url'] ?? '';
-              $icon_class    = $social['icon_class'] ?? '';
-              $social_target = '_blank';
-              $social_rel    = '';
+              $social_label     = $social['footer_social_label'] ?? '';
+              $social_link      = $social['footer_social_url'] ?? '';
+              $icon_class       = $social['footer_social_icon_class'] ?? '';
+              $social_url       = '';
+              $social_target    = '';
+              $social_rel       = 'noreferrer noopener';
 
-              if (! is_string($social_url) || '' === $social_url) {
+              if (is_array($social_link)) {
+                $social_url    = $social_link['url'] ?? '';
+                $social_target = ! empty($social_link['target']) ? $social_link['target'] : '';
+              } elseif (is_string($social_link)) {
+                $social_url = $social_link;
+              }
+
+              if (empty($social_url)) {
                 continue;
               }
 
-              if (0 === strpos($social_url, 'http')) {
-                $social_rel = 'noreferrer noopener';
-              } else {
-                $social_target = '';
+              if (empty($social_target)) {
+                $social_target = '_blank';
               }
             ?>
               <a class="footer-social-link" href="<?php echo esc_url($social_url); ?>"<?php echo $social_target ? ' target="' . esc_attr($social_target) . '"' : ''; ?><?php echo $social_rel ? ' rel="' . esc_attr($social_rel) . '"' : ''; ?> aria-label="<?php echo esc_attr($social_label ?: $social_url); ?>">
@@ -316,7 +189,7 @@ $social_links = array_filter(
     <?php get_template_part('template-parts/arquivo-whatsapp'); ?>
 
     <a class="btnTop" href="#top">
-      <i class="fa fa-arrow-up"></i>
+      <i class="fa-solid fa-arrow-up"></i>
     </a>
   <?php endif; ?>
 </footer>

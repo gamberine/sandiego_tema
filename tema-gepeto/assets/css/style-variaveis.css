@@ -25,21 +25,16 @@
   --secondary-color-transp: #383836cc;
 
   --accent-color      : #7AA874;
-  /* verde oliva suave, destaque harmonioso */
   --accent-color-hover: #6a9462;
 
   --bg-primary-color  : #ECECEC;
   --bg-secondary-color: #C9D3D0;
-  /* tom mais frio que complementa o primary */
   --bg-tertiary-color : #F8F8F8;
-  /* fundo alternativo mais leve */
 
   --success-color      : #2F8A57;
-  /* verde mais vivo e equilibrado */
   --success-color-hover: #276F47;
 
   --info-color      : #13706F;
-  /* mesma base do primary */
   --info-color-light: #CDE4E3;
 
   --warning-color      : #C99834;
