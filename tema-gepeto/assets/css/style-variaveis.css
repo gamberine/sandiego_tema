@@ -6,12 +6,19 @@
 
   --font-decorative: 'Blacksword', sans-serif !important;
 
-  --font-title: 'Diavlo Black', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  --font-body : 'Diavlo Book', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-title: 'Diavlo Black', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-body : 'Diavlo Book', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
 
-  --primary-color       : #13706F;
-  --primary-color-hover : #187C72;
-  --primary-color-transp: #13706fcc;
+  /* Paleta San Diego */
+  --primary-color       : #0d5963;
+  --primary-color-hover : #0b4951;
+  --primary-color-transp: #0d5963cc;
+  --teal-500            : #0f6773;
+  --teal-600            : #0d5963;
+  --teal-700            : #0a4b52;
+  --azul-500            : #1f3c88;
+  --azul-600            : #2c4da7;
+  --destaque-color      : #f97316;
 
   --secondary-color       : #383836;
   --secondary-color-hover : #2f2f2e;
@@ -41,9 +48,12 @@
   --danger-color      : #9A3A24;
   --danger-color-hover: #822F1C;
 
-  --gray-color: #6B757B;
+  --gray-color: #566370;
   --gray-light: #ADB5BD;
   --gray-dark : #343A40;
+  --card-border-color: #e1e5ea;
+  --card-shadow-soft : 0 2px 6px rgba(0, 0, 0, 0.06);
+  --input-border-color: #c6d3d6;
 
   --text-color      : #2E2E2E;
   --text-color-hover: #111111;

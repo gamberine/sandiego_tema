@@ -16826,42 +16826,119 @@ span.linkIdiomas.d-flex .gtranslate_wrapper .gt_selector {
 /* -------------- fim  arquivo-idiomas -------------- */
 
 
-/* San Diego - minimal styles for sections (Bootstrap friendly) */
+/* San Diego - seções utilitárias e componentes principais */
 
+.section-pad {
+  padding   : clamp(40px, 6vw, 80px) 0;
+  position  : relative;
+  isolation : isolate;
+}
 
-.sd-amenity {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  text-align: center;
+@media (max-width: 768px) {
+  .section-pad {
+    padding: clamp(32px, 10vw, 56px) 1.25rem;
+  }
+}
+
+.sd-title {
+  font-family    : var(--font-title);
+  font-weight    : 700;
+  text-transform : uppercase;
+  letter-spacing : .08em;
+  color          : var(--primary-color);
+}
+
+.sd-sub {
+  font-weight: 600;
+  color      : var(--teal-600);
 }
 
 .title-xl {
   font-family   : var(--font-title);
-  font-size     : clamp(1.8rem, 1.6rem + 1.2vw, 3rem);
+  font-size     : clamp(1.8rem, 1.5rem + 1.2vw, 3rem);
+  line-height   : 1.1;
   color         : var(--primary-color);
-  letter-spacing: .02em
+  letter-spacing: .02em;
+  margin-bottom : 1.5rem;
 }
 
 .title-lg {
-  font-family: var(--font-title);
-  font-size  : clamp(1.4rem, 1.2rem + .8vw, 2.2rem);
-  color      : var(--primary-color)
+  font-family : var(--font-title);
+  font-size   : clamp(1.4rem, 1.2rem + .8vw, 2.2rem);
+  line-height : 1.2;
+  color       : var(--primary-color);
+  margin-bottom: 1rem;
 }
 
 .lead {
-  font-size: 1.125rem;
-  color    : var(--gray-color)
+  font-size  : 1.125rem;
+  color      : var(--gray-color);
+  max-width  : 60ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sd-btn {
+  display        : inline-flex;
+  align-items    : center;
+  justify-content: center;
+  gap            : .4rem;
+  padding        : .85rem 1.75rem;
+  border         : none;
+  border-radius  : 12px;
+  text-transform : uppercase;
+  font-weight    : 700;
+  letter-spacing : .08em;
+  color          : var(--white-color);
+  background-image: linear-gradient(90deg, var(--azul-500), var(--teal-500));
+  box-shadow     : var(--card-shadow-soft);
+  transition     : transform .2s ease, filter .2s ease, box-shadow .2s ease;
+}
+
+.sd-btn:hover,
+.sd-btn:focus-visible {
+  color          : var(--white-color);
+  background-image: linear-gradient(90deg, var(--azul-600), var(--teal-600));
+  transform      : translateY(-1px);
+  box-shadow     : 0 8px 24px rgba(0, 0, 0, .15);
+}
+
+.sd-btn:focus-visible {
+  outline      : 2px solid var(--white-color);
+  outline-offset: 3px;
+}
+
+.sd-card {
+  background-color: var(--white-color);
+  border          : 1px solid var(--card-border-color);
+  border-radius   : 12px;
+  box-shadow      : var(--card-shadow-soft);
+  overflow        : hidden;
+  transition      : transform .25s ease, box-shadow .25s ease;
+}
+
+.sd-card:hover {
+  transform : translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .12);
+}
+
+.sd-amenity {
+  display       : flex;
+  flex-direction: column;
+  align-items   : center;
+  gap           : .5rem;
+  text-align    : center;
+  padding       : 1.5rem;
 }
 
 .hero {
-  position   : relative;
-  min-height : 60vh;
-  display    : grid;
-  place-items: center;
-  overflow   : hidden;
-  background : #083f46;
+  position        : relative;
+  min-height      : 60vh;
+  display         : grid;
+  place-items     : center;
+  overflow        : hidden;
+  background      : linear-gradient(145deg, var(--teal-700), var(--primary-color));
+  color           : var(--white-color);
 }
 
 @media (max-width: 768px) {
@@ -16870,7 +16947,7 @@ span.linkIdiomas.d-flex .gtranslate_wrapper .gt_selector {
   }
 
   .hero .play {
-    width: 120px;
+    width : 120px;
     height: 120px;
   }
 
@@ -16906,15 +16983,17 @@ span.linkIdiomas.d-flex .gtranslate_wrapper .gt_selector {
   width       : 64px;
   height      : 64px;
   fill        : none;
-  stroke      : #fff;
-  stroke-width: 12
+  stroke      : var(--white-color);
+  stroke-width: 12;
 }
 
 .searchbar {
-  background   : #fff;
+  background   : var(--white-color);
   margin-top   : -40px;
-  box-shadow   : 0 12px 24px rgba(0, 0, 0, .06);
-  border-radius: 12px
+  box-shadow   : var(--card-shadow-soft);
+  border-radius: 12px;
+  border       : 1px solid var(--card-border-color);
+  padding      : 1.5rem;
 }
 
 .searchbar .form-label {
@@ -16924,59 +17003,64 @@ span.linkIdiomas.d-flex .gtranslate_wrapper .gt_selector {
 
 .searchbar .form-control,
 .searchbar .form-select {
-  border-color : #c6d3d6;
+  border       : 1px solid var(--input-border-color);
   padding      : .8rem .9rem;
   border-radius: 10px;
 }
 
 .btn-search {
   background   : var(--primary-color);
-  color        : #fff;
+  color        : var(--white-color);
   border-radius: 10px;
-  padding      : .8rem 1rem
+  padding      : .8rem 1rem;
+  font-weight  : 600;
+  transition   : background .2s ease, transform .2s ease;
 }
 
 .btn-search:hover {
   background: var(--primary-color-hover);
-  transform: translateY(-1px);
+  transform : translateY(-1px);
 }
 
 .services .card {
   border       : 0;
-  box-shadow   : 0 6px 18px rgba(0, 0, 0, .05);
-  border-radius: 16px
+  box-shadow   : 0 6px 18px rgba(0, 0, 0, .08);
+  border-radius: 16px;
+  transition   : transform .25s ease, box-shadow .25s ease;
 }
 
 .services .card:hover {
-  transform: translateY(-6px);
+  transform : translateY(-6px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, .12);
 }
 
 .services .icon {
   width : 64px;
   height: 64px;
-  color : var(--primary-color)
+  color : var(--primary-color);
 }
 
 .numbers {
   background: var(--primary-color);
-  color     : #fff
+  color     : var(--white-color);
+  border-radius: 18px;
 }
 
 .numbers .item {
   border       : 2px solid rgba(255, 255, 255, .65);
   border-radius: 22px;
-  padding      : 22px
+  padding      : 22px;
 }
 
 .numbers .item strong {
   font-family: var(--font-title);
-  font-size: clamp(2rem, 1.6rem + 1vw, 3rem);
+  font-size  : clamp(2rem, 1.6rem + 1vw, 3rem);
 }
 
 .diff .mini h4 {
   color      : var(--primary-color);
   font-weight: 800;
-  font-size  : 1.1rem
+  font-size  : 1.1rem;
 }
 
 .diff .mini img {
@@ -16988,30 +17072,38 @@ span.linkIdiomas.d-flex .gtranslate_wrapper .gt_selector {
 
 .cta-card {
   background     : var(--primary-color);
-  color          : #fff;
+  color          : var(--white-color);
   border-radius  : 12px;
   padding        : 2rem;
   display        : flex;
   flex-flow      : column;
   justify-content: center;
+  gap            : 1rem;
+  margin-block   : 3%;
+  box-shadow     : var(--card-shadow-soft);
 }
 
-.cta-card {
-  background: var(--primary-color);
-  color: #fff;
-  border-radius: 12px;
-  padding: 2rem;
-  margin-block: 3%;
+/* Legacy / aguardando uso prático */
+/*
+.copy-inline {
+  cursor    : pointer;
+  border    : 0;
+  background: none;
+  color     : var(--teal-600);
+}
+
+.copy-inline:hover {
+  color: var(--teal-700);
 }
 
 .copy-list .copy-btn {
-  cursor             : pointer;
-  -webkit-user-select: none;
-  user-select        : none;
+  cursor    : pointer;
+  transition: opacity .2s ease;
 }
 
-.copy-list .copied {
-  opacity: .75
+.copy-list .copy-btn.copied {
+  opacity: .75;
 }
+*/
 
 /* fim css sandiego home  */

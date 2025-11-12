@@ -96,7 +96,6 @@ add_action('wp_enqueue_scripts', function () {
   wp_enqueue_style( 'sd-font-fira', 'https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap', [], null );
   wp_enqueue_style( 'sd-variaveis', get_stylesheet_directory_uri() . '/assets/css/style-variaveis.css', [], '1.0.0' );
   wp_enqueue_style( 'sd-style-base', get_stylesheet_directory_uri() . '/assets/css/style-base.css', [], '1.0.0' );
-  wp_enqueue_style( 'sd-theme', get_stylesheet_directory_uri() . '/assets/css/sandiego.css', ['sd-variaveis','sd-font-diavlo','sd-font-fira'], '1.1.0' );
 
   // JS personalizado
   wp_enqueue_script( 'sd-theme-js', get_stylesheet_directory_uri() . '/assets/js/sandiego.js', ['jquery','sd-slick'], '1.0.0', true );
