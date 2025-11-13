@@ -14,10 +14,9 @@
 
 <script>
   jQuery(document).ready(function() {
-    jQuery('a[data-gt-lang="pt"]').addClass('order-4');
-    jQuery('a[data-gt-lang="en"]').addClass('order-3');
-    jQuery('a[data-gt-lang="es"]').addClass('order-2');
-    jQuery('a[data-gt-lang="ca"]').addClass('order-1');
+    jQuery('a[data-gt-lang="pt"]').addClass('order-1');
+    jQuery('a[data-gt-lang="en"]').addClass('order-2');
+    jQuery('a[data-gt-lang="es"]').addClass('order-3');
   });
 </script>
 <script>
