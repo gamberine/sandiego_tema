@@ -239,10 +239,7 @@ Ano: 2025
 }
 
 .footer-grid {
-  display              : grid;
-  grid-template-columns: 1.3fr 1fr 1fr .9fr;
-  gap                  : 2.5rem;
-  align-items          : flex-start;
+  align-items: flex-start;
 }
 
 .footer-logo img {
@@ -273,9 +270,26 @@ Ano: 2025
   list-style: none;
   margin    : 0;
   padding   : 0;
-  display   : flex;
-  flex-flow : column;
-  gap       : .4rem;
+}
+
+.footer-menu-list {
+  display  : flex;
+  flex-flow: column;
+  gap      : .4rem;
+}
+
+.footer-contact-list {
+  display              : grid;
+  grid-template-columns: 1fr;
+  gap                  : .8rem;
+}
+
+@media (min-width: 768px) {
+  .footer-contact-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap           : 2rem;
+    row-gap              : 1rem;
+  }
 }
 
 .footer-menu-list li {
@@ -368,8 +382,8 @@ Ano: 2025
 
 @media (max-width: 1024px) {
   .footer-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap                  : 2rem;
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 2rem;
   }
 }
 
@@ -379,8 +393,8 @@ Ano: 2025
   }
 
   .footer-grid {
-    grid-template-columns: 1fr;
-    gap                  : 1.75rem;
+    --bs-gutter-x: 1rem;
+    --bs-gutter-y: 1.5rem;
   }
 
   .footer-menu-list li::before {
