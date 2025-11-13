@@ -16,15 +16,6 @@ Ano: 2025
 @import url('style-variaveis.css');
 
 
-.site-main {
-  background-image: url(../img/rodape.png);
-  background-size: 100% auto;
-  background-position: bottom center;
-  background-repeat: no-repeat !important;
-  position: relative;
-  margin-bottom: -3rem;
-  padding-bottom: 3rem !important;
-}
 
 .slick-prev,
 .slick-next {
@@ -7741,6 +7732,17 @@ template {
   padding-bottom: 0;
   margin-left   : auto;
   margin-right  : auto;
+}
+
+
+.site-main {
+  background-image: url(../img/rodape.png);
+  background-size: 100% auto;
+  background-position: bottom center;
+  background-repeat: no-repeat !important;
+  position: relative;
+  margin-bottom: -3rem;
+  padding-bottom: 3rem !important;
 }
 
 /* .site-header {
