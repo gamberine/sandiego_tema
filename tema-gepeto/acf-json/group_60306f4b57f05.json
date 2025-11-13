@@ -889,11 +889,10 @@
                 "append": ""
             },
             {
-                "key": "field_footer_contact_label_1_free_2025",
-                "label": "Contato 1 - Label",
-                "name": "footer_contact_label_1",
-                "aria-label": "",
-                "type": "text",
+                "key": "field_footer_contact_items_2025",
+                "label": "Itens de contato",
+                "name": "footer_contact_items",
+                "type": "repeater",
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -902,19 +901,73 @@
                     "class": "",
                     "id": ""
                 },
-                "default_value": "",
-                "maxlength": "",
-                "placeholder": "",
-                "prepend": "",
-                "append": ""
+                "collapsed": "",
+                "min": 0,
+                "max": 0,
+                "layout": "block",
+                "button_label": "Adicionar contato",
+                "sub_fields": [
+                    {
+                        "key": "field_footer_contact_label_item",
+                        "label": "Label",
+                        "name": "footer_contact_label",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "30",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_footer_contact_content_item",
+                        "label": "Conteúdo",
+                        "name": "footer_contact_content",
+                        "type": "textarea",
+                        "instructions": "Use quebras de linha para múltiplas informações.",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "40",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "new_lines": "br",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "rows": 3
+                    },
+                    {
+                        "key": "field_footer_contact_link_item",
+                        "label": "Link",
+                        "name": "footer_contact_link",
+                        "type": "link",
+                        "instructions": "Opcional: URL, telefone ou e-mail.",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "30",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "array"
+                    }
+                ]
             },
             {
-                "key": "field_footer_contact_content_1_free_2025",
-                "label": "Contato 1 - Conteúdo",
-                "name": "footer_contact_content_1",
-                "aria-label": "",
-                "type": "textarea",
-                "instructions": "",
+                "key": "field_footer_company_info_lines",
+                "label": "Informações institucionais",
+                "name": "footer_company_info_lines",
+                "type": "repeater",
+                "instructions": "Endereço completo, CNPJ e observações.",
                 "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
@@ -922,182 +975,30 @@
                     "class": "",
                     "id": ""
                 },
-                "default_value": "",
-                "new_lines": "",
-                "maxlength": "",
-                "placeholder": "",
-                "rows": ""
-            },
-            {
-                "key": "field_footer_contact_link_1_free_2025",
-                "label": "Contato 1 - Link",
-                "name": "footer_contact_link_1",
-                "aria-label": "",
-                "type": "url",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "placeholder": ""
-            },
-            {
-                "key": "field_footer_contact_label_2_free_2025",
-                "label": "Contato 2 - Label",
-                "name": "footer_contact_label_2",
-                "aria-label": "",
-                "type": "text",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "maxlength": "",
-                "placeholder": "",
-                "prepend": "",
-                "append": ""
-            },
-            {
-                "key": "field_footer_contact_content_2_free_2025",
-                "label": "Contato 2 - Conteúdo",
-                "name": "footer_contact_content_2",
-                "aria-label": "",
-                "type": "textarea",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "new_lines": "",
-                "maxlength": "",
-                "placeholder": "",
-                "rows": ""
-            },
-            {
-                "key": "field_footer_contact_link_2_free_2025",
-                "label": "Contato 2 - Link",
-                "name": "footer_contact_link_2",
-                "aria-label": "",
-                "type": "url",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "placeholder": ""
-            },
-            {
-                "key": "field_footer_contact_label_3_free_2025",
-                "label": "Contato 3 - Label",
-                "name": "footer_contact_label_3",
-                "aria-label": "",
-                "type": "text",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "maxlength": "",
-                "placeholder": "",
-                "prepend": "",
-                "append": ""
-            },
-            {
-                "key": "field_footer_contact_content_3_free_2025",
-                "label": "Contato 3 - Conteúdo",
-                "name": "footer_contact_content_3",
-                "aria-label": "",
-                "type": "textarea",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "new_lines": "",
-                "maxlength": "",
-                "placeholder": "",
-                "rows": ""
-            },
-            {
-                "key": "field_footer_contact_link_3_free_2025",
-                "label": "Contato 3 - Link",
-                "name": "footer_contact_link_3",
-                "aria-label": "",
-                "type": "url",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "placeholder": ""
-            },
-            {
-                "key": "field_footer_company_info_line_1_free_2025",
-                "label": "Linha info institucional 1",
-                "name": "footer_company_info_line_1",
-                "aria-label": "",
-                "type": "textarea",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "new_lines": "",
-                "maxlength": "",
-                "placeholder": "",
-                "rows": ""
-            },
-            {
-                "key": "field_footer_company_info_line_2_free_2025",
-                "label": "Linha info institucional 2",
-                "name": "footer_company_info_line_2",
-                "aria-label": "",
-                "type": "textarea",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "new_lines": "",
-                "maxlength": "",
-                "placeholder": "",
-                "rows": ""
+                "collapsed": "",
+                "min": 0,
+                "max": 0,
+                "layout": "block",
+                "button_label": "Adicionar linha",
+                "sub_fields": [
+                    {
+                        "key": "field_footer_company_info_text",
+                        "label": "Linha",
+                        "name": "footer_company_info_text",
+                        "type": "textarea",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "new_lines": "br",
+                        "rows": 2
+                    }
+                ]
             },
             {
                 "key": "field_footer_social_title_free_2025",
@@ -1120,11 +1021,10 @@
                 "append": ""
             },
             {
-                "key": "field_footer_social_label_1_free_2025",
-                "label": "Rede Social 1 - Label",
-                "name": "footer_social_label_1",
-                "aria-label": "",
-                "type": "text",
+                "key": "field_footer_social_links",
+                "label": "Redes sociais",
+                "name": "footer_social_links",
+                "type": "repeater",
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -1133,219 +1033,62 @@
                     "class": "",
                     "id": ""
                 },
-                "default_value": "",
-                "maxlength": "",
-                "placeholder": "",
-                "prepend": "",
-                "append": ""
-            },
-            {
-                "key": "field_footer_social_url_1_free_2025",
-                "label": "Rede Social 1 - URL",
-                "name": "footer_social_url_1",
-                "aria-label": "",
-                "type": "url",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "placeholder": ""
-            },
-            {
-                "key": "field_footer_social_icon_class_1_free_2025",
-                "label": "Rede Social 1 - Classe do ícone",
-                "name": "footer_social_icon_class_1",
-                "aria-label": "",
-                "type": "text",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "maxlength": "",
-                "placeholder": "",
-                "prepend": "",
-                "append": ""
-            },
-            {
-                "key": "field_footer_social_label_2_free_2025",
-                "label": "Rede Social 2 - Label",
-                "name": "footer_social_label_2",
-                "aria-label": "",
-                "type": "text",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "maxlength": "",
-                "placeholder": "",
-                "prepend": "",
-                "append": ""
-            },
-            {
-                "key": "field_footer_social_url_2_free_2025",
-                "label": "Rede Social 2 - URL",
-                "name": "footer_social_url_2",
-                "aria-label": "",
-                "type": "url",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "placeholder": ""
-            },
-            {
-                "key": "field_footer_social_icon_class_2_free_2025",
-                "label": "Rede Social 2 - Classe do ícone",
-                "name": "footer_social_icon_class_2",
-                "aria-label": "",
-                "type": "text",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "maxlength": "",
-                "placeholder": "",
-                "prepend": "",
-                "append": ""
-            },
-            {
-                "key": "field_footer_social_label_3_free_2025",
-                "label": "Rede Social 3 - Label",
-                "name": "footer_social_label_3",
-                "aria-label": "",
-                "type": "text",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "maxlength": "",
-                "placeholder": "",
-                "prepend": "",
-                "append": ""
-            },
-            {
-                "key": "field_footer_social_url_3_free_2025",
-                "label": "Rede Social 3 - URL",
-                "name": "footer_social_url_3",
-                "aria-label": "",
-                "type": "url",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "placeholder": ""
-            },
-            {
-                "key": "field_footer_social_icon_class_3_free_2025",
-                "label": "Rede Social 3 - Classe do ícone",
-                "name": "footer_social_icon_class_3",
-                "aria-label": "",
-                "type": "text",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "maxlength": "",
-                "placeholder": "",
-                "prepend": "",
-                "append": ""
-            },
-            {
-                "key": "field_footer_social_label_4_free_2025",
-                "label": "Rede Social 4 - Label",
-                "name": "footer_social_label_4",
-                "aria-label": "",
-                "type": "text",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "maxlength": "",
-                "placeholder": "",
-                "prepend": "",
-                "append": ""
-            },
-            {
-                "key": "field_footer_social_url_4_free_2025",
-                "label": "Rede Social 4 - URL",
-                "name": "footer_social_url_4",
-                "aria-label": "",
-                "type": "url",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "placeholder": ""
-            },
-            {
-                "key": "field_footer_social_icon_class_4_free_2025",
-                "label": "Rede Social 4 - Classe do ícone",
-                "name": "footer_social_icon_class_4",
-                "aria-label": "",
-                "type": "text",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "maxlength": "",
-                "placeholder": "",
-                "prepend": "",
-                "append": ""
+                "collapsed": "",
+                "min": 0,
+                "max": 0,
+                "layout": "block",
+                "button_label": "Adicionar rede social",
+                "sub_fields": [
+                    {
+                        "key": "field_footer_social_label_item",
+                        "label": "Label",
+                        "name": "footer_social_label",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "25",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": ""
+                    },
+                    {
+                        "key": "field_footer_social_url_item",
+                        "label": "URL",
+                        "name": "footer_social_url",
+                        "type": "link",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "35",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "array"
+                    },
+                    {
+                        "key": "field_footer_social_icon_item",
+                        "label": "Classe do ícone",
+                        "name": "footer_social_icon_class",
+                        "type": "text",
+                        "instructions": "Ex: fab fa-instagram",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "40",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": ""
+                    }
+                ]
             }
         ],
         "location": [

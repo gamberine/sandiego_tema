@@ -90,8 +90,19 @@ jQuery(window).scroll(function () {
 // gamberine - sliders padrões 
 jQuery(document).ready(function () {
   // Inicializar seletor
-  if (jQuery('.bannerPrincipal').length) {
-    jQuery('.bannerPrincipal').slick({
+  jQuery('.bannerPrincipal').each(function () {
+    var $slider = jQuery(this);
+    var isStatic = $slider.data('static');
+
+    if (isStatic === true || isStatic === 'true') {
+      return;
+    }
+
+    if ($slider.hasClass('slick-initialized')) {
+      return;
+    }
+
+    $slider.slick({
       slidesToShow: 1,
       slidesToScroll: 1,
       dots: false,
@@ -111,7 +122,7 @@ jQuery(document).ready(function () {
         },
       ],
     });
-  }
+  });
   // fim do seletor
   // Inicializar seletor
   if (jQuery('.sliderImgTexto').length) {
@@ -477,24 +488,81 @@ jQuery(function (jQuery) {
 });
 
 /* Animação contador numerico no scripts.js + adicionar a classe "contagem" na linha onde existe número */
-jQuery(document).ready(function () {
-    jQuery('.contagem').each(function () {
-      var $this = jQuery(this);
-      $this.prop('Counter', 0).animate(
-        {
-          Counter: $this.text()
-        },
-        {
-          duration: 5000,
-          easing: 'swing',
-          step: function (now) {
-            $this.text(Math.ceil(now));
-          }
-        }
-      );
-    });
-  });
+jQuery(function ($) {
+  var $counters = $('.contagem');
 
+  if (!$counters.length) {
+    return;
+  }
+
+  $counters.each(function () {
+    var $counter = $(this);
+    var finalText = $.trim($counter.text());
+    var dataValue = parseFloat($counter.data('count'));
+    var fallback = finalText.replace(/[^\d.,-]/g, '').replace(',', '.');
+    var target = !isNaN(dataValue) ? dataValue : parseFloat(fallback);
+
+    if (isNaN(target)) {
+      return;
+    }
+
+    $counter.prop('Counter', 0).animate(
+      {
+        Counter: target,
+      },
+      {
+        duration: 2000,
+        easing: 'swing',
+        step: function (now) {
+          $counter.text(Math.ceil(now));
+        },
+        complete: function () {
+          if (finalText.length) {
+            $counter.text(finalText);
+          } else {
+            $counter.text(Math.ceil(target));
+          }
+        },
+      }
+    );
+  });
+});
+
+// Ajuste responsivo para blocos com data-desktop-bg / data-mobile-bg.
+document.addEventListener('DOMContentLoaded', function () {
+  var responsiveBlocks = document.querySelectorAll('[data-desktop-bg]');
+
+  if (!responsiveBlocks.length) {
+    return;
+  }
+
+  var applyBackground = function (element) {
+    var desktop = element.getAttribute('data-desktop-bg');
+    var mobile = element.getAttribute('data-mobile-bg') || desktop;
+
+    if (!desktop) {
+      return;
+    }
+
+    var useMobile = window.innerWidth <= 991;
+    element.style.backgroundImage = useMobile ? mobile : desktop;
+  };
+
+  var applyAll = function () {
+    responsiveBlocks.forEach(function (element) {
+      applyBackground(element);
+    });
+  };
+
+  var resizeTimeout;
+  var handleResize = function () {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(applyAll, 150);
+  };
+
+  applyAll();
+  window.addEventListener('resize', handleResize);
+});
 
 // scripts.js - Código para modal dinâmico utilizando Slick Slider com legenda abaixo da imagem
 // document.addEventListener('click', function (event) {

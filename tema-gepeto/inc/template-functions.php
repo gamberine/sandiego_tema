@@ -419,6 +419,61 @@ function tema_base_gamb_password_form($post = 0)
 add_filter('the_password_form', 'tema_base_gamb_password_form');
 
 /**
+ * Returns the ID of the latest "conteudo" post used for global components.
+ *
+ * @since 1.0.0
+ *
+ * @return int
+ */
+function tema_gepeto_get_global_content_post_id()
+{
+    $cached = wp_cache_get('global_content_post_id', 'tema_gepeto');
+
+    if (false !== $cached) {
+        return (int) $cached;
+    }
+
+    $posts = get_posts(
+        array(
+            'post_type'      => 'conteudo',
+            'posts_per_page' => 1,
+            'orderby'        => 'date',
+            'order'          => 'DESC',
+            'no_found_rows'  => true,
+            'fields'         => 'ids',
+        )
+    );
+
+    $post_id = ! empty($posts) ? (int) $posts[0] : 0;
+
+    wp_cache_set('global_content_post_id', $post_id, 'tema_gepeto', 5 * MINUTE_IN_SECONDS);
+
+    return $post_id;
+}
+
+/**
+ * Clears the cached global content post ID.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function tema_gepeto_reset_global_content_cache()
+{
+    wp_cache_delete('global_content_post_id', 'tema_gepeto');
+}
+
+add_action('save_post_conteudo', 'tema_gepeto_reset_global_content_cache');
+add_action(
+    'deleted_post',
+    function ($post_id) {
+        if ('conteudo' === get_post_type($post_id)) {
+            tema_gepeto_reset_global_content_cache();
+        }
+    }
+);
+
+/**
  * Filters the list of attachment image attributes.
  *
  * @since Tema Dev-Gamb 1.0

@@ -1,0 +1,180 @@
+{
+    "key": "group_page_banner_settings",
+    "title": "Banner - Páginas institucionais",
+    "fields": [
+        {
+            "key": "field_page_banner_media_type",
+            "label": "Tipo de mídia",
+            "name": "page_banner_media_type",
+            "type": "button_group",
+            "instructions": "Escolha qual mídia será utilizada no destaque.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "image": "Imagem",
+                "video": "Vídeo"
+            },
+            "allow_null": 0,
+            "default_value": "image",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_page_banner_image",
+            "label": "Imagem principal (desktop)",
+            "name": "page_banner_image",
+            "type": "image",
+            "instructions": "Dimensão recomendada: 1920x900px.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_page_banner_media_type",
+                        "operator": "==",
+                        "value": "image"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "35",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "large",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_page_banner_image_mobile",
+            "label": "Imagem Mobile",
+            "name": "page_banner_image_mobile",
+            "type": "image",
+            "instructions": "Opcional. Substitui a imagem em telas menores (ex: 750x950px).",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_page_banner_media_type",
+                        "operator": "==",
+                        "value": "image"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "35",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "jpg,jpeg,png,webp"
+        },
+        {
+            "key": "field_page_banner_video",
+            "label": "Vídeo (MP4)",
+            "name": "page_banner_video",
+            "type": "file",
+            "instructions": "Upload em MP4 otimizado para web.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_page_banner_media_type",
+                        "operator": "==",
+                        "value": "video"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "mime_types": "mp4"
+        },
+        {
+            "key": "field_page_banner_content",
+            "label": "Conteúdo",
+            "name": "page_banner_content",
+            "type": "wysiwyg",
+            "instructions": "Aceita títulos, parágrafos e tags básicas.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_page_banner_button_label",
+            "label": "Texto do botão",
+            "name": "page_banner_button_label",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "40",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_page_banner_button_link",
+            "label": "Link do botão",
+            "name": "page_banner_button_link",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "40",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-hoteis.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "field",
+    "hide_on_screen": [],
+    "active": true,
+    "description": "",
+    "show_in_rest": 1
+}
