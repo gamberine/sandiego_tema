@@ -476,6 +476,24 @@ jQuery(function (jQuery) {
   });
 });
 
+/* Animação contador numerico no scripts.js + adicionar a classe "contagem" na linha onde existe número */
+jQuery(document).ready(function () {
+    jQuery('.contagem').each(function () {
+      var $this = jQuery(this);
+      $this.prop('Counter', 0).animate(
+        {
+          Counter: $this.text()
+        },
+        {
+          duration: 5000,
+          easing: 'swing',
+          step: function (now) {
+            $this.text(Math.ceil(now));
+          }
+        }
+      );
+    });
+  });
 
 
 // scripts.js - Código para modal dinâmico utilizando Slick Slider com legenda abaixo da imagem

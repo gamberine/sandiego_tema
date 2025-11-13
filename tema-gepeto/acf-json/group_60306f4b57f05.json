@@ -1,8 +1,25 @@
 [
     {
-        "key": "group_60306f4b57f05",
+        "key": "group_conteudo_oficial_free_2025",
         "title": "0.Conteudo_Oficial",
         "fields": [
+            {
+                "key": "field_tab_contatos_2025",
+                "label": "Contatos",
+                "name": "",
+                "type": "tab",
+                "instructions": "Campos unificados de contatos, endereços, redes sociais e rodapé.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
             {
                 "key": "field_65efc2459853f",
                 "label": "Logo do Site",
@@ -537,7 +554,7 @@
                 "name": "numero_feed_instagram",
                 "aria-label": "",
                 "type": "number",
-                "instructions": "Número exibido no caminho abaixo, na coluna \"Shortcode\".\r\n\r\nObs.: Caso não tenha nenhuma linha cadastrada, iniciar o processo de integração de um feed e depois retornar aqui para inserção do número. Caso seja o primeiro feed a ser cadastrado, ele já estará preenchido aqui automaticamente\r\n\r\n<a href=\"admin.php?page=sbi-feed-builder\">Instagram Feed > Todos os feeds<\/a>",
+                "instructions": "Número exibido no caminho abaixo, na coluna \"Shortcode\".\r\n\r\nObs.: Caso não tenha nenhuma linha cadastrada, iniciar o processo de integração de um feed e depois retornar aqui para inserção do número. Caso seja o primeiro feed a ser cadastrado, ele já estará preenchido aqui automaticamente\r\n\r\n<a href=\"admin.php?page=sbi-feed-builder\">Instagram Feed > Todos os feeds</a>",
                 "required": 0,
                 "conditional_logic": [
                     [

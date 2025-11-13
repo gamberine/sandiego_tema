@@ -19,25 +19,21 @@
 </div><!-- #content -->
 <!-- <div class="faixasecondary"></div> -->
 
-
-
 <?php get_template_part('template-parts/arquivo-footer'); ?>
-
-
 
 <div class="footerDesenvolvedorParceiro">
   <span>
-    <!-- Design/Manutenção: -->
+    Design/Manutenção:
     <?php bl_site_footer_se(); ?>
   </span>
-  <!-- <span>Desenvolvimento:
-    < ?php bl_site_footer_logo(); ?></span> -->
+  <span>Desenvolvimento:
+    <?php bl_site_footer_logo(); ?></span>
 </div>
 
 </div><!-- #page -->
 
 
-<?php get_template_part('template-parts/arquivo-modal-galeria'); ?>
+<!-- < ?php get_template_part('template-parts/arquivo-modal-galeria'); ?> -->
 
 <?php wp_footer(); ?>
 

@@ -21,12 +21,12 @@
     endif; ?>
   </div>
 
-  <div class="row align-items-stretch flex-lg-wrap flex-xl-nowrap gap-5 bg-Rodape">
-    <div class="col-12 col-lg-12 col-xl-5">
-      <div class="cta-card h-100">
+  <div class="row align-items-stretch flex-lg-wrap flex-xl-nowrap gap-5">
+    <div class="col-12 col-lg-12 col-xl-5 px-xl-4 ps-xl-3 pe-xl-5 py-xl-0 d-flex align-items-center cta-card h-100">
+      <!-- <div class="cta-card h-100"> -->
         <h3 class="h4 mb-2"><?php the_sub_field('cta_title');  ?></h3>
         <p class="mb-0"><?php the_sub_field('cta_text'); ?></p>
-      </div>
+      <!-- </div> -->
     </div>
 
     <!-- formulario de contato -->

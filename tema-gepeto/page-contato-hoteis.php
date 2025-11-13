@@ -17,14 +17,14 @@ get_header();
         $loop->the_post();
         ?>
         <div class="col-12 col-md-6">
-          <div class="sd-card p-3 h-100">
+          <div class="sd-card p-3 h-auto">
             <div class="d-flex gap-3 align-items-start">
               <div style="width:84px;height:84px;overflow:hidden;border-radius:12px;">
                 <?php the_post_thumbnail( 'thumbnail', [ 'class' => 'w-100 h-100 object-fit-cover' ] ); ?>
               </div>
               <div>
                 <h5 class="mb-1"><?php the_title(); ?></h5>
-                <div class="small text-muted mb-2">
+                <div class="small text-muted mb-2"> 
                   <?php echo esc_html( sd_field('hotel_cidade') ); ?> • <?php echo esc_html( sd_field('hotel_bairro') ); ?>
                 </div>
                 <div class="small">Telefone: <a href="tel:<?php echo esc_attr( sd_field('hotel_tel') ); ?>"><?php echo esc_html( sd_field('hotel_tel') ); ?></a></div>
@@ -39,7 +39,7 @@ get_header();
       ?>
     </div>
 
-    <div class="mt-5">
+    <div class="my-5">
       <h2 class="sd-title h4 mb-3"><?php echo esc_html( sd_field('contato_form_titulo', get_the_ID(), 'Quer conversar sobre os nossos serviços de administração?') ); ?></h2>
       <p><?php echo esc_html( sd_field('contato_form_sub', get_the_ID(), 'Preencha seus dados que entraremos em contato.') ); ?></p>
       <div class="my-3">

@@ -16,6 +16,16 @@ Ano: 2025
 @import url('style-variaveis.css');
 
 
+.site-main {
+  background-image: url(../img/rodape.png);
+  background-size: 100% auto;
+  background-position: bottom center;
+  background-repeat: no-repeat !important;
+  position: relative;
+  margin-bottom: -3rem;
+  padding-bottom: 3rem !important;
+}
+
 .slick-prev,
 .slick-next {
   top: 50% !important;
@@ -209,11 +219,11 @@ Ano: 2025
 /* .site-footer { */
 
 /* css: tema-gepeto\assets\css\style-base.css */
-.bg-Rodape {
-  background-image   : url('../imagens/rodape.png');
-  background-size    : cover;
-  background-position: center;
-}
+  /* .bg-Rodape {
+    background-image   : url('../img/rodape.png');
+    background-size    : cover;
+    background-position: center;
+  } */
 
 .site-footer {
   background: var(--primary-color-hover);
@@ -17093,7 +17103,7 @@ span.linkIdiomas.d-flex .gtranslate_wrapper .gt_selector {
   flex-flow      : column;
   justify-content: center;
   gap            : 1rem;
-  margin-block   : 3%;
+  margin-block: 9.5%;
   box-shadow     : var(--card-shadow-soft);
 }
 
