@@ -7748,8 +7748,6 @@ template {
   margin-right  : auto;
 }
 
-
-
 .site-main {
   background-image: url(../img/rodape.png);
   background-size: 100% auto;
@@ -17003,7 +17001,7 @@ span.linkIdiomas.d-flex .gtranslate_wrapper .gt_selector {
   border-radius  : 50%;
   display        : grid;
   place-items    : center;
-  backdrop-filter: blur(2px);
+  /* backdrop-filter: blur(2px); */
 }
 
 .hero .play svg {
