@@ -1,6 +1,6 @@
 {
   "key": "group_sandiego_home",
-  "title": "Home — Seções",
+  "title": "Home - Seções",
   "fields": [
     {
       "key": "field_home_sections",
@@ -142,14 +142,14 @@
             },
             {
               "key": "d_cta_title",
-              "label": "CTA — Título",
+              "label": "CTA - Título",
               "name": "cta_title",
               "type": "text",
               "default_value": "Quer conversar sobre os nossos serviços de administração?"
             },
             {
               "key": "d_cta_text",
-              "label": "CTA — Texto",
+              "label": "CTA - Texto",
               "name": "cta_text",
               "type": "textarea",
               "rows": 3,
