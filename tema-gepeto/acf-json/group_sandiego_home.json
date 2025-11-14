@@ -156,6 +156,82 @@
               "default_value": "Preencha seus dados que entraremos em contato."
             }
           ]
+        },
+        {
+          "key": "layout_founders",
+          "name": "founders",
+          "label": "Fundadores",
+          "display": "block",
+          "sub_fields": [
+            {
+              "key": "founders_section_title",
+              "label": "Titulo",
+              "name": "section_title",
+              "type": "text",
+              "default_value": "Como tudo começou"
+            },
+            {
+              "key": "founders_section_label",
+              "label": "Etiqueta",
+              "name": "section_label",
+              "type": "text",
+              "default_value": "Fundadores San Diego"
+            },
+            {
+              "key": "founders_repeater",
+              "label": "Fundadores",
+              "name": "founders",
+              "type": "repeater",
+              "layout": "row",
+              "button_label": "Adicionar fundador",
+              "sub_fields": [
+                {
+                  "key": "founders_photo",
+                  "label": "Foto",
+                  "name": "photo",
+                  "type": "image",
+                  "return_format": "array",
+                  "preview_size": "medium"
+                },
+                {
+                  "key": "founders_name",
+                  "label": "Nome",
+                  "name": "name",
+                  "type": "text"
+                },
+                {
+                  "key": "founders_role",
+                  "label": "Cargo ou destaque",
+                  "name": "role",
+                  "type": "text"
+                },
+                {
+                  "key": "founders_bio",
+                  "label": "Texto",
+                  "name": "bio",
+                  "type": "textarea",
+                  "rows": 3
+                }
+              ]
+            },
+            {
+              "key": "founders_content",
+              "label": "Conteudo",
+              "name": "section_content",
+              "type": "wysiwyg",
+              "tabs": "all",
+              "toolbar": "full",
+              "media_upload": 0
+            },
+            {
+              "key": "founders_image",
+              "label": "Imagem destaque",
+              "name": "section_image",
+              "type": "image",
+              "return_format": "array",
+              "preview_size": "large"
+            }
+          ]
         }
       ]
     }
