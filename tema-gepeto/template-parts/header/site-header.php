@@ -15,10 +15,19 @@ $wrapper_classes .= has_nav_menu('primary') ? ' has-menu' : '';
 ?>
 
 <header id="masthead" class="<?php echo esc_attr($wrapper_classes); ?>" role="banner">
+  <div class="site-header__container">
+    <div class="site-header__layout">
+      <div class="site-header__branding">
+        <?php get_template_part('template-parts/header/site-branding'); ?>
+      </div>
 
-  <?php get_template_part('template-parts/header/site-branding'); ?>
-  <?php get_template_part('template-parts/header/site-nav'); ?>
-  <?php get_template_part('template-parts/arquivo-idiomas'); ?>
+      <div class="site-header__nav">
+        <?php get_template_part('template-parts/header/site-nav'); ?>
+      </div>
 
-
+      <div class="site-header__utilities">
+        <?php get_template_part('template-parts/arquivo-idiomas'); ?>
+      </div>
+    </div>
+  </div>
 </header><!-- #masthead -->
