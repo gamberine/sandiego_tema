@@ -1,71 +1,87 @@
 <?php
 /**
- * Banner padrão utilizado nas páginas institucionais.
+ * Banner padrao utilizado nas paginas institucionais.
  *
  * @package Tema_Dev_Gamb
  */
-
-$page_id          = get_queried_object_id();
-$media_type       = get_field('page_banner_media_type', $page_id) ?: 'image';
-$image_desktop    = get_field('page_banner_image', $page_id);
-$image_mobile     = get_field('page_banner_image_mobile', $page_id);
-$video_file       = get_field('page_banner_video', $page_id);
-$banner_content   = get_field('page_banner_content', $page_id);
-$button_label     = get_field('page_banner_button_label', $page_id);
-$button_link      = get_field('page_banner_button_link', $page_id);
-$has_image_media  = 'image' === $media_type && ! empty($image_desktop);
-$has_video_media  = 'video' === $media_type && ! empty($video_file['url']);
-$should_render    = $has_image_media || $has_video_media;
-
-if (! $should_render) {
-    return;
-}
-
-$desktop_background = $has_image_media
-    ? sprintf("var(--gradientHeader), url('%s')", esc_url_raw($image_desktop['url']))
-    : 'var(--gradientHeader)';
-
-$mobile_reference = ($image_mobile['url'] ?? '') ?: ($image_desktop['url'] ?? '');
-$mobile_background = $mobile_reference
-    ? sprintf("var(--gradientHeader), url('%s')", esc_url_raw($mobile_reference))
-    : $desktop_background;
-
-$button_url   = $button_link['url'] ?? '';
-$button_title = $button_label ?: ($button_link['title'] ?? '');
-$button_target = $button_link['target'] ?? '_self';
-$button_rel    = '_blank' === $button_target ? 'noopener noreferrer' : '';
 ?>
 
-<section class="rowBannerHome page-default-banner" id="page-banner">
-  <div class="bannerPrincipal" data-static="true">
-    <div class="slide-items <?php echo esc_attr($has_video_media ? 'video' : 'banner'); ?>"
-      <?php if ($has_image_media) : ?>
-        style="background-image: <?php echo esc_attr($desktop_background); ?>;"
-        data-desktop-bg="<?php echo esc_attr($desktop_background); ?>"
-        data-mobile-bg="<?php echo esc_attr($mobile_background); ?>"
-      <?php endif; ?>
-    >
-      <?php if ($has_video_media) : ?>
-        <video autoplay muted loop playsinline>
-          <source src="<?php echo esc_url($video_file['url']); ?>" type="<?php echo esc_attr($video_file['mime_type'] ?? 'video/mp4'); ?>">
-        </video>
-      <?php endif; ?>
+<div class="rowBannerHome" id="home">
+  <div class="bannerPrincipal">
+    <?php if (have_rows('item_banner')) : ?>
+      <?php
+      while (have_rows('item_banner')) :
+        the_row();
+        $use_image = (bool) get_sub_field('select_imagem');
+        $select_adicionar_botao = get_sub_field('select_adicionar_botao');
+        $imagem_banner = get_sub_field('imagem_banner');
+        $imagem_banner_mobile = get_sub_field('imagem_banner_mobile');
+        $video_banner = get_sub_field('video_banner');
+        $texto_banner = get_sub_field('texto_banner');
+        $botao_banner = get_sub_field('botao_banner');
+        $link_botao = get_sub_field('link_botao');
+        $desktop_background = '';
+        $mobile_background = '';
 
-      <div class="formaBanner">
-        <?php if (! empty($banner_content)) : ?>
-          <div class="animationFade">
-            <?php echo wp_kses_post($banner_content); ?>
-          </div>
+        if ($use_image && $imagem_banner) {
+          $desktop_url = esc_url($imagem_banner);
+          $mobile_url = esc_url($imagem_banner_mobile ?: $imagem_banner);
+          $desktop_background = sprintf("url('%s'), var(--gradientHeader)", $desktop_url);
+          $mobile_background = sprintf("url('%s'), var(--gradientHeader)", $mobile_url);
+        }
+      ?>
+        <?php if ($use_image && $imagem_banner) : ?>
+          <div class="slide-items banner"
+            style="background: <?php echo esc_attr($desktop_background); ?>;"
+            data-desktop-bg="<?php echo esc_attr($desktop_background); ?>"
+            data-mobile-bg="<?php echo esc_attr($mobile_background); ?>">
+        <?php elseif (!$use_image && $video_banner) : ?>
+          <div class="slide-items video" style="background: var(--gradientHeader) !important; background-size: cover; background-blend-mode: multiply;">
+            <video autoplay muted loop>
+              <source src="<?php echo esc_url($video_banner); ?>" type="video/mp4">
+            </video>
+        <?php else : ?>
+          <div class="slide-items" style="background: var(--gradientHeader); background-size: cover;">
+            <p>Slide nao configurado corretamente.</p>
         <?php endif; ?>
-
-        <?php if ($button_url && $button_title) : ?>
-          <div class="gridBtnPost">
-            <a class="btnBanner" href="<?php echo esc_url($button_url); ?>" target="<?php echo esc_attr($button_target); ?>"<?php echo $button_rel ? ' rel="' . esc_attr($button_rel) . '"' : ''; ?>>
-              <?php echo esc_html($button_title); ?>
-            </a>
+            <div class="formaBanner">
+              <?php if (!empty($texto_banner)) : ?>
+                <div class="animationFade"><?php echo wp_kses_post($texto_banner); ?></div>
+              <?php endif; ?>
+              <?php if ($select_adicionar_botao && $botao_banner && $link_botao) : ?>
+                <div class="gridBtnPost">
+                  <a href="<?php echo esc_url($link_botao); ?>" class="btnBanner">
+                    <?php echo esc_html($botao_banner); ?>
+                  </a>
+                </div>
+              <?php endif; ?>
+            </div>
           </div>
-        <?php endif; ?>
+      <?php endwhile; ?>
+    <?php else : ?>
+      <div class="slide-items" style="background: var(--gradientHeader); background-size: cover;">
+        <p>Adicione ao menos um banner na pagina para exibi-lo aqui.</p>
       </div>
-    </div>
+    <?php endif; ?>
   </div>
-</section>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const banners = document.querySelectorAll('.slide-items.banner');
+    const updateBackgrounds = function() {
+      banners.forEach(function(banner) {
+        const mobileBg = banner.dataset.mobileBg;
+        const desktopBg = banner.dataset.desktopBg;
+        if (window.innerWidth <= 991 && mobileBg) {
+          banner.style.background = mobileBg;
+        } else if (desktopBg) {
+          banner.style.background = desktopBg;
+        }
+      });
+    };
+
+    updateBackgrounds();
+    window.addEventListener('resize', updateBackgrounds);
+  });
+</script>

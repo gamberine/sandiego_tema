@@ -6,12 +6,12 @@
  */
 ?>
 <section id="numeros" class="numbers py-5">
-  <div class="container">
+  <div class="container my-5">
     <?php $section_title = get_sub_field('titulo_sessao_numeros'); ?>
     <?php if (! empty($section_title)) : ?>
-      <h2 class="title-xl text-center text-white mb-4"><?php echo esc_html($section_title); ?></h2>
+      <h2 class="title-xl text-center text-white mb-5 pb-4"><?php echo esc_html($section_title); ?></h2>
     <?php endif; ?>
-    <div class="row g-4">
+    <div class="row g-4 mt-4">
       <?php if (have_rows('items')) : ?>
         <?php
         while (have_rows('items')) :
@@ -38,14 +38,14 @@
             ?>
           <div class="col-12 col-sm-6 col-lg-3">
             <div class="item h-100 text-center">
-              <div class="icon mx-auto mb-2">
+              <div class="icon mx-auto">
                 <img src="<?php echo esc_url($icon_url); ?>" alt="<?php echo esc_attr($icon_alt ?: $label_value); ?>" style="width:64px;height:64px;object-fit:contain">
               </div>
-              <div class="contagem display-4 fw-bold" <?php echo $count_target !== '' ? 'data-count="' . esc_attr($count_target) . '"' : ''; ?>>
+              <div class="font-title contagem display-5 fw-bold" <?php echo $count_target !== '' ? 'data-count="' . esc_attr($count_target) . '"' : ''; ?>>
                 <?php echo esc_html($number_value); ?>
               </div>
               <?php if ($label_value) : ?>
-                <div class="small text-uppercase"><?php echo esc_html($label_value); ?></div>
+                <div class="small"><?php echo esc_html($label_value); ?></div>
               <?php endif; ?>
             </div>
           </div>

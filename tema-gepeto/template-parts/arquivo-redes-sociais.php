@@ -25,7 +25,7 @@ if (! empty($configured_socials) && is_array($configured_socials)) {
         $url    = esc_url($link['url']);
         $target = ! empty($link['target']) ? $link['target'] : '_blank';
         $label  = $social_item['footer_social_label'] ?? '';
-        $icon   = $social_item['footer_social_icon_class'] ?? 'fab fa-link';
+        $icon   = $social_item['footer_social_icon_class'] ?? 'fi fi-brands-link';
 
         $items[] = array(
             'url'    => $url,

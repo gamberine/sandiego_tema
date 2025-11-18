@@ -1,7 +1,16 @@
 <?php
 /**
- * Funções do tema Gepeto SD - 03-43
- */
+* Funções do tema Gepeto SD - 03-43
+* 
+*  Adobe Fonts – Registro técnico
+*  Projeto: Sandiego Hotéis 2025
+*  Desenvolvedor responsável: Gamberine (Weslley Murta)
+*  Conta Adobe utilizada: weslley.murta
+*  Observação: As fontes são servidas exclusivamente via Adobe Fonts.
+*  Nenhum arquivo .otf/.ttf deve ser distribuído no tema.
+* 
+*/
+
 if ( ! defined( 'ABSPATH' ) ) {
   exit;
 }
@@ -9,74 +18,62 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Configurações básicas do tema.
  */
-/**
- * Configurações básicas do tema.
- */
-add_action('after_setup_theme', function () {
-  load_theme_textdomain('temabasegamb', get_template_directory() . '/languages');
+add_action( 'after_setup_theme', function () {
 
-  add_theme_support('title-tag');
-  add_theme_support('post-thumbnails');
-  add_theme_support('automatic-feed-links');
-  add_theme_support('html5', ['search-form','comment-form','comment-list','gallery','caption','style','script','navigation-widgets']);
-  add_theme_support('customize-selective-refresh-widgets');
-  add_theme_support('responsive-embeds');
-  add_theme_support('custom-logo', [
+  // Carrega o textdomain do tema
+  load_theme_textdomain(
+    'temabasegamb',
+    get_template_directory() . '/languages'
+  );
+
+  add_theme_support( 'title-tag' );
+  add_theme_support( 'post-thumbnails' );
+  add_theme_support( 'html5', [
+    'search-form',
+    'comment-form',
+    'comment-list',
+    'gallery',
+    'caption',
+    'style',
+    'script',
+    'navigation-widgets',
+  ] );
+  add_theme_support( 'responsive-embeds' );
+  add_theme_support( 'custom-logo', [
     'height'      => 100,
     'width'       => 300,
     'flex-height' => true,
     'flex-width'  => true,
   ]);
 
-  register_nav_menus([
-    'primary'   => __('Menu Principal', 'temabasegamb'),
-    'secondary' => __('Menu Internas', 'temabasegamb'),
-    'footer'    => __('Menu Rodapé', 'temabasegamb'),
-  ]);
-
-  // Starter content apenas no customizer
-  // if ( is_customize_preview() ) {
-  //   require get_template_directory() . '/classes/starter-content.php';
-  //   add_theme_support('starter-content', tema_base_gamb_get_starter_content());
-  // }
-});
-
-
-// Garantir que as funções base estejam carregadas
-// if ( !function_exists( 'tema_base_gamb_get_icon_svg' ) ) {
-//   require_once get_template_directory() . '/classes/class-tema-base-gamb-svg-icons.php';
-// }
-
-
+  // Menus sem funções de tradução aqui, para não disparar carregamento antecipado
+  register_nav_menus( [
+    'primary'   => 'Menu Principal',
+    'secondary' => 'Menu Internas',
+    'footer'    => 'Menu Rodapé',
+  ] );
+} );
+// Silencia avisos do tipo "Function X was called incorrectly"
+add_filter( 'doing_it_wrong_trigger_error', '__return_false' );
 
 // * --------------------------------------------------------------------------
 //  * 5) Requires (classes/inc)
 //  * -------------------------------------------------------------------------- */
+// ESSENCIAL: Carrega as configurações do ACF JSON.
 require_once get_stylesheet_directory() . '/inc/enqueue-and-acf.php';
-require get_template_directory() . '/classes/class-tema-base-gamb-svg-icons.php';
-require get_template_directory() . '/classes/class-tema-base-gamb-custom-colors.php';
-require get_template_directory() . '/classes/class-tema-base-gamb-customize.php';
-require_once get_template_directory() . '/classes/class-tema-base-gamb-dark-mode.php';
+require get_template_directory() . '/inc/class-tema-base-gamb-svg-icons.php';
+require get_template_directory() . '/inc/class-tema-base-gamb-custom-colors.php';
+require get_template_directory() . '/inc/class-tema-base-gamb-customize.php';
+require_once get_template_directory() . '/inc/class-tema-base-gamb-dark-mode.php';
 new Tema_Dev_Gamb_Custom_Colors();
 require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/menu-functions.php';
 require get_template_directory() . '/inc/template-tags.php';
 new Tema_Dev_Gamb_Customize();
-require get_template_directory() . '/inc/block-patterns.php';
-require get_template_directory() . '/inc/block-styles.php';
+// require get_template_directory() . '/inc/block-patterns.php';
+// require get_template_directory() . '/inc/block-styles.php';
 new Tema_Dev_Gamb_Dark_Mode();
 
-/* Customizer JS */
-function temabasegamb_customize_preview_init() {
-  wp_enqueue_script('temabasegamb-customize-helpers', get_theme_file_uri('/assets/js/customize-helpers.js'), array(), wp_get_theme()->get('Version'), true);
-  wp_enqueue_script('temabasegamb-customize-preview', get_theme_file_uri('/assets/js/customize-preview.js'), array('customize-preview','customize-selective-refresh','jquery','temabasegamb-customize-helpers'), wp_get_theme()->get('Version'), true);
-}
-add_action('customize_preview_init', 'temabasegamb_customize_preview_init');
-
-function temabasegamb_customize_controls_enqueue_scripts() {
-  wp_enqueue_script('temabasegamb-customize-helpers', get_theme_file_uri('/assets/js/customize-helpers.js'), array(), wp_get_theme()->get('Version'), true);
-}
-add_action('customize_controls_enqueue_scripts', 'temabasegamb_customize_controls_enqueue_scripts');
 
 /**
  * Carrega scripts e estilos (Bootstrap, Slick, CSS personalizado)
@@ -85,11 +82,12 @@ add_action('wp_enqueue_scripts', function () {
   // Bootstrap
   wp_enqueue_style( 'sd-bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css', [], '5.3.3' );
   wp_enqueue_script( 'sd-bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js', ['jquery'], '5.3.3', true );
+  wp_enqueue_style( 'sd-font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css', [], '5.15.4  ' );
 
   // Slick Carousel
   wp_enqueue_style( 'sd-slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', [], '1.8.1' );
   wp_enqueue_style( 'sd-slick-theme', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css', ['sd-slick'], '1.8.1' );
-  wp_enqueue_script( 'sd-slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', ['jquery'], '1.8.1', true );
+  wp_enqueue_script( 'sd-slick-min', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', ['jquery'], '1.8.1', true );
 
   // Estilos do tema
   wp_enqueue_style( 'sd-font-diavlo', 'https://use.typekit.net/nez2mlc.css', [], null );
@@ -98,22 +96,46 @@ add_action('wp_enqueue_scripts', function () {
   wp_enqueue_style( 'sd-style-base', get_stylesheet_directory_uri() . '/assets/css/style-base.css', [], '1.0.0' );
 
   // JS personalizado
-  wp_enqueue_script( 'sd-theme-js', get_stylesheet_directory_uri() . '/assets/js/sandiego.js', ['jquery','sd-slick'], '1.0.0', true );
+  wp_enqueue_script( 'scripts-js', get_stylesheet_directory_uri() . '/assets/js/scripts.js', ['jquery'], '1.0.0', true );
 });
 
-/* Estilos/Scripts no admin */
-function wgm_admin_styles() {
-    wp_enqueue_style( 'sd-style-admin', get_template_directory_uri() . '/assets/css/style-admin.css', [], '1.0.0' );
+/* Scroll menu ativo - Restaurado */
+function enqueue_scroll_menu_script() {
+  wp_enqueue_script('scroll-menu', get_template_directory_uri().'/assets/js/scroll-menu-active.js', array('jquery'), null, true);
 }
-add_action('admin_head', 'wgm_admin_styles');
+add_action('wp_enqueue_scripts','enqueue_scroll_menu_script');
+
+
+/* ===== Estilos e Scripts no ADMIN ===== */
+function wgm_admin_assets($hook) {
+    // CSS do admin
+    wp_enqueue_style(
+        'sd-style-admin',
+        get_template_directory_uri() . '/assets/css/style-wadmin.css',
+        [],
+        '1.0.0'
+    );
+
+    // JS do admin
+    wp_enqueue_script(
+        'sd-scripts-admin',
+        get_template_directory_uri() . '/assets/js/script-admin.js',
+        ['jquery'],
+        '1.0.0',
+        true
+    );
+}
+add_action('admin_enqueue_scripts', 'wgm_admin_assets');
+
 
 
 /**
  * Registra Custom Post Types e Taxonomias - gamberine
+ * ESSENCIAL
  */
 add_action('init', function () {
-// Post type Conteúdo 
-register_post_type('conteudo', [
+    // Post type Conteúdo 
+    register_post_type('conteudo', [
   'labels' => [
     'name'               => 'Conteúdo',
     'singular_name'      => 'Conteúdo',
@@ -134,10 +156,10 @@ register_post_type('conteudo', [
   'menu_icon'    => 'dashicons-admin-customizer',
   'supports'     => ['title','editor','thumbnail','excerpt','revisions'],
   'rewrite'      => ['slug'=>'conteudo'],
-]);
+    ]);
 
-// Post type Banner
-register_post_type('banner', [
+    // Post type Banner
+    register_post_type('banner', [
   'labels' => [
     'name'               => 'Banner',
     'singular_name'      => 'Banner',
@@ -155,11 +177,10 @@ register_post_type('banner', [
   'supports'     => ['title','editor','thumbnail','excerpt','revisions'],
   'rewrite'      => ['slug'=>'banner'],
   'show_in_rest' => true,
-]);
+    ]);
 
-
-  // Post type Hotéis
-  register_post_type('hoteis', [
+    // Post type Hotéis
+    register_post_type('hoteis', [
     'labels' => [
       'name'          => 'Hotéis',
       'singular_name' => 'Hotel',
@@ -177,10 +198,10 @@ register_post_type('banner', [
     'supports'     => ['title','editor','thumbnail','excerpt','revisions'],
     'rewrite'      => ['slug'=>'hoteis'],
     'show_in_rest' => true,
-  ]);
+    ]);
 
-  // Post type Acomodação
-  register_post_type('acomodacao', [
+    // Post type Acomodação
+    register_post_type('acomodacao', [
     'labels' => [
       'name'          => 'Acomodações',
       'singular_name' => 'Acomodação'
@@ -190,10 +211,10 @@ register_post_type('banner', [
     'supports'     => ['title','editor','thumbnail','excerpt','revisions'],
     'rewrite'      => ['slug'=>'acomodacoes'],
     'show_in_rest' => true,
-  ]);
+    ]);
 
-  // Post type Depoimento
-  register_post_type('depoimento', [
+    // Post type Depoimento
+    register_post_type('depoimento', [
     'labels' => [
       'name'          => 'Depoimentos',
       'singular_name' => 'Depoimento'
@@ -202,10 +223,31 @@ register_post_type('banner', [
     'menu_icon'    => 'dashicons-format-quote',
     'supports'     => ['title','editor','thumbnail','revisions'],
     'show_in_rest' => true,
-  ]);
+    ]);
+  
+    // Post type Ofertas
+    register_post_type('ofertas', [
+    'labels' => [
+      'name'               => 'Ofertas',
+      'singular_name'      => 'Oferta',
+      'add_new_item'       => 'Adicionar nova Oferta',
+      'edit_item'          => 'Editar Oferta',
+      'new_item'           => 'Nova Oferta',
+      'view_item'          => 'Ver Oferta',
+      'search_items'       => 'Buscar Ofertas',
+      'not_found'          => 'Nenhuma Oferta encontrada',
+      'not_found_in_trash' => 'Nenhuma Oferta encontrada na lixeira',
+    ],
+    'public'       => true,
+    'has_archive'  => true,
+    'menu_icon'    => 'dashicons-tickets-alt',
+    'supports'     => ['title','editor','thumbnail','excerpt','revisions'],
+    'rewrite'      => ['slug'=>'ofertas'],
+    'show_in_rest' => true,
+    ]);
 
-  // Taxonomia Comodidades para Hotéis
-  register_taxonomy('hotel_feature', ['hoteis'], [
+    // Taxonomia Comodidades para Hotéis
+    register_taxonomy('hotel_feature', ['hoteis'], [
     'labels' => [
       'name'          => 'Comodidades',
       'singular_name' => 'Comodidade',
@@ -213,27 +255,9 @@ register_post_type('banner', [
     'public'       => true,
     'hierarchical' => false,
     'show_in_rest' => true,
-  ]);
+    ]);
 });
 
-/**
- * Shortcode: [sd_copy text="..."] – Botão de cópia
- */
-function sd_shortcode_copy( $atts ) {
-  $a = shortcode_atts(['text' => ''], $atts);
-  $text = esc_attr($a['text']);
-  ob_start();
-  ?>
-  <button class="sd-copy btn btn-sm btn-outline-secondary" data-copy="<?php echo $text; ?>" title="Copiar">
-    <svg xmlns="https://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
-      <path d="M10 1.5H6a.5.5 0 0 0-.5.5v1h5V2a.5.5 0 0 0-.5-.5"/>
-      <path d="M4.5 3a1 1 0 0 1 1-1h.5v1a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2h.5a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1z"/>
-    </svg>
-  </button>
-  <?php
-  return ob_get_clean();
-}
-add_shortcode('sd_copy','sd_shortcode_copy');
 
 /**
  * Função auxiliar para obter campos ACF com valor padrão
@@ -252,6 +276,7 @@ function sd_field( $key, $post_id = null, $default = '' ) {
   }
   return $default;
 }
+
 
 /* Classe no admin quando CPT conteudo */
 function temabasegamb_admin_body_class($classes) {
@@ -299,53 +324,12 @@ add_action('login_head', 'gamberine_login_edit');
  * 8) Papéis / Permissões / Admin UI
  * -------------------------------------------------------------------------- */
 
-/* Renomeia rótulo de Administrator exibido */
-function renomear_funcao_administrador($roles) {
-  if ( isset($roles['administrator']) ) {
-    $roles['administrator']['name'] = 'Super Admin';
-  }
-  return $roles;
-}
-add_filter('editable_roles', 'renomear_funcao_administrador');
-
-function renomear_funcao_administrador_dropdown($role) {
-  return $role === 'Administrator' ? 'Super-Admin' : $role;
-}
-add_filter('role_names', 'renomear_funcao_administrador_dropdown');
-
-/* Cria função Administrador Site */
-function criar_funcao_administrador_site() {
-  if ( ! get_role('administrador_site') ) {
-    add_role('administrador_site', __('Administrador Site','temabasegamb'), array(
-      'read'=>true,'edit_posts'=>true,'delete_posts'=>true,'publish_posts'=>true,'upload_files'=>true,'manage_categories'=>true,
-      'install_plugins'=>true,'activate_plugins'=>true,'edit_plugins'=>true,'delete_plugins'=>true,
-      'install_themes'=>false,'edit_themes'=>false,'delete_themes'=>false,
-      'list_users'=>true,'edit_users'=>true,'delete_users'=>true,'create_users'=>true,'promote_users'=>true,
-      'manage_options'=>true,'edit_dashboard'=>true,'update_core'=>false,'update_plugins'=>true,'update_themes'=>false,'manage_links'=>true,'edit_files'=>true,
-      'edit_private_posts'=>true,'edit_published_posts'=>true,'delete_private_posts'=>true,'delete_published_posts'=>true,
-      'publish_pages'=>true,'edit_pages'=>true,'delete_pages'=>true,'edit_private_pages'=>true,'delete_private_pages'=>true,'edit_published_pages'=>true,'delete_published_pages'=>true,
-      'unfiltered_html'=>false,'edit_theme_options'=>false
-    ));
-  }
-}
-add_action('init','criar_funcao_administrador_site');
-
-function atribuir_funcao_administrador_site($user_id) {
-  $user = new WP_User($user_id);
-  $user->set_role('administrador_site');
-}
-add_action('user_register','atribuir_funcao_administrador_site');
-
-/* Remove funções padrão */
-function remover_funcoes_padrao() {
-  if ( get_role('administrador_comum') ) remove_role('administrador_comum');
-  if ( get_role('contributor') ) remove_role('contributor');
-  if ( get_role('author') ) remove_role('author');
-}
-add_action('init','remover_funcoes_padrao');
-
-/* Ocultar itens/avisos para não-super-admin */
+/* Ocultar itens/avisos para não-super-admin - Restaurado */
 function wgm_desativa_comentarios_admin_menu() {
+  // ATENÇÃO: A lógica original (`! current_user_can('add_users')`)
+  // vai ocultar itens para qualquer usuário que não seja Administrador.
+  // Se isso for desejado, mantenha. Se quiser que apenas Editores vejam,
+  // mude para `! current_user_can('manage_options')` por exemplo.
   if ( ! current_user_can('add_users') ) {
 
     // Core/Plugin updates notices
@@ -369,7 +353,7 @@ function wgm_desativa_comentarios_admin_menu() {
       unset($menu[25]); // Comentários
       unset($menu[60]); // Aparência
       if ( isset($submenu['index.php'][10]) ) unset($submenu['index.php'][10]); // Painel -> Atualização
-      if ( $user_ID != 99 ) {
+      if ( $user_ID != 99 ) { // Assumindo que 99 é um ID específico de Super Admin
         remove_menu_page('plugin-editor.php');
       }
     });
@@ -416,24 +400,8 @@ add_filter('acf/settings/load_json', function($paths){
   return $paths;
 });
 
-/* ACF: campo imagem default (render setting) */
-function add_default_value_to_image_field($field){
-  if ( function_exists('acf_render_field_setting') ) {
-    acf_render_field_setting($field, array(
-      'label'=>__('Default Image ID','acf'),
-      'instructions'=>__('Appears when creating a new post','acf'),
-      'type'=>'image',
-      'name'=>'default_value',
-    ));
-  }
-}
-add_action('acf/render_field_settings/type=image','add_default_value_to_image_field',20);
-
-/* Excerpt curto */
-function custom_short_excerpt($excerpt){ return substr($excerpt, 0, 200); }
-add_filter('the_excerpt','custom_short_excerpt');
-
 /* Remover meta generator */
+// BOA PRÁTICA
 remove_action('wp_head','wp_generator');
 
 /* Rodapé Admin */
@@ -442,7 +410,7 @@ function bl_admin_footer(){
 }
 add_filter('admin_footer_text','bl_admin_footer');
 
-/* Logos no site footer (se usados por filtros do tema) */
+/* Logos no site footer */
 function bl_site_footer_logo(){ echo '<a href="https://gamberine.com.br" target="_blank" rel="noopener"><img src="'.get_bloginfo('template_directory').'/imagens/logoGamberine.png"/></a>'; }
 add_filter('site_footer_text','bl_site_footer_logo');
 
@@ -478,12 +446,6 @@ function add_lang_class_to_body($classes){
 add_filter('body_class','add_lang_class_to_body');
 
 
-/* Scroll menu ativo */
-function enqueue_scroll_menu_script() {
-  wp_enqueue_script('scroll-menu', get_template_directory_uri().'/assets/js/scroll-menu-active.js', array('jquery'), null, true);
-}
-add_action('wp_enqueue_scripts','enqueue_scroll_menu_script');
-
 /* Shortcode: título de página */
 function shortcode_titulo_pagina() {
   return is_page() ? '<h1>'. get_the_title() .'</h1>' : '';
@@ -498,9 +460,7 @@ function adicionar_links_dinamicos_menu() {
 }
 add_action('admin_menu','adicionar_links_dinamicos_menu');
 
-/* --------------------- */
-
-// Add Last Modified Column
+/* Add Last Modified Column */
 add_filter('manage_posts_columns', function ($columns) {
   $columns['last_modified'] = __('Last Modified');
   return $columns;
@@ -513,4 +473,137 @@ add_action('manage_posts_custom_column', function ($column, $post_id) {
   }
 }, 10, 2);
 
-/* FIM functions.php reestruturado */
+
+/* - 9) MODO MANUTENÇÃO - CORRIGIDO E COMPLETADO */
+
+function sd_is_maintenance_mode_enabled() {
+  // Retorna o valor da opção, convertendo para booleano
+  return (bool) get_option('sd_maintenance_mode_enabled', false);
+}
+
+function sd_sanitize_checkbox($value) {
+  // Garante que o valor salvo seja 1 ou 0
+  return $value ? 1 : 0;
+}
+
+/**
+ * Registra a opção na API de Settings do WordPress
+ */
+add_action('admin_init', function () {
+  register_setting('sd_maintenance_settings','sd_maintenance_mode_enabled', [
+    'type'              => 'boolean',
+    'sanitize_callback' => 'sd_sanitize_checkbox',
+    'default'           => 0,
+  ]);
+});
+
+/**
+ * Renderiza a página de opções no admin
+ */
+function sd_render_maintenance_settings_page() {
+  // Verifica permissão
+  if (!current_user_can('manage_options')) {
+    return;
+  }
+  ?>
+  <div class="wrap">
+    <h1><?php esc_html_e('Página em manutenção','temabasegamb'); ?></h1>
+    <form method="post" action="options.php">
+      <?php
+        settings_fields('sd_maintenance_settings');
+        $enabled = sd_is_maintenance_mode_enabled();
+      ?>
+      <table class="form-table" role="presentation">
+        <tbody>
+          <tr>
+            <th scope="row"><?php esc_html_e('Status','temabasegamb'); ?></th>
+            <td>
+              <label for="sd-maintenance-mode-enabled">
+                <input type="checkbox" name="sd_maintenance_mode_enabled" id="sd-maintenance-mode-enabled" value="1" <?php checked($enabled); ?> />
+                <?php esc_html_e('Ativar página em manutenção','temabasegamb'); ?>
+              </label>
+              <p class="description"><?php esc_html_e('Quando ativo, visitantes verão a página em manutenção até que o modo seja desativado. Administradores continuam vendo o site normalmente.','temabasegamb'); ?></p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <?php submit_button(); ?>
+    </form>
+  </div>
+  <?php
+}
+
+/**
+ * Adiciona a página de opções no menu "Aparência"
+ */
+add_action('admin_menu', function () {
+  add_submenu_page(
+    'themes.php', // Parente (Aparência)
+    __('Página em manutenção','temabasegamb'),
+    __('Página em manutenção','temabasegamb'),
+    'manage_options', // Capacidade
+    'sd-maintenance-mode',
+    'sd_render_maintenance_settings_page'
+  );
+});
+
+/**
+ * Mostra um aviso no admin se o modo estiver ativo
+ */
+add_action('admin_notices', function () {
+  if (!sd_is_maintenance_mode_enabled() || !current_user_can('manage_options')) {
+    return;
+  }
+  // Não mostra o aviso na própria página de configuração
+  $screen = get_current_screen();
+  if ($screen && 'appearance_page_sd-maintenance-mode' === $screen->id) {
+    return;
+  }
+  echo '<div class="notice notice-warning"><p>'. esc_html__('O modo de manutenção está ativo. Visitantes estão vendo a página em manutenção.','temabasegamb') .'</p></div>';
+});
+
+/**
+ * Redireciona visitantes para a página de manutenção
+ * Esta é a função que estava quebrada (agora corrigida).
+ */
+add_action('template_redirect', function () {
+  
+  // Se o modo estiver desligado, não faz nada
+  if (!sd_is_maintenance_mode_enabled()) {
+    return;
+  }
+
+  // Permite acesso ao admin, ajax e API REST
+  if (is_admin() || wp_doing_ajax() || (defined('REST_REQUEST') && REST_REQUEST)) {
+    return;
+  }
+
+  // Permite que usuários logados vejam o site
+  if (is_user_logged_in()) {
+    return;
+  }
+
+  // Permite acesso à tela de login/registro
+  $request_uri = isset($_SERVER['REQUEST_URI']) ? sanitize_text_field(wp_unslash($_SERVER['REQUEST_URI'])) : '';
+  if (false !== strpos($request_uri, 'wp-login.php') || false !== strpos($request_uri, 'wp-register.php')) {
+    return;
+  }
+
+  // Para todos os outros:
+  // Define o status HTTP como 503 (Serviço Indisponível)
+  status_header(503);
+  nocache_headers();
+  
+  // Inclui o arquivo de template de manutenção
+  // CERTIFIQUE-SE QUE O ARQUIVO `maintenance.php` EXISTE NA RAIZ DO TEMA.
+  $maintenance_file = get_template_directory() . '/maintenance.php';
+  if ( file_exists( $maintenance_file ) ) {
+      include $maintenance_file;
+  } else {
+      // Fallback caso o arquivo não exista
+      wp_die(esc_html__('Nosso site está em manutenção no momento. Voltamos em breve!', 'temabasegamb'), 503);
+  }
+  exit;
+});
+
+/* FIM */

@@ -1,29 +1,99 @@
 {
-  "key": "group_sd_depo",
-  "title": "Depoimento – Campos",
-  "fields": [
-    {
-      "key": "depo_origem",
-      "label": "Origem (Cidade/UF)",
-      "name": "depo_origem",
-      "type": "text"
-    },
-    {
-      "key": "depo_nota",
-      "label": "Nota (1-5)",
-      "name": "depo_nota",
-      "type": "number",
-      "min": 1,
-      "max": 5
-    }
-  ],
-  "location": [
-    [
-      {
-        "param": "post_type",
-        "operator": "==",
-        "value": "depoimento"
-      }
-    ]
-  ]
+    "key": "group_sd_depo",
+    "title": "Depoimento - Campos",
+    "fields": [
+        {
+            "key": "depo_origem",
+            "label": "Origem (Cidade\/UF)",
+            "name": "depo_origem",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_674d3af0deb3a",
+            "label": "Texto Depoimento",
+            "name": "texto_depoimento",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "rows": 4,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "depo_nota",
+            "label": "Nota (1-5)",
+            "name": "depo_nota",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": 1,
+            "max": 5,
+            "default_value": "",
+            "step": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "depoimento"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "featured_image",
+        "send-trackbacks"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_rest": 1,
+    "modified": 1763199859
 }

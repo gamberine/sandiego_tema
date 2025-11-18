@@ -39,4 +39,4 @@
 <?php endif; ?>
 
 <!-- < ?php get_template_part('template-parts/arquivo-redes-sociais'); ?> -->
-<?php get_template_part('template-parts/arquivo-idiomas'); ?>
+<!-- < ?php get_template_part('template-parts/arquivo-idiomas'); ?> -->

@@ -7,8 +7,8 @@
  */
  ?>
 <section class="diff container py-5">
-  <h2 class="title-xl text-center mb-4">Principais Diferenciais</h2>
-  <div class="row g-4 mb-4 text-center">
+  <h2 class="title-xl text-center mt-5">Principais Diferenciais</h2>
+  <div class="row mt-3 mb-4 text-center">
     <?php if (have_rows('cards')): while (have_rows('cards')): the_row(); ?>
         <div class="col-12 col-sm-6 col-lg-3">
           <div class="mini">
@@ -21,12 +21,12 @@
     endif; ?>
   </div>
 
-  <div class="row align-items-stretch flex-lg-wrap flex-xl-nowrap gap-5">
-    <div class="col-12 col-lg-12 col-xl-5 px-xl-4 ps-xl-3 pe-xl-5 py-xl-0 d-flex align-items-center cta-card h-auto text-center">
-      <!-- <div class="cta-card h-100"> -->
+  <div class="row align-items-stretch flex-lg-wrap flex-xl-nowrap gap-5 mt-5">
+    <div class="col-12 col-lg-12 col-xl-5 py-xl-0 d-flex align-items-center text-center h-auto">
+      <div class="cta-card gap-4">
         <h3 class="h4 mb-2"><?php the_sub_field('cta_title');  ?></h3>
-        <p class="mb-0"><?php the_sub_field('cta_text'); ?></p>
-      <!-- </div> -->
+        <p class="mb-0 px-3"><?php the_sub_field('cta_text'); ?></p>
+      </div>
     </div>
 
     <!-- formulario de contato -->
