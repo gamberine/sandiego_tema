@@ -1,0 +1,106 @@
+@charset "UTF-8";
+
+/*
+/* Cores */
+:root {
+  --font-title: 'Diavlo', sans-serif;
+  --font-body: 'Diavlo', sans-serif;
+  --font-decorative: 'Blacksword', sans-serif !important;
+
+  --height-base: 42px !important;
+  --height-lg: 54px !important;
+
+  --boxShadow: 2px 2px 8px -2px var(--shadow-color) !important;
+  --sombraInterna: inset 0px 0px 6px 2px var(--primary-color-hover) !important;
+  --bordaPadrao: 1px solid var(--border-primary-color);
+  --bordaBranca: 4px solid var(--white-color) !important;
+  --bordaBSecundaria: 46px solid var(--bg-secondary-color) !important;
+  --textShadow: 1px 1px 1px var(--shadow-color) !important;
+  --filterShadow: drop-shadow(0 0 6px var(--shadow-color)) !important;
+  --border-padrao: 6px !important;
+  --border-radius-base: 6px !important;
+  --transition: all .3s ease !important;
+  --transitionLinear: all .3s linear !important;
+
+
+  /* Paleta San Diego */
+  --primary-color: #0d5963;
+  --primary-color-hover: #0b4951;
+  --primary-color-transp: #0d5963cc;
+  --teal-500: #1a626b;
+  --teal-600: #0d5963;
+  --teal-700: #0b4951;
+  --azul-500: #0a2a52;
+  --azul-600: #0b2441;
+  --destaque-color: #f97316;
+
+  --secondary-color: #352f2f;
+  --secondary-color-hover: #302929;
+  --secondary-color-transp: #352f2fcc;
+
+  --accent-color: #739248;
+  --accent-color-hover: #57894d;
+
+  --bg-primary-color: #ECECEC;
+  --bg-secondary-color: #C9D3D0;
+  --bg-tertiary-color: #F8F8F8;
+
+  --transparent: #ffffff00;
+  --success-color: #2F8A57;
+  --success-color-hover: #276F47;
+
+  --info-color: #13706F;
+  --info-color-light: #CDE4E3;
+
+  --warning-color: #C99834;
+  --warning-color-hover: #b27c19;
+
+  --danger-color: #9A3A24;
+  --danger-color-hover: #822F1C;
+
+  --gray-color: #566370;
+  --gray-light: #ADB5BD;
+  --gray-dark: #343A40;
+  --card-border-color: #e1e5ea;
+  --input-border-color: #c6d3d6;
+
+  --text-color: #2E2E2E;
+  --text-color-hover: #111111;
+  --text-color-light: #5C5C5C;
+
+  --white-color: #FFFFFF;
+  --black-color: #000000;
+
+  --primary-gradient: linear-gradient(270deg, var(--primary-color-hover), var(--primary-color)) !important;
+  --primary-gradient-hover: linear-gradient(90deg, var(--primary-color-hover), var(--primary-color)) !important;
+  --primary-gradient-trans: linear-gradient(212deg, var(--primary-color-hover), var(--primary-color), var(--teal-500)) !important;
+  --gradientHeader: linear-gradient(90deg, #383836ee, #313131fa) !important;
+
+  --border-primary-color: #bababa9d;
+  --shadow-color: #27272729;
+
+  --gradientMask: linear-gradient(212deg, #ECECEC4a 25%, #bababac9 88%) !important;
+  --gradientBtn: linear-gradient(270deg, var(--primary-color), var(--primary-color-hover)) !important;
+  --gradientBtnHover: linear-gradient(0deg, var(--primary-color), var(--primary-color-hover)) !important;
+  --secondary-gradient: linear-gradient(165deg, #fff, var(--gray-color), var(--primary-color) 110%) !important;
+  --gradientColorRotate: linear-gradient(270deg, var(--secondary-color), var(--accent-color)) !important;
+  --gradientBanner: linear-gradient(330deg, #155c8656, #155d8680) !important;
+
+}
+
+
+.font-title {
+  font-family: var(--font-title) !important;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-body {
+  font-family: var(--font-body) !important;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-decorative {
+  font-family: var(--font-decorative) !important;
+}

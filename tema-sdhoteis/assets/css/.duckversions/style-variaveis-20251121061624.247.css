@@ -1,0 +1,645 @@
+@charset "UTF-8";
+
+/*
+/* Cores */
+:root {
+
+  --font-title     : 'Diavlo Black', Roboto, system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  --font-body      : 'Diavlo Book', Roboto, system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  --font-decorative: 'Blacksword', sans-serif !important;
+
+  /* Paleta San Diego */
+  --primary-color       : #0d5963;
+  --primary-color-hover : #0b4951;
+  --primary-color-transp: #0d5963cc;
+  ---color     : #383836;
+  --teal-500            : #0f6773;
+  --teal-600            : #0d5963;
+  --teal-700            : #0a4b52;
+  --azul-500            : #1f3c88;
+  --azul-600            : #2c4da7;
+  --destaque-color      : #f97316;
+
+  --secondary-color       : #383836;
+  --secondary-color-hover : #2f2f2e;
+  --secondary-color-transp: #383836cc;
+
+  --accent-color      : #7AA874;
+  --accent-color-hover: #6a9462;
+
+  --bg-primary-color  : #ECECEC;
+  --bg-secondary-color: #C9D3D0;
+  --bg-tertiary-color : #F8F8F8;
+
+  --transparent        : #ffffff00;
+  --success-color      : #2F8A57;
+  --success-color-hover: #276F47;
+
+  --info-color      : #13706F;
+  --info-color-light: #CDE4E3;
+
+  --warning-color      : #C99834;
+  --warning-color-hover: #b27c19;
+
+  --danger-color      : #9A3A24;
+  --danger-color-hover: #822F1C;
+
+  --gray-color        : #566370;
+  --gray-light        : #ADB5BD;
+  --gray-dark         : #343A40;
+  --card-border-color : #e1e5ea;
+  --card-shadow-soft  : 0 2px 6px rgba(0, 0, 0, 0.06);
+  --input-border-color: #c6d3d6;
+
+  --text-color      : #2E2E2E;
+  --text-color-hover: #111111;
+  --text-color-light: #5C5C5C;
+
+  --white-color: #FFFFFF;
+  --black-color: #000000;
+
+  --primary-gradient      : linear-gradient(270deg, var(--primary-color-hover), var(--primary-color)) !important;
+  --primary-gradient-hover: linear-gradient(90deg, var(--primary-color-hover), var(--primary-color)) !important;
+  --primary-gradient-trans: linear-gradient(90deg, var(--primary-color-transp), var(--primary-color)) !important;
+  --gradientHeader        : linear-gradient(90deg, #383836ee, #313131fa) !important;
+
+  --height-base         : 42px !important;
+  --height-lg           : 56px !important;
+  --border-primary-color: #bababa9d;
+  --shadow-color        : #27272729;
+  --boxShadow           : 2px 2px 8px -2px var(--shadow-color) !important;
+  --sombraInterna       : inset 0px 0px 6px 2px var(--primary-color-hover) !important;
+
+  --bordaPadrao     : 1px solid var(--border-primary-color);
+  --bordaBranca     : 4px solid var(--white-color) !important;
+  --bordaBSecundaria: 46px solid var(--bg-secondary-color) !important;
+  --textShadow      : 1px 1px 1px var(--shadow-color) !important;
+  --filterShadow    : drop-shadow(0 0 6px var(--shadow-color)) !important;
+  --border-padrao   : 6px !important;
+  --transition      : all .3s ease !important;
+  --transitionLinear: all .3s linear !important;
+
+  --gradientMask       : linear-gradient(212deg, #ECECEC4a 25%, #bababac9 88%) !important;
+  --gradientBtn        : linear-gradient(270deg, var(--primary-color), var(--primary-color-hover)) !important;
+  --gradientBtnHover   : linear-gradient(0deg, var(--primary-color), var(--primary-color-hover)) !important;
+  --secondary-gradient : linear-gradient(165deg, #fff, var(--gray-color), var(--primary-color) 110%) !important;
+  --gradientColorRotate: linear-gradient(270deg, var(--secondary-color), var(--accent-color)) !important;
+  --gradientBanner     : linear-gradient(330deg, #155c8656, #155d8680) !important;
+
+
+  /* --rotateScale             : 5s ease-in-out infinite; */
+  --rotateScaleDuration              : 3s;
+  --rotateScaleTiming                : ease-in-out;
+  --rotateScaleIteration             : infinite;
+  /* --colorAnimation                : 3s ease 1s infinite alternate both; */
+  --colorDuration                    : 5s;
+  --colorTiming                      : ease;
+  --colorDelay                       : 1s;
+  --colorIteration                   : infinite;
+  --colorDirection                   : alternate;
+  --colorFillMode                    : both;
+  /* --animationBackgroundColor      : 10s ease 0s infinite alternate both; */
+  --backgroundColorDuration          : 5s;
+  --backgroundColorTiming            : ease;
+  --backgroundColorDelay             : 0s;
+  --backgroundColorIteration         : infinite;
+  --backgroundColorDirection         : alternate;
+  --backgroundColorFillMode          : both;
+  /* --animationScroll               : 5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite; */
+  --scrollDuration                   : 5s;
+  --scrollTiming                     : cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  --scrollIteration                  : infinite;
+  /* --animationFadeTop              : 1s ease-in 2s 1 alternate backwards; */
+  --slideToBottomDuration            : 1s;
+  --slideToBottomTiming              : ease-in;
+  --slideToBottomDelay               : 0s;
+  --slideToBottomIteration           : 1;
+  --slideToBottomDirection           : alternate;
+  --slideToBottomFillMode            : backwards;
+  /* --animationSlideToTop           : 1s ease-in 2s 1 reverse backwards; */
+  --slideToTopDuration               : .3s;
+  --slideToTopTiming                 : ease-out;
+  --slideToTopDelay                  : 0s;
+  --slideToTopIteration              : 1;
+  --slideToTopDirection              : reverse;
+  --slideToTopFillMode               : backwards;
+  /* --animationFade                 : animation: animationFade 4s linear 1s 1 alternate both;*/
+  --animationFadeDuration            : 2s;
+  --animationFadeTiming              : 4s;
+  --animationFadeIteration           : 1;
+  --animationFadeDirection           : normal;
+  --animationFadeFillMode            : forwards;
+  /* --vibrate                       : animationVibrate 6s linear 3s 3 normal  forwards; */
+  --vibrateDuration                  : .9s;
+  --vibrateTiming                    : linear;
+  --vibrateDelay                     : 7s;
+  --vibrateIteration                 : 1;
+  --vibrateDirection                 : normal;
+  --vibrateFillMode                  : forwards;
+
+  --responsive--spacing-horizontal: calc(2 * var(--global--spacing-horizontal) * 0.6);
+  --responsive--aligndefault-width: calc(100vw - var(--responsive--spacing-horizontal));
+  --responsive--alignwide-width   : calc(100vw - var(--responsive--spacing-horizontal));
+  --responsive--alignfull-width   : 100%;
+  --responsive--alignright-margin : var(--global--spacing-horizontal);
+  --responsive--alignleft-margin  : var(--global--spacing-horizontal);
+
+  /* Font Sizes */
+  --global--font-size-base: 1.25rem;
+  --global--font-size-xs  : 0.9rem;
+
+}
+
+@media only screen and (min-width: 482px) {
+  :root {
+    --responsive--aligndefault-width: min(calc(100vw - 4 * var(--global--spacing-horizontal)), 610px);
+    --responsive--alignwide-width   : calc(100vw - 4 * var(--global--spacing-horizontal));
+    --responsive--alignright-margin : calc(0.5 * (100vw - var(--responsive--aligndefault-width)));
+    --responsive--alignleft-margin  : calc(0.5 * (100vw - var(--responsive--aligndefault-width)));
+  }
+}
+
+@media only screen and (min-width: 652px) {
+  :root {
+    /* Adjusted font sizes for better readability */
+    --global--font-size-xl  : 2.5rem;
+    --global--font-size-xxl : 6rem;
+    --global--font-size-xxxl: 9rem;
+    --heading--font-size-h3 : 2rem;
+    --heading--font-size-h2 : 3rem;
+  }
+}
+
+@media only screen and (min-width: 822px) {
+  :root {
+    --responsive--aligndefault-width: min(calc(100vw - 8 * var(--global--spacing-horizontal)), 610px);
+    --responsive--alignwide-width   : min(calc(100vw - 8 * var(--global--spacing-horizontal)), 1240px);
+  }
+}
+
+/* ----- fim :root -------- */
+
+
+/* exibindo uma tooltip: */
+/* .cardHistoria h2[data-tooltip] {
+    position: relative;
+    cursor: pointer;
+} */
+
+/* Tooltip (conteúdo) */
+/* .cardHistoria h2[data-tooltip]::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        top: -50px; 
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--primary-color); 
+        color: #fff;
+        font-size: 1rem; 
+        font-family: var(--font-body);
+        padding: 5px 10px;
+        border-radius: var(--border-padrao); 
+        white-space: nowrap; 
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.2s ease, visibility 0.2s ease;
+        z-index: 10;
+    } */
+
+/* Seta da tooltip */
+/* .cardHistoria h2[data-tooltip]::before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent var(--primary-color) transparent; 
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.2s ease, visibility 0.2s ease;
+        z-index: 10;
+    } */
+
+/* Exibe a tooltip ao passar o mouse */
+/* .cardHistoria h2[data-tooltip]:hover::after,
+    .cardHistoria h2[data-tooltip]:hover::before {
+        opacity: 1;
+        visibility: visible;
+    }  */
+
+html {
+  box-sizing             : border-box;
+  font-family            : var(--font-body);
+  line-height            : 1.2;
+  font-size              : 100%;
+  /* 1rem = 10px */
+  overflow-x             : hidden;
+  max-width              : 100% !important;
+  padding                : 0;
+  margin                 : 0;
+  scroll-behavior        : smooth;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing : antialiased;
+}
+
+.site body,
+body {
+  font-family     : var(--font-body) !important;
+  color           : var(--text-color);
+  font-size       : 1.2rem;
+  font-weight     : 400;
+  overflow-x      : hidden;
+  width           : 100%;
+  background-color: transparent;
+  position        : inherit;
+  margin          : 0;
+}
+
+p {
+  font-size  : 1.1rem;
+  line-height: 1.25;
+  font-weight: 400;
+}
+
+.fa-check::before {
+  content            : "";
+  display            : inline-block;
+  width              : 33px;
+  height             : 40px;
+  background-image   : url(imagens/iconLogo.svg);
+  background-size    : contain;
+  /* Ajusta o SVG para caber dentro do tamanho definido */
+  background-repeat  : no-repeat;
+  /* Evita repetição */
+  background-position: center;
+  /* Centraliza a imagem */
+}
+
+textarea.wpcf7-form-control.wpcf7-textarea.textArea::placeholder,
+textarea::placeholder {
+  font-size: 1rem !important;
+  color    : var(--text-color) !important;
+  opacity  : .6;
+}
+
+/* Aplicando animações com variáveis */
+
+.animationFade {
+  animation : animationFade var(--animationFadeDuration) var(--animationFadeTiming) var(--animationFadeDelay) var(--animationFadeIteration) var(--animationFadeDirection) var(--animationFadeFillMode);
+  transition: var(--transition);
+}
+
+.animationFade:hover {
+  animation : none;
+  filter    : var(--textShadow);
+  transition: var(--transition);
+}
+
+.vibrate {
+  animation : vibrate var(--vibrateDuration) var(--vibrateTiming) var(--vibrateDelay) var(--vibrateIteration) var(--vibrateDirection) var(--vibrateFillMode);
+  transition: var(--transition);
+}
+
+.vibrate:hover {
+  animation : none;
+  transition: var(--transition);
+}
+
+.colorAnimation {
+  animation: colorAnimation var(--colorDuration) var(--colorTiming) var(--colorDelay) var(--colorIteration) var(--colorDirection) var(--colorFillMode);
+}
+
+.animationBackgroundColor {
+  animation: animationBackgroundColor var(--backgroundColorDuration) var(--backgroundColorTiming) var(--backgroundColorDelay) var(--backgroundColorIteration) var(--backgroundColorDirection) var(--backgroundColorFillMode);
+}
+
+.animationScroll {
+  animation: animationScroll var(--scrollDuration) var(--scrollTiming) var(--scrollIteration);
+}
+
+.animationFadeTop {
+  animation: animationFadeTop var(--slideToBottomDuration) var(--slideToBottomTiming) var(--slideToBottomDelay) var(--slideToBottomIteration) var(--slideToBottomDirection) var(--slideToBottomFillMode);
+}
+
+.animationSlideToTop {
+  animation: animationSlideToTop var(--slideToTopDuration) var(--slideToTopTiming) var(--slideToTopDelay) var(--slideToTopIteration) var(--slideToTopDirection) var(--slideToTopFillMode);
+}
+
+.lang-pt-br a.btnWhatsAppFooter.ca,
+.lang-en a.btnWhatsAppFooter.ca,
+.lang-pt-br a.btnWhatsAppFooter.en {
+  display: none !important;
+}
+
+.ios-app .rowData,
+.safari .rowData {
+  display: none !important;
+}
+
+body:not(.safari, .ios-app) .rowDataSafari {
+  display: none !important;
+}
+
+@media only screen and (max-width: 1366px) {
+  body {
+    font-size  : 1.2rem !important;
+    font-weight: 400 !important;
+    line-height: 1.3 !important;
+  }
+}
+
+.d-none-1280 {
+  display: flex !important;
+}
+
+.font-title {
+  font-family: var(--font-title) !important;
+}
+
+.font-body {
+  font-family: var(--font-body) !important;
+}
+
+.font-decorative {
+  font-family: var(--font-decorative) !important;
+}
+
+.menu-wrapper li.itemFooter,
+.menu-footer li.itemHeader {
+  display: none !important;
+}
+
+li#menu-item-2989 a::after {
+  display: none !important;
+}
+
+.bannerInternas .slide-items.desktop-banner {
+  display: flex !important;
+}
+
+.bannerInternas .slide-items.mobile-banner {
+  display: none !important;
+}
+
+@keyframes animationFade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes vibrate {
+  0% {
+    transform: translate(0);
+  }
+
+  20% {
+    transform: translate(2px, -2px);
+  }
+
+  40% {
+    transform: translate(2px, 2px);
+  }
+
+  60% {
+    transform: translate(-2px, 2px);
+  }
+
+  80% {
+    transform: translate(-2px, -2px);
+  }
+
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes rotateScale {
+  0% {
+    transform: rotateY(0deg) scale(1);
+  }
+
+  50% {
+    transform: rotateY(180deg) scale(1.02);
+  }
+
+  100% {
+    transform: rotateY(360deg) scale(1);
+  }
+}
+
+@keyframes animationSlideToTop {
+  0% {
+    opacity  : 0;
+    transform: translateY(-6.2rem);
+  }
+
+  100% {
+    opacity  : 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes animationFadeTop {
+  0% {
+    opacity     : 0;
+    /* transform: translateY(-6.2rem); */
+    transform   : translateY(-250px);
+  }
+
+  25% {
+    opacity  : .25;
+    transform: translateY(-200px);
+  }
+
+  50% {
+    opacity  : .5;
+    transform: translateY(-125px);
+  }
+
+  75% {
+    opacity  : .75;
+    transform: translateY(-75px);
+  }
+
+  100% {
+    opacity  : 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes colorAnimation {
+  0% {
+    transform : scale(1);
+    filter    : grayscale(1);
+    transition: var(--transition) !important;
+  }
+
+  25% {
+    transform: scale(1.03);
+    filter   : grayscale(.5);
+  }
+
+  50% {
+    transform: scale(1.05);
+    filter   : grayscale(0);
+  }
+
+  75% {
+    transform: scale(1.03);
+    filter   : grayscale(.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes animationBackgroundColor {
+  0% {
+    background-position: 0% 20%;
+  }
+
+  50% {
+    background-position: 80% 50%;
+  }
+
+  100% {
+    background-position: 0% 30%;
+  }
+}
+
+@keyframes animationScroll {
+
+  0%,
+  50%,
+  60% {
+    -webkit-transform: scaleY(0.118);
+    transform        : scaleY(0.118);
+  }
+
+  30% {
+    -webkit-transform: scaleY(1);
+    transform        : scaleY(1);
+  }
+
+  0%,
+  29.99% {
+    -webkit-transform-origin: top;
+    transform-origin        : top;
+  }
+
+  30%,
+  100% {
+    -webkit-transform-origin: bottom;
+    transform-origin        : bottom;
+  }
+
+  90%,
+  100% {
+    -webkit-transform: scaleY(0.118) translateY(-255px);
+    transform        : scaleY(0.118) translateY(-255px);
+  }
+}
+
+
+.tooltipHtml {
+  position: relative;
+  display : flex;
+  width   : 100%;
+  height  : 100px;
+}
+
+.tooltipHtml .tooltiptextHtml {
+  font-size     : 0.8rem;
+  letter-spacing: 0;
+  visibility    : hidden;
+  width         : 120px;
+  background    : var(--secondary-color);
+  color         : var(--white-color);
+  text-align    : center;
+  border-radius : var(--border-padrao) !important;
+  position      : absolute;
+  z-index       : 1;
+  bottom        : 114%;
+  left          : 50%;
+  margin-left   : -60px;
+  opacity       : 0;
+  transition    : var(--transition) !important;
+}
+
+.tooltipHtml .tooltiptextHtml::after {
+  content     : '';
+  position    : absolute;
+  top         : 100%;
+  left        : 50%;
+  margin-left : -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--secondary-color) transparent transparent transparent;
+}
+
+.tooltipHtml:hover .tooltiptextHtml {
+  visibility: visible;
+  opacity   : 1;
+}
+
+.tooltipHtml:hover span.tooltiptextHtml:empty,
+.tooltipHtml:hover .tooltiptextHtml:empty::after,
+.tooltipHtml .tooltiptextHtml:empty::after,
+.tooltipHtml span.tooltiptextHtml:empty::after,
+.tooltipHtml span.tooltiptextHtml:empty {
+  display     : none !important;
+  border-width: 0 !important;
+  border-color: transparent !important;
+  visibility  : hidden !important;
+}
+
+.tooltipLegenda .boxlegenda {
+  position   : relative;
+  display    : flex;
+  width      : 100%;
+  /* height  : 100px; */
+}
+
+.tooltipLegenda:hover span {
+  visibility: visible;
+  opacity   : 1;
+}
+
+.tooltipLegenda span {
+  position                  : absolute;
+  font-size                 : 1rem;
+  letter-spacing            : 0;
+  visibility                : hidden;
+  width                     : 100%;
+  background                : var(--primary-color-transp) !important;
+  color                     : var(--white-color);
+  text-align                : center;
+  z-index                   : 1;
+  bottom                    : 0;
+  left                      : 0;
+  margin-left               : 0;
+  opacity                   : 0;
+  border-bottom-left-radius : var(--border-padrao) !important;
+  border-bottom-right-radius: var(--border-padrao) !important;
+  transition                : var(--transition) !important;
+  display                   : flex;
+  align-items               : center;
+  justify-content           : center;
+  flex-direction            : column;
+}
+
+@media only screen and (max-width: 550px) {
+
+  .tooltipLegenda .boxlegenda {
+    width : 90%;
+    margin: 0 auto;
+  }
+
+}

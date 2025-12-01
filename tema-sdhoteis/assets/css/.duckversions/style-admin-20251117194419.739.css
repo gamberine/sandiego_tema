@@ -1,0 +1,40 @@
+
+
+
+
+#menu-posts,
+#menu-comments,
+#adminmenu .sbi-notice-alert,
+#menu-posts-banner,
+/* ocultando a barra de ferramentas de um Editor WYSIWYG para uso como criador de galeria de fotos (add class boxGaleriaAdmin */
+.boxGaleriaAdmin .mce-container.mce-toolbar.mce-stack-layout-item.mce-first.mce-last,
+.boxGaleriaAdmin button.button.wpforms-insert-form-button {
+  display: none !important;
+}
+
+
+
+
+.acf-input .acf-fields.-top.-border .acf-field {
+  min-height: 1px !important;
+} 
+
+.acf-fields > .acf-tab-wrap {
+  min-height: 47px;
+}
+
+
+@media only screen and (min-width: 1299px) and (max-width: 1380px) {
+
+  /* #adminmenu,
+    #adminmenu .wp-submenu,
+    #adminmenuback,
+    #adminmenuwrap {
+        width: 12.5vw !important;
+    } */
+
+  /* #wpcontent {
+    padding-left: 14vw !important;
+    margin-left : 0 !important;
+  } */
+}

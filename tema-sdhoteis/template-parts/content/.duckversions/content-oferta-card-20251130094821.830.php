@@ -1,0 +1,44 @@
+<?php
+/**
+ * Template part: Oferta card
+ * Displays oferta summary with featured image and CTA.
+ *
+ * @package Tema_Dev_Gamb
+ */
+
+if (!isset($args)) {
+  $args = [];
+}
+
+$button_label = $args['button_label'] ?? __('Saiba mais', 'ge-peto-sd-2025');
+?>
+<?php get_template_part( 'template-parts/sections/section', 'banner-institucional' ); ?>
+
+<article <?php post_class('oferta-card border rounded-4 p-4 shadow-sm'); ?>>
+  <div class="row g-4 align-items-center">
+    <div class="col-12 col-md-7">
+      <h2 class="h4 text-primary mb-3"><?php the_title(); ?></h2>
+      <div class="oferta-card__excerpt mb-3">
+        <?php
+        if (has_excerpt()) {
+          the_excerpt();
+        } else {
+          echo wpautop(wp_trim_words(wp_strip_all_tags(get_the_content()), 55));
+        }
+        ?>
+      </div>
+      <a class="btn btn-primary" href="<?php the_permalink(); ?>"><?php echo esc_html($button_label); ?></a>
+    </div>
+    <div class="col-12 col-md-5">
+      <?php if (has_post_thumbnail()) : ?>
+        <div class="ratio ratio-4x3 rounded overflow-hidden">
+          <?php the_post_thumbnail('large', ['class' => 'w-100 h-100 object-fit-cover']); ?>
+        </div>
+      <?php else : ?>
+        <div class="ratio ratio-4x3 bg-light rounded d-flex align-items-center justify-content-center text-muted">
+          <span><?php esc_html_e('Imagem não disponível', 'ge-peto-sd-2025'); ?></span>
+        </div>
+      <?php endif; ?>
+    </div>
+  </div>
+</article>

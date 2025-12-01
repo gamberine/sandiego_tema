@@ -1,0 +1,257 @@
+@charset "UTF-8";
+/*
+Theme Name: San Diego Hoteis 2025
+Theme URI: https://www.gamberine.com.br
+Author URI: https://www.gamberine.com.br
+Description: Base Gamberine, desenvolvido para o Hotel San Diego em 2025.
+Version: 1.0.0
+Template: tema-base-gamb
+Text Domain: sandiegoHoteis2025
+Tags: custom-background, custom-logo, custom-menu, featured-images, theme-options, translation-ready
+Author: Gamberine Comunicação Digital
+Ano: 2025
+*/
+
+/* styles.css */
+@import url('style-variaveis.css');
+
+.site-headerGamb {
+  width: 100%;
+  position: relative;
+  z-index: 50;
+  background-color: #fff;
+}
+
+.site-headerGamb__container {
+  width: 100%;
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.site-headerGamb__layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  min-height: 110px;
+}
+
+.site-headerGamb__brandingGamb {
+  flex: 0 0 20%;
+  min-width: 180px;
+}
+
+.site-headerGamb__nav {
+  flex: 1 1 55%;
+}
+
+.site-headerGamb__utilities {
+  flex: 0 0 25%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.site-brandingGamb {
+  display: flex;
+  align-items: center;
+}
+
+.site-brandingGamb .site-logo {
+  display: flex;
+  align-items: center;
+}
+
+.site-brandingGamb .site-logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.site-headerGamb .primary-navigation {
+  width: 100%;
+}
+
+.site-headerGamb .primary-navigation .menu-button-container {
+  display: none;
+}
+
+.site-headerGamb .primary-navigation .menu-button-container .button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.site-headerGamb .primary-navigation .dropdown-icon {
+  display: inline-flex;
+  align-items: center;
+}
+
+.site-headerGamb .primary-navigation .dropdown-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.site-headerGamb .primary-navigation .primary-menu-container {
+  width: 100%;
+}
+
+.site-headerGamb .primary-navigation .menu-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-headerGamb .primary-navigation .menu-wrapper > li > a {
+  font-family: 'Fira Sans', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #0f172a;
+  text-decoration: none;
+  padding: 12px 0;
+  display: inline-flex;
+  transition: color 0.2s ease;
+}
+
+.site-headerGamb .primary-navigation .menu-wrapper > li > a:hover,
+.site-headerGamb .primary-navigation .menu-wrapper > li > a:focus {
+  color: #0bb3ff;
+}
+
+.site-headerGamb__utilities .gridIdiomas {
+  column-gap: 24px;
+}
+
+.site-headerGamb__utilities .linkIdiomas {
+  gap: 8px;
+}
+
+.site-headerGamb__utilities .btn.btn-search {
+  width: 150px;
+  min-height: 52px;
+  border-radius: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.2;
+  background: linear-gradient(90deg, #0072ff 0%, #00c6ff 100%);
+  border: 0;
+}
+
+.site-headerGamb__utilities .btn.btn-search span {
+  font-family: 'Fira Sans', Arial, sans-serif;
+}
+
+#primary-mobile-menu .dropdown-icon.close {
+  display: none;
+}
+
+.site-headerGamb .primary-navigation.is-open #primary-mobile-menu .dropdown-icon.open {
+  display: none;
+}
+
+.site-headerGamb .primary-navigation.is-open #primary-mobile-menu .dropdown-icon.close {
+  display: inline-flex;
+}
+
+@media (max-width: 1600px) {
+  .site-headerGamb__brandingGamb {
+    flex-basis: 22%;
+  }
+
+  .site-headerGamb__utilities {
+    flex-basis: 23%;
+  }
+}
+
+@media (max-width: 1259.98px) {
+  .site-headerGamb__container {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  .site-headerGamb__layout {
+    flex-wrap: wrap;
+    gap: 20px;
+    min-height: auto;
+  }
+
+  .site-headerGamb__brandingGamb,
+  .site-headerGamb__utilities {
+    flex: 1 0 50%;
+  }
+
+  .site-headerGamb__nav {
+    flex: 1 0 100%;
+    order: 3;
+  }
+
+  .site-headerGamb__utilities {
+    justify-content: flex-end;
+  }
+
+  .site-headerGamb .primary-navigation .menu-button-container {
+    display: inline-flex;
+    order: 0;
+  }
+
+  .site-headerGamb .primary-navigation .menu-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 0;
+    width: 100%;
+    display: none;
+  }
+
+  .site-headerGamb .primary-navigation.is-open .menu-wrapper {
+    display: flex;
+  }
+
+  .site-headerGamb .primary-navigation .menu-wrapper > li > a {
+    padding: 8px 0;
+  }
+
+  .site-headerGamb__utilities .gridIdiomas {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .site-headerGamb__utilities .btn.btn-search {
+    width: 140px;
+    min-height: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-headerGamb__brandingGamb,
+  .site-headerGamb__utilities {
+    flex: 1 0 100%;
+    order: initial;
+    justify-content: space-between;
+  }
+
+  .site-headerGamb__utilities {
+    justify-content: flex-start;
+  }
+
+  .site-headerGamb__utilities .gridIdiomas {
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .site-headerGamb__utilities .btn.btn-search {
+    width: 100%;
+  }
+}

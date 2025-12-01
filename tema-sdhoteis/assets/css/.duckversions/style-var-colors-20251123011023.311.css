@@ -1,0 +1,149 @@
+@charset "UTF-8";
+
+/*
+/* Cores */
+:root {
+
+  --font-title     : 'Diavlo Black', Roboto, system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  --font-body      : 'Diavlo Book', Roboto, system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  --font-decorative: 'Blacksword', sans-serif !important;
+
+  /* Paleta San Diego */
+  --primary-color       : #0d5963;
+  --primary-color-hover : #0b4951;
+  --primary-color-transp: #0d5963cc;
+  ---color     : #383836;
+  --teal-500            : #0f6773;
+  --teal-600            : #0d5963;
+  --teal-700            : #0a4b52;
+  --azul-500            : #1f3c88;
+  --azul-600            : #2c4da7;
+  --destaque-color      : #f97316;
+
+  --secondary-color       : #383836;
+  --secondary-color-hover : #2f2f2e;
+  --secondary-color-transp: #383836cc;
+
+  --accent-color      : #7AA874;
+  --accent-color-hover: #6a9462;
+
+  --bg-primary-color  : #ECECEC;
+  --bg-secondary-color: #C9D3D0;
+  --bg-tertiary-color : #F8F8F8;
+
+  --transparent        : #ffffff00;
+  --success-color      : #2F8A57;
+  --success-color-hover: #276F47;
+
+  --info-color      : #13706F;
+  --info-color-light: #CDE4E3;
+
+  --warning-color      : #C99834;
+  --warning-color-hover: #b27c19;
+
+  --danger-color      : #9A3A24;
+  --danger-color-hover: #822F1C;
+
+  --gray-color        : #566370;
+  --gray-light        : #ADB5BD;
+  --gray-dark         : #343A40;
+  --card-border-color : #e1e5ea;
+  --card-shadow-soft  : 0 2px 6px rgba(0, 0, 0, 0.06);
+  --input-border-color: #c6d3d6;
+
+  --text-color      : #2E2E2E;
+  --text-color-hover: #111111;
+  --text-color-light: #5C5C5C;
+
+  --white-color: #FFFFFF;
+  --black-color: #000000;
+
+  --primary-gradient      : linear-gradient(270deg, var(--primary-color-hover), var(--primary-color)) !important;
+  --primary-gradient-hover: linear-gradient(90deg, var(--primary-color-hover), var(--primary-color)) !important;
+  --primary-gradient-trans: linear-gradient(212deg, var(--primary-color-hover), var(--primary-color), var(--primary-color-transp)) !important;
+  --gradientHeader        : linear-gradient(90deg, #383836ee, #313131fa) !important;
+
+  --height-base         : 42px !important;
+  --height-lg           : 56px !important;
+  --border-primary-color: #bababa9d;
+  --shadow-color        : #27272729;
+  --boxShadow           : 2px 2px 8px -2px var(--shadow-color) !important;
+  --sombraInterna       : inset 0px 0px 6px 2px var(--primary-color-hover) !important;
+
+  --bordaPadrao     : 1px solid var(--border-primary-color);
+  --bordaBranca     : 4px solid var(--white-color) !important;
+  --bordaBSecundaria: 46px solid var(--bg-secondary-color) !important;
+  --textShadow      : 1px 1px 1px var(--shadow-color) !important;
+  --filterShadow    : drop-shadow(0 0 6px var(--shadow-color)) !important;
+  --border-padrao   : 6px !important;
+  --transition      : all .3s ease !important;
+  --transitionLinear: all .3s linear !important;
+
+  --gradientMask       : linear-gradient(212deg, #ECECEC4a 25%, #bababac9 88%) !important;
+  --gradientBtn        : linear-gradient(270deg, var(--primary-color), var(--primary-color-hover)) !important;
+  --gradientBtnHover   : linear-gradient(0deg, var(--primary-color), var(--primary-color-hover)) !important;
+  --secondary-gradient : linear-gradient(165deg, #fff, var(--gray-color), var(--primary-color) 110%) !important;
+  --gradientColorRotate: linear-gradient(270deg, var(--secondary-color), var(--accent-color)) !important;
+  --gradientBanner     : linear-gradient(330deg, #155c8656, #155d8680) !important;
+
+
+  /* --rotateScale             : 5s ease-in-out infinite; */
+  --rotateScaleDuration              : 3s;
+  --rotateScaleTiming                : ease-in-out;
+  --rotateScaleIteration             : infinite;
+  /* --colorAnimation                : 3s ease 1s infinite alternate both; */
+  --colorDuration                    : 5s;
+  --colorTiming                      : ease;
+  --colorDelay                       : 1s;
+  --colorIteration                   : infinite;
+  --colorDirection                   : alternate;
+  --colorFillMode                    : both;
+  /* --animationBackgroundColor      : 10s ease 0s infinite alternate both; */
+  --backgroundColorDuration          : 5s;
+  --backgroundColorTiming            : ease;
+  --backgroundColorDelay             : 0s;
+  --backgroundColorIteration         : infinite;
+  --backgroundColorDirection         : alternate;
+  --backgroundColorFillMode          : both;
+  /* --animationScroll               : 5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite; */
+  --scrollDuration                   : 5s;
+  --scrollTiming                     : cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  --scrollIteration                  : infinite;
+  /* --animationFadeTop              : 1s ease-in 2s 1 alternate backwards; */
+  --slideToBottomDuration            : 1s;
+  --slideToBottomTiming              : ease-in;
+  --slideToBottomDelay               : 0s;
+  --slideToBottomIteration           : 1;
+  --slideToBottomDirection           : alternate;
+  --slideToBottomFillMode            : backwards;
+  /* --animationSlideToTop           : 1s ease-in 2s 1 reverse backwards; */
+  --slideToTopDuration               : .3s;
+  --slideToTopTiming                 : ease-out;
+  --slideToTopDelay                  : 0s;
+  --slideToTopIteration              : 1;
+  --slideToTopDirection              : reverse;
+  --slideToTopFillMode               : backwards;
+  /* --animationFade                 : animation: animationFade 4s linear 1s 1 alternate both;*/
+  --animationFadeDuration            : 2s;
+  --animationFadeTiming              : 4s;
+  --animationFadeIteration           : 1;
+  --animationFadeDirection           : normal;
+  --animationFadeFillMode            : forwards;
+  /* --vibrate                       : animationVibrate 6s linear 3s 3 normal  forwards; */
+  --vibrateDuration                  : .9s;
+  --vibrateTiming                    : linear;
+  --vibrateDelay                     : 7s;
+  --vibrateIteration                 : 1;
+  --vibrateDirection                 : normal;
+  --vibrateFillMode                  : forwards;
+
+  --responsive--spacing-horizontal: calc(2 * var(--global--spacing-horizontal) * 0.6);
+  --responsive--aligndefault-width: calc(100vw - var(--responsive--spacing-horizontal));
+  --responsive--alignwide-width   : calc(100vw - var(--responsive--spacing-horizontal));
+  --responsive--alignfull-width   : 100%;
+  --responsive--alignright-margin : var(--global--spacing-horizontal);
+  --responsive--alignleft-margin  : var(--global--spacing-horizontal);
+
+
+}
+

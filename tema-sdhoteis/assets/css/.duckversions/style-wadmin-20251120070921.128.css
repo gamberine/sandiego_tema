@@ -1,0 +1,201 @@
+/* Remove botões de mover caixas (metaboxes) - global */
+.handle-order-higher,
+.handle-order-lower,
+/* Oculta o botão "Adicionar novo Conteúdo" no admin */
+.post-type-conteudo .page-title-action,
+#menu-posts,
+#menu-comments,
+#adminmenu .sbi-notice-alert,
+#menu-posts-banner,
+/* ocultando a barra de ferramentas de um Editor WYSIWYG para uso como criador de galeria de fotos (add class boxGaleriaAdmin */
+.boxGaleriaAdmin .mce-container.mce-toolbar.mce-stack-layout-item.mce-first.mce-last,
+.boxGaleriaAdmin button.button.wpforms-insert-form-button {
+  display: none !important;
+}
+
+
+.acf-input .acf-fields.-top.-border .acf-field {
+  min-height: 1px !important;
+}
+
+.acf-fields>.acf-tab-wrap {
+  min-height: 47px;
+}
+
+
+@media only screen and (min-width: 1299px) and (max-width: 1380px) {
+
+  /* #adminmenu,
+    #adminmenu .wp-submenu,
+    #adminmenuback,
+    #adminmenuwrap {
+        width: 12.5vw !important;
+    } */
+
+  /* #wpcontent {
+    padding-left: 14vw !important;
+    margin-left : 0 !important;
+  } */
+}
+
+
+
+/* ================================
+   LOGIN / ADMIN CUSTOM SAN DIEGO
+   ================================ */
+
+body.login {
+  background : linear-gradient(212deg, var(--secondary-color) 25%, var(--secondary-color-hover) 88%) !important;
+  font-family: var(--font-body);
+}
+
+.login h1 {
+  background     : url('../imagens/logo.png') 50% 50% no-repeat !important;
+  background-size: contain !important;
+  height         : 130px !important;
+  margin-bottom  : 2rem !important;
+}
+
+.login h1 a,
+.language-switcher {
+  display: none !important;
+}
+
+form.admin-email-confirm-form h1 {
+  background: none !important;
+  height    : auto !important;
+}
+
+/* Botão primário */
+.wp-core-ui .button-primary {
+  background   : var(--info-color) !important;
+  border-color : transparent !important;
+  border-radius: 10px !important;
+  box-shadow   : none !important;
+  color        : var(--white-color) !important;
+  text-shadow  : none !important;
+  transition   : var(--transition) !important;
+}
+
+.wp-core-ui .button-primary:hover {
+  background: var(--info-color-light) !important;
+  opacity   : .9 !important;
+}
+
+/* Tamanho dos botões grandes */
+.wp-core-ui .button-group.button-large .button,
+.wp-core-ui .button.button-large {
+  min-height: 40px !important;
+  padding   : 0 2vw !important;
+}
+
+/* Inputs */
+input[type=color],
+input[type=date],
+input[type=datetime-local],
+input[type=datetime],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week],
+select,
+textarea {
+  border       : 1px solid var(--info-color) !important;
+  outline      : none !important;
+  border-radius: 3px !important;
+  font-family  : var(--font-body);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline-color: var(--info-color) !important;
+  box-shadow   : none !important;
+  border       : 1px solid var(--info-color) !important;
+}
+
+/* Botões secundários */
+.wp-core-ui .button,
+.wp-core-ui .button-secondary {
+  border    : 0 !important;
+  transition: var(--transition) !important;
+}
+
+/* Checkbox e radio */
+input[type=checkbox],
+input[type=radio] {
+  border: 1px solid var(--info-color) !important;
+}
+
+input[type=checkbox]:checked::before {
+  filter: brightness(0);
+}
+
+/* Mensagens */
+.login #login_error,
+.login .message,
+.login .success {
+  border-left: 1px solid var(--info-color) !important;
+}
+
+/* Container */
+#login {
+  padding: 2% 0 0 !important;
+}
+
+.login form {
+  border       : 1px solid var(--white-color) !important;
+  box-shadow   : 5px 5px 10px rgba(0, 0, 0, .08) !important;
+  color        : var(--text-color) !important;
+  border-radius: 10px !important;
+  margin-top   : 10px !important;
+}
+
+/* Icone do olho no password */
+.login .button.wp-hide-pw .dashicons {
+  color: var(--info-color) !important;
+}
+
+/* NAV */
+.login #nav {
+  float       : right !important;
+  margin-block: 1rem !important;
+}
+
+.login #nav a:hover,
+.login h1:hover {
+  color     : var(--info-color-hover) !important;
+  transition: var(--transition) !important;
+}
+
+/* Botão voltar ao site */
+.login #backtoblog {
+  background     : var(--azul-600) !important;
+  color          : var(--white-color) !important;
+  height         : 40px !important;
+  display        : flex !important;
+  align-items    : center !important;
+  justify-content: center !important;
+  width          : 80% !important;
+  margin         : 1rem auto 2rem auto !important;
+  border-radius  : 10px !important;
+  transition     : var(--transition) !important;
+}
+
+.login #backtoblog:hover {
+  background: var(--azul-600)cc !important;
+}
+
+.login #backtoblog a {
+  color: var(--white-color) !important;
+}
+
+.login #backtoblog a:hover {
+  color: var(--info-color) !important;
+}

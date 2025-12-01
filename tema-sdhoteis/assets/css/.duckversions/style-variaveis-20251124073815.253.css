@@ -1,0 +1,603 @@
+@charset "UTF-8";
+
+
+/* ===== styles.css ===== */
+@import url('style-variaveis-base.css');
+
+:root {
+  /* Espaçamentos Globais */
+  --card-shadow-soft: 0 2px 6px rgba(0, 0, 0, 0.06);
+  --card-shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --card-shadow-hard: 0 8px 24px rgba(0, 0, 0, 0.15);
+
+  /* --rotateScale             : 5s ease-in-out infinite; */
+  --rotateScaleDuration: 3s;
+  --rotateScaleTiming: ease-in-out;
+  --rotateScaleIteration: infinite;
+  /* --colorAnimation                : 3s ease 1s infinite alternate both; */
+  --colorDuration: 5s;
+  --colorTiming: ease;
+  --colorDelay: 1s;
+  --colorIteration: infinite;
+  --colorDirection: alternate;
+  --colorFillMode: both;
+  /* --animationBackgroundColor      : 10s ease 0s infinite alternate both; */
+  --backgroundColorDuration: 5s;
+  --backgroundColorTiming: ease;
+  --backgroundColorDelay: 0s;
+  --backgroundColorIteration: infinite;
+  --backgroundColorDirection: alternate;
+  --backgroundColorFillMode: both;
+  /* --animationScroll               : 5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite; */
+  --scrollDuration: 5s;
+  --scrollTiming: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  --scrollIteration: infinite;
+  /* --animationFadeTop              : 1s ease-in 2s 1 alternate backwards; */
+  --slideToBottomDuration: 1s;
+  --slideToBottomTiming: ease-in;
+  --slideToBottomDelay: 0s;
+  --slideToBottomIteration: 1;
+  --slideToBottomDirection: alternate;
+  --slideToBottomFillMode: backwards;
+  /* --animationSlideToTop           : 1s ease-in 2s 1 reverse backwards; */
+  --slideToTopDuration: .3s;
+  --slideToTopTiming: ease-out;
+  --slideToTopDelay: 0s;
+  --slideToTopIteration: 1;
+  --slideToTopDirection: reverse;
+  --slideToTopFillMode: backwards;
+  /* --animationFade                 : animation: animationFade 4s linear 1s 1 alternate both;*/
+  --animationFadeDuration: 2s;
+  --animationFadeTiming: 4s;
+  --animationFadeIteration: 1;
+  --animationFadeDirection: normal;
+  --animationFadeFillMode: forwards;
+  /* --vibrate                       : animationVibrate 6s linear 3s 3 normal  forwards; */
+  --vibrateDuration: .9s;
+  --vibrateTiming: linear;
+  --vibrateDelay: 7s;
+  --vibrateIteration: 1;
+  --vibrateDirection: normal;
+  --vibrateFillMode: forwards;
+
+  --responsive--spacing-horizontal: calc(2 * var(--global--spacing-horizontal) * 0.6);
+  --responsive--aligndefault-width: calc(100vw - var(--responsive--spacing-horizontal));
+  --responsive--alignwide-width: calc(100vw - var(--responsive--spacing-horizontal));
+  --responsive--alignfull-width: 100%;
+  --responsive--alignright-margin: var(--global--spacing-horizontal);
+  --responsive--alignleft-margin: var(--global--spacing-horizontal);
+
+  /* Font Sizes */
+  /* --global--font-size-base: 1.25rem;
+  --global--font-size-xs  : 0.9rem; */
+
+}
+
+.primary-color {
+  color: var(--primary-color) !important;
+}
+
+.primary-bg-color {
+  background-color: var(--primary-color) !important;
+}
+
+.primary-gradient-bg {
+  background: var(--primary-gradient) !important;
+}
+
+.primary-gradient-hover-bg {
+  background: var(--primary-gradient-hover) !important;
+}
+
+.primary-gradient {
+  background: var(--primary-gradient) !important;
+}
+
+.primary-gradient-hover {
+  background: var(--primary-gradient-hover) !important;
+}
+
+.primary-gradient {
+  background: var(--primary-gradient) !important;
+}
+
+.primary-gradient-trans {
+  background: var(--primary-gradient-trans) !important;
+}
+
+.secondary-color {
+  color: var(--secondary-color) !important;
+}
+
+.secondary-bg-color {
+  background-color: var(--secondary-color) !important;
+}
+
+.accent-color {
+  color: var(--accent-color) !important;
+}
+
+.accent-bg-color {
+  background-color: var(--accent-color) !important;
+}
+
+.accent-gradient {
+  background: var(--gradientColorRotate) !important;
+}
+
+.text-color-light {
+  color: var(--text-color-light) !important;
+}
+
+.text-color {
+  color: var(--text-color) !important;
+}
+
+.bg-gray-light {
+  background-color: var(--gray-light) !important;
+}
+
+
+.animationFade {
+  animation: animationFade var(--animationFadeDuration) var(--animationFadeTiming) var(--animationFadeDelay) var(--animationFadeIteration) var(--animationFadeDirection) var(--animationFadeFillMode);
+  transition: var(--transition);
+}
+
+.animationFade:hover {
+  animation: none;
+  filter: var(--textShadow);
+  transition: var(--transition);
+}
+
+.vibrate {
+  animation: vibrate var(--vibrateDuration) var(--vibrateTiming) var(--vibrateDelay) var(--vibrateIteration) var(--vibrateDirection) var(--vibrateFillMode);
+  transition: var(--transition);
+}
+
+.vibrate:hover {
+  animation: none;
+  transition: var(--transition);
+}
+
+.colorAnimation {
+  animation: colorAnimation var(--colorDuration) var(--colorTiming) var(--colorDelay) var(--colorIteration) var(--colorDirection) var(--colorFillMode);
+}
+
+.animationBackgroundColor {
+  animation: animationBackgroundColor var(--backgroundColorDuration) var(--backgroundColorTiming) var(--backgroundColorDelay) var(--backgroundColorIteration) var(--backgroundColorDirection) var(--backgroundColorFillMode);
+}
+
+.animationScroll {
+  animation: animationScroll var(--scrollDuration) var(--scrollTiming) var(--scrollIteration);
+}
+
+.animationFadeTop {
+  animation: animationFadeTop var(--slideToBottomDuration) var(--slideToBottomTiming) var(--slideToBottomDelay) var(--slideToBottomIteration) var(--slideToBottomDirection) var(--slideToBottomFillMode);
+}
+
+.animationSlideToTop {
+  animation: animationSlideToTop var(--slideToTopDuration) var(--slideToTopTiming) var(--slideToTopDelay) var(--slideToTopIteration) var(--slideToTopDirection) var(--slideToTopFillMode);
+}
+
+.lang-pt-br a.btnWhatsAppFooter.ca,
+.lang-en a.btnWhatsAppFooter.ca,
+.lang-pt-br a.btnWhatsAppFooter.en {
+  display: none !important;
+}
+
+.ios-app .rowData,
+.safari .rowData {
+  display: none !important;
+}
+
+body:not(.safari, .ios-app) .rowDataSafari {
+  display: none !important;
+}
+
+.d-none-1280 {
+  display: flex !important;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.menu-wrapper li.itemFooter,
+.menu-footer li.itemHeader {
+  display: none !important;
+}
+
+li#menu-item-2989 a::after {
+  display: none !important;
+}
+
+.bannerInternas .slide-items.desktop-banner {
+  display: flex !important;
+}
+
+.bannerInternas .slide-items.mobile-banner {
+  display: none !important;
+}
+
+@keyframes animationFade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes vibrate {
+  0% {
+    transform: translate(0);
+  }
+
+  20% {
+    transform: translate(2px, -2px);
+  }
+
+  40% {
+    transform: translate(2px, 2px);
+  }
+
+  60% {
+    transform: translate(-2px, 2px);
+  }
+
+  80% {
+    transform: translate(-2px, -2px);
+  }
+
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes rotateScale {
+  0% {
+    transform: rotateY(0deg) scale(1);
+  }
+
+  50% {
+    transform: rotateY(180deg) scale(1.02);
+  }
+
+  100% {
+    transform: rotateY(360deg) scale(1);
+  }
+}
+
+@keyframes animationSlideToTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-6.2rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes animationFadeTop {
+  0% {
+    opacity: 0;
+    /* transform: translateY(-6.2rem); */
+    transform: translateY(-250px);
+  }
+
+  25% {
+    opacity: .25;
+    transform: translateY(-200px);
+  }
+
+  50% {
+    opacity: .5;
+    transform: translateY(-125px);
+  }
+
+  75% {
+    opacity: .75;
+    transform: translateY(-75px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes colorAnimation {
+  0% {
+    transform: scale(1);
+    filter: grayscale(1);
+    transition: var(--transition) !important;
+  }
+
+  25% {
+    transform: scale(1.03);
+    filter: grayscale(.5);
+  }
+
+  50% {
+    transform: scale(1.05);
+    filter: grayscale(0);
+  }
+
+  75% {
+    transform: scale(1.03);
+    filter: grayscale(.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes animationBackgroundColor {
+  0% {
+    background-position: 0% 20%;
+  }
+
+  50% {
+    background-position: 80% 50%;
+  }
+
+  100% {
+    background-position: 0% 30%;
+  }
+}
+
+@keyframes animationScroll {
+
+  0%,
+  50%,
+  60% {
+    -webkit-transform: scaleY(0.118);
+    transform: scaleY(0.118);
+  }
+
+  30% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+  }
+
+  0%,
+  29.99% {
+    -webkit-transform-origin: top;
+    transform-origin: top;
+  }
+
+  30%,
+  100% {
+    -webkit-transform-origin: bottom;
+    transform-origin: bottom;
+  }
+
+  90%,
+  100% {
+    -webkit-transform: scaleY(0.118) translateY(-255px);
+    transform: scaleY(0.118) translateY(-255px);
+  }
+}
+
+
+.tooltipHtml {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100px;
+}
+
+.tooltipHtml .tooltiptextHtml {
+  font-size: 0.8rem;
+  letter-spacing: 0;
+  visibility: hidden;
+  width: 120px;
+  background: var(--secondary-color);
+  color: var(--white-color);
+  text-align: center;
+  border-radius: var(--border-padrao) !important;
+  position: absolute;
+  z-index: 1;
+  bottom: 114%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: var(--transition) !important;
+}
+
+.tooltipHtml .tooltiptextHtml::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--secondary-color) transparent transparent transparent;
+}
+
+.tooltipHtml:hover .tooltiptextHtml {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltipHtml:hover span.tooltiptextHtml:empty,
+.tooltipHtml:hover .tooltiptextHtml:empty::after,
+.tooltipHtml .tooltiptextHtml:empty::after,
+.tooltipHtml span.tooltiptextHtml:empty::after,
+.tooltipHtml span.tooltiptextHtml:empty {
+  display: none !important;
+  border-width: 0 !important;
+  border-color: transparent !important;
+  visibility: hidden !important;
+}
+
+.tooltipLegenda .boxlegenda {
+  position: relative;
+  display: flex;
+  width: 100%;
+  /* height  : 100px; */
+}
+
+.tooltipLegenda:hover span {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltipLegenda span {
+  position: absolute;
+  font-size: 1rem;
+  letter-spacing: 0;
+  visibility: hidden;
+  width: 100%;
+  background: var(--primary-color-transp) !important;
+  color: var(--white-color);
+  text-align: center;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  margin-left: 0;
+  opacity: 0;
+  border-bottom-left-radius: var(--border-padrao) !important;
+  border-bottom-right-radius: var(--border-padrao) !important;
+  transition: var(--transition) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 550px) {
+
+  .tooltipLegenda .boxlegenda {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+}
+
+/* ==========================================================================
+ * BOTÕES BTN (Base .btn + Modificadores .btn-cor)
+ * ========================================================================== */
+
+/* --- Estilos Base (Layout) --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 300 !important;
+  font-size: 1rem !important;
+  line-height: 1 !important;
+  text-decoration: none;
+  cursor: pointer;
+
+  /* Estilo e Forma */
+  border-radius: var(--border-padrao);
+  border: 1px solid transparent;
+  padding: .5rem 2rem;
+  min-height: var(--height-base);
+
+  /* Transição e Efeitos (Comum a todos os botões) */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+  transform-origin: center center;
+}
+
+/* Efeito de hover e scale (Comum a todos os botões) */
+.btn:hover {
+  transform: scale(1.02);
+  opacity: 1;
+  box-shadow: var(--boxShadow);
+}
+
+/* Estado desabilitado (Comum a todos os botões) */
+.btn:disabled,
+.btn[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+
+/* --------------------------------------------------------------------------
+ * MODIFICADORES DE COR (btn-[cor])
+ * -------------------------------------------------------------------------- */
+
+/* --- Modificador 1: Botão Primário (Solid) - .btn-primary --- */
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-color-hover);
+  border-color: var(--primary-color-hover);
+  color: var(--accent-color);
+}
+
+/* --- Modificador 2: Botão Secundário (Outline) - .btn-secondary --- */
+.btn-secondary {
+  background-color: transparent;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  border-width: 1px;
+}
+
+.btn-secondary:hover {
+  /* Cor Principal com 10% de opacidade para hover */
+  background-color: var(--primary-color-transp);
+  border-color: var(--primary-color-hover);
+  color: var(--white-color);
+}
+
+/* --- Modificador 3: Botão de Sucesso (Solid) - .btn-success --- */
+.btn-success {
+  background-color: var(--success-color);
+  color: var(--white-color);
+  border-color: var(--success-color);
+}
+
+.btn-success:hover {
+  background-color: var(--success-color-hover, var(--success-color));
+  border-color: var(--success-color-hover, var(--success-color));
+  opacity: 0.9;
+}
+
+/* --- Modificador 4: Botão de Aviso (Solid) - .btn-warning --- */
+.btn-warning {
+  background-color: var(--warning-color);
+  color: var(--white-color);
+  border-color: var(--warning-color);
+}
+
+.btn-warning:hover {
+  background-color: var(--warning-color-hover, var(--warning-color));
+  border-color: var(--warning-color-hover, var(--warning-color));
+  opacity: 0.9;
+}
+
+/* --- Modificador 5: Botão de Ícone (Circular) - .btn-icon --- */
+.btn-icon {
+  /* Sobrescreve estilos de forma/tamanho da base .btn */
+  border-radius: 50%;
+  padding: 0.5rem;
+  background-color: transparent;
+  color: var(--primary-color);
+
+  /* Desativa estilos de sombra/scale da base .btn */
+  box-shadow: none;
+  transform: none;
+}
+
+.btn-icon:hover {
+  background-color: var(--primary-color-transp-15);
+  /* Cor principal com 15% de opacidade */
+  transform: scale(1.1);
+  /* Scale-up específico para o ícone */
+  box-shadow: none;
+}

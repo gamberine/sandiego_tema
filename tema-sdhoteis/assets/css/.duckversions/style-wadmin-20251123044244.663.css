@@ -1,0 +1,308 @@
+@charset "UTF-8";
+/*
+Theme Name: San Diego Hoteis 2025
+Template: tema-base-gamb
+Author: Gamberine Comunicação Digital
+Ano: 2025
+*/
+
+@import "style-variaveis-base.css";
+
+/* ================================
+   ADMIN CUSTOM SAN DIEGO
+   ================================ */
+
+/* remove acf-settings-updates  */
+a[href*="acf-settings-updates"],
+#footer-upgrade,
+/* Remove botões de mover caixas (metaboxes) - global */
+.handle-order-higher,
+.handle-order-lower,
+/* Oculta o botão "Adicionar novo Conteúdo" no admin */
+.post-type-conteudo .page-title-action,
+#menu-posts,
+#menu-comments,
+#adminmenu .sbi-notice-alert,
+#menu-posts-banner,
+/* ocultando a barra de ferramentas de um Editor WYSIWYG para uso como criador de galeria de fotos (add class boxGaleriaAdmin */
+.boxGaleriaAdmin .mce-container.mce-toolbar.mce-stack-layout-item.mce-first.mce-last,
+.boxGaleriaAdmin button.button.wpforms-insert-form-button {
+  display: none !important;
+}
+
+.acf-input .acf-fields.-top.-border .acf-field {
+  min-height: 1px !important;
+}
+
+.acf-fields>.acf-tab-wrap {
+  min-height: 47px;
+}
+
+#wpfooter p {
+  font-size  : 12px !important;
+  line-height: 1 !important;
+  max-width  : 41ch !important;
+  white-space: nowrap !important;
+  overflow   : hidden !important;
+}
+
+:focus,
+a:focus,
+.wp-core-ui .button.focus,
+.wp-core-ui .button:focus {
+  border-color: transparent !important;
+  box-shadow  : none !important;
+  outline     : none !important;
+}
+
+/* Inputs */
+input[type=color],
+input[type=date],
+input[type=datetime-local],
+input[type=datetime],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week],
+select,
+textarea {
+  border       : 1px solid var(--info-color) !important;
+  outline      : none !important;
+  border-radius: var(--border-radius-base) !important;
+  font-family  : var(--font-body);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline-color: var(--info-color) !important;
+  box-shadow   : none !important;
+  border       : 1px solid var(--info-color) !important;
+}
+
+/* Botões secundários */
+.wp-core-ui .button,
+.wp-core-ui .button-secondary {
+  border    : 0 !important;
+  transition: var(--transition) !important;
+}
+
+/* Checkbox e radio */
+input[type=checkbox],
+input[type=radio] {
+  border: 1px solid var(--info-color) !important;
+}
+
+input[type=checkbox]:checked::before {
+  filter: brightness(0);
+}
+
+/* Mensagens */
+.login #login_error,
+.login .message,
+.login .success {
+  border-left: 1px solid var(--info-color) !important;
+}
+
+
+/* ================================
+   LOGIN / ADMIN CUSTOM SAN DIEGO
+   ================================ */
+
+body.login.js.login-action-login.wp-core-ui {
+  background    : var(--primary-gradient-trans) !important;
+  /* font-family: var(--font-body); */
+}
+
+.login h1 {
+  background     : url('../img/logo_white.png') 50% 50% no-repeat !important;
+  background-size: contain !important;
+  height         : 16dvh !important;
+  margin-bottom  : 2rem !important;
+}
+
+.login h1 a,
+.language-switcher {
+  display: none !important;
+}
+
+form.admin-email-confirm-form h1 {
+  background: none !important;
+  height    : auto !important;
+}
+
+/* Botão primário */
+.wp-core-ui .button-primary {
+  background   : var(--info-color) !important;
+  border-radius: var(--border-radius-base) !important;
+  color        : var(--white-color) !important;
+  border-color : transparent !important;
+  box-shadow   : none !important;
+  text-shadow  : none !important;
+  transition   : var(--transition) !important;
+}
+
+.wp-core-ui .button-primary:hover {
+  background: var(--info-color) !important;
+  filter    : saturate(1.5) !important;
+  transition: var(--transition) !important;
+}
+
+/* Tamanho dos botões grandes */
+.wp-core-ui .button-group.button-large .button,
+.wp-core-ui .button.button-large {
+  min-height: var(--height-base) !important;
+  padding   : 0 2dvw !important;
+}
+
+#login {
+  padding        : 2% 0 0 !important;
+  display        : grid;
+  justify-content: center;
+  width          : min-content;
+}
+
+.login form {
+  border       : none !important;
+  box-shadow   : var(--boxShadow) !important;
+  color        : var(--text-color) !important;
+  border-radius: var(--border-radius-base) !important;
+  margin-top   : 10px !important;
+  order        : 2;
+}
+
+/* Icone do olho no password */
+.login .button.wp-hide-pw .dashicons {
+  color: var(--info-color) !important;
+}
+
+/* NAV */
+.login #nav {
+  margin-block   : 1rem !important;
+  order          : 5;
+  display        : inline-flex;
+  justify-content: flex-end;
+}
+
+.login h1:hover {
+  color     : var(--info-color-hover) !important;
+  transition: var(--transition) !important;
+}
+
+.login #nav a {
+  color     : var(--info-color-light) !important;
+  transition: var(--transition) !important;
+}
+
+.login #nav a:hover {
+  color     : var(--info-color-light) !important;
+  filter    : brightness(1.5);
+  transition: var(--transition) !important;
+}
+
+/* Botão voltar ao site */
+.login #backtoblog {
+  background     : var(--secondary-color) !important;
+  color          : var(--white-color) !important;
+  height         : var(--height-base);
+  padding        : 0 !important;
+  display        : flex !important;
+  align-items    : center !important;
+  justify-content: center !important;
+  width          : calc(100% - 24px) !important;
+  margin         : 0 auto !important;
+  border-radius  : var(--border-radius-base) !important;
+  transition     : var(--transition) !important;
+  order          : 4;
+}
+
+.login #backtoblog:hover {
+  background: var(--secondary-color-hover) !important;
+  filter    : saturate(1.5);
+  transition: all 0.3s ease !important;
+}
+
+.login #backtoblog a {
+  color        : var(--transparent) !important;
+  height       : var(--height-base);
+  white-space  : nowrap;
+  max-width    : 100%;
+  padding-block: 0 !important;
+  margin-block : 0 !important;
+  position     : relative;
+  transition   : all 0.3s ease !important;
+}
+
+.login #backtoblog a:hover {
+  color        : var(--transparent) !important;
+  height       : var(--height-base);
+  white-space  : nowrap;
+  max-width    : 100%;
+  padding-block: 0 !important;
+  margin-block : 0 !important;
+  filter       : saturate(0.5);
+  transition   : filter 0.3s ease !important;
+}
+
+.login #backtoblog a:after {
+  content        : 'Ir para Home';
+  color          : #7f788e;
+  font-family    : var(--font-body);
+  width          : 100%;
+  position       : absolute;
+  display        : flex;
+  align-items    : center;
+  justify-content: center;
+  height         : var(--height-base);
+  top            : 0;
+  left           : 0;
+  transition     : color 0.3s ease !important;
+}
+
+.login #backtoblog a:hover:after {
+  color     : var(--white-color);
+  filter    : saturate(0.5);
+  transition: filter 0.3s ease !important;
+}
+
+
+/* ================================
+   ACF CUSTOM SAN DIEGO
+   ================================ */
+.gridWrap .acf-fields {
+  display       : flex !important;
+  flex-direction: row !important;
+  align-items   : stretch !important;
+  gap           : 0.5rem;
+}
+
+/* FOTO — coluna fixa à esquerda */
+.gridWrap .acf-field-sobre-leader-photo {
+  display       : flex;
+  flex-direction: column;
+  min-height    : 212px;
+  height        : auto;
+}
+
+.gridWrap .acf-field-sobre-leader-name,
+.gridWrap .acf-field-sobre-leader-role {
+  width         : 100% !important;
+  min-height    : unset !important;
+  flex          : 1;
+  display       : flex;
+  flex-direction: column;
+}
+
+.gridWrap .acf-field-sobre-leader-name {
+  height: 50%;
+}
+
+.gridWrap .acf-field-sobre-leader-role {
+  height: 50%;
+}
