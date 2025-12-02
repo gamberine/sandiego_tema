@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Funções Theme: San Diego Hoteis 2025
  * 
@@ -58,6 +59,7 @@ require get_template_directory() . '/inc/class-tema-base-gamb-svg-icons.php';
 require get_template_directory() . '/inc/class-tema-base-gamb-custom-colors.php';
 require get_template_directory() . '/inc/class-tema-base-gamb-customize.php';
 require_once get_template_directory() . '/inc/class-tema-base-gamb-dark-mode.php';
+require_once get_template_directory() . '/inc/acf-hoteis.php';
 new Tema_Dev_Gamb_Custom_Colors();
 require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/menu-functions.php';
@@ -240,84 +242,79 @@ add_action('init', function () {
  *
  * @return string URL da imagem do banner institucional ou string vazia se não houver
  */
-function sd_get_banner_institucional_url() {
-    $banner_posts = get_posts([
-        'post_type'      => 'conteudo',
-        'posts_per_page' => 1,
-        'orderby'        => 'date',
-        'order'          => 'DESC',
-        'no_found_rows'  => true,
-    ]);
+function sd_get_banner_institucional_url()
+{
+  $banner_posts = get_posts([
+    'post_type'      => 'conteudo',
+    'posts_per_page' => 1,
+    'orderby'        => 'date',
+    'order'          => 'DESC',
+    'no_found_rows'  => true,
+  ]);
 
-    if (empty($banner_posts)) {
-        return ''; 
-    }
-
-    $entry = $banner_posts[0];
-    $img   = get_field('banner-institucional', $entry->ID);
-
-    if (is_array($img) && !empty($img['url'])) {
-        return esc_url($img['url']);
-    }
-
-    if (is_string($img)) {
-        return esc_url($img);
-    }
-
+  if (empty($banner_posts)) {
     return '';
+  }
+
+  $entry = $banner_posts[0];
+  $img   = get_field('banner-institucional', $entry->ID);
+
+  if (is_array($img) && !empty($img['url'])) {
+    return esc_url($img['url']);
+  }
+
+  if (is_string($img)) {
+    return esc_url($img);
+  }
+
+  return '';
 }
 
 /**
  * Função para renderizar o banner institucional
  */
-function sd_render_banner_institucional() {
-    $banner_url = sd_get_banner_institucional_url();
-    
-    ?>
-    <div class="banner-institucional"
-         style="background-image: url('<?php echo $banner_url; ?>'), var(--primary-gradient);">
-        <h2 class="break-spaces text-center w-50 mx-auto px-5 d-flex flex-wrap align-items-center justify-content-center">
-            <strong><?php sd_page_title(); ?></strong>
-        </h2>
-    </div>
-    <?php
+function sd_render_banner_institucional()
+{
+  $banner_url = sd_get_banner_institucional_url();
+
+?>
+  <div class="banner-institucional"
+    style="background-image: url('<?php echo $banner_url; ?>'), var(--primary-gradient);">
+    <h2 class="break-spaces text-center w-50 mx-auto px-5 d-flex flex-wrap align-items-center justify-content-center">
+      <strong><?php sd_page_title(); ?></strong>
+    </h2>
+  </div>
+<?php
 }
 
 
 /**
  * Função auxiliar para exibir o título da página conforme o contexto
  */
-function sd_page_title() {
+function sd_page_title()
+{
 
-    if ( is_home() && ! is_front_page() ) {
-        // Página de posts definida no admin
-        echo esc_html( get_the_title( get_option('page_for_posts') ) );
-
-    } elseif ( is_singular() ) {
-        // Página ou post
-        echo esc_html( get_the_title() );
-
-    } elseif ( is_search() ) {
-        echo 'Resultados para: ' . esc_html( get_search_query() );
-
-    } elseif ( is_category() || is_tag() || is_tax() ) {
-        single_term_title();
-
-    } elseif ( is_author() ) {
-        echo 'Artigos de ' . esc_html( get_the_author() );
-
-    } elseif ( is_date() ) {
-        echo esc_html( get_the_date( 'F Y' ) );
-
-    } elseif ( is_post_type_archive() ) {
-        post_type_archive_title();
-
-    } elseif ( is_404() ) {
-        echo 'Página não encontrada';
-
-    } else {
-        echo esc_html( get_the_title() );
-    }
+  if (is_home() && ! is_front_page()) {
+    // Página de posts definida no admin
+    echo esc_html(get_the_title(get_option('page_for_posts')));
+  } elseif (is_singular()) {
+    // Página ou post
+    echo esc_html(get_the_title());
+  } elseif (is_search()) {
+    echo 'Resultados para: ' . esc_html(get_search_query());
+  } elseif (is_category() || is_tag() || is_tax()) {
+    single_term_title();
+  } elseif (is_author()) {
+    echo 'Artigos de ' . esc_html(get_the_author());
+  } elseif (is_date()) {
+    echo esc_html(get_the_date('F Y'));
+  } elseif (is_post_type_archive()) {
+    post_type_archive_title();
+  } elseif (is_404()) {
+    echo 'Página não encontrada';
+  } else {
+    echo esc_html(get_the_title());
+  }
 }
 
 

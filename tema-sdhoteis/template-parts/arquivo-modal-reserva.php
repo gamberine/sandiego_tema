@@ -12,7 +12,9 @@ $sd_search_form_id = 'sdModalForm';
     </header>
 
     <div class="sd-modal__body">
-      <?php get_template_part('template-parts/sections/section-search'); ?>
+      <div class="sd-modal__search">
+        <?php get_template_part('template-parts/sections/section-search'); ?>
+      </div>
     </div>
   </div>
 </div>

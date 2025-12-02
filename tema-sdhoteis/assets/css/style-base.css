@@ -17135,3 +17135,304 @@ body:not(.primary-navigation-open) .site-header.has-logo.has-title-and-tagline .
     padding-right: calc(var(--global--spacing-horizontal) * 0.6 - 4.5px);
     margin-right : calc(0px - var(--global--spacing-horizontal) * 0.6);
 }
+
+/* ------------------------------------------------------------
+   style-base: Atualizacoes fluxo Hotéis
+------------------------------------------------------------ */
+.sd-hotels-grid {
+    position   : relative;
+    overflow   : hidden;
+    padding-top: 56px;
+}
+
+.sd-hotels-grid__bg {
+    position          : absolute;
+    inset             : 0;
+    background-repeat : no-repeat;
+    background-position: center;
+    background-size   : contain;
+    opacity           : 0.12;
+    pointer-events    : none;
+}
+
+.sd-hotels-grid__header {
+    position    : relative;
+    z-index     : 1;
+    margin-bottom: 28px;
+}
+
+.sd-hotels-grid__cards {
+    position: relative;
+    z-index : 1;
+}
+
+.sd-hotel-card {
+    background   : #fff;
+    border       : 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 16px;
+    box-shadow   : var(--card-shadow-soft);
+    overflow     : hidden;
+    display      : flex;
+    flex-direction: column;
+    height       : 100%;
+    transition   : transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.sd-hotel-card.is-highlight {
+    border-color: var(--primary-color);
+    box-shadow  : var(--card-shadow-medium);
+    transform   : translateY(-4px);
+}
+
+.sd-hotel-card__media img,
+.sd-hotel-card__placeholder {
+    width        : 100%;
+    height       : 210px;
+    object-fit   : cover;
+    display      : block;
+    background   : linear-gradient(135deg, rgba(0, 71, 94, 0.18), rgba(0, 140, 180, 0.18));
+}
+
+.sd-hotel-card__body {
+    padding       : 18px;
+    display       : flex;
+    flex-direction: column;
+    gap           : 10px;
+    height        : 100%;
+}
+
+.sd-hotel-card__location {
+    font-size  : 0.95rem;
+    font-weight: 700;
+    color      : var(--primary-color);
+}
+
+.sd-hotel-card__bairro {
+    color      : var(--text-color);
+    font-size  : 0.88rem;
+    margin-left: 6px;
+}
+
+.sd-hotel-card__excerpt {
+    font-size: 0.95rem;
+    color    : var(--text-color);
+    flex     : 1;
+}
+
+.sd-hotel-card__btn {
+    display        : inline-flex;
+    align-items    : center;
+    gap            : 8px;
+    background     : var(--primary-color);
+    color          : #fff;
+    border-radius  : 12px;
+    padding        : 10px 14px;
+    text-decoration: none;
+    font-weight    : 700;
+    transition     : var(--transition);
+}
+
+.sd-hotel-card__btn:hover {
+    background: var(--secondary-color);
+    color     : #fff;
+}
+
+.sd-hotel-card__link {
+    color          : var(--primary-color);
+    font-weight    : 700;
+    text-decoration: none;
+    font-size      : 0.95rem;
+}
+
+.sd-hotel-card__link:hover {
+    text-decoration: underline;
+}
+
+.sd-hoteis-experiencia {
+    background: #eef5f7;
+}
+
+.sd-experiencia-card {
+    background   : #fff;
+    border-radius: 16px;
+    overflow     : hidden;
+    box-shadow   : var(--card-shadow-soft);
+    transition   : transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sd-experiencia-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--card-shadow-medium);
+}
+
+.sd-experiencia-card img,
+.sd-experiencia-card__placeholder {
+    width      : 100%;
+    height     : 240px;
+    object-fit : cover;
+    display    : block;
+    background : linear-gradient(135deg, rgba(0, 71, 94, 0.2), rgba(0, 140, 180, 0.2));
+}
+
+.sd-experiencia-card__legend {
+    padding    : 12px 14px;
+    font-weight: 700;
+    color      : var(--primary-color);
+}
+
+.sd-experiencia-carousel .slick-prev:before,
+.sd-experiencia-carousel .slick-next:before {
+    color    : var(--primary-color);
+    font-size: 26px;
+}
+
+.sd-hoteis-instagram {
+    background: #f6f9f9;
+}
+
+.sd-instagram-card {
+    background   : #fff;
+    border-radius: 14px;
+    overflow     : hidden;
+    box-shadow   : var(--card-shadow-soft);
+    transition   : transform 0.2s ease, box-shadow 0.2s ease;
+    height       : 100%;
+}
+
+.sd-instagram-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--card-shadow-medium);
+}
+
+.sd-instagram-card img,
+.sd-instagram-card__placeholder {
+    width     : 100%;
+    height    : 210px;
+    object-fit: cover;
+    display   : block;
+    background: linear-gradient(135deg, rgba(0, 71, 94, 0.18), rgba(0, 140, 180, 0.18));
+}
+
+.sd-instagram-card__legend {
+    padding    : 10px 12px;
+    font-weight: 700;
+    color      : var(--primary-color);
+    font-size  : 0.95rem;
+    min-height : 48px;
+}
+
+.sd-hotel-contact-card {
+    background   : #fff;
+    border       : 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 14px;
+    overflow     : hidden;
+    box-shadow   : var(--card-shadow-soft);
+    display      : flex;
+    flex-direction: column;
+    height       : 100%;
+}
+
+.sd-hotel-contact-card__media img,
+.sd-hotel-contact-card__placeholder {
+    width     : 100%;
+    height    : 180px;
+    object-fit: cover;
+    display   : block;
+    background: linear-gradient(135deg, rgba(0, 71, 94, 0.18), rgba(0, 140, 180, 0.18));
+}
+
+.sd-hotel-contact-card__body {
+    padding       : 16px;
+    display       : flex;
+    flex-direction: column;
+    gap           : 10px;
+}
+
+.sd-hotel-contact-card__location {
+    color      : var(--primary-color);
+    font-weight: 700;
+}
+
+.sd-hotel-contact-card__bairro {
+    color      : var(--text-color);
+    font-size  : 0.9rem;
+    margin-left: 6px;
+}
+
+.sd-hotel-contact-card__list {
+    list-style: none;
+    padding   : 0;
+    margin    : 0 0 10px;
+    display   : flex;
+    flex-direction: column;
+    gap       : 6px;
+}
+
+.sd-hotel-contact-card__list span {
+    font-weight: 700;
+    margin-right: 4px;
+    color      : var(--text-color);
+}
+
+.sd-hotel-contact-card__list a {
+    color: var(--primary-color);
+}
+
+.sd-contato-hotels .btn {
+    border-radius: 10px;
+}
+
+/* Modal de reserva - duas linhas em telas largas */
+#sdModalReserva .sd-modal__dialog {
+    max-width: 980px;
+}
+
+#sdModalReserva .sd-modal__search .sandiego.searchbar .row {
+    display              : grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap                  : 12px;
+    margin               : 0;
+}
+
+#sdModalReserva .sd-modal__search .gridItens {
+    width: 100%;
+}
+
+#sdModalReserva .sd-modal__search .btn-search {
+    min-height: 48px;
+}
+
+@media (max-width: 1260px) {
+    .sd-hotels-grid {
+        padding-top: 40px;
+    }
+
+    .sd-hotels-grid__bg {
+        opacity: 0.08;
+    }
+
+    .sd-hotel-card__media img,
+    .sd-hotel-card__placeholder {
+        height: 190px;
+    }
+
+    .sd-experiencia-card img,
+    .sd-experiencia-card__placeholder {
+        height: 210px;
+    }
+
+    #sdModalReserva .sd-modal__dialog {
+        margin: 0 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sd-hotel-card__body,
+    .sd-hotel-contact-card__body {
+        text-align: left;
+    }
+
+    .sd-instagram-card__legend {
+        min-height: 1px;
+    }
+}

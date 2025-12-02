@@ -20,8 +20,8 @@ jQuery(document).ready(function () {
 
 function atualizarMenuSuspenso() {
   var largura = jQuery(window).width();
-  var scroll  = jQuery(window).scrollTop();
-  var header  = jQuery("header.site-header");
+  var scroll = jQuery(window).scrollTop();
+  var header = jQuery("header.site-header");
 
   // Mobile: sempre suspenso
   if (largura <= 1260) {
@@ -30,12 +30,12 @@ function atualizarMenuSuspenso() {
   }
 
   // Histerese para evitar flicker
-  var limiarAtiva    = 120; // ativa
+  var limiarAtiva = 120; // ativa
   var limiarDesativa = 80;  // desativa
 
   if (scroll >= limiarAtiva && !header.hasClass("menuSuspenso")) {
     header.addClass("menuSuspenso");
-  } 
+  }
   else if (scroll <= limiarDesativa && header.hasClass("menuSuspenso")) {
     header.removeClass("menuSuspenso");
   }
@@ -161,7 +161,23 @@ jQuery(document).on("ready", function () {
         slidesToShow: 2,
         slidesToScroll: 2,
         responsive: [
-          { breakpoint: 992, settings: { slidesToShow: 1, slidesToScroll: 1 } },
+          { breakpoint: 1260, settings: { slidesToShow: 1, slidesToScroll: 1 } },
+        ],
+      });
+    }
+
+    /* Experiência (página Hotéis) */
+    if (jQuery(".sd-experiencia-carousel").length) {
+      jQuery(".sd-experiencia-carousel").slick({
+        dots: true,
+        arrows: true,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        responsive: [
+          { breakpoint: 1260, settings: { slidesToShow: 2 } },
+          { breakpoint: 768, settings: { slidesToShow: 1 } },
         ],
       });
     }
@@ -262,61 +278,75 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* ============================================================
-     2. AUTOCOMPLETE DO HOTEL — SEM CONFLITOS
+     2. AUTOCOMPLETE DO HOTEL - SEM CONFLITOS
      ============================================================ */
 
-  const sdInp       = document.getElementById("hotelInput");
-  const sdDropdown  = document.getElementById("hotelDropdown");
-  const sdHotelCode = document.getElementById("hotelCode");
+  const sdSearchForms = Array.from(document.querySelectorAll("form")).filter(form =>
+    form.querySelector("#hotelInput") && form.querySelector("#hotelDropdown") && form.querySelector("#hotelCode")
+  );
 
-  if (sdInp && sdDropdown && sdHotelCode) {
+  const renderHotelItem = (list, dropdown, selectFn) => {
+    if (!list || !list.length) {
+      const empty = document.createElement("div");
+      empty.className = "list-group-item list-group-item-action disabled";
+      empty.textContent = "Nenhum hotel encontrado";
+      dropdown.appendChild(empty);
+      return;
+    }
 
-    sdInp.addEventListener("focus", () => sdRenderHotels(""));
-    sdInp.addEventListener("input", e => sdRenderHotels(e.target.value));
+    list.forEach(h => {
+      const item = document.createElement("div");
+      item.className = "list-group-item list-group-item-action";
+      item.style.cursor = "pointer";
+      item.textContent = h.Property_Name;
+      item.onclick = () => selectFn(h.Property_Name, h.Property_UID);
+      dropdown.appendChild(item);
+    });
+  };
 
-    function sdRenderHotels(term) {
-      sdDropdown.innerHTML = "";
+  sdSearchForms.forEach(form => {
+    const input = form.querySelector("#hotelInput");
+    const dropdown = form.querySelector("#hotelDropdown");
+    const code = form.querySelector("#hotelCode");
 
-      let list  = sdHotels;
-      const t   = term.trim().toLowerCase();
+    if (!input || !dropdown || !code) return;
+
+    const selectHotel = (name, id) => {
+      input.value = name;
+      code.value = id;
+      dropdown.style.display = "none";
+    };
+
+    const renderHotels = (term = "") => {
+      dropdown.innerHTML = "";
+      const t = term.trim().toLowerCase();
+      let list = sdHotels;
 
       if (t !== "") {
-        list = sdHotels.filter(h => h.Property_Name.toLowerCase().includes(t));
+        list = sdHotels.filter(h => (h.Property_Name || "").toLowerCase().includes(t));
       }
 
-      sdDropdown.style.display = "block";
+      dropdown.style.display = "block";
 
-      // Opção "Todos os Hotéis"
       const allItem = document.createElement("div");
       allItem.className = "list-group-item list-group-item-action";
       allItem.style.cursor = "pointer";
-      allItem.textContent = "Todos os Hotéis";
-      allItem.onclick = () => sdSelectHotel("Todos os Hotéis", 0);
-      sdDropdown.appendChild(allItem);
+      allItem.textContent = "Todos os Hoteis";
+      allItem.onclick = () => selectHotel("Todos os Hoteis", 0);
+      dropdown.appendChild(allItem);
 
-      // Unidades
-      list.forEach(h => {
-        const item = document.createElement("div");
-        item.className = "list-group-item list-group-item-action";
-        item.style.cursor = "pointer";
-        item.textContent = h.Property_Name;
-        item.onclick = () => sdSelectHotel(h.Property_Name, h.Property_UID);
-        sdDropdown.appendChild(item);
-      });
-    }
+      renderHotelItem(list, dropdown, selectHotel);
+    };
 
-    function sdSelectHotel(name, id) {
-      sdInp.value      = name;
-      sdHotelCode.value = id;
-      sdDropdown.style.display = "none";
-    }
+    input.addEventListener("focus", () => renderHotels(""));
+    input.addEventListener("input", e => renderHotels(e.target.value));
 
     document.addEventListener("click", e => {
-      if (!sdDropdown.contains(e.target) && e.target !== sdInp) {
-        sdDropdown.style.display = "none";
+      if (!dropdown.contains(e.target) && e.target !== input) {
+        dropdown.style.display = "none";
       }
     });
-  }
+  });
 
 
 
@@ -324,7 +354,7 @@ document.addEventListener("DOMContentLoaded", () => {
      3. CLICK EM TODA A ÁREA DO BLOCO — SHOW PICKER
      ============================================================ */
 
-  window.sdFocarInput = function(wrapper) {
+  window.sdFocarInput = function (wrapper) {
     const input = wrapper.querySelector("input");
     if (!input) return;
     if (input.showPicker) input.showPicker();
@@ -337,7 +367,7 @@ document.addEventListener("DOMContentLoaded", () => {
      4. FORMATAR DATA
      ============================================================ */
 
-  window.sdFormat = function(d) {
+  window.sdFormat = function (d) {
     return new Date(d).toLocaleDateString("pt-BR").replace(/\//g, "");
   };
 
@@ -347,7 +377,7 @@ document.addEventListener("DOMContentLoaded", () => {
      5. VALIDAR DATAS
      ============================================================ */
 
-  window.sdDatasValidas = function(form) {
+  window.sdDatasValidas = function (form) {
     if (!form.checkin.value || !form.checkout.value) {
       alert("Selecione datas válidas.");
       return false;
@@ -369,17 +399,18 @@ document.addEventListener("DOMContentLoaded", () => {
      6. BUSCAR NO OMNIBEES
      ============================================================ */
 
-  window.sdBuscar = function(formId = "sdSearchForm") {
+  window.sdBuscar = function (formId = "sdSearchForm") {
     const form = document.getElementById(formId);
     if (!form) return;
 
     if (!sdDatasValidas(form)) return;
 
-    const ci    = sdFormat(form.checkin.value);
-    const co    = sdFormat(form.checkout.value);
-    const ad    = form.hospedes.value;
+    const ci = sdFormat(form.checkin.value);
+    const co = sdFormat(form.checkout.value);
+    const ad = form.hospedes.value;
     const rooms = form.quartos.value;
-    const hotel = sdHotelCode && sdHotelCode.value ? sdHotelCode.value : 0;
+    const hotelCode = form.querySelector("#hotelCode");
+    const hotel = hotelCode && hotelCode.value ? hotelCode.value : 0;
 
     const url =
       `https://book.omnibees.com/chainresults?c=9627&q=${hotel}` +
@@ -400,7 +431,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function sdUpdateBanners() {
     banners.forEach(banner => {
-      const mobileBg  = banner.dataset.mobileBg;
+      const mobileBg = banner.dataset.mobileBg;
       const desktopBg = banner.dataset.desktopBg;
 
       if (window.innerWidth <= 991 && mobileBg) {
@@ -427,16 +458,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("sdModalReserva");
   if (!modal) return;
 
-  const backdrop     = modal.querySelector(".sd-modal__backdrop");
+  const backdrop = modal.querySelector(".sd-modal__backdrop");
   const closeTargets = modal.querySelectorAll("[data-sd-modal-close]");
-  const triggers     = document.querySelectorAll('[data-sd-modal-target="#sdModalReserva"]');
+  const triggers = document.querySelectorAll('[data-sd-modal-target="#sdModalReserva"]');
 
   const toggleScroll = lock => {
     document.body.classList.toggle("lock-scrolling", lock);
   };
 
   const syncForms = () => {
-    const mainForm  = document.getElementById("sdSearchForm");
+    const mainForm = document.getElementById("sdSearchForm");
     const modalForm = document.getElementById("sdModalForm");
     if (!mainForm || !modalForm) return;
 
@@ -445,6 +476,14 @@ document.addEventListener("DOMContentLoaded", () => {
         modalForm[field].value = mainForm[field].value;
       }
     });
+
+    const mainHotel = mainForm.querySelector("#hotelInput");
+    const modalHotel = modalForm.querySelector("#hotelInput");
+    const mainCode = mainForm.querySelector("#hotelCode");
+    const modalCode = modalForm.querySelector("#hotelCode");
+
+    if (mainHotel && modalHotel) modalHotel.value = mainHotel.value;
+    if (mainCode && modalCode) modalCode.value = mainCode.value;
   };
 
   const openModal = evt => {

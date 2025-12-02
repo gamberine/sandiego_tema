@@ -1,0 +1,178 @@
+{
+  "key": "group_sd_page_hoteis_final",
+  "title": "Pagina Hoteis",
+  "fields": [
+    {
+      "key": "tab_sd_hoteis_intro",
+      "label": "Chamada",
+      "name": "",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_sd_hoteis_subtitulo",
+      "label": "Subtitulo",
+      "name": "hoteis_subtitulo",
+      "type": "text",
+      "default_value": "Nossos Hoteis"
+    },
+    {
+      "key": "field_sd_hoteis_titulo",
+      "label": "Titulo",
+      "name": "hoteis_titulo",
+      "type": "text",
+      "default_value": "Desfrute do melhor da hospitalidade mineira"
+    },
+    {
+      "key": "field_sd_hoteis_mapa_bg",
+      "label": "Imagem de fundo (mapa/linha)",
+      "name": "hoteis_mapa_fundo",
+      "type": "image",
+      "return_format": "array",
+      "preview_size": "medium",
+      "library": "all",
+      "instructions": "Opcional. Se vazio, usa o mapa padrao do tema."
+    },
+    {
+      "key": "tab_sd_hoteis_grid",
+      "label": "Grid de Hoteis",
+      "name": "",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_sd_hoteis_grid_limite",
+      "label": "Quantidade de hoteis",
+      "name": "hoteis_grid_limite",
+      "type": "number",
+      "default_value": -1,
+      "instructions": "Use -1 para exibir todos."
+    },
+    {
+      "key": "field_sd_hoteis_grid_ordem",
+      "label": "Ordenacao",
+      "name": "hoteis_grid_ordem",
+      "type": "select",
+      "choices": {
+        "hotel_ordem": "Ordem manual (campo Ordem de exibicao)",
+        "title": "Titulo (A-Z)",
+        "date": "Data de publicacao (mais recentes primeiro)"
+      },
+      "default_value": "hotel_ordem",
+      "ui": 1,
+      "return_format": "value"
+    },
+    {
+      "key": "tab_sd_hoteis_experiencia",
+      "label": "Experiencia",
+      "name": "",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_sd_hoteis_experiencia_titulo",
+      "label": "Titulo da secao",
+      "name": "hoteis_experiencia_titulo",
+      "type": "text",
+      "default_value": "Experiencia San Diego"
+    },
+    {
+      "key": "field_sd_hoteis_experiencia_itens",
+      "label": "Itens (slides)",
+      "name": "hoteis_experiencia_itens",
+      "type": "repeater",
+      "layout": "row",
+      "button_label": "Adicionar slide",
+      "sub_fields": [
+        {
+          "key": "field_sd_hoteis_experiencia_img",
+          "label": "Imagem",
+          "name": "imagem",
+          "type": "image",
+          "return_format": "array",
+          "preview_size": "medium",
+          "library": "all",
+          "required": 1
+        },
+        {
+          "key": "field_sd_hoteis_experiencia_legenda",
+          "label": "Legenda",
+          "name": "legenda",
+          "type": "text"
+        },
+        {
+          "key": "field_sd_hoteis_experiencia_link",
+          "label": "Link (opcional)",
+          "name": "link",
+          "type": "url"
+        }
+      ]
+    },
+    {
+      "key": "tab_sd_hoteis_instagram",
+      "label": "Instagram",
+      "name": "",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_sd_hoteis_instagram_titulo",
+      "label": "Titulo",
+      "name": "hoteis_instagram_titulo",
+      "type": "text",
+      "default_value": "Siga nosso Instagram"
+    },
+    {
+      "key": "field_sd_hoteis_instagram_itens",
+      "label": "Cards",
+      "name": "hoteis_instagram_itens",
+      "type": "repeater",
+      "layout": "row",
+      "button_label": "Adicionar card",
+      "sub_fields": [
+        {
+          "key": "field_sd_hoteis_instagram_img",
+          "label": "Imagem",
+          "name": "imagem",
+          "type": "image",
+          "return_format": "array",
+          "preview_size": "medium",
+          "library": "all",
+          "required": 1
+        },
+        {
+          "key": "field_sd_hoteis_instagram_legenda",
+          "label": "Legenda/Texto curto",
+          "name": "legenda",
+          "type": "text"
+        },
+        {
+          "key": "field_sd_hoteis_instagram_link",
+          "label": "Link",
+          "name": "link",
+          "type": "url",
+          "instructions": "Opcional. Se vazio, apenas exibe a imagem."
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "page_template",
+        "operator": "==",
+        "value": "page-hoteis.php"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "acf_after_title",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1735776000
+}

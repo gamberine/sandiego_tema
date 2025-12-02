@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Banner padrao utilizado nas paginas institucionais.
  *
@@ -6,11 +7,11 @@
  */
 ?>
 
- <div class="rowBannerHome" id="internas">
+<div class="rowBannerHome" id="internas">
   <div class="bannerPrincipal">
-    <?php if (have_rows('item_banner_internas')) : ?>
+    <?php if (have_rows('item_banner_hoteis')) : ?>
       <?php
-      while (have_rows('item_banner_internas')) :
+      while (have_rows('item_banner_hoteis')) :
         the_row();
         $use_image = (bool) get_sub_field('select_imagem');
         $select_adicionar_botao = get_sub_field('select_adicionar_botao');
@@ -35,36 +36,33 @@
             style="background: <?php echo esc_attr($desktop_background); ?>;"
             data-desktop-bg="<?php echo esc_attr($desktop_background); ?>"
             data-mobile-bg="<?php echo esc_attr($mobile_background); ?>">
-        <?php elseif (!$use_image && $video_banner) : ?>
-          <div class="slide-items video" style="background: var(--transparent) !important; background-size: cover; background-blend-mode: multiply;">
-            <video autoplay muted loop>
-              <source src="<?php echo esc_url($video_banner); ?>" type="video/mp4">
-            </video>
-        <?php else : ?>
-          <div class="slide-items" style="background: var(--transparent); background-size: cover;">
-            <p>Slide nao configurado corretamente.</p>
-        <?php endif; ?>
-            <div class="formaBanner">
-              <?php if (!empty($texto_banner)) : ?>
-                <div class="animationFade"><?php echo wp_kses_post($texto_banner); ?></div>
+          <?php elseif (!$use_image && $video_banner) : ?>
+            <div class="slide-items video" style="background: var(--transparent) !important; background-size: cover; background-blend-mode: multiply;">
+              <video autoplay muted loop>
+                <source src="<?php echo esc_url($video_banner); ?>" type="video/mp4">
+              </video>
+            <?php else : ?>
+              <div class="slide-items" style="background: var(--transparent); background-size: cover;">
+                <p>Slide nao configurado corretamente.</p>
               <?php endif; ?>
-              <?php if ($select_adicionar_botao && $botao_banner && $link_botao) : ?>
-                <div class="gridBtnPost">
-                  <a href="<?php echo esc_url($link_botao); ?>" class="btnBanner">
-                    <?php echo esc_html($botao_banner); ?>
-                  </a>
-                </div>
-              <?php endif; ?>
+              <div class="formaBanner">
+                <?php if (!empty($texto_banner)) : ?>
+                  <div class="animationFade"><?php echo wp_kses_post($texto_banner); ?></div>
+                <?php endif; ?>
+                <?php if ($select_adicionar_botao && $botao_banner && $link_botao) : ?>
+                  <div class="gridBtnPost">
+                    <a href="<?php echo esc_url($link_botao); ?>" class="btnBanner">
+                      <?php echo esc_html($botao_banner); ?>
+                    </a>
+                  </div>
+                <?php endif; ?>
+              </div>
+              </div>
+            <?php endwhile; ?>
+          <?php else : ?>
+            <div class="slide-items" style="background: var(--transparent); background-size: cover;">
+              <p>Adicione ao menos um banner na pagina para exibi-lo aqui.</p>
+            </div>
+          <?php endif; ?>
             </div>
           </div>
-      <?php endwhile; ?>
-    <?php else : ?>
-      <div class="slide-items" style="background: var(--transparent); background-size: cover;">
-        <p>Adicione ao menos um banner na pagina para exibi-lo aqui.</p>
-      </div>
-    <?php endif; ?>
-  </div>
-</div>
-
-
-
