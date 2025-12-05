@@ -46,6 +46,25 @@ a[href*="acf-settings-updates"],
   overflow   : hidden !important;
 }
 
+.acf-field.acf-field-message {
+  border-block: var(--info-color-light)!important;
+  color: var(--secondary-color) !important;
+  background: var(--info-color-light);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  line-height: 1;
+}
+.acf-field.acf-field-message .acf-label {
+  margin: 0 !important;
+}
+
+.acf-field.acf-field-message .acf-label label {
+  margin: 0!important;
+  padding: 0 5px!important;
+  font-weight: 600 !important;
+  font-style: italic;
+}
 
 span.gamberine-footer a {
   padding-right: 3rem;

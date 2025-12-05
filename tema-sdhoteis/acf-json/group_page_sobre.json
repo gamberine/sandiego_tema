@@ -1,0 +1,361 @@
+{
+    "key": "group_page_sobre",
+    "title": "2.Page Sobre",
+    "fields": [
+        {
+            "key": "field_691b42eb79216",
+            "label": "Banner",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_6921773f98548",
+            "label": "Item Banner Internas",
+            "name": "item_banner_internas",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 1,
+            "max": 0,
+            "collapsed": "field_691fdaffc1740",
+            "button_label": "Adicionar banner",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_6921773f98549",
+                    "label": "Imagem ou Vídeo",
+                    "name": "select_imagem",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "Imagem",
+                    "default_value": 1,
+                    "allow_in_bindings": 1,
+                    "ui_on_text": "Imagem",
+                    "ui_off_text": "Vídeo",
+                    "ui": 1,
+                    "parent_repeater": "field_6921773f98548"
+                },
+                {
+                    "key": "field_6921773f9854a",
+                    "label": "Imagem Principal",
+                    "name": "imagem_banner",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Tamanho ideal: 1920x1080",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6921773f98549",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "35",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ".jpg, .jpeg, .png",
+                    "allow_in_bindings": 1,
+                    "preview_size": "thumbnail",
+                    "parent_repeater": "field_6921773f98548"
+                },
+                {
+                    "key": "field_6921773f9854b",
+                    "label": "Imagem Mobile",
+                    "name": "imagem_banner_mobile",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Tamanho ideal: 390x490",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6921773f98549",
+                                "operator": "==",
+                                "value": "1"
+                            },
+                            {
+                                "field": "field_6921773f9854a",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "35",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ".jpg, .jpeg, .png",
+                    "allow_in_bindings": 1,
+                    "preview_size": "thumbnail",
+                    "parent_repeater": "field_6921773f98548"
+                },
+                {
+                    "key": "field_6921773f9854c",
+                    "label": "Vídeo do Banner",
+                    "name": "video_banner",
+                    "aria-label": "",
+                    "type": "file",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_691fdafec173f",
+                                "operator": "!=empty"
+                            },
+                            {
+                                "field": "field_6921773f98549",
+                                "operator": "!=",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "70",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "library": "all",
+                    "min_size": "",
+                    "max_size": "",
+                    "mime_types": ".mp4, .mov, .avi, .wmv, .mpg, .mpeg, .asf, .flv, .f4v, .swf, .mkv",
+                    "allow_in_bindings": 1,
+                    "parent_repeater": "field_6921773f98548"
+                },
+                {
+                    "key": "field_6921773f9854d",
+                    "label": "Adicionar Botão?",
+                    "name": "select_adicionar_botao",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_691fdafec173f",
+                                "operator": "!=empty"
+                            },
+                            {
+                                "field": "field_6921773f9854a",
+                                "operator": "!=empty"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_691fdafec173f",
+                                "operator": "!=empty"
+                            },
+                            {
+                                "field": "field_6921773f9854c",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "allow_in_bindings": 1,
+                    "ui_on_text": "Sim",
+                    "ui_off_text": "Não",
+                    "ui": 1,
+                    "parent_repeater": "field_6921773f98548"
+                },
+                {
+                    "key": "field_6921773f9854e",
+                    "label": "Botão Banner",
+                    "name": "botao_banner",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_691fdafec173f",
+                                "operator": "!=empty"
+                            },
+                            {
+                                "field": "field_6921773f9854a",
+                                "operator": "!=empty"
+                            },
+                            {
+                                "field": "field_6921773f9854d",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_691fdafec173f",
+                                "operator": "!=empty"
+                            },
+                            {
+                                "field": "field_6921773f9854c",
+                                "operator": "!=empty"
+                            },
+                            {
+                                "field": "field_6921773f9854d",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": 12,
+                    "allow_in_bindings": 1,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_6921773f98548"
+                },
+                {
+                    "key": "field_6921773f9854f",
+                    "label": "Link Botão",
+                    "name": "link_botao",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_691fdafec173f",
+                                "operator": "!=empty"
+                            },
+                            {
+                                "field": "field_6921773f9854d",
+                                "operator": "==",
+                                "value": "1"
+                            },
+                            {
+                                "field": "field_6921773f9854e",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "70",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 1,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_6921773f98548"
+                }
+            ]
+        },
+        {
+            "key": "field_691fe4707baf3",
+            "label": "Conteúdo",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-sobre.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "field",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": true,
+    "description": "2.Page Sobre",
+    "show_in_rest": 0,
+    "modified": 1764624186
+}

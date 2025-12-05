@@ -527,6 +527,79 @@ function add_lang_class_to_body($classes)
 }
 add_filter('body_class', 'add_lang_class_to_body');
 
+/**
+ * Google Reviews helper
+ * Usa Place ID por hotel e uma API key definida via constante SD_GOOGLE_API_KEY ou opção sd_google_api_key.
+ */
+function sd_google_api_key()
+{
+  if (defined('SD_GOOGLE_API_KEY') && SD_GOOGLE_API_KEY) {
+    return SD_GOOGLE_API_KEY;
+  }
+  return get_option('sd_google_api_key', '');
+}
+
+/**
+ * Busca avaliações do Google para o Place ID informado.
+ * Cache em transient por 12h para evitar limites.
+ *
+ * @param string $place_id
+ * @param int    $limit
+ * @return array
+ */
+function sd_get_google_reviews($place_id, $limit = 6)
+{
+  $place_id = trim((string) $place_id);
+  $api_key  = sd_google_api_key();
+
+  if (!$place_id || !$api_key) {
+    return [];
+  }
+
+  $cache_key = 'sd_gr_' . md5($place_id);
+  $cached    = get_transient($cache_key);
+  if ($cached !== false) {
+    return $cached;
+  }
+
+  $url = add_query_arg([
+    'placeid' => $place_id,
+    'fields'  => 'name,rating,reviews,user_ratings_total',
+    'language' => 'pt-BR',
+    'key'     => $api_key,
+  ], 'https://maps.googleapis.com/maps/api/place/details/json');
+
+  $response = wp_remote_get($url, ['timeout' => 12]);
+  if (is_wp_error($response)) {
+    return [];
+  }
+
+  $body = wp_remote_retrieve_body($response);
+  $data = json_decode($body, true);
+
+  if (!isset($data['status']) || $data['status'] !== 'OK' || empty($data['result']['reviews'])) {
+    return [];
+  }
+
+  $reviews = array_slice($data['result']['reviews'], 0, $limit);
+  $clean   = [];
+
+  foreach ($reviews as $rev) {
+    $clean[] = [
+      'author'   => $rev['author_name'] ?? '',
+      'rating'   => (float) ($rev['rating'] ?? 0),
+      'text'     => $rev['text'] ?? '',
+      'time'     => $rev['relative_time_description'] ?? '',
+      'profile'  => $rev['profile_photo_url'] ?? '',
+      'lang'     => $rev['language'] ?? '',
+      'url'      => $rev['author_url'] ?? '',
+    ];
+  }
+
+  set_transient($cache_key, $clean, 12 * HOUR_IN_SECONDS);
+  return $clean;
+}
+
 
 /* Shortcode: título de página */
 function shortcode_titulo_pagina()
@@ -692,5 +765,64 @@ add_action('template_redirect', function () {
   }
   exit;
 });
+
+
+
+/* FIM */
+
+/**
+ * SAN DIEGO — Endereço completo no ACF
+ * CEP com máscara, número apenas números, ViaCEP automático
+ */
+add_action('acf/input/admin_footer', function () {
+    ?>
+    <script>
+    // Máscara CEP
+    document.addEventListener("input", function (e) {
+      if (e.target.name === "hotel_cep") {
+        let v = e.target.value.replace(/\D/g, "");
+        if (v.length > 5) {
+          v = v.replace(/(\d{5})(\d+)/, "$1-$2");
+        }
+        e.target.value = v.substring(0, 9);
+      }
+    });
+
+    // Apenas números no campo número
+    document.addEventListener("input", function (e) {
+      if (e.target.name === "hotel_numero") {
+        e.target.value = e.target.value.replace(/\D/g, "");
+      }
+    });
+
+    // Auto-completar endereço via ViaCEP
+    document.addEventListener("blur", function (e) {
+      if (e.target.name !== "hotel_cep") return;
+
+      const cep = e.target.value.replace(/\D/g, "");
+      if (cep.length !== 8) return;
+
+      fetch("https://viacep.com.br/ws/" + cep + "/json/")
+        .then(r => r.json())
+        .then(d => {
+          if (d.erro) return;
+
+          const set = (name, value) => {
+            const f = document.querySelector('[name="' + name + '"]');
+            if (f && value) f.value = value;
+          };
+
+          set("hotel_logradouro", d.logradouro);
+          set("hotel_bairro", d.bairro);
+          set("hotel_cidade", d.localidade);
+
+          const estadoSelect = document.querySelector('[name="hotel_estado"]');
+          if (estadoSelect) estadoSelect.value = d.uf;
+        });
+    });
+    </script>
+    <?php
+});
+
 
 /* FIM */

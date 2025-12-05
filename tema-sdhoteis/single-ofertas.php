@@ -10,7 +10,7 @@ get_header();
 
 <?php get_template_part( 'template-parts/sections/section', 'banner-institucional' ); ?>
 
-  <section class="container py-5 teste">
+  <section class="container py-5">
     <?php if (have_posts()) : ?>
       <?php while (have_posts()) : the_post(); ?>
         <article <?php post_class('oferta-single mx-auto'); ?> style="max-width: 920px;">

@@ -1,49 +1,64 @@
 <?php
+
 /**
  * Seção: Experiência San Diego (página Hotéis)
  */
 
-$page_id = get_the_ID();
-$titulo  = sd_field('hoteis_experiencia_titulo', $page_id, 'Experiência San Diego');
-$itens   = sd_field('hoteis_experiencia_itens', $page_id);
+$titulo = sd_field('hoteis_experiencia_titulo', get_the_ID(), 'Experiência San Diego');
+
+$args = [
+  'post_type'      => 'hoteis',
+  'posts_per_page' => -1,
+  'post_status'    => 'publish'
+];
+
+$query = new WP_Query($args);
 ?>
 
-<?php if ($itens) : ?>
+<?php if ($query->have_posts()) : ?>
   <section class="sd-hoteis-experiencia section-pad">
     <div class="container">
+
       <div class="sd-section-header text-center mb-4">
-        <?php if ($titulo) : ?>
-          <h2 class="sd-title display-6 mb-0"><?php echo esc_html($titulo); ?></h2>
-        <?php endif; ?>
+        <h2 class="sd-title display-6 mb-0"><?php echo esc_html($titulo); ?></h2>
       </div>
 
       <div class="sd-experiencia-carousel">
-        <?php foreach ($itens as $item) :
-          $img     = isset($item['imagem']['url']) ? $item['imagem']['url'] : '';
-          $legenda = isset($item['legenda']) ? $item['legenda'] : '';
-          $link    = isset($item['link']) ? $item['link'] : '';
-        ?>
+
+        <?php while ($query->have_posts()) : $query->the_post(); ?>
+
+          <?php
+          $img       = sd_field('imagem_destaque');
+          $cidade    = sd_field('hotel_cidade');
+          $permalink = get_permalink();
+          ?>
+
           <div class="sd-experiencia-card">
-            <?php if ($link) : ?>
-              <a href="<?php echo esc_url($link); ?>" target="_blank" rel="noopener noreferrer">
-            <?php endif; ?>
 
-            <?php if ($img) : ?>
-              <img src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($legenda); ?>">
-            <?php else : ?>
-              <div class="sd-experiencia-card__placeholder"></div>
-            <?php endif; ?>
+            <a href="<?php echo esc_url($permalink); ?>" class="sd-experiencia-link">
 
-            <?php if ($legenda) : ?>
-              <div class="sd-experiencia-card__legend"><?php echo esc_html($legenda); ?></div>
-            <?php endif; ?>
+              <?php if ($img) : ?>
+                <img src="<?php echo esc_url($img['url']); ?>"
+                  alt="<?php echo esc_attr(get_the_title()); ?>">
+              <?php endif; ?>
 
-            <?php if ($link) : ?>
-              </a>
-            <?php endif; ?>
+              <div class="sd-experiencia-overlay">
+                <?php if ($cidade) : ?>
+                  <p class="sd-exp-cidade"><?php echo esc_html($cidade); ?></p>
+                <?php endif; ?>
+
+                <h3 class="sd-exp-titulo"><?php echo esc_html(get_the_title()); ?></h3>
+              </div>
+
+            </a>
+
           </div>
-        <?php endforeach; ?>
+
+        <?php endwhile;
+        wp_reset_postdata(); ?>
+
       </div>
+
     </div>
   </section>
 <?php endif; ?>

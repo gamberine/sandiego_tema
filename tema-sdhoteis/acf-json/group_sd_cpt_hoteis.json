@@ -17,6 +17,13 @@
       "required": 1
     },
     {
+      "key": "field_sd_hotel_google_place_id",
+      "label": "Google Place ID",
+      "name": "hotel_google_place_id",
+      "type": "text",
+      "instructions": "Informe o Place ID do hotel no Google (usado para buscar avaliacoes automaticamente)."
+    },
+    {
       "key": "field_sd_hotel_estado",
       "label": "Estado (UF)",
       "name": "hotel_estado",

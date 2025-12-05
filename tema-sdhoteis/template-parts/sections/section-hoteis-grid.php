@@ -48,19 +48,22 @@ if ($ordem === 'hotel_ordem') {
 $hoteis = new WP_Query($query_args);
 ?>
 
-<section class="sd-hotels-grid section-pad" id="hoteis">
+<section class="sd-hotels-grid section-pad mt-5" id="hoteis">
   <div class="container position-relative">
     <div class="sd-hotels-grid__bg" aria-hidden="true" style="background-image:url('<?php echo esc_url($mapa_url); ?>');"></div>
 
     <div class="sd-hotels-grid__header text-center">
       <?php if ($subtitulo) : ?>
-        <div class="sd-sub text-uppercase mb-2"><?php echo esc_html($subtitulo); ?></div>
+        <span class="badge px-4"><?php echo esc_html($subtitulo); ?></span>
       <?php endif; ?>
       <?php if ($titulo) : ?>
-        <h2 class="sd-title display-6 mb-0"><?php echo esc_html($titulo); ?></h2>
+        <h2 class="primary-color col-12 col-lg-6 mx-auto mt-2"><?php echo esc_html($titulo); ?></h2>
       <?php endif; ?>
     </div>
 
+
+
+     <!-- cards  -->
     <?php if ($hoteis->have_posts()) : ?>
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4 sd-hotels-grid__cards">
         <?php
@@ -76,38 +79,41 @@ $hoteis = new WP_Query($query_args);
         ?>
           <article class="col">
             <div class="sd-hotel-card h-100 <?php echo $destaque ? 'is-highlight' : ''; ?>">
-              <div class="sd-hotel-card__media">
+              <div class="sd-hotel-card__media p-2 rounded">
+                  <a class="link" href="<?php echo esc_url($link ?: get_permalink()); ?>" target="_blank">
                 <?php if ($thumb) : ?>
                   <img src="<?php echo esc_url($thumb); ?>" alt="<?php the_title_attribute(); ?>">
                 <?php else : ?>
                   <div class="sd-hotel-card__placeholder"></div>
                 <?php endif; ?>
+                  </a>
               </div>
               <div class="sd-hotel-card__body">
                 <?php if ($cidade || $estado || $bairro) : ?>
                   <div class="sd-hotel-card__location">
                     <?php echo esc_html(trim($cidade . ($estado ? ' - ' . $estado : ''))); ?>
                     <?php if ($bairro) : ?>
-                      <span class="sd-hotel-card__bairro">• <?php echo esc_html($bairro); ?></span>
+                      <span class="sd-hotel-card__bairro"><?php echo esc_html($bairro); ?></span>
                     <?php endif; ?>
                   </div>
                 <?php endif; ?>
 
-                <h3 class="sd-hotel-card__title h5 mb-2"><?php the_title(); ?></h3>
+                <p class="sd-hotel-card__title"><?php the_title(); ?></h3>
 
                 <?php if ($resumo) : ?>
-                  <p class="sd-hotel-card__excerpt mb-3"><?php echo esc_html($resumo); ?></p>
+                  <p class="sd-hotel-card__excerpt3"><?php echo esc_html($resumo); ?></p>
                 <?php endif; ?>
 
                 <div class="d-flex align-items-center justify-content-between">
-                  <a class="sd-hotel-card__btn" href="<?php echo esc_url($link ?: get_permalink()); ?>">
-                    <span>Reservar</span>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <a class="btn btn-accent" href="<?php echo esc_url($link ?: get_permalink()); ?>">
+                    <span>Saiba mais</span>/<a>
+                    <!-- <a class="sd-hotel-card__btnsd-hotel-card__btn" href="< ?php echo esc_url($link ?: get_permalink()); ?>" target="_blank"> -->
+                    <!-- <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                       <line x1="5" y1="12" x2="19" y2="12"></line>
                       <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                  </a>
-                  <a class="sd-hotel-card__link" href="<?php the_permalink(); ?>">Ver detalhes</a>
+                    </svg> -->
+                  
+                   <!-- < a class="btn btn-accent" href="< ?php the_permalink(); ?>">Saiba mais</a> -->
                 </div>
               </div>
             </div>

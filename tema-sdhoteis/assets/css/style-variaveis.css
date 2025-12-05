@@ -568,17 +568,21 @@ li#menu-item-2989 a::after {
   color: var(--gray-light) !important;
   opacity: 0.9;
 }
+
 .btn-accent {
-  background-color: var(--accent-color);
   color: var(--white-color) !important;
+  background-color: var(--accent-color);
   border-color: var(--accent-color);
 }
 
 .btn-accent:hover {
-   color: var(--primary-color-hover) !important;
-  background-color: var(--accent-color-hover, var(--accent-color));
-  border-color: var(--accent-color-hover, var(--accent-color));
+  color: var(--accent-color) !important;
+  background-color: var(--white-color);
+  border-color: var(--white-color);
   opacity: 0.9;
+  /* color: var(--primary-color-hover) !important;
+     background-color: var(--accent-color-hover, var(--accent-color));
+     border-color: var(--accent-color-hover, var(--accent-color)); */
 }
 
 /* --- Modificador 4: Botão de Aviso (Solid) - .btn-warning --- */
@@ -589,7 +593,7 @@ li#menu-item-2989 a::after {
 }
 
 .btn-warning:hover {
-   color: var(--gray-light) !important;
+  color: var(--gray-light) !important;
   background-color: var(--warning-color-hover, var(--warning-color));
   border-color: var(--warning-color-hover, var(--warning-color));
   opacity: 0.9;
