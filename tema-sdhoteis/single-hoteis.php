@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 /**
  * SINGLE HOTEIS
@@ -8,6 +8,7 @@ get_header();
 the_post();
 $cidade = sd_field('hotel_cidade');
 $bairro = sd_field('hotel_bairro');
+$resumo   = sd_field('hotel_resumo');
 ?>
 <section class="bannerSingle" style="background:linear-gradient(0deg,rgba(0,0,0,.55),rgba(0,0,0,.55)),url('<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), 'full')); ?>') center/cover no-repeat;">
   <div class="container h-100 d-flex align-items-center">
@@ -19,20 +20,26 @@ $bairro = sd_field('hotel_bairro');
   </div>
 </section>
 <?php get_template_part('template-parts/sections/section', 'search'); ?>
+
 <section class="section-pad">
   <div class="container">
     <div class="row g-4">
       <div class="col-lg-6">
-        <?php echo apply_filters('the_content', get_the_content()); ?>
+        <?php if ($resumo) : ?>
+          <p class="mb-4 pb-3 "><?php echo esc_html($resumo); ?></p>
+        <?php endif; ?>
       </div>
       <div class="col-lg-6">
-        <?php $galeria = sd_field('hotel_galeria');
-        if (is_array($galeria)) {
-          foreach ($galeria as $img) {
-            echo '<img class="w-100 mb-3 rounded-3" src="' . esc_url($img['url']) . '" alt="">';
-          }
-        }
-        ?>
+        <?php $galeria = sd_field('hotel_galeria'); ?>
+        <?php if (is_array($galeria) && !empty($galeria)) : ?>
+          <div class="sd-hotel-gallery">
+            <?php foreach ($galeria as $img) : ?>
+              <div class="sd-hotel-gallery__slide">
+                <img class="w-100 rounded sd-hotel-gallery__img" src="<?php echo esc_url($img['url']); ?>" alt="">
+              </div>
+            <?php endforeach; ?>
+          </div>
+        <?php endif; ?>
       </div>
     </div>
   </div>
@@ -90,63 +97,68 @@ $bairro = sd_field('hotel_bairro');
   }
   ?>
 </div>
+<?php
+// Google Reviews desativado a pedido do cliente.
+// $place_id       = sd_field('hotel_google_place_id');
+// $google_reviews = sd_get_google_reviews($place_id, 8);
 
-  </div>
-</section>
+$depo_query = new WP_Query([
+  'post_type'      => 'depoimento',
+  'posts_per_page' => 12,
+  'meta_query'     => [
+    'relation' => 'OR',
+    [
+      'key'   => 'hotel_avaliado',
+      'value' => get_the_ID(),
+    ],
+    [
+      'key'     => 'hotel_avaliado',
+      'value'   => '"' . get_the_ID() . '"',
+      'compare' => 'LIKE',
+    ],
+  ],
+]);
+?>
 
+<?php if ($depo_query->have_posts()) : ?>
 <section class="section-pad bg-light">
   <div class="container">
-    <?php
-    $place_id       = sd_field('hotel_google_place_id');
-    $google_reviews = sd_get_google_reviews($place_id, 8);
-    ?>
-    <h2 class="sd-title mb-4 text-center">Depoimento dos nossos Hóspedes</h2>
+    <h2 class="sd-title mb-4 text-center">Depoimento dos nossos Hospedes</h2>
 
-    <?php if ($google_reviews) : ?>
-      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-        <?php foreach ($google_reviews as $rev) : ?>
-          <article class="col">
-            <div class="sd-card h-100 p-3 d-flex flex-column gap-2">
-              <div class="fw-semibold"><?php echo esc_html($rev['author']); ?></div>
-              <?php if (! empty($rev['time'])) : ?>
-                <div class="small text-muted"><?php echo esc_html($rev['time']); ?></div>
-              <?php endif; ?>
-              <div class="sd-google-stars" aria-label="<?php echo esc_attr($rev['rating']); ?> estrelas">
-                <?php
-                $rating = (int) floor($rev['rating']);
-                for ($i = 1; $i <= 5; $i++) {
-                  echo '<span class="' . ($i <= $rating ? 'on' : '') . '">&#9733;</span>';
-                }
-                ?>
-              </div>
-              <?php if (! empty($rev['text'])) : ?>
-                <p class="mb-0 small"><?php echo esc_html($rev['text']); ?></p>
-              <?php endif; ?>
-              <div class="small text-muted mt-auto">Fonte: Google Reviews</div>
-            </div>
-          </article>
-        <?php endforeach; ?>
-      </div>
-    <?php else : ?>
-      <div class="sd-carousel-depo">
-        <?php
-        $depo_query = new WP_Query(['post_type' => 'depoimento', 'posts_per_page' => 6]);
-        while ($depo_query->have_posts()) {
-          $depo_query->the_post();
-          echo '<div class="px-3"><div class="sd-card h-100 p-3">';
-          echo '<div class="small text-muted mb-1">
-        ' . esc_html(sd_field('depo_origem', get_the_ID())) . '
-        <span>' . esc_html(sd_field('nome_origem', get_the_ID())) . '</span> </div>';
-          echo '<div class="fw-semibold mb-2">' . esc_html(get_the_title()) . '</div>';
-          echo '<div class="mb-2">' . get_the_content() . '</div>';
-          echo '</div></div>';
-        }
-        wp_reset_postdata();
+    <div class="sd-carousel-depo">
+      <?php
+      while ($depo_query->have_posts()) {
+        $depo_query->the_post();
+        $nome  = (string) sd_field('nome_origem', get_the_ID());
+        $nota  = max(0, min(5, (int) sd_field('depo_nota', get_the_ID())));
+        $texto = (string) sd_field('texto_depoimento', get_the_ID());
         ?>
-      </div>
-    <?php endif; ?>
-</div>
+        <div class="px-3">
+          <div class="sd-card h-100 p-3 d-flex flex-column gap-2">
+            <?php if ($nome) : ?>
+              <div class="fw-semibold"><?php echo esc_html($nome); ?></div>
+            <?php endif; ?>
+            <?php if ($nota) : ?>
+              <div class="sd-google-stars" aria-label="<?php echo esc_attr($nota); ?> estrelas">
+                <?php for ($i = 1; $i <= 5; $i++) {
+                  echo '<span class="' . ($i <= $nota ? 'on' : '') . '">&#9733;</span>';
+                } ?>
+              </div>
+            <?php endif; ?>
+            <?php if ($texto) : ?>
+              <p class="mb-0 small"><?php echo esc_html($texto); ?></p>
+            <?php endif; ?>
+            <div class="small text-muted mt-auto">Fonte: Depoimentos do site</div>
+          </div>
+        </div>
+        <?php
+      }
+      wp_reset_postdata();
+      ?>
+    </div>
+  </div>
 </section>
+<?php endif; ?>
 
 <!-- aqui vai o arquivo hoteis-redes-sociais -->
 <!-- < ?php get_template_part('template-parts/sections/section-hoteis-redes-sociais'); ?> -->
