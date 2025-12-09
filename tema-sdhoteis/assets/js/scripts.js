@@ -225,9 +225,110 @@ jQuery(document).on("ready", function () {
 
 
 /* ============================================================
-   NOVOS SCRIPTS (AUTOCOMPLETE + BANNERS + MODAL)
+* Animação contador numerico no scripts.js + adicionar a classe "contagem" na linha onde existe número
 ============================================================ */
 
+jQuery(function ($) {
+  var $counters = $(".contagem");
+  if (!$counters.length) return;
+
+  function parseCounterData($el) {
+    var rawText = $el.text().trim();
+    var rawTarget =
+      $el.data("count") !== undefined && $el.data("count") !== ""
+        ? String($el.data("count"))
+        : rawText;
+
+    var parts = rawText.match(/([^0-9]*)([0-9.,]+)([^0-9]*)/);
+    var prefix = parts && parts[1] ? parts[1] : "";
+    var suffix = parts && parts[3] ? parts[3] : "";
+
+    var normalized = rawTarget.replace(/[^\d.,-]/g, "").replace(/\s/g, "");
+    var hasComma = normalized.indexOf(",") !== -1;
+    var hasDot = normalized.indexOf(".") !== -1;
+    var decimalSeparator = null;
+
+    if (hasComma && hasDot) {
+      decimalSeparator =
+        normalized.lastIndexOf(",") > normalized.lastIndexOf(".") ? "," : ".";
+    } else if (hasComma) {
+      decimalSeparator = ",";
+    } else if (hasDot) {
+      var lastGroup = normalized.split(".").pop();
+      decimalSeparator = lastGroup.length === 3 ? null : ".";
+    }
+
+    if (decimalSeparator === ",") {
+      normalized = normalized.replace(/\./g, "").replace(",", ".");
+    } else if (decimalSeparator === ".") {
+      normalized = normalized.replace(/,/g, "");
+    } else {
+      normalized = normalized.replace(/[.,]/g, "");
+    }
+
+    var decimals = decimalSeparator ? (normalized.split(".")[1] || "").length : 0;
+    var target = parseFloat(normalized);
+
+    if (Number.isNaN(target)) return null;
+    return { target: target, decimals: decimals, prefix: prefix, suffix: suffix };
+  }
+
+  function formatCount(value, decimals) {
+    return value.toLocaleString("pt-BR", {
+      minimumFractionDigits: decimals,
+      maximumFractionDigits: decimals,
+    });
+  }
+
+  function runCounter(el) {
+    var $el = $(el);
+    var parsed = parseCounterData($el);
+    if (!parsed || $el.data("count-started")) return;
+
+    $el.data("count-started", true);
+    $el.prop("Counter", 0).animate(
+      { Counter: parsed.target },
+      {
+        duration: 2000,
+        easing: "swing",
+        step: function (now) {
+          $el.text(
+            parsed.prefix + formatCount(now, parsed.decimals) + parsed.suffix
+          );
+        },
+        complete: function () {
+          $el.text(
+            parsed.prefix +
+              formatCount(parsed.target, parsed.decimals) +
+              parsed.suffix
+          );
+        },
+      }
+    );
+  }
+
+  if ("IntersectionObserver" in window) {
+    var observer = new IntersectionObserver(
+      function (entries, obs) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            runCounter(entry.target);
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.35 }
+    );
+
+    $counters.each(function () {
+      observer.observe(this);
+    });
+  } else {
+    $counters.each(function () {
+      runCounter(this);
+    });
+  }
+});
 
 
 
@@ -298,9 +399,32 @@ jQuery(document).on("ready", function () {
   };
 
   const config = window.sdHotelSearch || {};
-  const hotelsEndpoint =
-    config.endpoint ||
-    "/wp-json/wp/v2/hoteis?per_page=100&_fields=id,link,title.rendered,acf,meta";
+
+  const resolveHotelsEndpoint = () => {
+    if (config.endpoint) return config.endpoint;
+
+    var restBase =
+      (window.wpApiSettings && window.wpApiSettings.root) ||
+      (function () {
+        var link = document.querySelector('link[rel="https://api.w.org/"]');
+        return link && link.href ? link.href : "/wp-json/";
+      })();
+
+    try {
+      var normalized = new URL(restBase, window.location.origin).toString();
+      restBase = normalized;
+    } catch (e) {
+      // mantém restBase como está se URL falhar
+    }
+
+    restBase = (restBase || "").replace(/\/$/, "");
+    return (
+      restBase +
+      "/wp/v2/hoteis?per_page=100&_fields=id,link,title.rendered,acf,meta"
+    );
+  };
+
+  const hotelsEndpoint = resolveHotelsEndpoint();
   const defaultHotelUrl = config.defaultUrl || "";
 
   const decodeHTML = str => {
@@ -324,7 +448,7 @@ jQuery(document).on("ready", function () {
       city,
       bairro,
       url: urlFromMeta || raw.link || "",
-      label: [name, city || bairro].filter(Boolean).join(" • ") || name,
+      label: [name, city || bairro].filter(Boolean).join(" - ") || name,
     };
   };
 

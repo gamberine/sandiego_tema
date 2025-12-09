@@ -236,6 +236,26 @@ add_action('init', function () {
   ]);
 });
 
+/**
+ * Ajusta campo ACF post_object "hotel_avaliado" para listar o CPT correto.
+ */
+function sd_acf_filter_hotel_avaliado($args)
+{
+  $args['post_type']      = ['hoteis'];   // slug do CPT registrado
+  $args['post_status']    = ['publish'];  // somente publicados
+  $args['posts_per_page'] = -1;           // lista todos
+  $args['orderby']        = 'title';
+  $args['order']          = 'ASC';
+  return $args;
+}
+add_filter('acf/fields/post_object/query/name=hotel_avaliado', function ($args, $field, $post_id) {
+  return sd_acf_filter_hotel_avaliado($args);
+}, 10, 3);
+add_filter('acf/fields/post_object/query/key=field_692e4bc5e01d0', function ($args, $field, $post_id) {
+  return sd_acf_filter_hotel_avaliado($args);
+}, 10, 3);
+
+
 
 /**
  * Função auxiliar para obter a URL do banner institucional mais recente

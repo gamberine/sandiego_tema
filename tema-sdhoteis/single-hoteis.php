@@ -129,7 +129,7 @@ $depo_query = new WP_Query([
       <?php
       while ($depo_query->have_posts()) {
         $depo_query->the_post();
-        $nome  = (string) sd_field('nome_origem', get_the_ID());
+        $nome  = (string) get_the_title();
         $nota  = max(0, min(5, (int) sd_field('depo_nota', get_the_ID())));
         $texto = (string) sd_field('texto_depoimento', get_the_ID());
         ?>
