@@ -198,6 +198,7 @@ add_action('init', function () {
       'singular_name' => 'Depoimento'
     ],
     'public'       => true,
+    'has_archive'  => false,
     'menu_icon'    => 'dashicons-format-quote',
     'supports'     => ['title', 'editor', 'thumbnail', 'revisions'],
     'show_in_rest' => true,
@@ -255,7 +256,56 @@ add_filter('acf/fields/post_object/query/key=field_692e4bc5e01d0', function ($ar
   return sd_acf_filter_hotel_avaliado($args);
 }, 10, 3);
 
+/**
+ * Relacionamento bidirecional: quando um depoimento aponta para um hotel
+ * em "hotel_avaliado", sincroniza um campo no hotel para referenciar de volta.
+ */
+add_filter('acf/update_value/name=hotel_avaliado', function ($value, $post_id, $field) {
+  if (get_post_type($post_id) !== 'depoimento') {
+    return $value;
+  }
 
+  // Ajuste este slug se o campo no hotel tiver outro nome.
+  $target_field = 'hotel_depoimentos';
+
+  static $running = false;
+  if ($running) {
+    return $value;
+  }
+  $running = true;
+
+  $new_ids = [];
+  if (is_array($value)) {
+    $new_ids = array_map('intval', $value);
+  } elseif ($value) {
+    $new_ids = [intval($value)];
+  }
+
+  $old_value = get_field('hotel_avaliado', $post_id, false);
+  $old_ids   = is_array($old_value) ? array_map('intval', $old_value) : (array) (intval($old_value) ?: []);
+
+  $removed = array_diff($old_ids, $new_ids);
+  $added   = array_diff($new_ids, $old_ids);
+
+  foreach ($removed as $hotel_id) {
+    $existing = get_field($target_field, $hotel_id, false);
+    $existing = is_array($existing) ? array_map('intval', $existing) : [];
+    $existing = array_diff($existing, [$post_id]);
+    update_field($target_field, $existing, $hotel_id);
+  }
+
+  foreach ($added as $hotel_id) {
+    $existing = get_field($target_field, $hotel_id, false);
+    $existing = is_array($existing) ? array_map('intval', $existing) : [];
+    if (!in_array($post_id, $existing, true)) {
+      $existing[] = $post_id;
+      update_field($target_field, $existing, $hotel_id);
+    }
+  }
+
+  $running = false;
+  return $value;
+}, 10, 3);
 
 /**
  * Função auxiliar para obter a URL do banner institucional mais recente
