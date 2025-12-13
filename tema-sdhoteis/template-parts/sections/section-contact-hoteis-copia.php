@@ -12,7 +12,7 @@
     <div class="text-center mx-auto mb-5">
        <span class="badge px-4 py-2 fw-semibold">Contato</span>
       <!-- <h4 class="accent-color mb-0">Contato</h4> -->
-      <h2 class="sd-title primary-color mb-4 text-center">Conheca nossos Hoteis</h2>
+      <h2 class="sd-title primary-color mb-4 text-center">Conheça nossos Hotéis</h2>
     </div>
     <div class="row g-4 sd-contato-hotels">
               <?php
@@ -101,7 +101,7 @@
                     <li><span>E-mail:</span> <a href="mailto:<?php echo esc_attr($email); ?>"><?php echo esc_html($email); ?></a></li>
                   <?php endif; ?>
                   <?php if ($endereco_formatado) : ?>
-                    <li><span>Endereco:</span> <?php echo esc_html($endereco_formatado); ?></li>
+                    <li><span>Endereço:</span> <?php echo esc_html($endereco_formatado); ?></li>
                   <?php endif; ?>
                 </ul>
 

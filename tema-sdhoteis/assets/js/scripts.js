@@ -289,7 +289,7 @@ jQuery(function ($) {
     $el.prop("Counter", 0).animate(
       { Counter: parsed.target },
       {
-        duration: 2000,
+        duration: 1000,
         easing: "swing",
         step: function (now) {
           $el.text(
