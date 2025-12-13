@@ -23,19 +23,20 @@ $resumo   = sd_field('hotel_resumo');
 
 <section class="section-pad">
   <div class="container">
+    <?php $galeria = sd_field('hotel_galeria'); ?>
+    <?php $has_gallery = is_array($galeria) && !empty($galeria); ?>
     <div class="row g-4">
-      <div class="col-lg-6">
+      <div class="<?php echo $has_gallery ? 'no-slider-col col-12 col-lg-6' : 'no-slider-col col-12'; ?>">
         <?php if ($resumo) : ?>
-          <p class="mb-4 pb-3 "><?php echo esc_html($resumo); ?></p>
+         <?php echo esc_html($resumo); ?>
         <?php endif; ?>
       </div>
-      <div class="col-lg-6">
-        <?php $galeria = sd_field('hotel_galeria'); ?>
-        <?php if (is_array($galeria) && !empty($galeria)) : ?>
+      <div class="<?php echo $has_gallery ? 'sd-slider-col col-12 col-lg-6' : 'sd-slider-col col-12 col-lg-6 d-none'; ?>">
+        <?php if ($has_gallery) : ?>
           <div class="sd-hotel-gallery">
             <?php foreach ($galeria as $img) : ?>
               <div class="sd-hotel-gallery__slide">
-                <img class="w-100 rounded sd-hotel-gallery__img" src="<?php echo esc_url($img['url']); ?>" alt="">
+                <img class="rounded sd-hotel-gallery__img" src="<?php echo esc_url($img['url']); ?>" alt="">
               </div>
             <?php endforeach; ?>
           </div>
@@ -44,6 +45,32 @@ $resumo   = sd_field('hotel_resumo');
     </div>
   </div>
 </section>
+
+<style>
+  .sd-hotel-gallery {
+    position: relative;
+  }
+  .sd-hotel-gallery__slide {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-height: clamp(240px, 60vw, 420px);
+  }
+  .sd-hotel-gallery__img {
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    margin-left: auto;
+    display: block;
+  }
+  @media (min-width: 1260px) {
+    .sd-hotel-gallery__slide {
+      min-height: 48dvh;
+      max-height: 48dvh;
+    }
+  }
+</style>
 
 <section class="section-pad bg-light">
   <div class="container">
@@ -72,101 +99,99 @@ $resumo   = sd_field('hotel_resumo');
 <section class="section-pad primary-gradient">
   <div class="container white-color">
     <h2 class="sd-title white-color mb-4 text-center">Comodidades</h2>
-<div class="row justify-content-center align-items-center row-cols-2 row-cols-md-4 g-4">
-  <?php
-  $terms = get_the_terms(get_the_ID(), 'hotel_feature');
+    <div class="row justify-content-center align-items-center row-cols-2 row-cols-md-4 g-4">
+      <?php
+      $terms = get_the_terms(get_the_ID(), 'hotel_feature');
 
-  if ($terms && ! is_wp_error($terms)) {
+      if ($terms && ! is_wp_error($terms)) {
 
-    foreach ($terms as $term) {
+        foreach ($terms as $term) {
 
-      // pega o elemento HTML completo do ícone
-      $icon = sd_field('feature_icon', $term);
+          // pega o elemento HTML completo do ícone
+          $icon = sd_field('feature_icon', $term);
 
-      echo '<div class="col"><div class="sd-amenity sd-card p-3 text-center">';
+          echo '<div class="col"><div class="sd-amenity sd-card p-3 text-center">';
 
-      if ($icon) {
-        // o campo já retorna <i class="fa-solid ..."></i>
-        echo '<div class="mb-2" style="font-size:42px;line-height:1;">' . $icon . '</div>';
+          if ($icon) {
+            // o campo já retorna <i class="fa-solid ..."></i>
+            echo '<div class="mb-2" style="font-size:42px;line-height:1;">' . $icon . '</div>';
+          }
+
+          echo '<div>' . esc_html($term->name) . '</div>';
+
+          echo '</div></div>';
+        }
       }
-
-      echo '<div>' . esc_html($term->name) . '</div>';
-
-      echo '</div></div>';
-    }
-  }
-  ?>
-</div>
-<?php
-// Google Reviews desativado a pedido do cliente.
-// $place_id       = sd_field('hotel_google_place_id');
-// $google_reviews = sd_get_google_reviews($place_id, 8);
-
-$depo_query = new WP_Query([
-  'post_type'      => 'depoimento',
-  'posts_per_page' => 12,
-  'meta_query'     => [
-    'relation' => 'OR',
-    [
-      'key'   => 'hotel_avaliado',
-      'value' => get_the_ID(),
-    ],
-    [
-      'key'     => 'hotel_avaliado',
-      'value'   => '"' . get_the_ID() . '"',
-      'compare' => 'LIKE',
-    ],
-  ],
-]);
-?>
-
-<?php if ($depo_query->have_posts()) : ?>
+      ?>
+    </div>
+    </div>
+</section>
 <section class="section-pad bg-light">
   <div class="container">
     <h2 class="sd-title mb-4 text-center">Depoimento dos nossos Hospedes</h2>
-
-    <div class="sd-carousel-depo">
-      <?php
-      while ($depo_query->have_posts()) {
-        $depo_query->the_post();
-        $nome  = (string) get_the_title();
-        $nota  = max(0, min(5, (int) sd_field('depo_nota', get_the_ID())));
-        $texto = (string) sd_field('texto_depoimento', get_the_ID());
-        ?>
-        <div class="px-3">
-          <div class="sd-card h-100 p-3 d-flex flex-column gap-2">
-            <?php if ($nome) : ?>
-              <div class="fw-semibold"><?php echo esc_html($nome); ?></div>
-            <?php endif; ?>
-            <?php if ($nota) : ?>
-              <div class="sd-google-stars" aria-label="<?php echo esc_attr($nota); ?> estrelas">
-                <?php for ($i = 1; $i <= 5; $i++) {
-                  echo '<span class="' . ($i <= $nota ? 'on' : '') . '">&#9733;</span>';
-                } ?>
+    
+          <?php
+      
+          $depo_query = new WP_Query([
+            'post_type'      => 'depoimento',
+            'posts_per_page' => 12,
+            'meta_query'     => [
+              'relation' => 'OR',
+              [
+                'key'   => 'hotel_avaliado',
+                'value' => get_the_ID(),
+              ],
+              [
+                'key'     => 'hotel_avaliado',
+                'value'   => '"' . get_the_ID() . '"',
+                'compare' => 'LIKE',
+              ],
+            ],
+          ]);
+          ?>
+      
+          <?php if ($depo_query->have_posts()) : ?>
+          <div class="sd-carousel-depo">
+            <?php
+            while ($depo_query->have_posts()) {
+              $depo_query->the_post();
+              $nome  = (string) get_the_title();
+              $nota  = max(0, min(5, (int) sd_field('depo_nota', get_the_ID())));
+              $texto = (string) sd_field('texto_depoimento', get_the_ID());
+            ?>
+              <div class="px-3">
+                <div class="sd-card h-100 p-3 d-flex flex-column gap-2">
+                  <?php if ($nome) : ?>
+                    <div class="fw-semibold"><?php echo esc_html($nome); ?></div>
+                  <?php endif; ?>
+                  <?php if ($nota) : ?>
+                    <div class="sd-google-stars" aria-label="<?php echo esc_attr($nota); ?> estrelas">
+                      <?php for ($i = 1; $i <= 5; $i++) {
+                        echo '<span class="' . ($i <= $nota ? 'on' : '') . '">&#9733;</span>';
+                      } ?>
+                    </div>
+                  <?php endif; ?>
+                  <?php if ($texto) : ?>
+                    <p class="mb-0 small"><?php echo esc_html($texto); ?></p>
+                  <?php endif; ?>
+                </div>
               </div>
-            <?php endif; ?>
-            <?php if ($texto) : ?>
-              <p class="mb-0 small"><?php echo esc_html($texto); ?></p>
-            <?php endif; ?>
-            <div class="small text-muted mt-auto">Fonte: Depoimentos do site</div>
+            <?php
+            }
+            wp_reset_postdata();
+            ?>
           </div>
+          <?php endif; ?>
         </div>
-        <?php
-      }
-      wp_reset_postdata();
-      ?>
-    </div>
-  </div>
-</section>
-<?php endif; ?>
+      </section>
 
-<!-- aqui vai o arquivo hoteis-redes-sociais -->
-<!-- < ?php get_template_part('template-parts/sections/section-hoteis-redes-sociais'); ?> -->
+    <!-- aqui vai o arquivo hoteis-redes-sociais -->
+    <!-- < ?php get_template_part('template-parts/sections/section-hoteis-redes-sociais'); ?> -->
 
-<section class="pt-5 mb-5" style="height: 19rem;align-items: center;display: flex;">
-    <?php $url = sd_field('hotel_url_reserva'); ?>
-    <a target="_blank" class="btn btn-accent mx-auto w-80 px-5 my-4" href="<?php echo esc_url($url ?: 'https://book.omnibees.com/chain/9627'); ?>">Quero fazer uma reserva nessa unidade</a>
+    <section class="pt-5 mb-5" style="height: 19rem;align-items: center;display: flex;">
+      <?php $url = sd_field('hotel_url_reserva'); ?>
+      <a target="_blank" class="btn btn-accent mx-auto w-80 px-5 my-4" href="<?php echo esc_url($url ?: 'https://book.omnibees.com/chain/9627'); ?>">Quero fazer uma reserva nessa unidade</a>
 
-</section>
+    </section>
 
-<?php get_footer(); ?>
+    <?php get_footer(); ?>
