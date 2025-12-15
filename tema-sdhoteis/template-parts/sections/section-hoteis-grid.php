@@ -105,15 +105,8 @@ $hoteis = new WP_Query($query_args);
                 <?php endif; ?>
 
                 <div class="d-flex align-items-center justify-content-between">
-                  <a class="btn btn-accent" href="<?php echo esc_url($link ?: get_permalink()); ?>">
+                  <a class="btn btn-accent" href="<?php the_permalink(); ?>">
                     <span>Saiba mais</span>/<a>
-                    <!-- <a class="sd-hotel-card__btnsd-hotel-card__btn" href="< ?php echo esc_url($link ?: get_permalink()); ?>" target="_blank"> -->
-                    <!-- <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg> -->
-                  
-                   <!-- < a class="btn btn-accent" href="< ?php the_permalink(); ?>">Saiba mais</a> -->
                 </div>
               </div>
             </div>
